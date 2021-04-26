@@ -1,6 +1,6 @@
 # HCI
 
-Članovi tima:
+Članovi tima 1.3:
 
 - Aleksandar Čepić SW-3/2018
 - Đorđe Njegić SW-12/2018
