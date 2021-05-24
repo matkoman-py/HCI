@@ -1,0 +1,24 @@
+﻿<Window x:Class="ReservationSystem.Views.RequestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReservationSystem.Views"
+        mc:Ignorable="d"
+        Title="Pregled predloga" Height="450" Width="800">
+    <Grid>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Label Margin="10,10,0,0" Content="Zadaci:" HorizontalAlignment="Center"/>
+            <ListView Margin="10,10,0,13"   Name="Zadaci" VerticalAlignment="Top" Width="600" Height="160">
+                <ListViewItem Content="Zadatak 1"></ListViewItem>
+                <ListViewItem Content="Zadatak 2"></ListViewItem>
+                <ListViewItem Content="Zadatak 3"></ListViewItem>
+            </ListView>
+            <Label Margin="100,10,0,0" Content="Komentar:" />
+            <TextBlock Background="LightGray" Width="600" Height="100">Ovo je predlog za moju proslavu.</TextBlock>
+            <Button Background="BlueViolet" Content="Posalji odgovor na predlog" Width="200" Margin="35" />
+        </StackPanel>
+
+        
+    </Grid>
+</Window>

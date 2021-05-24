@@ -1,0 +1,31 @@
+﻿<Window x:Class="ReservationSystem.Views.OfferReviewPagexaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReservationSystem.Views"
+        mc:Ignorable="d"
+        Title="OfferReviewPagexaml" Height="400" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left">
+            <Button Content="Nazad" Width="110" Height="30" Margin="20"/>
+            <Label Margin="10" Width="110" Height="30" Content="Saradnik: PETRUS"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
+            <Label Margin="3" Width="110" Height="30" Content="Cena ponude: "/>
+            <TextBox  Height="30"  Width="200" Margin="0"/>
+            <Label Margin="3" Width="110" Height="30" Content="Opis ponude: "/>
+            <TextBox  Height="100"  Width="200" Margin="0"/>
+        </StackPanel>
+        <Image  Grid.Column="1" Grid.Row="1" Height="150" Width="150" Source="C:\Users\Mateja\Pictures\slike.jpg"/>
+    </Grid>
+</Window>
