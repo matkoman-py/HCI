@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\
+C:\Users\zoran\Source\Repos\HCI-2\ReservationSystem\ReservationSystem\obj\Debug\
 ReservationSystem
 none
 false
 DEBUG;TRACE
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\App.xaml
-3-647033019
+C:\Users\zoran\Source\Repos\HCI-2\ReservationSystem\ReservationSystem\App.xaml
+121070977543
 
-18-1364988963
-17-1608207566
-MainWindow.xaml;Views\LoginWindow.xaml;Views\AssociateOverview.xaml;
+271408154210
+17-450311382
+MainWindow.xaml;Views\ChooseOrganisatorPage.xaml;Views\DataUpdate.xaml;Views\LoginWindow.xaml;Views\AssociateOverview.xaml;Views\OfferReviewPagexaml.xaml;Views\Profile.xaml;Views\RegistrationWindow.xaml;Views\RequestCreation.xaml;Views\RequestView.xaml;Views\TaskOverview.xaml;Views\UserHomePage.xaml;
 
 False
 
