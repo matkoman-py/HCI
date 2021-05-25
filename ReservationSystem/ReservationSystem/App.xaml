@@ -4,6 +4,18 @@
              xmlns:local="clr-namespace:ReservationSystem"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Foreground" Value="Blue"></Setter>
+            <Setter Property="Margin" Value="10px"></Setter>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
     </Application.Resources>
+    
 </Application>

@@ -50,3 +50,13 @@ C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CopyComplete
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.exe
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.pdb
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.dll
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.xml
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PregledSaradnika.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.baml
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.baml
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PregledSaradnika.baml
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CopyComplete
