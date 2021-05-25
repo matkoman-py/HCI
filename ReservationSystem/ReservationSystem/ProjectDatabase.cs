@@ -14,7 +14,7 @@ namespace ReservationSystem
         public DbSet<Offer> Offers { get; set; }
         public DbSet<PartyRequest> PartyRequests { get; set; }
         public DbSet<Point> Points { get; set; }
-        public DbSet<Suggestion> Seuggestions { get; set; }
+        public DbSet<Suggestion> Suggestions { get; set; }
         public DbSet<Table> Tables { get; set; }
         public DbSet<TablesArrangement> TablesArrangements { get; set; }
         public DbSet<OrganizierTask> OrganizierTasks { get; set; }
