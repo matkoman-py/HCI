@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\zoran\Source\Repos\HCI-2\ReservationSystem\ReservationSystem\App.xaml
-121070977543
+13-830961392
 
-271408154210
+28-842240577
 17-450311382
-MainWindow.xaml;Views\ChooseOrganisatorPage.xaml;Views\DataUpdate.xaml;Views\LoginWindow.xaml;Views\AssociateOverview.xaml;Views\OfferReviewPagexaml.xaml;Views\Profile.xaml;Views\RegistrationWindow.xaml;Views\RequestCreation.xaml;Views\RequestView.xaml;Views\TaskOverview.xaml;Views\UserHomePage.xaml;
+MainWindow.xaml;Views\ChooseOrganisatorPage.xaml;Views\DataUpdate.xaml;Views\LoginWindow.xaml;Views\AssociateOverview.xaml;Views\OfferReviewPagexaml.xaml;Views\Profile.xaml;Views\RegistrationWindow.xaml;Views\RequestCreation.xaml;Views\RequestView.xaml;Views\TaskOverview.xaml;Views\TestWindow.xaml;Views\UserHomePage.xaml;
 
-False
+True
 

@@ -96,6 +96,9 @@
     <Compile Include="Views\TaskOverview.xaml.cs">
       <DependentUpon>TaskOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TestWindow.xaml.cs">
+      <DependentUpon>TestWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserHomePage.xaml.cs">
       <DependentUpon>UserHomePage.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
     <Page Include="Views\TaskOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserHomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
