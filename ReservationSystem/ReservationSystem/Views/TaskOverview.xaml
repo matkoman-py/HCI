@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <Button Content="Nazad" Grid.Row="0"  Height="20" Margin="10" HorizontalAlignment="Left"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Label Content="Naziv:" Margin="0,0,0,0.4" Width="72"></Label>
             <Label Content="Angazuj trubace" Margin="0,0,0,0.4" Width="141"></Label>
             <Label Content="Status:" Margin="0,0,0,0.4" Width="97"></Label>
