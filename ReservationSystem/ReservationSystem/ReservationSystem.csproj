@@ -66,8 +66,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\AcceptedRequestOverview.xaml.cs">
+      <DependentUpon>AcceptedRequestOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActiveRequestOverview.xaml.cs">
+      <DependentUpon>ActiveRequestOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChooseOrganisatorPage.xaml.cs">
       <DependentUpon>ChooseOrganisatorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateNewAssociateWindow.xaml.cs">
+      <DependentUpon>CreateNewAssociateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateNewOfferWindow.xaml.cs">
+      <DependentUpon>CreateNewOfferWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DataUpdate.xaml.cs">
       <DependentUpon>DataUpdate.xaml</DependentUpon>
@@ -86,6 +98,9 @@
     </Compile>
     <Compile Include="Views\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RejectedRequestOverview.xaml.cs">
+      <DependentUpon>RejectedRequestOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RequestCreation.xaml.cs">
       <DependentUpon>RequestCreation.xaml</DependentUpon>
@@ -114,9 +129,25 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AcceptedRequestOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActiveRequestOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ChooseOrganisatorPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CreateNewAssociateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateNewOfferWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DataUpdate.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +172,10 @@
     <Page Include="Views\RegistrationWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RejectedRequestOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RequestCreation.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -199,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Static\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

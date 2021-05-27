@@ -60,3 +60,15 @@ C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debu
 C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.baml
 C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PregledSaradnika.baml
 C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CopyComplete
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AssociateOverview.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPagexaml.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TestWindow.g.cs
+C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.g.cs

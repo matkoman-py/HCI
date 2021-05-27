@@ -1,0 +1,75 @@
+﻿<Window x:Class="ReservationSystem.Views.AcceptedRequestOverview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReservationSystem.Views"
+        mc:Ignorable="d"
+        Title="AcceptedRequestOverview" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" />
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Label Margin="15" FontSize="16" Content="User:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">Ime korisnika</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Label Margin="15" FontSize="16" Content="Party type:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">Rodjendan</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Label Margin="15" FontSize="16" Content="Number of guests:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">25</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Label Margin="15" FontSize="16" Content="Budget:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">55 000</TextBlock>
+        </StackPanel>
+        <StackPanel Margin="15" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Label FontSize="16" Content="Description:" FontWeight="Bold"/>
+            <TextBox MinLines="2" BorderThickness="2" BorderBrush="Black" FontSize="20">sfdsafasfsad</TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Label Margin="15" FontSize="16" Content="Location:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">Sombor</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Label Margin="15" FontSize="16" Content="Theme:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">lepak</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Label Margin="15" FontSize="16" Content="Date:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">5.7.2021.</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Label Margin="15" FontSize="16" Content="Time:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">21h</TextBlock>
+        </StackPanel>
+
+        <StackPanel Background="LightGray" Margin="15" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Label FontSize="16" Content="REQUEST ACCEPTED" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                
+            </StackPanel>
+            <Button Content="Suggestion review" HorizontalAlignment="Center"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

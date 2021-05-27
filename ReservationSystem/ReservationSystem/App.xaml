@@ -9,6 +9,7 @@
             <Setter Property="Background" Value="White"></Setter>
             <Setter Property="Foreground" Value="Blue"></Setter>
             <Setter Property="Margin" Value="10px"></Setter>
+            <Setter Property="Padding" Value="8px"></Setter>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="7"/>
