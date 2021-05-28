@@ -1,0 +1,53 @@
+﻿<Window x:Class="ReservationSystem.Views.Organizer.CreateSuggestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReservationSystem.Views.Organizer"
+        mc:Ignorable="d"
+        Title="CreateSuggestion" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="2" Grid.Column="3" Margin="0,0,50,0">
+            <Button >Kreiraj novi zadatak</Button>
+        </StackPanel>
+        <DockPanel Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="50,0,50,0" >
+            <Label DockPanel.Dock="Top" HorizontalAlignment="Center">Kreirani zadaci:</Label>
+            <ListView Name="Zadaci" VerticalAlignment="Top">
+                <ListViewItem Content="Zadatak 1"></ListViewItem>
+                <ListViewItem Content="Zadatak 2"></ListViewItem>
+                <ListViewItem Content="Zadatak 3"></ListViewItem>
+            </ListView>
+        </DockPanel>
+        <Label Margin="50,0,50,0" Grid.Row="5" Content="Komentar:"></Label>
+        <TextBox Grid.Row="6" 
+                 Grid.ColumnSpan="4" 
+                 Margin="50,0,50,0" 
+                 HorizontalAlignment="Stretch" 
+                 BorderBrush="Gray" 
+                 BorderThickness="1" Grid.RowSpan="3"/>
+        <StackPanel Grid.Row="9" Grid.Column="3" Margin="0,0,50,0">
+            <Button >Prihvati zahtev</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="9" Grid.Column="0" Margin="50,0,0,0">
+            <Button >Odustani</Button>
+        </StackPanel>
+    </Grid>
+</Window>

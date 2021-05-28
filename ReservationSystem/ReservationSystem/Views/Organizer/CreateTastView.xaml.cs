@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ReservationSystem.Views
+namespace ReservationSystem.Views.Organizer
 {
     /// <summary>
-    /// Interaction logic for RequestCreation.xaml
+    /// Interaction logic for CreateTastView.xaml
     /// </summary>
-    public partial class RequestCreation : Window
+    public partial class CreateTastView : Window
     {
-        public RequestCreation()
+        public CreateTastView()
         {
             InitializeComponent();
         }

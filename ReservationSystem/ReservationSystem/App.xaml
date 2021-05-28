@@ -2,6 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ReservationSystem"
+             xmlns:views ="clr-namespace:ReservationSystem.Views"
+             xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels"
+             xmlns:models="clr-namespace:ReservationSystem.Models"
+             xmlns:commands="clr-namespace:ReservationSystem.Commands"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
@@ -17,6 +21,12 @@
             </Style.Resources>
         </Style>
 
+        <DataTemplate DataType="{x:Type viewmodels:ProfileViewModel}">
+            <views:Profile></views:Profile>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:LoginWindow/>
+        </DataTemplate>
     </Application.Resources>
     
 </Application>

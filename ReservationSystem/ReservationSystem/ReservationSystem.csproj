@@ -66,6 +66,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ProfileViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Views\AcceptedRequestOverview.xaml.cs">
       <DependentUpon>AcceptedRequestOverview.xaml</DependentUpon>
     </Compile>
@@ -92,6 +99,18 @@
     </Compile>
     <Compile Include="Views\OfferReviewPagexaml.xaml.cs">
       <DependentUpon>OfferReviewPagexaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Organizer\CreateSuggestionView.xaml.cs">
+      <DependentUpon>CreateSuggestionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Organizer\CreateTastView.xaml.cs">
+      <DependentUpon>CreateTastView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Organizer\DenyRequestView.xaml.cs">
+      <DependentUpon>DenyRequestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Organizer\RequestOverivew.xaml.cs">
+      <DependentUpon>RequestOverivew.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
@@ -164,6 +183,22 @@
     <Page Include="Views\OfferReviewPagexaml.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Organizer\CreateSuggestionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Organizer\CreateTastView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Organizer\DenyRequestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Organizer\RequestOverivew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Profile.xaml">
       <Generator>MSBuild:Compile</Generator>
