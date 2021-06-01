@@ -8,33 +8,35 @@ using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
 {
-    public class RequesCreationViewModel : BaseViewModel
+    public class ChooseOrganisatorPageViewModel : BaseViewModel
     {
         public ICommand UpdateViewCommand { get; set; }
+
+        public ICommand RequestCreationCommand
+        {
+            get; set;
+        }
+
         public ICommand UserHomePageCommand
         {
             get; set;
         }
 
-        public ICommand ChooseOrganisatorPageCommand
-        {
-            get; set;
-        }
-
-        public RequesCreationViewModel(ICommand updateViewCommand)
+        public ChooseOrganisatorPageViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
+            RequestCreationCommand = new DelegateCommand(RequestCreation);
             UserHomePageCommand = new DelegateCommand(UserHomePage);
-            ChooseOrganisatorPageCommand = new DelegateCommand(ChooseOrganisatorPage);
         }
+
         public void UserHomePage()
         {
             UpdateViewCommand.Execute("UserHomePage");
         }
 
-        public void ChooseOrganisatorPage()
+        public void RequestCreation()
         {
-            UpdateViewCommand.Execute("ChooseOrganisatorPage");
+            UpdateViewCommand.Execute("RequestCreation");
         }
     }
 }

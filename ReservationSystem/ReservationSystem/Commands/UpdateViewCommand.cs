@@ -46,7 +46,9 @@ namespace ReservationSystem.Commands
                 case "RequestCreation":
                     viewModel.SelectedViewModel = new RequesCreationViewModel(this);
                     break;
-
+                case "ChooseOrganisatorPage":
+                    viewModel.SelectedViewModel = new ChooseOrganisatorPageViewModel(this);
+                    break;
             }
         }
     }

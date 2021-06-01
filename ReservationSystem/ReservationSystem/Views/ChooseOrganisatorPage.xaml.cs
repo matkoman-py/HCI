@@ -17,7 +17,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for ChooseOrganisatorPage.xaml
     /// </summary>
-    public partial class ChooseOrganisatorPage : Window
+    public partial class ChooseOrganisatorPage : UserControl
     {
         public ChooseOrganisatorPage()
         {

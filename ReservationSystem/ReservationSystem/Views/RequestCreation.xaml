@@ -44,7 +44,7 @@
 
             <Button Content="Ubaci goste" Grid.Column="1" Grid.Row="3"  Margin="35"/>
 
-            <Button Content="Kreiraj zahtev" Grid.Column="1" Grid.Row="3"  Margin="25"/>
+            <Button Command="{Binding ChooseOrganisatorPageCommand}" Content="Kreiraj zahtev" Grid.Column="1" Grid.Row="3"  Margin="25"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -1,11 +1,11 @@
-﻿<Window x:Class="ReservationSystem.Views.ChooseOrganisatorPage"
+﻿<UserControl x:Class="ReservationSystem.Views.ChooseOrganisatorPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReservationSystem.Views"
         mc:Ignorable="d"
-        Title="ChooseOrganisatorPage" Height="450" Width="500">
+        Height="450" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -36,8 +36,8 @@
         </DataGrid>
 
         <StackPanel  Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-            <Button Content="Nazad"  Height ="30" Width="100" Margin="10"/>
-            <Button Content="Zavrsi zahtev"  Height ="30" Width="100" Margin="35"/>
+            <Button Content="Nazad" Command="{Binding RequestCreationCommand}"  Height ="30" Width="100" Margin="10"/>
+            <Button Content="Zavrsi zahtev" Command="{Binding UserHomePageCommand}" Height ="30" Width="100" Margin="35"/>
         </StackPanel>
     </Grid>
-</Window>
+</UserControl>
