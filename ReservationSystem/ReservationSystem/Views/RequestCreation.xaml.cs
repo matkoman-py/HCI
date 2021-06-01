@@ -18,7 +18,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for RequestCreation.xaml
     /// </summary>
-    public partial class RequestCreation : Window
+    public partial class RequestCreation : UserControl
     {
         public RequestCreation()
         {

@@ -21,7 +21,7 @@
         <StackPanel Grid.Row="1" Grid.Column="0" >
             <Image  Height="150" Width="150"/>
 
-            <Button Content="Nazad" Grid.Column="1" Grid.Row="3"  Margin="35"/>
+            <Button Content="Nazad" Grid.Column="1" Grid.Row="3" Command="{Binding UserHomePageCommand}" Margin="35"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" >
@@ -31,7 +31,7 @@
             <Label  Content="Prezime: Bekuta"/>
             <Label  Content="E-mail: ana@bekuta.com"/>
             <Label  Content="Datum rodjenja: 22.06.1999"/>
-            <Button Content="Azuriraj podatke" Grid.Column="1" Grid.Row="3"  Margin="35"/>
+            <Button Content="Azuriraj podatke" Grid.Column="1" Grid.Row="3" Command="{Binding DataUpdateCommand}" Margin="35"/>
         </StackPanel>
 
 

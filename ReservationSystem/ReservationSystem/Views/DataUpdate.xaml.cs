@@ -18,7 +18,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for DataUpdate.xaml
     /// </summary>
-    public partial class DataUpdate : Window
+    public partial class DataUpdate : UserControl
     {
         public DataUpdate()
         {

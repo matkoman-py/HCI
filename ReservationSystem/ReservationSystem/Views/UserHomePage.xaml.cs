@@ -17,7 +17,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for UserHomePage.xaml
     /// </summary>
-    public partial class UserHomePage : Window
+    public partial class UserHomePage : UserControl
     {
         public UserHomePage()
         {

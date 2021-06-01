@@ -31,7 +31,7 @@ namespace ReservationSystem.ViewModels
         {
             if (CheckCredentials())
             {
-                UpdateViewCommand.Execute("Profile");
+                UpdateViewCommand.Execute("UserHomePage");
             }
             else 
             {

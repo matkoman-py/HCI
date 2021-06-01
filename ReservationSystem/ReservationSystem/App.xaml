@@ -27,6 +27,15 @@
         <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
             <views:LoginWindow/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:UserHomePageViewModel}">
+            <views:UserHomePage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:DataUpdateViewModel}">
+            <views:DataUpdate/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:RequesCreationViewModel}">
+            <views:RequestCreation/>
+        </DataTemplate>
     </Application.Resources>
     
 </Application>

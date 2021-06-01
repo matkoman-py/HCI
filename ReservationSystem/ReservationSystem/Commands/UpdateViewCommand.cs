@@ -37,6 +37,16 @@ namespace ReservationSystem.Commands
                 case "Login":
                     viewModel.SelectedViewModel = new LoginViewModel(this);
                     break;
+                case "UserHomePage":
+                    viewModel.SelectedViewModel = new UserHomePageViewModel(this);
+                    break;
+                case "DataUpdate":
+                    viewModel.SelectedViewModel = new DataUpdateViewModel(this);
+                    break;
+                case "RequestCreation":
+                    viewModel.SelectedViewModel = new RequesCreationViewModel(this);
+                    break;
+
             }
         }
     }
