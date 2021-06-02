@@ -23,21 +23,21 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0" >
             <Label  Content="Korisnicko ime:"/>
-            <TextBox  Height="30" Margin="10"/>
+            <TextBox  Height="30" Margin="10" Text="{Binding username}"/>
             <Label  Content="Lozinka:"/>
-            <PasswordBox  Height="30" Margin="10"/>
+            <TextBox  Height="30" Margin="10" Text="{Binding password}"/>
             <Label  Content="E-mail:"/>
-            <TextBox  Height="30" Margin="10"/>
+            <TextBox  Height="30" Margin="10" Text="{Binding email}"/>
             <Button Command="{Binding ProfileCancelCommand}" Content="Odustani" Grid.Column="1" Grid.Row="3"  Margin="35"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" >
             <Label  Content="Ime:"/>
-            <TextBox  Height="30" Margin="10"/>
+            <TextBox  Height="30" Margin="10" Text="{Binding name}"/>
             <Label  Content="Prezime:"/>
-            <TextBox  Height="30" Margin="10"/>
-            <Label  Content="Datum rodjenja:"/>
-            <TextBox  Height="30" Margin="10"/>
+            <TextBox  Height="30" Margin="10" Text="{Binding surname}"/>
+            <Label  Content="Datum rodjenja:" />
+            <TextBox  Height="30" Margin="10" Text="{Binding birthday}"/>
             <Button Command="{Binding ProfileSaveCommand}" Content="Sacuvaj" Grid.Column="1" Grid.Row="3"  Margin="35"/>
         </StackPanel>
 

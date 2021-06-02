@@ -29,12 +29,12 @@ namespace ReservationSystem.ViewModels
         }
         public void UserHomePage()
         {
-            UpdateViewCommand.Execute("UserHomePage");
+            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));
         }
 
         public void ChooseOrganisatorPage()
         {
-            UpdateViewCommand.Execute("ChooseOrganisatorPage");
+            UpdateViewCommand.Execute(new ChooseOrganisatorPageViewModel(UpdateViewCommand));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ReservationSystem.Commands;
+using ReservationSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,17 +34,18 @@ namespace ReservationSystem.ViewModels
 
         public void RequestCreation()
         {
-            UpdateViewCommand.Execute("RequestCreation");
+            UpdateViewCommand.Execute(new RequesCreationViewModel(UpdateViewCommand));
         }
 
         public void Profile()
         {
-            UpdateViewCommand.Execute("Profile");
+           
+            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand));
         }
 
         public void LogOut()
         {
-            UpdateViewCommand.Execute("Login");
+            UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ReservationSystem.Commands;
+using ReservationSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace ReservationSystem.ViewModels
         {
             if (CheckCredentials())
             {
-                UpdateViewCommand.Execute("UserHomePage");
+                UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));
             }
             else 
             {

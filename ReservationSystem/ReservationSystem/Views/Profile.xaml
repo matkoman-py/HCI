@@ -25,12 +25,12 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" >
-            <Label  Content="Korisnicko ime: ana123"/>
-            <Label  Content="Password: ******"/>
-            <Label  Content="Ime: Ana"/>
-            <Label  Content="Prezime: Bekuta"/>
-            <Label  Content="E-mail: ana@bekuta.com"/>
-            <Label  Content="Datum rodjenja: 22.06.1999"/>
+            <Label  Content="{Binding username}"/>
+            <Label  Content="{Binding password}"/>
+            <Label  Content="{Binding name}"/>
+            <Label  Content="{Binding surname}"/>
+            <Label  Content="{Binding email}"/>
+            <Label  Content="{Binding birthday}"/>
             <Button Content="Azuriraj podatke" Grid.Column="1" Grid.Row="3" Command="{Binding DataUpdateCommand}" Margin="35"/>
         </StackPanel>
 

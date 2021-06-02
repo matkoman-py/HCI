@@ -31,12 +31,13 @@ namespace ReservationSystem.ViewModels
 
         public void UserHomePage()
         {
-            UpdateViewCommand.Execute("UserHomePage");
+
+            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));
         }
 
         public void RequestCreation()
         {
-            UpdateViewCommand.Execute("RequestCreation");
+            UpdateViewCommand.Execute(new RequesCreationViewModel(UpdateViewCommand));
         }
     }
 }
