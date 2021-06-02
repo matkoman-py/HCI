@@ -20,23 +20,24 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Id { get; set; }
         [DataMember]
-        private PartyType PartyType { get; set; }
+        public PartyType PartyType { get; set; }
         [DataMember]
-        private int Budget { get; set; }
+        public int Budget { get; set; }
         [DataMember]
-        private string Place { get; set; }
+        public string Place { get; set; }
         [DataMember]
-        private DateTime Time { get; set; }
+        public DateTime Time { get; set; }
         [DataMember]
-        private int Capacity { get; set; }
+        public int Capacity { get; set; }
         [DataMember]
-        private bool IsBudgetFlexible { get; set; }
+        public bool IsBudgetFlexible { get; set; }
         [DataMember]
-        private string PartyTheme { get; set; }
+        public string PartyTheme { get; set; }
         [DataMember]
-        private string Description { get; set; }
+        public string Description { get; set; }
         [DataMember]
-        private RequestState RequestState { get; set; }
+        public RequestState RequestState { get; set; }
 
+        
     }
 }

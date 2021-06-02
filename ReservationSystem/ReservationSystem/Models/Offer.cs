@@ -15,13 +15,21 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Id { get; set; }
         [DataMember]
-        private Associate Associate { get; set; }
+        public Associate Associate { get; set; }
         [DataMember]
-        private int Price { get; set; }
+        public int Price { get; set; }
         [DataMember]
-        private string Description { get; set; }
+        public string Description { get; set; }
         [DataMember]
-        private string Image { get; set; }
+        public string Image { get; set; }
 
+        public Offer(Associate associate, int price, string description ,string image)
+        {
+            Associate = associate;
+            Price = price;
+            Description = description;
+            Image = image;
+        }
+        
     }
 }

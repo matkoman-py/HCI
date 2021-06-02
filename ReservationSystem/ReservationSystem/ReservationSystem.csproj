@@ -69,6 +69,7 @@
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Models\DataContainerDto.cs" />
+    <Compile Include="Models\SuggestionWithCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChooseOrganisatorPageViewModel.cs" />
     <Compile Include="ViewModels\DataUpdateViewModel.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RequesCreationViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewViewModel.cs" />
     <Compile Include="ViewModels\UserHomePageViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Views\AcceptedRequestOverview.xaml.cs">

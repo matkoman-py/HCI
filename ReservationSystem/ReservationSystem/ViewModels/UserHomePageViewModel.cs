@@ -11,6 +11,8 @@ namespace ReservationSystem.ViewModels
 {
     public class UserHomePageViewModel : BaseViewModel
     {
+
+        public List<SuggestionWithCommand> Suggestions { get; set; }
         public ICommand UpdateViewCommand { get; set; }
         public ICommand LogOutCommand
         {
@@ -24,12 +26,17 @@ namespace ReservationSystem.ViewModels
         {
             get; set;
         }
+        public ICommand RequestViewCommand
+        {
+            get; set;
+        }
         public UserHomePageViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
             LogOutCommand = new DelegateCommand(LogOut);
             ProfileCommand = new DelegateCommand(Profile);
             RequestCreationCommand = new DelegateCommand(RequestCreation);
+            Suggestions = getOffers();
         }
 
         public void RequestCreation()
@@ -46,6 +53,70 @@ namespace ReservationSystem.ViewModels
         public void LogOut()
         {
             UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));
+        }
+
+        
+        public List<SuggestionWithCommand> getOffers()
+        {
+            // OVDE TREBA IZ DB UZETI SVE SUGGESTIONE KOJI IMAJU ID USERA KOJI JE PROSLEDJEN OVOM PROZORU
+            // TO DALJE SALJES 
+            return new List<SuggestionWithCommand>()
+            {
+                
+                new SuggestionWithCommand(new Suggestion("1",new List<OrganizierTask>(){ 
+                    new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+
+                    }, false,""),
+                    new OrganizierTask("Zadatak2", "Drugi zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                    }, false,""),
+                    new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                    }, false,"")
+                }, "MASU JAK PREDLOG1", new PartyRequest()),UpdateViewCommand),
+                new SuggestionWithCommand(new Suggestion("2",new List<OrganizierTask>(){
+                    new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                    }, false,""),
+                    new OrganizierTask("Zadatak2", "Drugi zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                    }, false,""),
+                    new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                    }, false,"")
+                }, "MASU JAK PREDLOG2", new PartyRequest()),UpdateViewCommand),
+                new SuggestionWithCommand(new Suggestion("3",new List<OrganizierTask>(){
+                    new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                    }, false,""),
+                    new OrganizierTask("Zadatak2", "Drugi zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                    }, false,""),
+                    new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
+                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                    }, false,"")
+                }, "MASU JAK PREDLOG3", new PartyRequest()),UpdateViewCommand)
+
+            };
         }
     }
 }

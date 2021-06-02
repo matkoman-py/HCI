@@ -39,6 +39,9 @@
         <DataTemplate DataType="{x:Type viewmodels:ChooseOrganisatorPageViewModel}">
             <views:ChooseOrganisatorPage/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:RequestViewViewModel}">
+            <views:RequestView/>
+        </DataTemplate>
     </Application.Resources>
     
 </Application>
