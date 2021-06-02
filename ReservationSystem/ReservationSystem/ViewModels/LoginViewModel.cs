@@ -32,7 +32,7 @@ namespace ReservationSystem.ViewModels
         {
             if (CheckCredentials())
             {
-                UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));
+                UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));//, new User()));
             }
             else 
             {
@@ -44,6 +44,13 @@ namespace ReservationSystem.ViewModels
         {
             if (Username == "pera" && Password == "pass") 
             {
+                using (var db = new ProjectDatabase())
+                {
+                    db.Users.Add(new User("pera", "pera", "Pera", "Peric", new DateTime(1999, 9, 5), Role.Customer));
+                    db.Users.Add(new User("mika", "mika", "Mika", "Mikic", new DateTime(1998, 9, 5), Role.Administrator));
+                    db.Users.Add(new User("zika", "zika", "Zika", "Zikic", new DateTime(1997, 9, 5), Role.Organizier));
+                    db.SaveChanges();
+                }
                 return true;
             }
             return false;

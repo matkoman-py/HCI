@@ -13,10 +13,16 @@ namespace ReservationSystem.Models
     {
         [Key]
         [DataMember]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [DataMember]
-        private int X { get; set; }
+        public int X { get; set; }
         [DataMember]
-        private int Y { get; set; }
+        public int Y { get; set; }
+
+        public Point(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 }

@@ -13,12 +13,19 @@ namespace ReservationSystem.Models
     {
         [Key]
         [DataMember]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [DataMember]
-        private List<Table> Tables { get; set; }
+        public List<Table> Tables { get; set; }
         [DataMember]
-        private string Description { get; set; }
+        public string Description { get; set; }
         [DataMember]
-        private string Image { get; set; }
+        public string Image { get; set; }
+
+        public TablesArrangement(List<Table> tables, string description, string image)
+        {
+            Tables = tables;
+            Description = description;
+            Image = image;
+        }
     }
 }

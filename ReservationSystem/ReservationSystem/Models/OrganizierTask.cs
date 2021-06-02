@@ -13,16 +13,25 @@ namespace ReservationSystem.Models
     {
         [Key]
         [DataMember]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [DataMember]
-        private string Name { get; set; }
+        public string Name { get; set; }
         [DataMember]
-        private string Description { get; set; }
+        public string Description { get; set; }
         [DataMember]
-        private List<Offer> SelectedOffers { get; set; }
+        public List<Offer> SelectedOffers { get; set; }
         [DataMember]
-        private bool IsDone { get; set; }
+        public bool IsDone { get; set; }
         [DataMember]
-        private string Comment { get; set; }
+        public string Comment { get; set; }
+
+        public OrganizierTask(string name, string description, List<Offer> selectedOffers, bool isDone, string comment)
+        {
+            Name = name;
+            Description = description;
+            SelectedOffers = selectedOffers;
+            IsDone = isDone;
+            Comment = comment;
+        }
     }
 }

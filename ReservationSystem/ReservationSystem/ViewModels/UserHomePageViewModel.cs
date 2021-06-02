@@ -24,7 +24,10 @@ namespace ReservationSystem.ViewModels
         {
             get; set;
         }
-        public UserHomePageViewModel(ICommand updateViewCommand)
+
+        public User User { get; set; }
+
+        public UserHomePageViewModel(ICommand updateViewCommand)//, User user)
         {
             UpdateViewCommand = updateViewCommand;
             LogOutCommand = new DelegateCommand(LogOut);

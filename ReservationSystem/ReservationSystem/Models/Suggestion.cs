@@ -13,12 +13,19 @@ namespace ReservationSystem.Models
     {
         [Key]
         [DataMember]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [DataMember]
-        private List<OrganizierTask> Tasks { get; set; }
+        public List<OrganizierTask> Tasks { get; set; }
         [DataMember]
-        private string Comment { get; set; }
+        public string Comment { get; set; }
         [DataMember]
-        private PartyRequest Request { get; set; }  
+        public PartyRequest PartyRequest { get; set; }  
+
+        public Suggestion(List<OrganizierTask> tasks, string comment, PartyRequest partyRequest)
+        {
+            Tasks = tasks;
+            Comment = comment;
+            PartyRequest = partyRequest;
+        }
     }
 }

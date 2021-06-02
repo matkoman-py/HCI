@@ -16,21 +16,31 @@ namespace ReservationSystem.Models
     {
         [Key]
         [DataMember]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [DataMember]
-        private string Username { get; set; }
+        public string Username { get; set; }
         [DataMember]
-        private string Password { get; set; }
+        public string Password { get; set; }
         [DataMember]
-        private string Email { get; set; }
+        public string Email { get; set; }
         [DataMember]
-        private string Name { get; set; }
+        public string Name { get; set; }
         [DataMember]
-        private string Surname { get; set; }
+        public string Surname { get; set; }
         [DataMember]
-        private DateTime Birthday { get; set; }
+        public DateTime Birthday { get; set; }
         [DataMember]
-        private Role Role { get; set; }
+        public Role Role { get; set; }
+
+        public User(string username, string password, string name, string surname, DateTime birthday, Role role)
+        {
+            Username = username;
+            Password = password;
+            Name = name;
+            Surname = surname;
+            Birthday = birthday;
+            Role = role;
+        }
 
     }
 }

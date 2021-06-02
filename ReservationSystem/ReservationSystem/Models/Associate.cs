@@ -16,17 +16,26 @@ namespace ReservationSystem.Models
     {
         [Key]
         [DataMember]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [DataMember]
-        private string Name { get; set; }
+        public string Name { get; set; }
         [DataMember]
-        private string Address { get; set; }
+        public string Address { get; set; }
         [DataMember]
-        private string Description { get; set; }
+        public string Description { get; set; }
         [DataMember]
-        private FieldOfWork FieldOfWork { get; set; }
+        public FieldOfWork FieldOfWork { get; set; }
         [DataMember]
-        private TablesArrangement TablesArrangement { get; set; }
+        public TablesArrangement TablesArrangement { get; set; }
+
+        public Associate(string name, string address, string description, FieldOfWork fieldOfWork, TablesArrangement tablesArrangement)
+        {
+            Name = name;
+            Address = address;
+            Description = description;
+            FieldOfWork = fieldOfWork;
+            TablesArrangement = tablesArrangement;
+        }
 
     }
 }
