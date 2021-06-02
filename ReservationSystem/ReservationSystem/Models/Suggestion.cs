@@ -19,7 +19,12 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Comment { get; set; }
         [DataMember]
-        public PartyRequest PartyRequest { get; set; }  
+        public PartyRequest PartyRequest { get; set; }
+
+        public Suggestion()
+        {
+
+        }
 
         public Suggestion(List<OrganizierTask> tasks, string comment, PartyRequest partyRequest)
         {

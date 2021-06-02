@@ -27,6 +27,9 @@
         <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
             <views:LoginWindow/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:RegistrationViewModel}">
+            <views:RegistrationWindow/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:UserHomePageViewModel}">
             <views:UserHomePage/>
         </DataTemplate>

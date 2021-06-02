@@ -19,6 +19,11 @@ namespace ReservationSystem.Models
         [DataMember]
         public Point TableCoordinates { get; set; }
 
+        public Table()
+        {
+
+        }
+
         public Table(int numberOfSeats, Point tableCoordinates)
         {
             NumberOfSeats = numberOfSeats;

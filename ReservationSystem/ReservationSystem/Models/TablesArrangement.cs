@@ -21,6 +21,11 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Image { get; set; }
 
+        public TablesArrangement()
+        {
+
+        }
+
         public TablesArrangement(List<Table> tables, string description, string image)
         {
             Tables = tables;

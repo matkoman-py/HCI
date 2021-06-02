@@ -27,9 +27,14 @@
         <StackPanel Grid.Row="2" Grid.Column="1" >
             <Label  Content="Lozinka:"/>
             <TextBox Text="{Binding Password}" Height="30" Margin="3"/>
-            <Label  Content="Jos nemas profil? Registruj se!"/>
+            <TextBlock>
+                Jos uvek nemas profil?
+                <Hyperlink Click="Register">
+                    Registruj se
+                </Hyperlink>
+            </TextBlock>
         </StackPanel>
 
-        <Button Content="Uloguj se" Grid.Column="1" Grid.Row="3"  Margin="35" Command="{Binding LoginCommand}" CommandParameter="Profile"/>
+        <Button Content="Uloguj se" Grid.Column="1" Grid.Row="3"  Margin="35" Command="{Binding LoginCommand}"/>
     </Grid>
 </UserControl>

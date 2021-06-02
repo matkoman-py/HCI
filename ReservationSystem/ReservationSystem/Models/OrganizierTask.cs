@@ -25,6 +25,11 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Comment { get; set; }
 
+        public OrganizierTask()
+        {
+
+        }
+
         public OrganizierTask(string name, string description, List<Offer> selectedOffers, bool isDone, string comment)
         {
             Name = name;

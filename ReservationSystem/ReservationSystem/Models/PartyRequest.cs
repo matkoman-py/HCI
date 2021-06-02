@@ -38,6 +38,11 @@ namespace ReservationSystem.Models
         [DataMember]
         public RequestState RequestState { get; set; }
 
+        public PartyRequest()
+        {
+
+        }
+
         public PartyRequest(PartyType partyType, int budget, string place, DateTime time, int capacity, bool isBudgetFlexible, string partyTheme, string description, RequestState requestState)
         {
             PartyType = PartyType;

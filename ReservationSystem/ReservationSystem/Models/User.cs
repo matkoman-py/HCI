@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -17,6 +18,7 @@ namespace ReservationSystem.Models
         [Key]
         [DataMember]
         public int Id { get; set; }
+        //Kako ide unique constraint?
         [DataMember]
         public string Username { get; set; }
         [DataMember]
@@ -32,10 +34,16 @@ namespace ReservationSystem.Models
         [DataMember]
         public Role Role { get; set; }
 
-        public User(string username, string password, string name, string surname, DateTime birthday, Role role)
+        public User()
+        {
+
+        }
+
+        public User(string username, string password, string email, string name, string surname, DateTime birthday, Role role)
         {
             Username = username;
             Password = password;
+            Email = email;
             Name = name;
             Surname = surname;
             Birthday = birthday;

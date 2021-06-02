@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReservationSystem.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,11 @@ namespace ReservationSystem.Views
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void Register(object sender, RoutedEventArgs e)
+        {
+            LoginViewModel.RegistrationCommand.Execute(null);
         }
     }
 }

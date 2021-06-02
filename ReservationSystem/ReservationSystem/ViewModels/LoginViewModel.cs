@@ -14,10 +14,8 @@ namespace ReservationSystem.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         public ICommand UpdateViewCommand { get; set; }
-        public ICommand LoginCommand
-        {
-            get; set;
-        }
+        public ICommand LoginCommand { get; set; }
+        static public ICommand RegistrationCommand { get; set; }
 
         public string Username { get; set; }
         public string Password { get; set; }
@@ -26,34 +24,53 @@ namespace ReservationSystem.ViewModels
         {
             UpdateViewCommand = updateViewCommand;
             LoginCommand = new DelegateCommand(Login);
+            RegistrationCommand = new DelegateCommand(Register);
         }
 
         public void Login() 
         {
-            if (CheckCredentials())
+            User user = findUser();
+            if (user == null)
             {
-                UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));//, new User()));
+                Console.WriteLine("Netacni kredencijali!");
             }
-            else 
+            else
             {
-                Console.WriteLine("nemas pojma");
+                switch (user.Role)
+                {
+                    case Role.Customer:
+                        //customer
+                        UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));//, new User()));
+                        break;
+                    case Role.Organizier:
+                        //organizier
+                        UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));//, new User()));
+                        break;
+                    case Role.Administrator:
+                        //administrator
+                        UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));//, new User()));
+                        break;
+                }
             }
         }
 
-        public Boolean CheckCredentials() 
+        public void Register()
         {
-            if (Username == "pera" && Password == "pass") 
+            UpdateViewCommand.Execute(new RegistrationViewModel(UpdateViewCommand));//, new User()));
+        }
+
+        public User findUser()
+        {
+            //verovatno ce biti neki globalni objekat u koji cemo ucitati na pocetku sve entitete, da ne bi pristupali bazi pri svakoj proveri
+            using (var db = new ProjectDatabase())
             {
-                using (var db = new ProjectDatabase())
+                foreach (User user in db.Users)
                 {
-                    db.Users.Add(new User("pera", "pera", "Pera", "Peric", new DateTime(1999, 9, 5), Role.Customer));
-                    db.Users.Add(new User("mika", "mika", "Mika", "Mikic", new DateTime(1998, 9, 5), Role.Administrator));
-                    db.Users.Add(new User("zika", "zika", "Zika", "Zikic", new DateTime(1997, 9, 5), Role.Organizier));
-                    db.SaveChanges();
+                    if (user.Username.Equals(Username) && user.Password.Equals(Password))
+                        return user;
                 }
-                return true;
             }
-            return false;
+            return null;
         }
     }
 }

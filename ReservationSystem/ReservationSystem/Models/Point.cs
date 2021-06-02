@@ -19,6 +19,11 @@ namespace ReservationSystem.Models
         [DataMember]
         public int Y { get; set; }
 
+        public Point()
+        {
+
+        }
+
         public Point(int x, int y)
         {
             X = x;

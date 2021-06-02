@@ -28,6 +28,11 @@ namespace ReservationSystem.Models
         [DataMember]
         public TablesArrangement TablesArrangement { get; set; }
 
+        public Associate()
+        {
+
+        }
+
         public Associate(string name, string address, string description, FieldOfWork fieldOfWork, TablesArrangement tablesArrangement)
         {
             Name = name;

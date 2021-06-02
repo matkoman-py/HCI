@@ -23,6 +23,11 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Image { get; set; }
 
+        public Offer()
+        {
+
+        }
+
         public Offer(Associate associate, int price, string description, string image)
         {
             Associate = associate;
