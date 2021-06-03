@@ -101,7 +101,7 @@ namespace ReservationSystem.ViewModels
             // TO DALJE SALJES
             return new List<Suggestion>()
             {
-                new Suggestion("1",new List<OrganizierTask>(){
+                new Suggestion(new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
@@ -119,7 +119,7 @@ namespace ReservationSystem.ViewModels
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
                     }, false,"")
                 }, "MASU JAK PREDLOG1", new PartyRequest()),
-                new Suggestion("2",new List<OrganizierTask>(){
+                new Suggestion(new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
@@ -137,7 +137,7 @@ namespace ReservationSystem.ViewModels
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
                     }, false,"")
                 }, "MASU JAK PREDLOG2", new PartyRequest()),
-                new Suggestion("3",new List<OrganizierTask>(){
+                new Suggestion(new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
