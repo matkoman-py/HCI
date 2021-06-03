@@ -56,5 +56,6 @@ namespace ReservationSystem.Models
             RequestState = requestState;
         }
 
+
     }
 }

@@ -18,14 +18,23 @@
         <Button Content="Odjavi se" Grid.Column="0" Grid.Row="0" Command="{Binding LogOutCommand}" Margin="35"/>
         <StackPanel Grid.Column="0" Grid.Row="1">
             <Label Margin="10,10,0,0" Content="Predlozi organizatora:"/>
-            <ListView Margin="10,10,0,13"   Name="ListView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200">
-            <ListViewItem Content="Predlog 1"></ListViewItem>
-            <ListViewItem Content="Predlog 3"></ListViewItem>
-                <ListViewItem Content="Predlog 4"></ListViewItem>
-                <ListViewItem Content="Predlog 5"></ListViewItem>
-                <ListViewItem Content="Predlog 6"></ListViewItem>
-                <ListViewItem Content="Predlog 2"></ListViewItem>
-        </ListView>
+            <ListView Margin="10,10,0,13"  ItemsSource="{Binding Suggestions}" Name="ListView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Button  
+                                    Command="{Binding DataContext.RequestViewCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    Content="{Binding Comment}"
+                                    Tag ="{Binding Id}"
+                               >    
+                            </Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <Button Content="Kreiraj novi zahtev" Command="{Binding RequestCreationCommand}" Grid.Column="0" Grid.Row="0"  Margin="10,10,0,0"/>

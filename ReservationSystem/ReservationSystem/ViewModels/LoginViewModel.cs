@@ -27,7 +27,7 @@ namespace ReservationSystem.ViewModels
             RegistrationCommand = new DelegateCommand(Register);
         }
 
-        public void Login() 
+        public void Login()
         {
             User user = findUser();
             if (user == null)

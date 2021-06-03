@@ -68,6 +68,8 @@
     </ApplicationDefinition>
     <Compile Include="App_Code\Initializer.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\RequestViewCommand.cs" />
+    <Compile Include="Commands\TeskOverviewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChooseOrganisatorPageViewModel.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\RequesCreationViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewViewModel.cs" />
     <Compile Include="ViewModels\UserHomePageViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Views\AcceptedRequestOverview.xaml.cs">

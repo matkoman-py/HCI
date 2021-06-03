@@ -49,6 +49,5 @@ namespace ReservationSystem.Models
             Birthday = birthday;
             Role = role;
         }
-
     }
 }

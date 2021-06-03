@@ -36,5 +36,6 @@ namespace ReservationSystem.Models
             Image = image;
         }
 
+
     }
 }
