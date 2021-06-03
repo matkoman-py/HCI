@@ -23,6 +23,9 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Image { get; set; }
 
+        public int OrganizierTaskId { get; set; }
+        public  virtual OrganizierTask OrganizierTask { get; set; }
+
         public Offer()
         {
 

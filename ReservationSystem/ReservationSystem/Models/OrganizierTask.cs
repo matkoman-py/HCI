@@ -23,12 +23,14 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Description { get; set; }
         [DataMember]
-        public List<Offer> SelectedOffers { get; set; }
+        public virtual List<Offer> Offers { get; set; }
         [DataMember]
         public bool IsDone { get; set; }
         [DataMember]
         public string Comment { get; set; }
 
+        public int SuggestionId { get; set; }
+        public virtual Suggestion Suggestion { get; set; }
         public UserApproval UserApproval { get; set; }
         public OrganizierTask()
         {
@@ -39,7 +41,7 @@ namespace ReservationSystem.Models
         {
             Name = name;
             Description = description;
-            SelectedOffers = selectedOffers;
+            Offers = selectedOffers;
             IsDone = isDone;
             Comment = comment;
             UserApproval = userApproval;

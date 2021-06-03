@@ -27,6 +27,7 @@ namespace ReservationSystem.ViewModels
 
             UpdateViewCommand = updateViewCommand;
             OrganizierTask = suggestion;
+            
             SelectedOffer = null;
             OfferReviewCommand = new OfferReviewCommand(UpdateViewCommand);
             RequestViewCommand = new DelegateCommand(RequestView);
@@ -37,65 +38,35 @@ namespace ReservationSystem.ViewModels
         public void RequestView()
         {
             //PRONADJI IZ DBA NA OSNOVU TASKA SUGGESTION KOJI SADRZI TAJ TASK I PROSLEDI GA
-            /*
+            
              Suggestion sug;
              using (var db = new ProjectDatabase())
                 {
-                    foreach(Suggestion s in db.Suggestions){
-                        foreach(OrganizierTask ot in s.Tasks){
-                            if(ot.Id == OragnizierTask.Id){
-                                sug = s;
-                            }
-                        }
-                
-                    }
-                    db.SaveChanges();
+                sug = db.Suggestions.Include("OrganizierTasks")
+                        .Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
                 }
                 UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));
-             */
-            UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion( new List<OrganizierTask>(){
-                    new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
-                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
-                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
-                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
-
-                    }, false,"kurcina", UserApproval.Neobradjen),
-                    new OrganizierTask("Zadatfafaak2", "Drugi zadatak", new List<Offer>(){
-                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
-                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
-                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", UserApproval.Neobradjen),
-                    new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
-                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
-                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
-                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", UserApproval.Neobradjen)
-                }, "MASU JAK PREDLOG1", new PartyRequest())));
+             
+            
         }
 
         public void DenyTask()
         {
             // nadji task u dbu, postavi userapproval na odbijeno i prosledi sugestiju u kojoj se nalazi
-            /*
-             Suggestion sug;
+            
+             Suggestion sug = null;
              using (var db = new ProjectDatabase())
                 {
-                    foreach(Suggestion s in db.Suggestions){
-                        foreach(OrganizierTask ot in s.Tasks){
-                            if(ot.Id == OragnizierTask.Id){
-                                ot.UserApproval = "Odbijen";
-                                ot.Comment = OrganizierTask.Comment;
-                                sug = s;
-                                
-                            }
-                        }
-                
-                    }
-                    db.SaveChanges();
+                OrganizierTask taskk = db.OrganizierTasks.Where(task => task.Id == OrganizierTask.Id).First();
+                taskk.Comment = OrganizierTask.Comment;
+                taskk.UserApproval = UserApproval.Odbijen;
+                sug = db.Suggestions.Include("OrganizierTasks")
+                        .Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
+                db.SaveChanges();
                 }
-                UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));
-             */
-            UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion( new List<OrganizierTask>(){
+            UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));
+             
+            /*UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion( new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
@@ -112,7 +83,7 @@ namespace ReservationSystem.ViewModels
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
                     }, false,"", UserApproval.Neobradjen)
-                }, "MASU JAK PREDLOG1", new PartyRequest())));
+                }, "MASU JAK PREDLOG1", new PartyRequest())));*/
         }
 
         public void AcceptTask()
@@ -121,27 +92,19 @@ namespace ReservationSystem.ViewModels
             // task napravi mu user approval prihvacen i u selected offers ubaci izabranu
             if (SelectedOffer != null)
             {
-                /*
-             Suggestion sug;
-             using (var db = new ProjectDatabase())
+                Suggestion sug = null;
+                using (var db = new ProjectDatabase())
                 {
-                    foreach(Suggestion s in db.Suggestions){
-                        foreach(OrganizierTask ot in s.Tasks){
-                            if(ot.Id == OragnizierTask.Id){
-                                ot.UserApproval = "Prihvacen";
-                                ot.SelectedOffer = SelectedOffer;
-                                ot.Comment = OrganizierTask.Comment;
-                                sug = s;
-                                
-                            }
-                        }
-                
-                    }
+                    OrganizierTask taskk = db.OrganizierTasks.Where(task => task.Id == OrganizierTask.Id).First();
+                    taskk.Comment = OrganizierTask.Comment;
+                    taskk.UserApproval = UserApproval.Prihvacen;
+                    sug = db.Suggestions.Include("OrganizierTasks")
+                            .Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
                     db.SaveChanges();
                 }
                 UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));
-             */
-                UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion( new List<OrganizierTask>(){
+
+                /*UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion( new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
@@ -158,7 +121,7 @@ namespace ReservationSystem.ViewModels
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
                     }, false,"", UserApproval.Neobradjen)
-                }, "MASU JAK PREDLOG1", new PartyRequest())));
+                }, "MASU JAK PREDLOG1", new PartyRequest())));*/
             }
             else
             {

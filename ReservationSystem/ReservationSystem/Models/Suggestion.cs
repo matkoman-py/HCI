@@ -1,4 +1,4 @@
-﻿using System;
+﻿////using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,8 +15,9 @@ namespace ReservationSystem.Models
         [Key]
         public int Id { get; set; }
         
-        public List<OrganizierTask> Tasks { get; set; }
         
+        public virtual List<OrganizierTask> OrganizierTasks { get; set; }
+
         public string Comment { get; set; }
         
         [ForeignKey("PartyRequest")]
@@ -30,7 +31,7 @@ namespace ReservationSystem.Models
 
         public Suggestion(List<OrganizierTask> tasks, string comment, PartyRequest partyRequest)
         {
-            Tasks = tasks;
+            OrganizierTasks = tasks;
             Comment = comment;
             PartyRequest = partyRequest;
         }

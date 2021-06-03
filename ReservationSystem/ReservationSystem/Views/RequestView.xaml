@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
             <Label  Margin="10" Content="Zadaci:" />
-            <ListView  Margin="10"  Name="Zadaci" ItemsSource="{Binding Suggestion.Tasks}" VerticalAlignment="Top" Width="600" Height="160">
+            <ListView  Margin="10"  Name="Zadaci" ItemsSource="{Binding Suggestion.OrganizierTasks}" VerticalAlignment="Top" Width="600" Height="160">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">

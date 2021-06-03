@@ -12,6 +12,7 @@ namespace ReservationSystem.ViewModels
     public class RequestViewViewModel : BaseViewModel
     {
         public Suggestion Suggestion { get; set; }
+        public User user { get; set; }
         public ICommand UpdateViewCommand { get; set; }
 
         public ICommand UserHomePageCommand
@@ -29,6 +30,7 @@ namespace ReservationSystem.ViewModels
 
             UpdateViewCommand = updateViewCommand;
             Suggestion = suggestion;
+            
             UserHomePageCommand = new DelegateCommand(UserHomePage);
             TaskOverviewCommand = new TeskOverviewCommand(UpdateViewCommand);
         }
@@ -38,7 +40,12 @@ namespace ReservationSystem.ViewModels
             //treba da se prosledjuje id korisnika koji je u pitanju - znaci nzm kako 
             // i nesto sacuvas u bazu valjda 
 
-            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, new User()));
+            using (var db = new ProjectDatabase())
+            {
+                Console.WriteLine(Suggestion.PartyRequest.CreatorId);
+                user = db.Users.Where(u => u.Id == Suggestion.PartyRequest.CreatorId).First();
+            }
+            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, user));
         }
     }
 }
