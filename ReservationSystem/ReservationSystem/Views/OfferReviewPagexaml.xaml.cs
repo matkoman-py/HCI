@@ -17,7 +17,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for OfferReviewPagexaml.xaml
     /// </summary>
-    public partial class OfferReviewPagexaml : Window
+    public partial class OfferReviewPagexaml : UserControl
     {
         public OfferReviewPagexaml()
         {

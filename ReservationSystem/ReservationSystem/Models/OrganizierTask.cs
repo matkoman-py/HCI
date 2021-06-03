@@ -37,6 +37,7 @@ namespace ReservationSystem.Models
             SelectedOffers = selectedOffers;
             IsDone = isDone;
             Comment = comment;
+            UserApproval = userApproval;
         }
     }
 }

@@ -12,7 +12,7 @@
             <ListView  Margin="10"  Name="Zadaci" ItemsSource="{Binding Suggestion.Tasks}" VerticalAlignment="Top" Width="600" Height="160">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
+                        <StackPanel Orientation="Horizontal">
                             <Button 
                                 Command="{Binding DataContext.TaskOverviewCommand,
                                                 RelativeSource={RelativeSource AncestorType=UserControl}}"
@@ -20,6 +20,7 @@
                                 Content="{Binding Name}" 
                                >
                             </Button>
+                            <Label Content="{Binding UserApproval}"></Label>
                         </StackPanel>
                     </DataTemplate>
                     </ListView.ItemTemplate>

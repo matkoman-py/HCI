@@ -1,5 +1,5 @@
-﻿using ReservationSystem.ViewModels;
-using ReservationSystem.Models;
+﻿using ReservationSystem.Models;
+using ReservationSystem.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace ReservationSystem.Commands
 {
-    public class TeskOverviewCommand : ICommand
+    public class OfferReviewCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
@@ -22,12 +22,12 @@ namespace ReservationSystem.Commands
 
         public void Execute(object parameter)
         {
-            OrganizierTask sug = (OrganizierTask)parameter;
-            Console.WriteLine(sug.Name);
-            UpdateViewCommand.Execute(new TaskOverviewViewModel(UpdateViewCommand, sug));
+            Offer sug = (Offer)parameter;
+            
+            UpdateViewCommand.Execute(new OfferReviewPageViewModel(UpdateViewCommand, sug));
         }
 
-        public TeskOverviewCommand(ICommand updateViewCommand)
+        public OfferReviewCommand(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
         }

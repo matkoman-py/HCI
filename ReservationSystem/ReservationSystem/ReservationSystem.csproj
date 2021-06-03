@@ -68,7 +68,9 @@
     </ApplicationDefinition>
     <Compile Include="App_Code\Initializer.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\OfferReviewCommand.cs" />
     <Compile Include="Commands\RequestViewCommand.cs" />
+    <Compile Include="Commands\TaskOverviewFromOfferCommand.cs" />
     <Compile Include="Commands\TeskOverviewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -76,10 +78,12 @@
     <Compile Include="ViewModels\DataUpdateViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\OfferReviewPageViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\RequesCreationViewModel.cs" />
     <Compile Include="ViewModels\RequestViewViewModel.cs" />
+    <Compile Include="ViewModels\TaskOverviewViewModel.cs" />
     <Compile Include="ViewModels\UserHomePageViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Views\AcceptedRequestOverview.xaml.cs">
