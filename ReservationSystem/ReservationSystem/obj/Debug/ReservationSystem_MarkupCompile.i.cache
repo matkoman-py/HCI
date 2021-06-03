@@ -12,8 +12,9 @@ DEBUG;TRACE
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\App.xaml
 22-1345657365
 
-53-1917075043
+57-783283422
 172011317957
 MainWindow.xaml;Views\AcceptedRequestOverview.xaml;Views\ActiveRequestOverview.xaml;Views\ChooseOrganisatorPage.xaml;Views\CreateNewAssociateWindow.xaml;Views\CreateNewOfferWindow.xaml;Views\DataUpdate.xaml;Views\LoginWindow.xaml;Views\AssociateOverview.xaml;Views\OfferReviewPagexaml.xaml;Views\Organizer\CreateSuggestionView.xaml;Views\Organizer\CreateTastView.xaml;Views\Organizer\DenyRequestView.xaml;Views\Organizer\RequestOverivew.xaml;Views\Profile.xaml;Views\RegistrationWindow.xaml;Views\RejectedRequestOverview.xaml;Views\RequestCreation.xaml;Views\RequestView.xaml;Views\TaskOverview.xaml;Views\TestWindow.xaml;Views\UserHomePage.xaml;
 
-True
+False
+

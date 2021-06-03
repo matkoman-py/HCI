@@ -30,7 +30,7 @@ namespace ReservationSystem.Commands
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
 
-                    }, false, "kurcina", "Nije obradjen")));
+                    }, false, "kurcina", UserApproval.Neobradjen)));
         }
 
         public TaskOverviewFromOfferCommand(ICommand updateViewCommand)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -38,12 +39,15 @@ namespace ReservationSystem.Models
         [DataMember]
         public RequestState RequestState { get; set; }
 
+        [DataMember]
+        public int CreatorId { get; set; }
+       
         public PartyRequest()
         {
 
         }
 
-        public PartyRequest(PartyType partyType, int budget, string place, DateTime time, int capacity, bool isBudgetFlexible, string partyTheme, string description, RequestState requestState)
+        public PartyRequest(PartyType partyType, int budget, string place, DateTime time, int capacity, bool isBudgetFlexible, string partyTheme, string description, RequestState requestState, int creatorId)
         {
             PartyType = PartyType;
             Budget = budget;
@@ -54,6 +58,7 @@ namespace ReservationSystem.Models
             PartyTheme = partyTheme;
             Description = description;
             RequestState = requestState;
+            CreatorId = creatorId;
         }
 
 

@@ -11,12 +11,7 @@ namespace ReservationSystem.ViewModels
 {
     public class ProfileViewModel : BaseViewModel
     {
-        public string name { get; set; }
-        public string surname { get; set; }
-        public string username { get; set; }
-        public string email { get; set; }
-        public DateTime birthday { get; set; }
-        public string password { get; set; }
+        public User User { get; set; }
 
         public ICommand UpdateViewCommand { get; set; }
         public ICommand UserHomePageCommand
@@ -28,28 +23,23 @@ namespace ReservationSystem.ViewModels
             get; set;
         }
         
-        public ProfileViewModel(ICommand updateViewCommand,string name,string surname,string username,string email,DateTime birthday,string password)
+        public ProfileViewModel(ICommand updateViewCommand,User user)
         {
             UpdateViewCommand = updateViewCommand;
             UserHomePageCommand = new DelegateCommand(UserHomePage);
             DataUpdateCommand = new DelegateCommand(DataUpdate);
-            this.name = name;
-            this.surname = surname;
-            this.username = username;
-            this.password = password;
-            this.email = email;
-            this.birthday = birthday;
+            User = user;
         }
 
 
         public void UserHomePage()
         {
-            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));
+            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, User));
         }
 
         public void DataUpdate()
         {
-           UpdateViewCommand.Execute(new DataUpdateViewModel(UpdateViewCommand, name, surname, username, email, birthday, password));
+           UpdateViewCommand.Execute(new DataUpdateViewModel(UpdateViewCommand, User));
         }
     }
 }

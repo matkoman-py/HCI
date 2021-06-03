@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
+    public enum UserApproval
+    {
+        Neobradjen, Odbijen, Prihvacen
+    }
     [DataContract]
     public class OrganizierTask
     {
@@ -25,12 +29,13 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Comment { get; set; }
 
+        public UserApproval UserApproval { get; set; }
         public OrganizierTask()
         {
 
         }
 
-        public OrganizierTask(string name, string description, List<Offer> selectedOffers, bool isDone, string comment)
+        public OrganizierTask(string name, string description, List<Offer> selectedOffers, bool isDone, string comment, UserApproval userApproval)
         {
             Name = name;
             Description = description;

@@ -13,18 +13,9 @@ namespace ReservationSystem.ViewModels
     public class DataUpdateViewModel : BaseViewModel
     {
 
-        public string name { get; set; }
-        public string surname { get; set; }
-        public string username { get; set; }
-        public string email { get; set; }
-        public DateTime birthday { get; set; }
-        public string password { get; set; }
-        public string name_copy { get; set; }
-        public string surname_copy { get; set; }
-        public string username_copy { get; set; }
-        public string email_copy { get; set; }
-        public DateTime birthday_copy { get; set; }
-        public string password_copy { get; set; }
+        public User User { get; set; }
+
+        public User UserCopy {get;set;}
 
         public ICommand UpdateViewCommand { get; set; }
 
@@ -38,28 +29,17 @@ namespace ReservationSystem.ViewModels
             get; set;
         }
 
-        public DataUpdateViewModel(ICommand updateViewCommand, string name, string surname,string username, string email, DateTime birthday, string password)
+        public DataUpdateViewModel(ICommand updateViewCommand, User user)
         {
             UpdateViewCommand = updateViewCommand;
             ProfileCancelCommand = new DelegateCommand(ProfileCancel);
             ProfileSaveCommand = new DelegateCommand(ProfileSave);
-            this.name = name;
-            this.surname = surname;
-            this.username = username;
-            this.password = password;
-            this.email = email;
-            this.birthday = birthday;
-
-            name_copy = name;
-            surname_copy = surname;
-            username_copy = username;
-            password_copy = password;
-            email_copy = email;
-            birthday_copy = birthday;
+            UserCopy = new User(user);
+            User = user;
         }
         public void ProfileCancel()
         {
-            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, name_copy, surname_copy, username_copy, email_copy, birthday_copy, password_copy));
+            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, UserCopy));
         }
         public void ProfileSave()
         {
@@ -67,19 +47,19 @@ namespace ReservationSystem.ViewModels
             {
                 foreach (User user in db.Users.ToList())
                 {
-                    if (user.Username.Equals(username))
+                    if (user.Username.Equals(User.Username))
                     {
-                        user.Name = name;
-                        user.Surname = surname;
-                        user.Email = email;
-                        user.Birthday = birthday;
-                        user.Password = password;
+                        user.Name = User.Name;
+                        user.Surname = User.Surname;
+                        user.Email = User.Email;
+                        user.Birthday = User.Birthday;
+                        user.Password = User.Password;
                         db.SaveChanges();
                         break;
                     }
                 }
             }
-            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, name, surname, username, email, birthday, password));
+            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, User));
         }
     }
 }

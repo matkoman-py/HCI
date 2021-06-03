@@ -15,12 +15,8 @@ namespace ReservationSystem.ViewModels
 
         public List<Suggestion> Suggestions { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-        public string name { get; set; }
-        public string surname { get; set; }
-        public string username { get; set; }
-        public string email { get; set; }
-        public DateTime birthday { get; set; }
-        public string password { get; set; }
+        
+        public User User { get; set; }
         public static string SelectedId { get; set; }
         public ICommand LogOutCommand
         {
@@ -40,7 +36,7 @@ namespace ReservationSystem.ViewModels
         }
 
 
-        public UserHomePageViewModel(ICommand updateViewCommand)
+        public UserHomePageViewModel(ICommand updateViewCommand, User user)
         {
 
             UpdateViewCommand = updateViewCommand;
@@ -48,17 +44,9 @@ namespace ReservationSystem.ViewModels
             ProfileCommand = new DelegateCommand(Profile);
             RequestViewCommand = new RequestViewCommand(UpdateViewCommand);
             RequestCreationCommand = new DelegateCommand(RequestCreation);
+            User = user;
             Suggestions = getOffers();
-            username = "pera";
-            /*
-            name = "Aleksandar";
-            surname = "Cepic";
-            username = "cepic123";
-            password = "cepic99";
-            email = "aleksandar.epic@gmail.com";
-            birthday = "22.06.1999.";
-            */
-            FillUser();
+            
         }
 
         public void RequestCreation()
@@ -68,7 +56,7 @@ namespace ReservationSystem.ViewModels
 
         public void Profile()
         {
-            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, name, surname, username, email, birthday, password));
+            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, User));
         }
 
         public void LogOut()
@@ -76,30 +64,28 @@ namespace ReservationSystem.ViewModels
             UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));
         }
 
-        public void FillUser()
-        {
-            using(var db = new ProjectDatabase())
-            {
-                foreach(User user in db.Users)
-                {
-                    if (user.Username.Equals(username))
-                    {
-                        name = user.Name;
-                        surname = user.Surname;
-                        email = user.Email;
-                        birthday = user.Birthday;
-                        password = user.Password;
-                        return;
-                    }
-                }
-            }
-        }
 
         public List<Suggestion> getOffers()
         {
             // OVDE TREBA IZ DB UZETI SVE SUGGESTIONE KOJI IMAJU ID USERA KOJI JE PROSLEDJEN OVOM PROZORU
             // TO DALJE SALJES
-            return new List<Suggestion>()
+            List<Suggestion> list = new List<Suggestion>();
+            using (var db = new ProjectDatabase())
+            {
+                foreach(Suggestion s in db.Suggestions)
+                {
+                    Console.WriteLine(s.Comment);
+                    Console.WriteLine(s.PartyRequest);
+                    if(s.PartyRequest.CreatorId == User.Id)
+                    {
+                        list.Add(s);
+                    }
+
+                }
+                
+            }
+            return list;
+            /*return new List<Suggestion>()
             {
                 new Suggestion(new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
@@ -107,17 +93,17 @@ namespace ReservationSystem.ViewModels
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
 
-                    }, false,"kurcina", "Nije obradjeno"),
+                    }, false,"kurcina", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatfafaak2", "Drugi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno"),
+                    }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno")
+                    }, false,"", UserApproval.Neobradjen)
                 }, "MASU JAK PREDLOG1", new PartyRequest()),
                 new Suggestion(new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
@@ -125,17 +111,17 @@ namespace ReservationSystem.ViewModels
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
 
-                    }, false,"", "Nije obradjeno"),
+                    }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatfafaak2", "Drugi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno"),
+                    }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno")
+                    }, false,"", UserApproval.Neobradjen)
                 }, "MASU JAK PREDLOG2", new PartyRequest()),
                 new Suggestion(new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
@@ -143,17 +129,17 @@ namespace ReservationSystem.ViewModels
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
 
-                    }, false,"", "Nije obradjeno"),
+                    }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatfafaak2", "Drugi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno"),
+                    }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno")
+                    }, false,"", UserApproval.Neobradjen)
                 }, "MASU JAK PREDLOG3", new PartyRequest())
             };
             /*return new List<SuggestionWithCommand>()

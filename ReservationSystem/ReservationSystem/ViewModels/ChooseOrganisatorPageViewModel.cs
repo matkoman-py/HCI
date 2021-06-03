@@ -32,7 +32,7 @@ namespace ReservationSystem.ViewModels
         public void UserHomePage()
         {
 
-            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));
+            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, new Models.User()));
         }
 
         public void RequestCreation()

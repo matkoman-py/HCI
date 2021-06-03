@@ -1,4 +1,5 @@
 ﻿using ReservationSystem.Commands;
+using ReservationSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace ReservationSystem.ViewModels
         }
         public void UserHomePage()
         {
-            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));
+            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand,new User()));
         }
 
         public void ChooseOrganisatorPage()

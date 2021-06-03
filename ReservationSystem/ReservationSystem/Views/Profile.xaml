@@ -25,12 +25,12 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" >
-            <Label  Content="{Binding username}"/>
-            <Label  Content="{Binding password}"/>
-            <Label  Content="{Binding name}"/>
-            <Label  Content="{Binding surname}"/>
-            <Label  Content="{Binding email}"/>
-            <Label  Content="{Binding birthday}"/>
+            <Label  Content="{Binding User.Username}"/>
+            <Label  Content="{Binding User.Password}"/>
+            <Label  Content="{Binding User.Name}"/>
+            <Label  Content="{Binding User.Surname}"/>
+            <Label  Content="{Binding User.Email}"/>
+            <Label  Content="{Binding User.Birthday}"/>
             <Button Content="Azuriraj podatke" Grid.Column="1" Grid.Row="3" Command="{Binding DataUpdateCommand}" Margin="35"/>
         </StackPanel>
 

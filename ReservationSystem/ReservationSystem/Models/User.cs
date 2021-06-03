@@ -49,5 +49,16 @@ namespace ReservationSystem.Models
             Birthday = birthday;
             Role = role;
         }
+
+        public User(User user)
+        {
+            Username = user.Username;
+            Password = user.Password;
+            Email = user.Email;
+            Name = user.Name;
+            Surname = user.Surname;
+            Birthday = user.Birthday;
+            Role = user.Role;
+        }
     }
 }

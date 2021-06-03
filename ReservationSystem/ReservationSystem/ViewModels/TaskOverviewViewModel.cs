@@ -53,23 +53,23 @@ namespace ReservationSystem.ViewModels
                 }
                 UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));
              */
-            UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion("1", new List<OrganizierTask>(){
+            UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion( new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
 
-                    }, false,"kurcina", "Nije obradjeno"),
+                    }, false,"kurcina", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatfafaak2", "Drugi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno"),
+                    }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno")
+                    }, false,"", UserApproval.Neobradjen)
                 }, "MASU JAK PREDLOG1", new PartyRequest())));
         }
 
@@ -95,23 +95,23 @@ namespace ReservationSystem.ViewModels
                 }
                 UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));
              */
-            UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion("1", new List<OrganizierTask>(){
+            UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion( new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
 
-                    }, false,"kurcina", "Nije obradjeno"),
+                    }, false,"kurcina", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatfafaak2", "Drugi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno"),
+                    }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno")
+                    }, false,"", UserApproval.Neobradjen)
                 }, "MASU JAK PREDLOG1", new PartyRequest())));
         }
 
@@ -141,23 +141,23 @@ namespace ReservationSystem.ViewModels
                 }
                 UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));
              */
-                UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion("1", new List<OrganizierTask>(){
+                UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, new Suggestion( new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
 
-                    }, false,"kurcina", "Nije obradjeno"),
+                    }, false,"kurcina", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatfafaak2", "Drugi zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno"),
+                    }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
                         new Offer(null,100,"Opasna ponuda1", "nema slike"),
                         new Offer(null,150,"Opasna ponuda2", "ima slike"),
                         new Offer(null,200,"Opasna ponuda3", "nema slike"),
-                    }, false,"", "Nije obradjeno")
+                    }, false,"", UserApproval.Neobradjen)
                 }, "MASU JAK PREDLOG1", new PartyRequest())));
             }
             else

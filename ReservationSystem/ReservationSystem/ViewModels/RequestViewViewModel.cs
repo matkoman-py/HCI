@@ -38,7 +38,7 @@ namespace ReservationSystem.ViewModels
             //treba da se prosledjuje id korisnika koji je u pitanju - znaci nzm kako 
             // i nesto sacuvas u bazu valjda 
 
-            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand));
+            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, new User()));
         }
     }
 }
