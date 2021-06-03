@@ -15,7 +15,12 @@ namespace ReservationSystem.ViewModels
         
         public List<Suggestion> Suggestions { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-
+        public string name { get; set; }
+        public string surname { get; set; }
+        public string username { get; set; }
+        public string email { get; set; }
+        public DateTime birthday { get; set; }
+        public string password { get; set; }
         public static string SelectedId { get; set; }
         public ICommand LogOutCommand
         {
@@ -44,6 +49,16 @@ namespace ReservationSystem.ViewModels
             RequestViewCommand = new RequestViewCommand(UpdateViewCommand);
             RequestCreationCommand = new DelegateCommand(RequestCreation);
             Suggestions = getOffers();
+            username = "pera";
+            /*
+            name = "Aleksandar";
+            surname = "Cepic";
+            username = "cepic123";
+            password = "cepic99";
+            email = "aleksandar.epic@gmail.com";
+            birthday = "22.06.1999.";
+            */
+            FillUser();
         }
 
         public void RequestCreation()
@@ -53,8 +68,7 @@ namespace ReservationSystem.ViewModels
 
         public void Profile()
         {
-           
-            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand));
+            UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, name, surname, username, email, birthday, password));
         }
 
         public void LogOut()
@@ -62,7 +76,25 @@ namespace ReservationSystem.ViewModels
             UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));
         }
 
-        
+        public void FillUser()
+        {
+            using(var db = new ProjectDatabase())
+            {
+                foreach(User user in db.Users)
+                {
+                    if (user.Username.Equals(username))
+                    {
+                        name = user.Name;
+                        surname = user.Surname;
+                        email = user.Email;
+                        birthday = user.Birthday;
+                        password = user.Password;
+                        return;
+                    }
+                }
+            }
+        }
+
         public List<Suggestion> getOffers()
         {
             // OVDE TREBA IZ DB UZETI SVE SUGGESTIONE KOJI IMAJU ID USERA KOJI JE PROSLEDJEN OVOM PROZORU

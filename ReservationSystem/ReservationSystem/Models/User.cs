@@ -18,7 +18,7 @@ namespace ReservationSystem.Models
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        public  string Username { get; set; }
+        public string Username { get; set; }
         [DataMember]
         public string Password { get; set; }
         [DataMember]
@@ -32,10 +32,15 @@ namespace ReservationSystem.Models
         [DataMember]
         public Role Role { get; set; }
 
-        public User(string username, string password, string name, string surname, DateTime birthday, Role role)
+        public User()
+        {
+
+        }
+        public User(string username, string password, string name, string surname,string email, DateTime birthday, Role role)
         {
             Username = username;
             Password = password;
+            Email = email;
             Name = name;
             Surname = surname;
             Birthday = birthday;

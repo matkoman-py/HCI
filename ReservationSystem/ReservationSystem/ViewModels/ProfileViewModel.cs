@@ -15,7 +15,7 @@ namespace ReservationSystem.ViewModels
         public string surname { get; set; }
         public string username { get; set; }
         public string email { get; set; }
-        public string birthday { get; set; }
+        public DateTime birthday { get; set; }
         public string password { get; set; }
 
         public ICommand UpdateViewCommand { get; set; }
@@ -28,17 +28,17 @@ namespace ReservationSystem.ViewModels
             get; set;
         }
         
-        public ProfileViewModel(ICommand updateViewCommand)
+        public ProfileViewModel(ICommand updateViewCommand,string name,string surname,string username,string email,DateTime birthday,string password)
         {
             UpdateViewCommand = updateViewCommand;
             UserHomePageCommand = new DelegateCommand(UserHomePage);
             DataUpdateCommand = new DelegateCommand(DataUpdate);
-            name = "Ana";
-            surname = "Bekuta";
-            username = "ana123";
-            password = "ana321";
-            email = "anabekuta@gmail.com";
-            birthday = "24.05.1972.";
+            this.name = name;
+            this.surname = surname;
+            this.username = username;
+            this.password = password;
+            this.email = email;
+            this.birthday = birthday;
         }
 
 
