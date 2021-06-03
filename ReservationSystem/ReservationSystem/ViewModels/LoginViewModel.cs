@@ -1,5 +1,6 @@
 ﻿using ReservationSystem.Commands;
 using ReservationSystem.Models;
+using ReservationSystem.ViewModels.Administrator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace ReservationSystem.ViewModels
             if (user == null)
             {
                 Console.WriteLine("Netacni kredencijali!");
-                /*using (var db = new ProjectDatabase())
+                using (var db = new ProjectDatabase())
                 {
                     db.Users.Add(new User("pera", "pera","peragmajl", "Pera", "Peric", new DateTime(1999, 9, 5), Role.Customer));
                     db.Users.Add(new User("mika", "mika", "mikagmajl", "Mika", "Mikic", new DateTime(1998, 9, 5), Role.Administrator));
@@ -61,7 +62,7 @@ namespace ReservationSystem.ViewModels
 
                     db.Suggestions.Add(sug);
                     db.SaveChanges();
-                }*/
+                }
 
             }
             else
@@ -78,7 +79,7 @@ namespace ReservationSystem.ViewModels
                         break;
                     case Role.Administrator:
                         //administrator
-                        UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, user));//, new User()));
+                        UpdateViewCommand.Execute(new AdminPageViewModel(UpdateViewCommand, user));//, new User()));
                         break;
                 }
             }

@@ -18,9 +18,9 @@ namespace ReservationSystem.Views.Administrator
     /// <summary>
     /// Interaction logic for AdministratorPage.xaml
     /// </summary>
-    public partial class AdministratorPage : UserControl
+    public partial class AdminPage : UserControl
     {
-        public AdministratorPage()
+        public AdminPage()
         {
             InitializeComponent();
         }

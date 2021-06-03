@@ -16,23 +16,23 @@ namespace ReservationSystem.Models
     public class User
     {
         [Key]
-        [DataMember]
         public int Id { get; set; }
         //Kako ide unique constraint?
-        [DataMember]
+        [Required]
         public string Username { get; set; }
-        [DataMember]
+        [Required]
         public string Password { get; set; }
-        [DataMember]
+        [Required]
         public string Email { get; set; }
-        [DataMember]
+        [Required]
         public string Name { get; set; }
-        [DataMember]
+        [Required]
         public string Surname { get; set; }
-        [DataMember]
+        
         public DateTime Birthday { get; set; }
-        [DataMember]
+        [Required]
         public Role Role { get; set; }
+        public string PhoneNumber { get; set; }
 
         public User()
         {

@@ -73,6 +73,9 @@
     <Compile Include="Commands\TaskOverviewFromOfferCommand.cs" />
     <Compile Include="Commands\TeskOverviewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="ViewModels\Administrator\AddOrganizerViewModel.cs" />
+    <Compile Include="ViewModels\Administrator\AdminOrganizersOverviewModel.cs" />
+    <Compile Include="ViewModels\Administrator\AdminPageViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChooseOrganisatorPageViewModel.cs" />
     <Compile Include="ViewModels\DataUpdateViewModel.cs" />
@@ -91,6 +94,15 @@
     </Compile>
     <Compile Include="Views\ActiveRequestOverview.xaml.cs">
       <DependentUpon>ActiveRequestOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\AddOrganizerView.xaml.cs">
+      <DependentUpon>AddOrganizerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\AdminOrganizersOverview.xaml.cs">
+      <DependentUpon>AdminOrganizersOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChooseOrganisatorPage.xaml.cs">
       <DependentUpon>ChooseOrganisatorPage.xaml</DependentUpon>
@@ -166,6 +178,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ActiveRequestOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\AddOrganizerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\AdminOrganizersOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

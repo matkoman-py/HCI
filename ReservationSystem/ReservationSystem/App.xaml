@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ReservationSystem"
              xmlns:views ="clr-namespace:ReservationSystem.Views"
+             xmlns:viewsAdmin ="clr-namespace:ReservationSystem.Views.Administrator"
              xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels"
+             xmlns:viewmodelsAdmin="clr-namespace:ReservationSystem.ViewModels.Administrator"
              xmlns:models="clr-namespace:ReservationSystem.Models"
              xmlns:commands="clr-namespace:ReservationSystem.Commands"
              StartupUri="MainWindow.xaml">
@@ -50,6 +52,15 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:OfferReviewPageViewModel}">
             <views:OfferReviewPagexaml/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminOrganizersOverviewModel}">
+            <viewsAdmin:AdminOrganizersOverview/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodelsAdmin:AddOrganizersViewModel}">
+            <viewsAdmin:AddOrganizerView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminPageViewModel}">
+            <viewsAdmin:AdminPage/>
         </DataTemplate>
     </Application.Resources>
     
