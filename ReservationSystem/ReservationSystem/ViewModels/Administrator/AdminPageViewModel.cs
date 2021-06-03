@@ -16,11 +16,13 @@ namespace ReservationSystem.ViewModels.Administrator
         public ICommand UpdateViewCommand { get; set; }
 
         public ICommand ToOrganizersCommand { get; set; }
+        public ICommand ToAssociatesCommand { get; set; }
 
         public AdminPageViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
             ToOrganizersCommand = new DelegateCommand(ToOrganizers);
+            ToAssociatesCommand = new DelegateCommand(ToAssociates);
         }
 
         public AdminPageViewModel(ICommand updateViewCommand, User user) : this(updateViewCommand)
@@ -31,6 +33,11 @@ namespace ReservationSystem.ViewModels.Administrator
         public void ToOrganizers()
         {
             UpdateViewCommand.Execute(new AdminOrganizersOverviewModel(UpdateViewCommand));
+        }
+
+        public void ToAssociates()
+        {
+            UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand));
         }
     }
 }

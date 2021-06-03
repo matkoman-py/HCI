@@ -6,11 +6,12 @@
              xmlns:viewsAdmin ="clr-namespace:ReservationSystem.Views.Administrator"
              xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels"
              xmlns:viewmodelsAdmin="clr-namespace:ReservationSystem.ViewModels.Administrator"
+             xmlns:converters="clr-namespace:ReservationSystem.Converter"
              xmlns:models="clr-namespace:ReservationSystem.Models"
              xmlns:commands="clr-namespace:ReservationSystem.Commands"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
+        <converters:EnumConverter x:Key="EnumConverter"/>
         <Style TargetType="Button">
             <Setter Property="Background" Value="White"></Setter>
             <Setter Property="Foreground" Value="Blue"></Setter>
@@ -61,6 +62,12 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminPageViewModel}">
             <viewsAdmin:AdminPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminAssociatesViewModel}">
+            <viewsAdmin:AdminAssociatesView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodelsAdmin:AddAssociatesViewModel}">
+            <viewsAdmin:AddAssociatesView/>
         </DataTemplate>
     </Application.Resources>
     

@@ -73,7 +73,10 @@
     <Compile Include="Commands\TaskOverviewFromOfferCommand.cs" />
     <Compile Include="Commands\TeskOverviewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="Converter\EnumConverter.cs" />
+    <Compile Include="ViewModels\Administrator\AddAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOrganizerViewModel.cs" />
+    <Compile Include="ViewModels\Administrator\AdminAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminOrganizersOverviewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminPageViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -95,8 +98,14 @@
     <Compile Include="Views\ActiveRequestOverview.xaml.cs">
       <DependentUpon>ActiveRequestOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrator\AddAssociatesView.xaml.cs">
+      <DependentUpon>AddAssociatesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrator\AddOrganizerView.xaml.cs">
       <DependentUpon>AddOrganizerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\AdminAssociatesView.xaml.cs">
+      <DependentUpon>AdminAssociatesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrator\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
@@ -181,7 +190,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Administrator\AddAssociatesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Administrator\AddOrganizerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\AdminAssociatesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
