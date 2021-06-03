@@ -67,9 +67,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\RequestViewCommand.cs" />
+    <Compile Include="Commands\TeskOverviewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
-    <Compile Include="Models\DataContainerDto.cs" />
-    <Compile Include="Models\SuggestionWithCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChooseOrganisatorPageViewModel.cs" />
     <Compile Include="ViewModels\DataUpdateViewModel.cs" />

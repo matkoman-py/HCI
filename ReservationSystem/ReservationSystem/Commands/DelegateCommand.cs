@@ -23,6 +23,8 @@ namespace ReservationSystem.Commands
             _validator = validator;
             _execution = execution;
         }
+
+
         public bool CanExecute(object parameter)
         {
             return _validator();

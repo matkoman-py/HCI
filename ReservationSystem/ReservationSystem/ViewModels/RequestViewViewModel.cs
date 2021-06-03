@@ -18,12 +18,19 @@ namespace ReservationSystem.ViewModels
         {
             get; set;
         }
+
+        public static ICommand TaskOverviewCommand
+        {
+            get; set;
+        }
+
         public RequestViewViewModel(ICommand updateViewCommand, Suggestion suggestion)
         {
 
             UpdateViewCommand = updateViewCommand;
             Suggestion = suggestion;
             UserHomePageCommand = new DelegateCommand(UserHomePage);
+            TaskOverviewCommand = new TeskOverviewCommand(UpdateViewCommand);
         }
 
         public void UserHomePage()

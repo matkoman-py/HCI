@@ -23,10 +23,13 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <Button Command="{Binding RequestViewCommand}" 
-                    
-                            Content="{Binding Suggestion.Comment}" 
-                               >
+                            <Button  
+                                    Command="{Binding DataContext.RequestViewCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    Content="{Binding Comment}"
+                                    Tag ="{Binding Id}"
+                               >    
                             </Button>
                         </StackPanel>
                     </DataTemplate>

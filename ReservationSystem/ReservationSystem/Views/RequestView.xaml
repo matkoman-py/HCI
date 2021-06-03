@@ -14,8 +14,10 @@
                     <DataTemplate>
                         <StackPanel>
                             <Button 
-                    
-                            Content="{Binding Name}" 
+                                Command="{Binding DataContext.TaskOverviewCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}"
+                                Content="{Binding Name}" 
                                >
                             </Button>
                         </StackPanel>
