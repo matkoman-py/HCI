@@ -17,7 +17,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for TaskOverview.xaml
     /// </summary>
-    public partial class TaskOverview : Window
+    public partial class TaskOverview : UserControl
     {
         public TaskOverview()
         {

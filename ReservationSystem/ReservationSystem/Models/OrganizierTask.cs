@@ -25,13 +25,17 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Comment { get; set; }
 
-        public OrganizierTask(string name, string description, List<Offer> offers, bool isDone, string comment)
+        [DataMember]
+        public string UserApproval { get; set; }
+
+        public OrganizierTask(string name, string description, List<Offer> offers, bool isDone, string comment, string userApproval)
         {
             Name = name;
             Description = description;
             SelectedOffers = offers;
             IsDone = isDone;
             Comment = comment;
+            UserApproval = userApproval;
         }
     }
 }
