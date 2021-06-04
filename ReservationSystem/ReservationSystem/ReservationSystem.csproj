@@ -68,6 +68,8 @@
     </ApplicationDefinition>
     <Compile Include="App_Code\Initializer.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\EditAssociateViewCommand.cs" />
+    <Compile Include="Commands\EditOfferViewCommand.cs" />
     <Compile Include="Commands\OfferReviewCommand.cs" />
     <Compile Include="Commands\RequestViewCommand.cs" />
     <Compile Include="Commands\TaskOverviewFromOfferCommand.cs" />
@@ -75,10 +77,13 @@
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Converter\EnumConverter.cs" />
     <Compile Include="ViewModels\Administrator\AddAssociatesViewModel.cs" />
+    <Compile Include="ViewModels\Administrator\AddOfferViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOrganizerViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminOrganizersOverviewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminPageViewModel.cs" />
+    <Compile Include="ViewModels\Administrator\EditAssociatesViewModel.cs" />
+    <Compile Include="ViewModels\Administrator\EditOfferViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChooseOrganisatorPageViewModel.cs" />
     <Compile Include="ViewModels\DataUpdateViewModel.cs" />
@@ -101,6 +106,9 @@
     <Compile Include="Views\Administrator\AddAssociatesView.xaml.cs">
       <DependentUpon>AddAssociatesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrator\AddOfferView.xaml.cs">
+      <DependentUpon>AddOfferView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrator\AddOrganizerView.xaml.cs">
       <DependentUpon>AddOrganizerView.xaml</DependentUpon>
     </Compile>
@@ -112,6 +120,12 @@
     </Compile>
     <Compile Include="Views\Administrator\AdminOrganizersOverview.xaml.cs">
       <DependentUpon>AdminOrganizersOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\EditAssociatesView.xaml.cs">
+      <DependentUpon>EditAssociatesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\EditOfferView.xaml.cs">
+      <DependentUpon>EditOfferView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChooseOrganisatorPage.xaml.cs">
       <DependentUpon>ChooseOrganisatorPage.xaml</DependentUpon>
@@ -194,6 +208,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Administrator\AddOfferView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Administrator\AddOrganizerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,6 +225,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Administrator\AdminOrganizersOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\EditAssociatesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\EditOfferView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

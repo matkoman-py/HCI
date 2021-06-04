@@ -40,23 +40,26 @@ namespace ReservationSystem.ViewModels
                     db.Users.Add(new User("mika", "mika", "mikagmajl", "Mika", "Mikic", new DateTime(1998, 9, 5), Role.Administrator));
                     db.Users.Add(new User("zika", "zika", "zikagmajl", "Zika", "Zikic", new DateTime(1997, 9, 5), Role.Organizier));
 
+                    Associate associate = new Associate("Kod Jove", "Kumanovska 2, Zrenjanin", "Nesto nesto nesto", FieldOfWork.Restaurant);
+                    db.Associates.Add(associate);
+
                     PartyRequest pr = new PartyRequest(PartyType.Birthday, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak", "Duvanje", RequestState.Accepted, 1);
                     Suggestion sug = new Suggestion(new List<OrganizierTask>(){
                     new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
-                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
-                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
-                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                        new Offer(associate,"Ime",100,"Opasna ponuda1", "nema slike"),
+                        new Offer(associate,"Ime",150,"Opasna ponuda2", "ima slike"),
+                        new Offer(associate,"Ime",200,"Opasna ponuda3", "nema slike"),
 
                     }, false,"kurcina", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatfafaak2", "Drugi zadatak", new List<Offer>(){
-                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
-                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
-                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                        new Offer(associate,"Ime",100,"Opasna ponuda1", "nema slike"),
+                        new Offer(associate,"Ime",150,"Opasna ponuda2", "ima slike"),
+                        new Offer(associate,"Ime",200,"Opasna ponuda3", "nema slike"),
                     }, false,"", UserApproval.Neobradjen),
                     new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
-                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
-                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
-                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                        new Offer(associate,"Ime",100,"Opasna ponuda1", "nema slike"),
+                        new Offer(associate,"Ime",150,"Opasna ponuda2", "ima slike"),
+                        new Offer(associate,"Ime",200,"Opasna ponuda3", "nema slike"),
                     }, false,"", UserApproval.Neobradjen)
                 }, "MASU JAK PREDLOG1", pr);
 

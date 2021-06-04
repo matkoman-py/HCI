@@ -2,59 +2,58 @@
 using ReservationSystem.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels.Administrator
 {
-    public class AddAssociatesViewModel : BaseViewModel
+    public class EditAssociatesViewModel : BaseViewModel
     {
         private ICommand UpdateViewCommand;
-        public ICommand AddAssociatesCommand { get; set; }
-        public ICommand AddOfferCommand { get; set; }
+        public ICommand EditAssociatesCommand { get; set; }
+        public EditOfferViewCommand EditOfferCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public Associate Associate { get; set; }
         public List<FieldOfWork> FieldOfWorkOptions { get; set; }
 
-        public AddAssociatesViewModel(ICommand updateViewCommand)
+        public EditAssociatesViewModel(ICommand updateViewCommand)
         {
             Setup(updateViewCommand);
             Associate = new Associate();
         }
 
-        public AddAssociatesViewModel(ICommand updateViewCommand, Associate associate)
+        public EditAssociatesViewModel(ICommand updateViewCommand, Associate associate)
         {
             Setup(updateViewCommand);
             Associate = associate;
         }
 
-        private void Setup(ICommand updateViewCommand) 
+        private void Setup(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
             FieldOfWorkOptions = Enum.GetValues(typeof(FieldOfWork)).Cast<FieldOfWork>().ToList();
-            AddAssociatesCommand = new DelegateCommand(AddAssociates);
-            AddOfferCommand = new DelegateCommand(AddOffer);
-            BackCommand = new DelegateCommand(() => UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand)));
+            EditAssociatesCommand = new DelegateCommand(UpdateAssociates);
+            EditOfferCommand = new EditOfferViewCommand(UpdateViewCommand);
+            BackCommand = new DelegateCommand(() =>
+                UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand)));
         }
 
-        private void AddOffer()
-        {
-            UpdateViewCommand.Execute(new AddOfferViewModel(UpdateViewCommand, Associate));
-        }
-
-        private void AddAssociates() 
+        private void UpdateAssociates()
         {
             using (var db = new ProjectDatabase())
             {
                 try
                 {
-                    db.Associates.Add(Associate);
+                    db.Entry(Associate).State = EntityState.Modified;
                     db.SaveChanges();
                     UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand));
                 }
                 catch
                 {
-                    Console.WriteLine("Can't add associate!");
+                    Console.WriteLine("Can't update associate!");
                 }
 
             }

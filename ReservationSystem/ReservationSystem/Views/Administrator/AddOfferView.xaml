@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="ReservationSystem.Views.Administrator.AddOfferView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ReservationSystem.Views.Administrator"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="1" Margin="20,0,20,0">
+            <Label DockPanel.Dock="Top">Saradnik:</Label>
+            <TextBlock Height="25" Text="{Binding Associate.Name}"></TextBlock>
+        </DockPanel>
+        <DockPanel VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="1" Margin="20,0,20,0">
+            <Label DockPanel.Dock="Top">Ime:</Label>
+            <TextBox Height="25" Text="{Binding Offer.Name}"></TextBox>
+        </DockPanel>
+        <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="1" Margin="20,0,20,0">
+            <Label DockPanel.Dock="Top">Cena ponude:</Label>
+            <TextBox Height="25" Text="{Binding Offer.Price}"></TextBox>
+        </DockPanel>
+        <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="1" 
+                   Grid.RowSpan="2" Margin="20,0,20,0">
+            <Label DockPanel.Dock="Top">Opis:</Label>
+            <TextBox Height="100" Text="{Binding Offer.Description}"></TextBox>
+        </DockPanel>
+        <DockPanel VerticalAlignment="Center" Grid.Row="1"
+                   Grid.ColumnSpan="1" Grid.RowSpan="4" Grid.Column="1" Margin="20,0,20,0">
+            <Label DockPanel.Dock="Top">Slika:</Label>
+            <TextBlock Height="250"></TextBlock>
+        </DockPanel>
+        <StackPanel VerticalAlignment="Center" Grid.Row="5">
+            <Button Command="{Binding BackCommand}">Odustani</Button>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="1">
+            <Button Command="{Binding AddOfferCommand}">Dodaj</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

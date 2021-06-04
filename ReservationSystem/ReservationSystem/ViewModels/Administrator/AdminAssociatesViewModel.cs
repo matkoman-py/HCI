@@ -13,6 +13,7 @@ namespace ReservationSystem.ViewModels.Administrator
     {
         private ICommand UpdateViewCommand;
         public ICommand ToAddAssociatesCommand { get; set; }
+        public EditAssociateViewCommand ToEditAssociatesCommand { get; set; }
         public ICollection<Associate> Associates { get; set; }
         public ICommand BackCommand { get; set; }
 
@@ -21,6 +22,7 @@ namespace ReservationSystem.ViewModels.Administrator
         {
             UpdateViewCommand = updateViewCommand;
             ToAddAssociatesCommand = new DelegateCommand(ToAddAssociate);
+            ToEditAssociatesCommand = new EditAssociateViewCommand(UpdateViewCommand);
             Associates = getAssociates();
             BackCommand = new DelegateCommand(() =>
                 UpdateViewCommand.Execute(new AdminPageViewModel(UpdateViewCommand)));
@@ -30,7 +32,7 @@ namespace ReservationSystem.ViewModels.Administrator
         {
             using (var db = new ProjectDatabase())
             {
-                return db.Associates.ToList();
+                return db.Associates.Include("Offers").ToList();
             }
         }
 

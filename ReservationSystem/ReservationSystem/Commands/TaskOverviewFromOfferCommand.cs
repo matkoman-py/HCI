@@ -26,9 +26,9 @@ namespace ReservationSystem.Commands
             //PRONADJI U DB KOJI ORGANIZIERTASK IMA OVAJ OFFER U SEBI I TOG POSALJI NAZAD
             
             UpdateViewCommand.Execute(new TaskOverviewViewModel(UpdateViewCommand, new OrganizierTask("Zadatak1", "Prvi zadatak", new List<Offer>(){
-                        new Offer(null,100,"Opasna ponuda1", "nema slike"),
-                        new Offer(null,150,"Opasna ponuda2", "ima slike"),
-                        new Offer(null,200,"Opasna ponuda3", "nema slike"),
+                        new Offer(null,"Ime",100,"Opasna ponuda1", "nema slike"),
+                        new Offer(null,"Ime",150,"Opasna ponuda2", "ima slike"),
+                        new Offer(null,"Ime",200,"Opasna ponuda3", "nema slike"),
 
                     }, false, "kurcina", UserApproval.Neobradjen)));
         }

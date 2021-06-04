@@ -11,35 +11,28 @@ namespace ReservationSystem.Models
 
     public enum FieldOfWork { Restaurant, Catering, Music, Other }
 
-    [DataContract]
     public class Associate
     {
         [Key]
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
         public string Name { get; set; }
-        [DataMember]
         public string Address { get; set; }
-        [DataMember]
         public string Description { get; set; }
-        [DataMember]
         public FieldOfWork FieldOfWork { get; set; }
-        [DataMember]
         public TablesArrangement TablesArrangement { get; set; }
+        public virtual ICollection<Offer> Offers { get; set; }
 
         public Associate()
         {
-
+            Offers = new List<Offer>();
         }
 
-        public Associate(string name, string address, string description, FieldOfWork fieldOfWork, TablesArrangement tablesArrangement)
+        public Associate(string name, string address, string description, FieldOfWork fieldOfWork)
         {
             Name = name;
             Address = address;
             Description = description;
             FieldOfWork = fieldOfWork;
-            TablesArrangement = tablesArrangement;
         }
 
     }

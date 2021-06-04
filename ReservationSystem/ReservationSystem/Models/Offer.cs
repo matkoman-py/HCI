@@ -8,28 +8,24 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    [DataContract]
     public class Offer
     {
         [Key]
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
-        public Associate Associate { get; set; }
-        [DataMember]
+        public string Name { get; set; }
         public int Price { get; set; }
-        [DataMember]
         public string Description { get; set; }
-        [DataMember]
         public string Image { get; set; }
-
+        public int AssociateId { get; set; }
+        public virtual Associate Associate { get; set; }
         public Offer()
         {
 
         }
 
-        public Offer(Associate associate, int price, string description, string image)
+        public Offer(Associate associate, string name, int price, string description, string image)
         {
+            Name = name;
             Associate = associate;
             Price = price;
             Description = description;

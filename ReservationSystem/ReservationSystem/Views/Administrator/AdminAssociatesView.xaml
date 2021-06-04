@@ -40,7 +40,9 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button>Ažuriraj</Button>
+                            <Button 
+                            Command="{Binding Path=DataContext.ToEditAssociatesCommand, RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                            CommandParameter="{Binding}">Ažuriraj</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

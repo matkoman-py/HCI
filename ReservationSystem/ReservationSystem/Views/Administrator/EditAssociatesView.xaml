@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ReservationSystem.Views.Administrator.AddAssociatesView"
+﻿<UserControl x:Class="ReservationSystem.Views.Administrator.EditAssociatesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -34,8 +34,8 @@
         <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Delatnost:</Label>
             <ComboBox Height="25" 
-                      ItemsSource="{Binding Path=FieldOfWorkOptions}"
-                      SelectedValue="{Binding Path=Associate.FieldOfWork, Converter={StaticResource EnumConverter}}"></ComboBox>
+                    ItemsSource="{Binding Path=FieldOfWorkOptions}"
+                    SelectedValue="{Binding Path=Associate.FieldOfWork, Converter={StaticResource EnumConverter}}"></ComboBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row ="4" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Opsi:</Label>
@@ -45,17 +45,26 @@
             <Button Command="{Binding BackCommand}">Odustani</Button>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2">
-            <Button Command="{Binding AddAssociatesCommand}">Dodaj</Button>
+            <Button Command="{Binding EditAssociatesCommand}">Ažuriraj</Button>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="3">
-            <Button Command="{Binding AddOfferCommand}">Dodaj Ponudu</Button>
+            <Button Command="{Binding EditOfferCommand}">Dodaj Ponudu</Button>
         </StackPanel>
         <DataGrid Height="250"  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="4"
-                  Margin="0,10,10,0" ItemsSource="{Binding Associate.Offers}" AutoGenerateColumns="False" CanUserAddRows="false">
+                Margin="0,10,10,0" ItemsSource="{Binding Associate.Offers}" AutoGenerateColumns="False" CanUserAddRows="false">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ime" Width="90" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Cena" Width="90" Binding="{Binding Price}"/>
                 <DataGridTextColumn Header="Opis" Width="120" Binding="{Binding Description}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button 
+                            Command="{Binding Path=DataContext.EditOfferCommand, RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                            CommandParameter="{Binding}">Ažuriraj</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
