@@ -17,18 +17,18 @@
         </Grid.RowDefinitions>
         <Button Content="Odjavi se" Grid.Column="0" Grid.Row="0" Command="{Binding LogOutCommand}" Margin="35"/>
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <Label Margin="10,10,0,0" Content="Predlozi organizatora:"/>
-            <ListView Margin="10,10,0,13"  ItemsSource="{Binding Suggestions}" Name="ListView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200">
+            <Label Margin="10,10,0,0" Content="Tvoji zahtevi:"/>
+            <ListView Margin="10,10,0,13"  ItemsSource="{Binding Requests}" Name="ListView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200">
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
                             <Button  
-                                    Command="{Binding DataContext.RequestViewCommand,
+                                    Command="{Binding DataContext.RequestOverviewCommand,
                                                 RelativeSource={RelativeSource AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
-                                    Content="{Binding Comment}"
-                                    Tag ="{Binding Id}"
+                                    Content="{Binding PartyTheme}"
+                                    
                                >    
                             </Button>
                         </StackPanel>

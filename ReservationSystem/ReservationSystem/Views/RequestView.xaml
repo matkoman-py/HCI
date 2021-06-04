@@ -8,8 +8,9 @@
         Height="500" Width="800">
     <Grid>
         <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
+            <Button  Content="Nazad" Command="{Binding RequestOverviewCommand}" CommandParameter="{Binding Request}" Width="50" HorizontalAlignment="Left" />
             <Label  Margin="10" Content="Zadaci:" />
-            <ListView  Margin="10"  Name="Zadaci" ItemsSource="{Binding Suggestion.Tasks}" VerticalAlignment="Top" Width="600" Height="160">
+            <ListView  Margin="10"  Name="Zadaci" ItemsSource="{Binding Suggestion.OrganizierTasks}" VerticalAlignment="Top" Width="600" Height="160">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -27,7 +28,7 @@
             </ListView>
             <Label  Margin="10" Content="Komentar:" />
             <TextBlock Margin="10" Background="LightGray" Width="600" Height="100" Text="{Binding Suggestion.Comment}"></TextBlock>
-            <Button  Content="Posalji odgovor na predlog" Command="{Binding UserHomePageCommand}" Width="200" Margin="35" />
+            <Button  Content="Posalji odgovor na predlog" Command="{Binding GiveAnswerCommand}"  Width="200" Margin="35" />
         </StackPanel>
 
         

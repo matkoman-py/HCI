@@ -19,5 +19,7 @@ namespace ReservationSystem
         public DbSet<TablesArrangement> TablesArrangements { get; set; }
         public DbSet<OrganizierTask> OrganizierTasks { get; set; }
         public DbSet<User> Users { get; set; }
+
+        
     }
 }

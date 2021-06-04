@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ReservationSystem.Views"
-        mc:Ignorable="d"
+        xmlns:local="clr-namespace:ReservationSystem.Views" xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ChooseOrganisatorPageViewModel}"
+             mc:Ignorable="d"
         Height="450" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,28 +14,29 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
             <TextBox   Height ="30" Width="250" Margin="10"/>
             <Button Content="Pretrazi"  Height ="30" Width="100" Margin="35"/>
+            
         </StackPanel>
 
-        <DataGrid Grid.Row="1" Grid.Column="0" Name = "dataGrid" AlternatingRowBackground = "LightBlue"  
-         AlternationCount = "2" AutoGenerateColumns = "False" GridLinesVisibility="Vertical" HeadersVisibility="All" Margin="10" VerticalAlignment="Center"> 
-
-            <DataGrid.Columns>
-                <DataGridTextColumn Header = "Ime"  />
-                <DataGridTextColumn Header = "Prezime" />
-                <DataGridTextColumn Header = "Broj telefona" />
-                <DataGridTextColumn Header = "Email" />
-                <DataGridCheckBoxColumn Header = "Izaberi" />
-                
-            </DataGrid.Columns>
-
-        </DataGrid>
-
         <StackPanel  Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+            <ListView ItemsSource="{Binding Organisers}" SelectedItem="{Binding SelectedOrganiser}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Surname}" Header="Surname" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="Email" Width="150"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+
+        <StackPanel  Grid.Row="3" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
             <Button Content="Nazad" Command="{Binding RequestCreationCommand}"  Height ="30" Width="100" Margin="10"/>
             <Button Content="Zavrsi zahtev" Command="{Binding UserHomePageCommand}" Height ="30" Width="100" Margin="35"/>
         </StackPanel>

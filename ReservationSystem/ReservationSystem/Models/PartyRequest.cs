@@ -17,50 +17,58 @@ namespace ReservationSystem.Models
     [DataContract]
     public class PartyRequest
     {
+        private PartyType birthday;
+        private int v1;
+        private string v2;
+        private DateTime dateTime;
+        private int v3;
+        private bool v4;
+        private string v5;
+        private string v6;
+        private RequestState accepted;
+        private int v7;
+
         [Key]
-        [DataMember]
+        
         public int Id { get; set; }
-        [DataMember]
+        
         public PartyType PartyType { get; set; }
-        [DataMember]
+        
         public int Budget { get; set; }
-        [DataMember]
+        
         public string Place { get; set; }
-        [DataMember]
-        public DateTime Time { get; set; }
-        [DataMember]
+
+        public DateTime Date { get; set; }
+                
         public int Capacity { get; set; }
-        [DataMember]
+        
         public bool IsBudgetFlexible { get; set; }
-        [DataMember]
+        
         public string PartyTheme { get; set; }
-        [DataMember]
+        
         public string Description { get; set; }
-        [DataMember]
+        
         public RequestState RequestState { get; set; }
 
-        [DataMember]
         public int CreatorId { get; set; }
-       
+        public int OrganiserId { get; set; }
         public PartyRequest()
         {
 
         }
 
-        public PartyRequest(PartyType partyType, int budget, string place, DateTime time, int capacity, bool isBudgetFlexible, string partyTheme, string description, RequestState requestState, int creatorId)
+        public PartyRequest(PartyType partyType, int budget, string place, DateTime date, int capacity, bool isBudgetFlexible, string partyTheme, string description, RequestState requestState, int creatorId)
         {
-            PartyType = PartyType;
+            PartyType = partyType;
             Budget = budget;
             Place = place;
-            Time = time;
             Capacity = capacity;
             IsBudgetFlexible = isBudgetFlexible;
             PartyTheme = partyTheme;
             Description = description;
+            Date = date;
             RequestState = requestState;
             CreatorId = creatorId;
         }
-
-
     }
 }
