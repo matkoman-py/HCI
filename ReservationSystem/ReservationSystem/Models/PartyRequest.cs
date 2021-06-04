@@ -27,7 +27,9 @@ namespace ReservationSystem.Models
         [DataMember]
         public string Place { get; set; }
         [DataMember]
-        public DateTime Time { get; set; }
+        public DateTime Date { get; set; }
+        [DataMember]
+        public string Time { get; set; }
         [DataMember]
         public int Capacity { get; set; }
         [DataMember]
@@ -38,16 +40,14 @@ namespace ReservationSystem.Models
         public string Description { get; set; }
         [DataMember]
         public RequestState RequestState { get; set; }
-
         [DataMember]
         public int CreatorId { get; set; }
-       
         public PartyRequest()
         {
 
         }
 
-        public PartyRequest(PartyType partyType, int budget, string place, DateTime time, int capacity, bool isBudgetFlexible, string partyTheme, string description, RequestState requestState, int creatorId)
+        public PartyRequest(PartyType partyType, int budget, string place, string time,DateTime date, int capacity, bool isBudgetFlexible, string partyTheme, string description, RequestState requestState, int creatorId)
         {
             PartyType = PartyType;
             Budget = budget;
@@ -57,6 +57,7 @@ namespace ReservationSystem.Models
             IsBudgetFlexible = isBudgetFlexible;
             PartyTheme = partyTheme;
             Description = description;
+            Date = date;
             RequestState = requestState;
             CreatorId = creatorId;
         }
