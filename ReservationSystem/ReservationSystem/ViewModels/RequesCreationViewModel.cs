@@ -58,12 +58,7 @@ namespace ReservationSystem.ViewModels
 
         public void ChooseOrganisatorPage()
         {
-            using(var db = new ProjectDatabase())
-            {
-                db.PartyRequests.Add(PartyRequest);
-                db.SaveChanges();
-            }
-            UpdateViewCommand.Execute(new ChooseOrganisatorPageViewModel(UpdateViewCommand, User));
+            UpdateViewCommand.Execute(new ChooseOrganisatorPageViewModel(UpdateViewCommand, User, PartyRequest));
         }
     }
 }

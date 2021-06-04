@@ -42,6 +42,8 @@ namespace ReservationSystem.Models
         public RequestState RequestState { get; set; }
         [DataMember]
         public int CreatorId { get; set; }
+        [DataMember]
+        public int OrganiserId { get; set; }
         public PartyRequest()
         {
 
@@ -49,7 +51,7 @@ namespace ReservationSystem.Models
 
         public PartyRequest(PartyType partyType, int budget, string place, string time,DateTime date, int capacity, bool isBudgetFlexible, string partyTheme, string description, RequestState requestState, int creatorId)
         {
-            PartyType = PartyType;
+            PartyType = partyType;
             Budget = budget;
             Place = place;
             Time = time;
