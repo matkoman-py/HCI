@@ -71,6 +71,7 @@ namespace ReservationSystem.ViewModels
                     db.OrganizierTasks.Add(or2);
                     db.OrganizierTasks.Add(or3);
                     PartyRequest pr = new PartyRequest(PartyType.Birthday, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak", "Duvanje", RequestState.Accepted, 1);
+                    db.PartyRequests.Add(pr);
                     Suggestion sug = new Suggestion(new List<OrganizierTask>(){
                     or1,or2,or3
                 }, "MASU JAK PREDLOG1", pr);

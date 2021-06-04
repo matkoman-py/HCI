@@ -42,6 +42,7 @@ namespace ReservationSystem.ViewModels
 
             using (var db = new ProjectDatabase())
             {
+                Console.WriteLine(Suggestion.Comment);
                 Console.WriteLine(Suggestion.PartyRequest.CreatorId);
                 user = db.Users.Where(u => u.Id == Suggestion.PartyRequest.CreatorId).First();
             }

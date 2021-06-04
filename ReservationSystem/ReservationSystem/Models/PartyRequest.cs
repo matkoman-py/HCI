@@ -41,7 +41,7 @@ namespace ReservationSystem.Models
 
         [DataMember]
         public int CreatorId { get; set; }
-       
+        
         public PartyRequest()
         {
 

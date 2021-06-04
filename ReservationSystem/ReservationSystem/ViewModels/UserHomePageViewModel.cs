@@ -72,11 +72,17 @@ namespace ReservationSystem.ViewModels
             List<Suggestion> list = new List<Suggestion>();
             using (var db = new ProjectDatabase())
             {
+
                 list = db.Suggestions
+                        .Include("PartyRequest")
                         .Include("OrganizierTasks")
                         .Include("OrganizierTasks.Offers")
                         .Where(suggestion => suggestion.PartyRequest.CreatorId == User.Id)
                         .ToList();
+                foreach(Suggestion s in list)
+                {
+                    Console.WriteLine(s.PartyRequest.CreatorId);
+                }
             }
             return list;
         }
