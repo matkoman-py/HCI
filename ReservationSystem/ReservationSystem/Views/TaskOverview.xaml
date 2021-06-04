@@ -30,7 +30,7 @@
         <Label Grid.Row="2" Margin="100,10,0,0" Content="Opis zadatka:" />
         <TextBlock Grid.Row="3" Background="LightGray" Width="600" Height="40" Text="{Binding OrganizierTask.Description}"></TextBlock>
         <Label Grid.Row="4" Margin="100,10,0,0" Content="Komentar:" />
-        <TextBlock Grid.Row="5" Background="LightGray" Width="600" Height="50" Text="{Binding OrganizierTask.Comment}"></TextBlock>
+        <TextBox Grid.Row="5" Background="LightGray" Width="600" Height="50" Text="{Binding OrganizierTask.Comment}" IsEnabled="{Binding Answered}"></TextBox>
         <Label Grid.Row="6" Margin="10,10,0,0" Content="Ponude:" HorizontalAlignment="Center"/>
         <ListView Grid.Row="7" Margin="10" ItemsSource="{Binding OrganizierTask.Offers}" SelectedItem="{Binding SelectedOffer}" Name="Zadaci" VerticalAlignment="Top" Width="600" Height="50">
             <ListView.ItemTemplate>

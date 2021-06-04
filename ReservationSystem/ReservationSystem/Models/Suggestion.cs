@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    
+    public enum AnsweredType
+    {
+        Odbijen, Prihvacen, Neobradjen
+    }
     public class Suggestion
     {
         [Key]
@@ -18,6 +21,7 @@ namespace ReservationSystem.Models
         
         public virtual List<OrganizierTask> OrganizierTasks { get; set; }
 
+        public AnsweredType Answered { get; set; }
         public string Comment { get; set; }
         
         [ForeignKey("PartyRequest")]
@@ -34,6 +38,7 @@ namespace ReservationSystem.Models
             OrganizierTasks = tasks;
             Comment = comment;
             PartyRequest = partyRequest;
+            Answered = AnsweredType.Neobradjen;
         }
     }
 }
