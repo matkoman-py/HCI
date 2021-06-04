@@ -69,6 +69,7 @@
     <Compile Include="App_Code\Initializer.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\OfferReviewCommand.cs" />
+    <Compile Include="Commands\RequestOverviewCommand.cs" />
     <Compile Include="Commands\RequestViewCommand.cs" />
     <Compile Include="Commands\TaskOverviewFromOfferCommand.cs" />
     <Compile Include="Commands\TeskOverviewCommand.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\RequesCreationViewModel.cs" />
+    <Compile Include="ViewModels\RequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\RequestViewViewModel.cs" />
     <Compile Include="ViewModels\TaskOverviewViewModel.cs" />
     <Compile Include="ViewModels\UserHomePageViewModel.cs" />
@@ -136,6 +138,9 @@
     </Compile>
     <Compile Include="Views\RequestCreation.xaml.cs">
       <DependentUpon>RequestCreation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestOverview.xaml.cs">
+      <DependentUpon>RequestOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RequestView.xaml.cs">
       <DependentUpon>RequestView.xaml</DependentUpon>
@@ -228,6 +233,10 @@
     <Page Include="Views\RequestCreation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RequestOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RequestView.xaml">
       <Generator>MSBuild:Compile</Generator>

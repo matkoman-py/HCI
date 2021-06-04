@@ -14,6 +14,7 @@ namespace ReservationSystem.ViewModels
 
 
         public List<Suggestion> Suggestions { get; set; }
+        public List<PartyRequest> Requests { get; set; }
         public ICommand UpdateViewCommand { get; set; }
         
         public User User { get; set; }
@@ -35,7 +36,10 @@ namespace ReservationSystem.ViewModels
             get; set;
         }
 
-
+        public static ICommand RequestOverviewCommand
+        {
+            get; set;
+        }
         public UserHomePageViewModel(ICommand updateViewCommand, User user)
         {
 
@@ -43,10 +47,12 @@ namespace ReservationSystem.ViewModels
             LogOutCommand = new DelegateCommand(LogOut);
             ProfileCommand = new DelegateCommand(Profile);
             RequestViewCommand = new RequestViewCommand(UpdateViewCommand);
+            RequestOverviewCommand = new RequestOverviewCommand(UpdateViewCommand);
             RequestCreationCommand = new DelegateCommand(RequestCreation);
             User = user;
-            Suggestions = getOffers();
-            
+
+            //Suggestions = getSuggestions();
+            Requests = getRequests();
         }
 
         public void RequestCreation()
@@ -65,24 +71,34 @@ namespace ReservationSystem.ViewModels
         }
 
 
-        public List<Suggestion> getOffers()
+        public List<Suggestion> getSuggestions()
         {
             // OVDE TREBA IZ DB UZETI SVE SUGGESTIONE KOJI IMAJU ID USERA KOJI JE PROSLEDJEN OVOM PROZORU
             // TO DALJE SALJES
             List<Suggestion> list = new List<Suggestion>();
             using (var db = new ProjectDatabase())
             {
-                foreach(Suggestion s in db.Suggestions)
-                {
-                    Console.WriteLine(s.Comment);
-                    Console.WriteLine(s.PartyRequest);
-                    if(s.PartyRequest.CreatorId == User.Id)
-                    {
-                        list.Add(s);
-                    }
 
+                list = db.Suggestions
+                        .Include("PartyRequest")
+                        .Include("OrganizierTasks")
+                        .Include("OrganizierTasks.Offers")
+                        .Where(suggestion => suggestion.PartyRequest.CreatorId == User.Id)
+                        .ToList();
+                foreach(Suggestion s in list)
+                {
+                    Console.WriteLine(s.PartyRequest.CreatorId);
                 }
-                
+            }
+            return list;
+        }
+
+        public List<PartyRequest> getRequests()
+        {
+            List<PartyRequest> list = new List<PartyRequest>();
+            using(var db = new ProjectDatabase())
+            {
+                list = db.PartyRequests.Where(pr => pr.CreatorId == User.Id).ToList();
             }
             return list;
         }

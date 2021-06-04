@@ -18,32 +18,33 @@ namespace ReservationSystem.Models
     public class PartyRequest
     {
         [Key]
-        [DataMember]
+        
         public int Id { get; set; }
-        [DataMember]
+        
         public PartyType PartyType { get; set; }
-        [DataMember]
+        
         public int Budget { get; set; }
-        [DataMember]
+        
         public string Place { get; set; }
-        [DataMember]
+
         public DateTime Date { get; set; }
-        [DataMember]
+        
         public string Time { get; set; }
-        [DataMember]
+        
         public int Capacity { get; set; }
-        [DataMember]
+        
         public bool IsBudgetFlexible { get; set; }
-        [DataMember]
+        
         public string PartyTheme { get; set; }
-        [DataMember]
+        
         public string Description { get; set; }
-        [DataMember]
+        
         public RequestState RequestState { get; set; }
-        [DataMember]
+
+        
         public int CreatorId { get; set; }
-        [DataMember]
-        public int OrganiserId { get; set; }
+        
+        public int OragnizatorId { get; set; }
         public PartyRequest()
         {
 

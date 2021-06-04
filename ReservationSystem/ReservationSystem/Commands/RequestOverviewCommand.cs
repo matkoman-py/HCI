@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace ReservationSystem.Commands
 {
-    public class TaskOverviewFromOfferCommand : ICommand
+    public class RequestOverviewCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
@@ -22,18 +22,15 @@ namespace ReservationSystem.Commands
 
         public void Execute(object parameter)
         {
-            Offer sug = (Offer)parameter;
-            //PRONADJI U DB KOJI ORGANIZIERTASK IMA OVAJ OFFER U SEBI I TOG POSALJI NAZAD
-            OrganizierTask ot = null;
-            using (var db = new ProjectDatabase())
+            PartyRequest sug = (PartyRequest)parameter;
+            /*using (var db = new ProjectDatabase())
             {
-                ot = db.OrganizierTasks.Include("Offers")
-                        .Where(suggestion => suggestion.Id == sug.OrganizierTaskId).First();
-            }
-            UpdateViewCommand.Execute(new TaskOverviewViewModel(UpdateViewCommand, ot));
+                sug = db.PartyRequests.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == sug.Id).First();
+            }*/
+            UpdateViewCommand.Execute(new RequestOverviewViewModel(UpdateViewCommand, sug));
         }
 
-        public TaskOverviewFromOfferCommand(ICommand updateViewCommand)
+        public RequestOverviewCommand(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
         }

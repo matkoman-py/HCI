@@ -23,7 +23,6 @@ namespace ReservationSystem.Commands
         public void Execute(object parameter)
         {
             OrganizierTask sug = (OrganizierTask)parameter;
-            Console.WriteLine(sug.Name);
             UpdateViewCommand.Execute(new TaskOverviewViewModel(UpdateViewCommand, sug));
         }
 

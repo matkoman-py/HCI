@@ -23,6 +23,10 @@ namespace ReservationSystem.Commands
         public void Execute(object parameter)
         {
             Suggestion sug = (Suggestion)parameter;
+            using(var db = new ProjectDatabase())
+            {
+                sug = db.Suggestions.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == sug.Id).First();
+            }
             UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand,sug));
         }
 
