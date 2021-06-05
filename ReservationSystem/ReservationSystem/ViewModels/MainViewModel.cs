@@ -26,8 +26,8 @@ namespace ReservationSystem.ViewModels
         public MainViewModel()
         {
             UpdateViewCommand = new UpdateViewCommand(this);
-            //_selectedViewModel = new LoginViewModel(UpdateViewCommand);
-            _selectedViewModel = new AssociateOverviewViewModel(UpdateViewCommand);
+            _selectedViewModel = new LoginViewModel(UpdateViewCommand);
+            //_selectedViewModel = new AssociateOverviewViewModel(UpdateViewCommand);
         }
     }
 }

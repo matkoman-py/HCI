@@ -172,9 +172,6 @@
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AssociateOverview.xaml.cs">
-      <DependentUpon>AssociateOverview.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\OfferReviewPage.xaml.cs">
       <DependentUpon>OfferReviewPage.xaml</DependentUpon>
     </Compile>
@@ -302,10 +299,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\LoginWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AssociateOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
