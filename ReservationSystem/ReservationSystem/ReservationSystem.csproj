@@ -106,8 +106,11 @@
     <Compile Include="ViewModels\Administrator\AdminPageViewModel.cs" />
     <Compile Include="ViewModels\Administrator\EditAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\EditOfferViewModel.cs" />
+    <Compile Include="ViewModels\AssociateOverviewViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChooseOrganisatorPageViewModel.cs" />
+    <Compile Include="ViewModels\CreateNewAssociateViewModel.cs" />
+    <Compile Include="ViewModels\CreateNewOfferViewModel.cs" />
     <Compile Include="ViewModels\DataUpdateViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -183,6 +186,9 @@
     </Compile>
     <Compile Include="Views\Organizer\DenyRequestView.xaml.cs">
       <DependentUpon>DenyRequestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Organizer\OrganizerAssociateOverview.xaml.cs">
+      <DependentUpon>OrganizerAssociateOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Organizer\RequestOverivew.xaml.cs">
       <DependentUpon>RequestOverivew.xaml</DependentUpon>
@@ -316,6 +322,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Organizer\DenyRequestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Organizer\OrganizerAssociateOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

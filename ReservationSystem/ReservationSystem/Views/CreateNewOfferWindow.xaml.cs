@@ -17,7 +17,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for CreateNewOfferWindow.xaml
     /// </summary>
-    public partial class CreateNewOfferWindow : Window
+    public partial class CreateNewOfferWindow : UserControl
     {
         public CreateNewOfferWindow()
         {

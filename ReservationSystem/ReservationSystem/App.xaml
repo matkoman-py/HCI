@@ -4,8 +4,10 @@
              xmlns:local="clr-namespace:ReservationSystem"
              xmlns:views ="clr-namespace:ReservationSystem.Views"
              xmlns:viewsAdmin ="clr-namespace:ReservationSystem.Views.Administrator"
+             xmlns:viewsOrganizer ="clr-namespace:ReservationSystem.Views.Organizer"
              xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels"
              xmlns:viewmodelsAdmin="clr-namespace:ReservationSystem.ViewModels.Administrator"
+
              xmlns:converters="clr-namespace:ReservationSystem.Converter"
              xmlns:models="clr-namespace:ReservationSystem.Models"
              xmlns:commands="clr-namespace:ReservationSystem.Commands"
@@ -13,7 +15,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            
+
             <ResourceDictionary.MergedDictionaries>
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Blue" SecondaryColor="Lime" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
@@ -24,7 +26,7 @@
             </Style>
 
             <converters:EnumConverter x:Key="EnumConverter"/>
-           
+
             <DataTemplate DataType="{x:Type viewmodels:ProfileViewModel}">
                 <views:Profile></views:Profile>
             </DataTemplate>
@@ -79,14 +81,20 @@
             <DataTemplate DataType="{x:Type viewmodelsAdmin:EditOfferViewModel}">
                 <viewsAdmin:EditOfferView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodels:RequestOverviewViewModel}">
-                <views:RequestOverview/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:RequestsOverviewViewModel}">
                 <views:RequestsOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AssociateOverviewViewModel}">
+                <viewsOrganizer:OrganizerAssociateOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CreateNewOfferViewModel}">
+                <views:CreateNewOfferWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CreateNewAssociateViewModel}">
+                <views:CreateNewAssociateWindow/>
             </DataTemplate>
         </ResourceDictionary>
 
     </Application.Resources>
-    
+
 </Application>
