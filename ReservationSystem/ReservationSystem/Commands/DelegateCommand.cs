@@ -9,7 +9,12 @@ namespace ReservationSystem.Commands
 {
     public class DelegateCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+
         private Func<Boolean> _validator;
         private Action _execution;
 
@@ -33,6 +38,11 @@ namespace ReservationSystem.Commands
         public void Execute(object parameter)
         {
             _execution();
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CommandManager.InvalidateRequerySuggested();
         }
     }
 }

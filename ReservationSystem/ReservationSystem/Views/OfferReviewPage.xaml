@@ -26,6 +26,6 @@
             <Label Margin="3" Width="110" Height="30" Content="Opis ponude: "/>
             <TextBox  Height="100"  Width="200" Margin="0" Text="{Binding Offer.Description}" IsReadOnly="True"/>
         </StackPanel>
-        <Image  Grid.Column="1" Grid.Row="1" Height="150" Width="150" Source="C:\Users\Mateja\Pictures\slike.jpg"/>
+        <Image  Grid.Column="1" Grid.Row="1" Height="150" Width="150"/>
     </Grid>
 </UserControl>

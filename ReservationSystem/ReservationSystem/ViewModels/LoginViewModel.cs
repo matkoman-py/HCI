@@ -99,7 +99,7 @@ namespace ReservationSystem.ViewModels
                         break;
                     case Role.Organizier:
                         //organizier
-                        UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, user));//, new User()));
+                        UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user));//, new User()));
                         break;
                     case Role.Administrator:
                         //administrator

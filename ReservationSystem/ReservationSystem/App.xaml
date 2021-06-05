@@ -9,78 +9,84 @@
              xmlns:converters="clr-namespace:ReservationSystem.Converter"
              xmlns:models="clr-namespace:ReservationSystem.Models"
              xmlns:commands="clr-namespace:ReservationSystem.Commands"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <converters:EnumConverter x:Key="EnumConverter"/>
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="White"></Setter>
-            <Setter Property="Foreground" Value="Blue"></Setter>
-            <Setter Property="Margin" Value="10px"></Setter>
-            <Setter Property="Padding" Value="8px"></Setter>
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="7"/>
-                </Style>
-            </Style.Resources>
-        </Style>
+        <ResourceDictionary>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Blue" SecondaryColor="Lime" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatMidBgButton}">
+                <Setter Property="OverridesDefaultStyle" Value="True" />
+                <Setter Property="Foreground"  Value="{StaticResource MaterialDesignDarkForeground}"/>
+            </Style>
 
-        <DataTemplate DataType="{x:Type viewmodels:ProfileViewModel}">
-            <views:Profile></views:Profile>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
-            <views:LoginWindow/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:RegistrationViewModel}">
-            <views:RegistrationWindow/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:UserHomePageViewModel}">
-            <views:UserHomePage/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:DataUpdateViewModel}">
-            <views:DataUpdate/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:RequesCreationViewModel}">
-            <views:RequestCreation/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:ChooseOrganisatorPageViewModel}">
-            <views:ChooseOrganisatorPage/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:RequestViewViewModel}">
-            <views:RequestView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:TaskOverviewViewModel}">
-            <views:TaskOverview/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:OfferReviewPageViewModel}">
-            <views:OfferReviewPagexaml/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminOrganizersOverviewModel}">
-            <viewsAdmin:AdminOrganizersOverview/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodelsAdmin:AddOrganizersViewModel}">
-            <viewsAdmin:AddOrganizerView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminPageViewModel}">
-            <viewsAdmin:AdminPage/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminAssociatesViewModel}">
-            <viewsAdmin:AdminAssociatesView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodelsAdmin:AddAssociatesViewModel}">
-            <viewsAdmin:AddAssociatesView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodelsAdmin:AddOfferViewModel}">
-            <viewsAdmin:AddOfferView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodelsAdmin:EditAssociatesViewModel}">
-            <viewsAdmin:EditAssociatesView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodelsAdmin:EditOfferViewModel}">
-            <viewsAdmin:EditOfferView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:RequestOverviewViewModel}">
-            <views:RequestOverview/>
-        </DataTemplate>
+            <converters:EnumConverter x:Key="EnumConverter"/>
+           
+            <DataTemplate DataType="{x:Type viewmodels:ProfileViewModel}">
+                <views:Profile></views:Profile>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+                <views:LoginWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RegistrationViewModel}">
+                <views:RegistrationWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:UserHomePageViewModel}">
+                <views:UserHomePage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:DataUpdateViewModel}">
+                <views:DataUpdate/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RequesCreationViewModel}">
+                <views:RequestCreation/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ChooseOrganisatorPageViewModel}">
+                <views:ChooseOrganisatorPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RequestViewViewModel}">
+                <views:RequestView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:TaskOverviewViewModel}">
+                <views:TaskOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:OfferReviewPageViewModel}">
+                <views:OfferReviewPagexaml/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminOrganizersOverviewModel}">
+                <viewsAdmin:AdminOrganizersOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:AddOrganizersViewModel}">
+                <viewsAdmin:AddOrganizerView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminPageViewModel}">
+                <viewsAdmin:AdminPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminAssociatesViewModel}">
+                <viewsAdmin:AdminAssociatesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:AddAssociatesViewModel}">
+                <viewsAdmin:AddAssociatesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:AddOfferViewModel}">
+                <viewsAdmin:AddOfferView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:EditAssociatesViewModel}">
+                <viewsAdmin:EditAssociatesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:EditOfferViewModel}">
+                <viewsAdmin:EditOfferView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RequestOverviewViewModel}">
+                <views:RequestOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RequestsOverviewViewModel}">
+                <views:RequestsOverview/>
+            </DataTemplate>
+        </ResourceDictionary>
+
     </Application.Resources>
     
 </Application>

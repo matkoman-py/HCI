@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ReservationSystem.Views
 {
     /// <summary>
-    /// Interaction logic for TestWindow.xaml
+    /// Interaction logic for RequestsOverview.xaml
     /// </summary>
-    public partial class TestWindow : Window
+    public partial class RequestsOverview : UserControl
     {
-        public TestWindow()
+        public RequestsOverview()
         {
             InitializeComponent();
         }

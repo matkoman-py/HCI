@@ -35,6 +35,7 @@
             </TextBlock>
         </StackPanel>
 
-        <Button Content="Uloguj se" Grid.Column="1" Grid.Row="3"  Margin="35" Command="{Binding LoginCommand}"/>
+        <Button 
+            Content="Uloguj se" Grid.Column="1" Grid.Row="3"  Margin="35" Command="{Binding LoginCommand}"/>
     </Grid>
 </UserControl>

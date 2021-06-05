@@ -17,17 +17,6 @@ namespace ReservationSystem.Models
     [DataContract]
     public class PartyRequest
     {
-        private PartyType birthday;
-        private int v1;
-        private string v2;
-        private DateTime dateTime;
-        private int v3;
-        private bool v4;
-        private string v5;
-        private string v6;
-        private RequestState accepted;
-        private int v7;
-
         [Key]
         
         public int Id { get; set; }

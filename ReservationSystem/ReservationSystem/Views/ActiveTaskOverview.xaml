@@ -56,7 +56,7 @@
                             <StackPanel>
                                 <CheckBox></CheckBox>
                                 <TextBlock>
-                            <Hyperlink Click="nesto">
+                            <Hyperlink>
                                 <TextBlock Text="{Binding nesto}"></TextBlock>
                             </Hyperlink>
                         </TextBlock>

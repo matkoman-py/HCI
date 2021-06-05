@@ -38,16 +38,37 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.2.0.0\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.1.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.1\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.MahApps, Version=0.1.7.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.MahApps.0.1.7\lib\net452\MaterialDesignThemes.MahApps.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.1.0.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -94,6 +115,7 @@
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\RequesCreationViewModel.cs" />
+    <Compile Include="ViewModels\RequestsOverviewViewModel.cs" />
     <Compile Include="ViewModels\RequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\RequestViewViewModel.cs" />
     <Compile Include="ViewModels\TaskOverviewViewModel.cs" />
@@ -104,6 +126,9 @@
     </Compile>
     <Compile Include="Views\ActiveRequestOverview.xaml.cs">
       <DependentUpon>ActiveRequestOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActiveTaskOverview.xaml.cs">
+      <DependentUpon>ActiveTaskOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrator\AddAssociatesView.xaml.cs">
       <DependentUpon>AddAssociatesView.xaml</DependentUpon>
@@ -147,8 +172,8 @@
     <Compile Include="Views\AssociateOverview.xaml.cs">
       <DependentUpon>AssociateOverview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\OfferReviewPagexaml.xaml.cs">
-      <DependentUpon>OfferReviewPagexaml.xaml</DependentUpon>
+    <Compile Include="Views\OfferReviewPage.xaml.cs">
+      <DependentUpon>OfferReviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Organizer\CreateSuggestionView.xaml.cs">
       <DependentUpon>CreateSuggestionView.xaml</DependentUpon>
@@ -161,6 +186,9 @@
     </Compile>
     <Compile Include="Views\Organizer\RequestOverivew.xaml.cs">
       <DependentUpon>RequestOverivew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrganizierHomePage.xaml.cs">
+      <DependentUpon>OrganizierHomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
@@ -177,14 +205,20 @@
     <Compile Include="Views\RequestOverview.xaml.cs">
       <DependentUpon>RequestOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RequestsOverview.xaml.cs">
+      <DependentUpon>RequestsOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RequestView.xaml.cs">
       <DependentUpon>RequestView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TaskOverview.xaml.cs">
-      <DependentUpon>TaskOverview.xaml</DependentUpon>
+    <Compile Include="Views\ResolvedTaskOverview.xaml.cs">
+      <DependentUpon>ResolvedTaskOverview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TestWindow.xaml.cs">
-      <DependentUpon>TestWindow.xaml</DependentUpon>
+    <Compile Include="Views\SuggestionOverview.xaml.cs">
+      <DependentUpon>SuggestionOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TableArrangementOverview.xaml.cs">
+      <DependentUpon>TableArrangementOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserHomePage.xaml.cs">
       <DependentUpon>UserHomePage.xaml</DependentUpon>
@@ -208,6 +242,10 @@
     <Page Include="Views\ActiveRequestOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActiveTaskOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Administrator\AddAssociatesView.xaml">
       <SubType>Designer</SubType>
@@ -265,7 +303,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\OfferReviewPagexaml.xaml">
+    <Page Include="Views\OfferReviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -284,6 +322,10 @@
     <Page Include="Views\Organizer\RequestOverivew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OrganizierHomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Profile.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -305,17 +347,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RequestsOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RequestView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\TaskOverview.xaml">
+    <Page Include="Views\ResolvedTaskOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\TestWindow.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\SuggestionOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TableArrangementOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\UserHomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -369,6 +419,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
 </Project>
