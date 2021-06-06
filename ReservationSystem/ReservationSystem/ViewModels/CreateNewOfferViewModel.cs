@@ -15,6 +15,7 @@ namespace ReservationSystem.ViewModels
         public Associate Associate { get; set; }
 
         public Offer Offer { get; set; }
+        public User User { get; set; }
         public ICommand UpdateViewCommand
         {
             get; set;
@@ -30,9 +31,10 @@ namespace ReservationSystem.ViewModels
             get; set;
         }
 
-        public CreateNewOfferViewModel(ICommand updateViewCommand, Associate associate)
+        public CreateNewOfferViewModel(ICommand updateViewCommand, Associate associate, User user)
         {
             UpdateViewCommand = updateViewCommand;
+            User = user;
             AssociateOverviewCommand = new DelegateCommand(AssociateOverview);
             Associate = associate;
             Offer = new Offer();
@@ -41,7 +43,7 @@ namespace ReservationSystem.ViewModels
 
         public void AssociateOverview()
         {
-            UpdateViewCommand.Execute(new AssociateOverviewViewModel(UpdateViewCommand));
+            UpdateViewCommand.Execute(new AssociateOverviewViewModel(UpdateViewCommand, User));
         }
 
         private void AddOffer()
@@ -58,7 +60,7 @@ namespace ReservationSystem.ViewModels
             }
             
             MessageBox.Show("Uspesno ste kreirali ponudu");
-            UpdateViewCommand.Execute(new AssociateOverviewViewModel(UpdateViewCommand));
+            UpdateViewCommand.Execute(new AssociateOverviewViewModel(UpdateViewCommand, User));
         }
     }
 }

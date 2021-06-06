@@ -14,6 +14,8 @@ namespace ReservationSystem.ViewModels
     {
         public List<PartyRequest> Requests { get; set; }
 
+        
+
         private List<PartyRequest> requestsToShow;
         public List<PartyRequest> RequestsToShow 
         {
@@ -37,18 +39,24 @@ namespace ReservationSystem.ViewModels
         }
         private int requestsLength { get; set; }
         public ICommand UpdateViewCommand { get; set; }
+        public ICommand BackCommand { get; set; }
         public DelegateCommand NextPageCommand { get; set; }
         public DelegateCommand PreviousPageCommand { get; set; }
-        public User User { get; set; }
 
-        public RequestsOverviewViewModel(ICommand updateViewCommand, User user)
+        public MoreInfoCommand MoreInfoCommand { get; set; }
+        public User User { get; set; }
+        public RequestState RequestState { get; set; }
+        public RequestsOverviewViewModel(ICommand updateViewCommand, User user, RequestState requestState)
         {
             UpdateViewCommand = updateViewCommand;
             User = user;
+            RequestState = requestState;
             Requests = getRequests();
             requestsLength = Requests.Count();
             NextPageCommand = new DelegateCommand(CanGetNextPage, NextPage);
             PreviousPageCommand = new DelegateCommand(CanGetPreviousPage, PreviousPage);
+            BackCommand = new DelegateCommand(Back);
+            MoreInfoCommand = new MoreInfoCommand(UpdateViewCommand);
             PageIndex = 0;
             InitialPage();
         }
@@ -95,10 +103,52 @@ namespace ReservationSystem.ViewModels
 
         private List<PartyRequest> getRequests() 
         {
-            using (var db = new ProjectDatabase()) 
+            if(RequestState == RequestState.Accepted)
             {
-                return db.PartyRequests.OrderBy(requst => requst.Date).ToList();
+                Console.WriteLine("Nabavi obradjene");
+                return getProcessed();
+                
+            }else if(RequestState == RequestState.Pending)
+            {
+                Console.WriteLine("Nabavi neobradjene");
+                return getPending();
+            }
+            else
+            {
+                Console.WriteLine("Nabavi aktivne");
+                return getActive();
+            }
+            
+        }
+        public void Back()
+        {
+            UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand, User));
+        }
+
+        public List<PartyRequest> getProcessed()
+        {
+            using (var db = new ProjectDatabase())
+            {
+                return db.PartyRequests.Where(req => req.RequestState == RequestState.Accepted || req.RequestState == RequestState.Rejected).OrderBy(requst => requst.Date).ToList();
             }
         }
+
+        public List<PartyRequest> getActive()
+        {
+            using (var db = new ProjectDatabase())
+            {
+                return db.PartyRequests.Where(req => req.RequestState == RequestState.Active).OrderBy(requst => requst.Date).ToList();
+            }
+        }
+
+        public List<PartyRequest> getPending()
+        {
+            using (var db = new ProjectDatabase())
+            {
+                return db.PartyRequests.Where(req => req.RequestState == RequestState.Pending).OrderBy(requst => requst.Date).ToList();
+            }
+        }
+        
+        
     }
 }

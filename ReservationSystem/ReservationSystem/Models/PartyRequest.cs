@@ -12,7 +12,7 @@ namespace ReservationSystem.Models
 
     public enum PartyType { Birthday, Anniversary, Other}
 
-    public enum RequestState { Pending, Rejected, Accepted }
+    public enum RequestState { Pending, Rejected, Accepted , Active}
 
     [DataContract]
     public class PartyRequest

@@ -74,12 +74,14 @@ namespace ReservationSystem.ViewModels
                     db.OrganizierTasks.Add(or1);
                     db.OrganizierTasks.Add(or2);
                     db.OrganizierTasks.Add(or3);
-                    PartyRequest pr = new PartyRequest(PartyType.Birthday, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Accepted, 1);
-                    PartyRequest pr1 = new PartyRequest(PartyType.Anniversary, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
-                    PartyRequest pr2 = new PartyRequest(PartyType.Other, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Accepted, 1);
+                    PartyRequest pr = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr1 = new PartyRequest(PartyType.Anniversary, 600, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
+                    PartyRequest pr2 = new PartyRequest(PartyType.Other, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Active, 1);
+                    PartyRequest pr3 = new PartyRequest(PartyType.Other, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Rejected, 1);
                     db.PartyRequests.Add(pr);
                     db.PartyRequests.Add(pr1);
                     db.PartyRequests.Add(pr2);
+                    db.PartyRequests.Add(pr3);
                     Suggestion sug = new Suggestion(new List<OrganizierTask>(){
                     or1,or2,or3
                 }, "MASU JAK PREDLOG1", pr);
@@ -99,7 +101,8 @@ namespace ReservationSystem.ViewModels
                         break;
                     case Role.Organizier:
                         //organizier
-                        UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user));//, new User()));
+                        //UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user));//, new User()));
+                        UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand, user));
                         break;
                     case Role.Administrator:
                         //administrator
