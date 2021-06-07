@@ -76,6 +76,15 @@ namespace ReservationSystem.ViewModels
             using (var db = new ProjectDatabase())
             {
                 db.PartyRequests.Where(pr => pr.Id == Sug.Id).First().RequestState = RequestState.Active;
+                double price = 0;
+                foreach (OrganizierTask task in OrganizierTasks)
+                {
+                    foreach (Offer offer in task.Offers)
+                    {
+                        price += offer.Price;
+                    }
+                }
+                db.Suggestions.Where(suggestion => suggestion.Id == Sug.Id).First().Price = price;
                 db.SaveChanges();
             }
             UpdateViewCommand.Execute(new PendingRequestOverview(UpdateViewCommand, Sug));

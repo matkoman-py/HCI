@@ -41,7 +41,7 @@ namespace ReservationSystem.ViewModels
         {
             get; set;
         }
-        public ICommand RequestCreationCommand
+        public static ICommand RequestCreationCommand
         {
             get; set;
         }

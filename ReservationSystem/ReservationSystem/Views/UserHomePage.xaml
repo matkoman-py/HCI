@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views" xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:UserHomePageViewModel}"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Height="570" Width="860">
+        Height="590" Width="860">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -54,6 +54,12 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="10,0,10,0" Kind="BellBadge" Width="26" Height="26" Foreground="White" VerticalAlignment="Center"/>
                             <TextBlock Text="Novi predlozi" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="CreateNewRequest" Height="70" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="10,0,10,0" Kind="ClipboardPlusOutline" Width="26" Height="26" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="Kreiraj novi zahtev" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="White"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="PendingRequests" Height="70" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">

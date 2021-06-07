@@ -23,6 +23,7 @@ namespace ReservationSystem.Models
 
         public AnsweredType Answered { get; set; }
         public string Comment { get; set; }
+        public double Price { get; set; }
         
         [ForeignKey("PartyRequest")]
         public int PartyRequestId { get; set; }
@@ -39,6 +40,15 @@ namespace ReservationSystem.Models
             Comment = comment;
             PartyRequest = partyRequest;
             Answered = AnsweredType.Neobradjen;
+            Price = 0;
+
+            foreach (OrganizierTask task in tasks)
+            {
+                foreach (Offer offer in task.Offers)
+                {
+                    Price += offer.Price;
+                }
+            }
         }
     }
 }
