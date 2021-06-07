@@ -19,7 +19,11 @@ namespace ReservationSystem.ViewModels.Administrator
         public ICommand EditFieldOfWorkCommand { get; set; }
         public ICommand CancelEditCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
         public ObservableCollection<FieldOfWork> FieldsOfWork { get; set; }
+        public ObservableCollection<FieldOfWork> FieldsOfWorkToDisplay { get; set; }
+        public string SearchQuery { get; set; }
+
         private string newFieldOfWorkName;
         public string NewFieldOfWorkName 
         {
@@ -59,7 +63,8 @@ namespace ReservationSystem.ViewModels.Administrator
             EditFieldOfWorkCommand = new DelegateCommand(EditFieldOfWork);
             CancelEditCommand = new DelegateCommand(CancelEditMode);
             DeleteCommand = new DelegateCommand(Delete);
-            FieldsOfWork = getFieldsOfWork();
+            SearchCommand = new DelegateCommand(Search);
+            Search();
         }
 
         private ObservableCollection<FieldOfWork> getFieldsOfWork()
@@ -68,6 +73,21 @@ namespace ReservationSystem.ViewModels.Administrator
             {
                 return new ObservableCollection<FieldOfWork>(db.FieldsOfWork.ToList());
             }
+        }
+
+        private void Search()
+        {
+            Console.WriteLine("search");
+            if (String.IsNullOrEmpty(SearchQuery)) 
+            {
+                FieldsOfWork = getFieldsOfWork();
+            }
+            using (var db = new ProjectDatabase())
+            {
+                var results = db.FieldsOfWork.Where(field => field.Name.Contains(SearchQuery)).ToList();
+                FieldsOfWork = results.Count == 0 ? getFieldsOfWork() : new ObservableCollection<FieldOfWork>(results);
+            }
+            OnPropertyChanged("FieldsOfWork");
         }
 
         private void AddFieldOfWork()
@@ -135,5 +155,6 @@ namespace ReservationSystem.ViewModels.Administrator
             }
             return this;
         }
+
     }
 }
