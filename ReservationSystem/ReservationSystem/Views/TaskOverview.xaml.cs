@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ReservationSystem.Views
 {
     /// <summary>
-    /// Interaction logic for AcceptedRequestOverview.xaml
+    /// Interaction logic for TaskOverview.xaml
     /// </summary>
-    public partial class AcceptedRequestOverview : UserControl
+    public partial class TaskOverview : UserControl
     {
-        public AcceptedRequestOverview()
+        public TaskOverview()
         {
             InitializeComponent();
         }

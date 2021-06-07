@@ -6,10 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ReservationSystem
 {
     public class ProjectDatabase : DbContext
     {
+
         public DbSet<Associate> Associates { get; set; }
         public DbSet<Offer> Offers { get; set; }
         public DbSet<PartyRequest> PartyRequests { get; set; }
@@ -19,7 +21,22 @@ namespace ReservationSystem
         public DbSet<TablesArrangement> TablesArrangements { get; set; }
         public DbSet<OrganizierTask> OrganizierTasks { get; set; }
         public DbSet<User> Users { get; set; }
-
         
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<Offer>()
+                        .HasMany<OrganizierTask>(s => s.OrganizierTasks)
+                        .WithMany(c => c.Offers)
+                        .Map(cs =>
+                        {
+                            cs.MapLeftKey("OfferRefId");
+                            cs.MapRightKey("OrganizierTaskRefId");
+                            cs.ToTable("OfferOrganizierTask");
+                        });
+
+        }
+
+
     }
 }

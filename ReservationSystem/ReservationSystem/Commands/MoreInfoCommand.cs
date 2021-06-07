@@ -1,4 +1,5 @@
 ﻿using ReservationSystem.Models;
+using ReservationSystem.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,14 @@ namespace ReservationSystem.Commands
             //UpdateViewCommand.Execute(new TaskOverviewViewModel(UpdateViewCommand, sug));
             if (sug.RequestState == RequestState.Accepted || sug.RequestState == RequestState.Rejected)
             {
-                Console.WriteLine("idi obradjene");
-                //return getProcessed();
+                if(sug.RequestState == RequestState.Accepted)
+                {
+                    UpdateViewCommand.Execute(new AcceptedRequestOverviewViewModel(UpdateViewCommand, sug));
+                }
+                if (sug.RequestState == RequestState.Rejected)
+                {
+                    UpdateViewCommand.Execute(new RejectedRequestOverviewViewModel(UpdateViewCommand, sug));
+                }
 
             }
             else if (sug.RequestState == RequestState.Pending)
@@ -37,7 +44,7 @@ namespace ReservationSystem.Commands
             else
             {
                 Console.WriteLine("idi  aktivne");
-                //return getActive();
+                UpdateViewCommand.Execute(new ActiveRequestOverviewViewModel(UpdateViewCommand, sug));
             }
         }
 

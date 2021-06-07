@@ -19,12 +19,7 @@ namespace ReservationSystem.Models
         public int AssociateId { get; set; }
         public virtual Associate Associate { get; set; }
 
-        
-
-        
-        public int OrganizierTaskId { get; set; }
-        public virtual OrganizierTask OrganizierTask { get; set; }
-
+        public virtual List<OrganizierTask> OrganizierTasks { get; set; }
         public Offer()
         {
 

@@ -52,9 +52,10 @@ namespace ReservationSystem.ViewModels
             Associate ass;
             using(var db = new ProjectDatabase())
             {
+                
                 ass = db.Associates.Include("Offers").Where(a => a.Id == Associate.Id).First();
                 Offer.Associate = ass;
-                //db.Offers.Add(Offer);
+                db.Offers.Add(Offer);
                 ass.Offers.Add(Offer);
                 db.SaveChanges();
             }
