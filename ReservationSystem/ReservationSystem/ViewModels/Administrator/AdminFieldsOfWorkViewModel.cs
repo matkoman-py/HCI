@@ -44,6 +44,18 @@ namespace ReservationSystem.ViewModels.Administrator
                 OnPropertyChanged("NewFieldOfWorkName");
             }
         }
+
+        private bool newHasRoom;
+        public Boolean NewHasRoom
+        {
+            get { return newHasRoom; }
+            set
+            {
+                newHasRoom = value;
+                OnPropertyChanged("NewHasRoom");
+            }
+        }
+
         private FieldOfWork fieldOfWorkToEdit;
         public FieldOfWork FieldOfWorkToEdit
         {
@@ -106,10 +118,11 @@ namespace ReservationSystem.ViewModels.Administrator
         {
             using (var db = new ProjectDatabase())
             {
-                FieldOfWork fieldOfWork = new FieldOfWork { Name = NewFieldOfWorkName };
+                FieldOfWork fieldOfWork = new FieldOfWork { Name = NewFieldOfWorkName, HasRoom = NewHasRoom };
                 db.FieldsOfWork.Add(fieldOfWork);
                 db.SaveChanges();
                 NewFieldOfWorkName = "";
+                NewHasRoom = false;
                 FieldsOfWork.Add(fieldOfWork);
             }
         }
@@ -122,6 +135,7 @@ namespace ReservationSystem.ViewModels.Administrator
                 {
                     db.Entry(FieldOfWorkToEdit).State = EntityState.Modified;
                     FieldOfWorkToEdit.Name = NewFieldOfWorkName;
+                    FieldOfWorkToEdit.HasRoom = NewHasRoom;
                     db.SaveChanges();
                     CancelEditMode();
                 }
@@ -136,6 +150,7 @@ namespace ReservationSystem.ViewModels.Administrator
         {
             IsInEditMode = false;
             NewFieldOfWorkName = "";
+            NewHasRoom = false;
         }
 
         private Object SwitchToEditMode(Object fieldOfWork) 
@@ -143,6 +158,7 @@ namespace ReservationSystem.ViewModels.Administrator
             IsInEditMode = true;
             FieldOfWorkToEdit = (FieldOfWork)fieldOfWork;
             NewFieldOfWorkName = FieldOfWorkToEdit.Name;
+            NewHasRoom = FieldOfWorkToEdit.HasRoom;
             return this;
         }
 

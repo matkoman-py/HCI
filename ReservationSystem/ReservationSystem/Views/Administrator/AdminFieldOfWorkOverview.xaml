@@ -47,20 +47,24 @@
                     <Grid HorizontalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="7*"/>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Content="{Binding Name}"></Label>
+                        <Label Grid.Column="1" Visibility="{Binding HasRoom, Converter={StaticResource BooleanToVisibilityConverter}}" ToolTip="Ima Salu">
+                            <materialDesign:PackIcon Kind="TableFurniture"/>
+                        </Label>
                         <Button 
-                            Grid.Column="3" 
+                            Grid.Column="4" 
                             IsEnabled="{Binding Path=DataContext.IsInEditMode, Converter={StaticResource NegateConverter}, RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
                             Margin="2"
                             Content="{materialDesign:PackIcon Trash}" 
                             ToolTip="Izbriši"
                             Command="{Binding Path=DataContext.DeleteCommand, RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
                             CommandParameter="{Binding}"></Button>
-                        <Button Grid.Column="2" 
+                        <Button Grid.Column="3" 
                             Margin="2"
                             IsEnabled="{Binding Path=DataContext.IsInEditMode, Converter={StaticResource NegateConverter}, RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
                             Content="{materialDesign:PackIcon PencilOutline}" 
@@ -73,14 +77,17 @@
         </ListView>
         <Grid Margin="10" VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="1.8*"/>
             </Grid.ColumnDefinitions>
             
             <TextBox Text="{Binding NewFieldOfWorkName}" Margin="0,0,10,0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"></TextBox>
 
-            <Grid Grid.Column="2"
+            <CheckBox Margin="0,0,10,0" Grid.Column="2" IsChecked="{Binding NewHasRoom}">Sala</CheckBox>
+            
+            <Grid Grid.Column="3"
                   Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                   >
                 <Grid.ColumnDefinitions>
@@ -99,12 +106,12 @@
                     Content="{materialDesign:PackIcon Close}" ToolTip="Odustani"></Button>
             </Grid>
 
-            <Button  Grid.Column="2" 
+            <Button  Grid.Column="3" 
                      Command="{Binding AddFieldOfWorkCommand}"
                      Margin="0,0,10,0"
                      Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
-                     ToolTip="Dodaj novu"
-                     >Dodaj delatnost</Button>
+                     ToolTip="Dodaj novu delatnost"
+                     >Dodaj</Button>
         </Grid>
     </Grid>
 </UserControl>
