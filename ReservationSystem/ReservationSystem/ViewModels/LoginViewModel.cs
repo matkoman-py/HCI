@@ -73,20 +73,55 @@ namespace ReservationSystem.ViewModels
 
 
                     }, false, "kurcina", UserApproval.Neobradjen);
+
+                    OrganizierTask ora1 = new OrganizierTask("Zadatak11", "Prvi zadatak", new List<Offer>(){
+                        of1,
+                        of2,
+                        of3
+
+                    }, false, "kurcina", UserApproval.Neobradjen);
+
+                    OrganizierTask ora2 = new OrganizierTask("Zadatak22", "Drugi zadatak", new List<Offer>(){
+                        of1,
+                        of2,
+                        of3
+
+
+                    }, false, "kurcina", UserApproval.Neobradjen);
+
+                    OrganizierTask ora3 = new OrganizierTask("Zadatak33", "Treci zadatak", new List<Offer>(){
+                        of1,
+                        of2,
+                        of3
+
+
+                    }, true, "kurcina", UserApproval.Neobradjen);
+
                     db.OrganizierTasks.Add(or1);
                     db.OrganizierTasks.Add(or2);
                     db.OrganizierTasks.Add(or3);
-                    PartyRequest pr = new PartyRequest(PartyType.Birthday, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Accepted, 1);
-                    PartyRequest pr1 = new PartyRequest(PartyType.Anniversary, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
-                    PartyRequest pr2 = new PartyRequest(PartyType.Other, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Accepted, 1);
+                    db.OrganizierTasks.Add(ora1);
+                    db.OrganizierTasks.Add(ora2);
+                    db.OrganizierTasks.Add(ora3);
+                    PartyRequest pr = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr1 = new PartyRequest(PartyType.Anniversary, 600, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
+                    PartyRequest pr2 = new PartyRequest(PartyType.Other, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Active, 1);
+                    PartyRequest pr3 = new PartyRequest(PartyType.Other, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Rejected, 1);
                     db.PartyRequests.Add(pr);
                     db.PartyRequests.Add(pr1);
                     db.PartyRequests.Add(pr2);
+                    db.PartyRequests.Add(pr3);
                     Suggestion sug = new Suggestion(new List<OrganizierTask>(){
                     or1,or2,or3
                 }, "MASU JAK PREDLOG1", pr);
 
+
+                    Suggestion sug2 = new Suggestion(new List<OrganizierTask>(){
+                    ora1,ora2,ora3
+                }, "MASU JAK PREDLOG3", pr2);
+
                     db.Suggestions.Add(sug);
+                    db.Suggestions.Add(sug2);
                     db.SaveChanges();
                 }
 
@@ -105,7 +140,8 @@ namespace ReservationSystem.ViewModels
                         break;
                     case Role.Organizier:
                         //organizier
-                        UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user));//, new User()));
+                        //UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user));//, new User()));
+                        UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand, user));
                         break;
                     case Role.Administrator:
                         //administrator

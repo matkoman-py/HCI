@@ -19,7 +19,7 @@
             <RowDefinition Height="0.15*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel>
-            <Button Margin="15">Nazad</Button>
+            <Button Margin="15" Command="{Binding BackCommand}">Nazad</Button>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="{Binding PageIndex}"></TextBlock>
@@ -31,7 +31,7 @@
             <Button Margin="15" Command="{Binding PreviousPageCommand}">Prethodna strana</Button>
         </StackPanel>
         <DockPanel Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
-            <ListView ItemsSource="{Binding RequestsToShow}">
+            <ListView ItemsSource="{Binding RequestsToShow}" >
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal"></StackPanel>
@@ -66,7 +66,9 @@
                                         <TextBlock DockPanel.Dock="Top" Margin="0,0,0,5">Opis:</TextBlock>
                                         <TextBox BorderBrush="LightGray" BorderThickness="1" IsEnabled="False" Text="{Binding Description}"></TextBox>
                                     </DockPanel>
-                                    <Button Grid.Row="2">Vidi više</Button>
+                                    <Button Grid.Row="2" Command="{Binding DataContext.MoreInfoCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}">Vidi više</Button>
                                 </Grid>
                             </materialDesign:Card>
                         </DockPanel>

@@ -91,14 +91,20 @@
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\EditAssociateViewCommand.cs" />
     <Compile Include="Commands\EditOfferViewCommand.cs" />
+    <Compile Include="Commands\MoreInfoCommand.cs" />
     <Compile Include="Commands\OfferReviewCommand.cs" />
+    <Compile Include="Commands\OfferReviewOrganizerCommand.cs" />
     <Compile Include="Commands\RequestOverviewCommand.cs" />
     <Compile Include="Commands\RequestViewCommand.cs" />
     <Compile Include="Commands\TaskOverviewFromOfferCommand.cs" />
+    <Compile Include="Commands\TaskOverviewOrganizerCommand.cs" />
     <Compile Include="Commands\TeskOverviewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Converter\EnumConverter.cs" />
     <Compile Include="IMainWindow.cs" />
+    <Compile Include="ViewModels\AcceptedRequestOverviewViewModel.cs" />
+    <Compile Include="ViewModels\ActiveRequestOverviewViewModel.cs" />
+    <Compile Include="ViewModels\ActiveTaskOverviewViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOfferViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOrganizerViewModel.cs" />
@@ -120,12 +126,18 @@
     <Compile Include="ViewModels\OfferReviewPageViewModel.cs" />
     <Compile Include="ViewModels\PendingRequestsViewModel.cs" />
     <Compile Include="ViewModels\PreviousPartiesViewModel.cs" />
+    <Compile Include="ViewModels\OfferReviewOrganizerViewModel.cs" />
+    <Compile Include="ViewModels\OfferReviewPageViewModel.cs" />
+    <Compile Include="ViewModels\OrganizierHomePageViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\RejectedRequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\RequesCreationViewModel.cs" />
     <Compile Include="ViewModels\RequestsOverviewViewModel.cs" />
     <Compile Include="ViewModels\RequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\RequestViewViewModel.cs" />
+    <Compile Include="ViewModels\ResolvedTaskOverviewViewModel.cs" />
+    <Compile Include="ViewModels\SuggestionOverviewViewModel.cs" />
     <Compile Include="ViewModels\TaskOverviewViewModel.cs" />
     <Compile Include="ViewModels\UserHomePageViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
@@ -182,6 +194,8 @@
     </Compile>
     <Compile Include="Views\NewSuggestionsOverview.xaml.cs">
       <DependentUpon>NewSuggestionsOverview.xaml</DependentUpon>
+    <Compile Include="Views\OfferReviewOrganizer.xaml.cs">
+      <DependentUpon>OfferReviewOrganizer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OfferReviewPage.xaml.cs">
       <DependentUpon>OfferReviewPage.xaml</DependentUpon>
@@ -233,6 +247,9 @@
     </Compile>
     <Compile Include="Views\ResolvedTaskOverview.xaml.cs">
       <DependentUpon>ResolvedTaskOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskOverview.xaml.cs">
+      <DependentUpon>TaskOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SuggestionOverview.xaml.cs">
       <DependentUpon>SuggestionOverview.xaml</DependentUpon>
@@ -324,6 +341,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NewSuggestionsOverview.xaml">
+    <Page Include="Views\OfferReviewOrganizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -392,6 +410,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ResolvedTaskOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

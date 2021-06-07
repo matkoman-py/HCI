@@ -21,7 +21,7 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" />
+        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" Command="{Binding BackCommand}"/>
         <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="4"
                     Name = "AssociateOverviewTable" AlternatingRowBackground = "LightBlue"  
                      AutoGenerateColumns = "False" ItemsSource="{Binding Associates}" CanUserAddRows="false" SelectedItem="{Binding SelectedAssociate}">
