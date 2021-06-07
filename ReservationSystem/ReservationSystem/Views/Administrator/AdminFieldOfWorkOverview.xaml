@@ -31,7 +31,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox Margin="0,0,10,0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"></TextBox>
+            <TextBox Text="{Binding SearchQuery}" Margin="0,0,10,0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"></TextBox>
             <Button 
                 Grid.Column="2"
                 Content="{materialDesign:PackIcon Magnify}" ToolTip="Pretraži"

@@ -7,12 +7,14 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels.Administrator
 {
     public class AdminFieldsOfWorkViewModel : BaseViewModel
     {
+
         private ICommand UpdateViewCommand;
         public ICommand AddFieldOfWorkCommand { get; set; }
         public ICommand ToEditFieldOfWorkCommand { get; set; }
@@ -20,8 +22,16 @@ namespace ReservationSystem.ViewModels.Administrator
         public ICommand CancelEditCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
         public ICommand SearchCommand { get; set; }
-        public ObservableCollection<FieldOfWork> FieldsOfWork { get; set; }
-        public ObservableCollection<FieldOfWork> FieldsOfWorkToDisplay { get; set; }
+        private ObservableCollection<FieldOfWork> fieldsOfWork;
+        public ObservableCollection<FieldOfWork> FieldsOfWork 
+        {
+            get { return fieldsOfWork; }
+            set 
+            {
+                fieldsOfWork = value;
+                OnPropertyChanged("FieldsOfWork");
+            }
+        }
         public string SearchQuery { get; set; }
 
         private string newFieldOfWorkName;
@@ -77,17 +87,19 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void Search()
         {
-            Console.WriteLine("search");
-            if (String.IsNullOrEmpty(SearchQuery)) 
+            Console.WriteLine(String.IsNullOrEmpty(SearchQuery));
+            if (String.IsNullOrEmpty(SearchQuery))
             {
                 FieldsOfWork = getFieldsOfWork();
             }
-            using (var db = new ProjectDatabase())
+            else 
             {
-                var results = db.FieldsOfWork.Where(field => field.Name.Contains(SearchQuery)).ToList();
-                FieldsOfWork = results.Count == 0 ? getFieldsOfWork() : new ObservableCollection<FieldOfWork>(results);
+                using (var db = new ProjectDatabase())
+                {
+                    var results = db.FieldsOfWork.Where(field => field.Name.Contains(SearchQuery)).ToList();
+                    FieldsOfWork = new ObservableCollection<FieldOfWork>(results);
+                }
             }
-            OnPropertyChanged("FieldsOfWork");
         }
 
         private void AddFieldOfWork()

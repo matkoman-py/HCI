@@ -23,5 +23,16 @@ namespace ReservationSystem.Models
                 OnPropertyChanged("Name"); 
             } 
         }
+
+        private bool hasRoom;
+        public bool HasRoom
+        {
+            get { return hasRoom; }
+            set
+            {
+                hasRoom = value;
+                OnPropertyChanged("HasRoom");
+            }
+        }
     }
 }

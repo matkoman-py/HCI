@@ -7,11 +7,20 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    public class PartyType
+    public class PartyType : AbstractModel
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
+        private string name;
+        public string Name 
+        {
+            get { return name; }
+            set 
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
+        }
 
         public PartyType() { }
 
