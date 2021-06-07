@@ -111,6 +111,7 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:PendingRequestsViewModel}">
                 <views:PendingRequestsOverview/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:OrganizierHomePageViewModel}">
                 <views:OrganizierHomePage/>
             </DataTemplate>

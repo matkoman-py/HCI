@@ -123,12 +123,11 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewSuggestionsViewModel.cs" />
-    <Compile Include="ViewModels\OfferReviewPageViewModel.cs" />
-    <Compile Include="ViewModels\PendingRequestsViewModel.cs" />
-    <Compile Include="ViewModels\PreviousPartiesViewModel.cs" />
     <Compile Include="ViewModels\OfferReviewOrganizerViewModel.cs" />
     <Compile Include="ViewModels\OfferReviewPageViewModel.cs" />
     <Compile Include="ViewModels\OrganizierHomePageViewModel.cs" />
+    <Compile Include="ViewModels\PendingRequestsViewModel.cs" />
+    <Compile Include="ViewModels\PreviousPartiesViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\RejectedRequestOverviewViewModel.cs" />
@@ -194,6 +193,7 @@
     </Compile>
     <Compile Include="Views\NewSuggestionsOverview.xaml.cs">
       <DependentUpon>NewSuggestionsOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OfferReviewOrganizer.xaml.cs">
       <DependentUpon>OfferReviewOrganizer.xaml</DependentUpon>
     </Compile>
@@ -248,14 +248,14 @@
     <Compile Include="Views\ResolvedTaskOverview.xaml.cs">
       <DependentUpon>ResolvedTaskOverview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TaskOverview.xaml.cs">
-      <DependentUpon>TaskOverview.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SuggestionOverview.xaml.cs">
       <DependentUpon>SuggestionOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TableArrangementOverview.xaml.cs">
       <DependentUpon>TableArrangementOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskOverview.xaml.cs">
+      <DependentUpon>TaskOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserHomePage.xaml.cs">
       <DependentUpon>UserHomePage.xaml</DependentUpon>
@@ -341,9 +341,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NewSuggestionsOverview.xaml">
-    <Page Include="Views\OfferReviewOrganizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OfferReviewOrganizer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\OfferReviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -410,10 +413,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ResolvedTaskOverview.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TaskOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -422,6 +421,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\TableArrangementOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TaskOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
