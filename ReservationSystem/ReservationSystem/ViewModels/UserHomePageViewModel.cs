@@ -9,9 +9,19 @@ using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
 {
-    public class UserHomePageViewModel : BaseViewModel
+    public class UserHomePageViewModel : BaseViewModel, IMainWindow
     {
+        private BaseViewModel _selectedViewModel;
 
+        public BaseViewModel SelectedViewModel
+        {
+            get { return _selectedViewModel; }
+            set
+            {
+                _selectedViewModel = value;
+                OnPropertyChanged(nameof(SelectedViewModel));
+            }
+        }
 
         public List<Suggestion> Suggestions { get; set; }
         public List<PartyRequest> Requests { get; set; }
@@ -19,11 +29,15 @@ namespace ReservationSystem.ViewModels
         
         public User User { get; set; }
         public static string SelectedId { get; set; }
-        public ICommand LogOutCommand
+        static public ICommand LogOutCommand
         {
             get; set;
         }
-        public ICommand ProfileCommand
+        static public ICommand ProfileCommand
+        {
+            get; set;
+        }
+        static public ICommand PreviousPartiesCommand
         {
             get; set;
         }
@@ -36,16 +50,36 @@ namespace ReservationSystem.ViewModels
             get; set;
         }
 
+        static public ICommand FuturePartiesCommand
+        {
+            get; set;
+        }
+
+        public static ICommand NewSuggestionsCommand
+        {
+            get; set;
+        }
+
         public static ICommand RequestOverviewCommand
         {
             get; set;
         }
-        public UserHomePageViewModel(ICommand updateViewCommand, User user)
+
+        public static ICommand PendingRequestsCommand
+        {
+            get; set;
+        }
+        
+        public UserHomePageViewModel(User user)
         {
 
-            UpdateViewCommand = updateViewCommand;
+            UpdateViewCommand = new UpdateViewCommand(this);
             LogOutCommand = new DelegateCommand(LogOut);
             ProfileCommand = new DelegateCommand(Profile);
+            PendingRequestsCommand = new DelegateCommand(PendingRequests);
+            NewSuggestionsCommand = new DelegateCommand(NewSuggestions);
+            PreviousPartiesCommand = new DelegateCommand(PreviousParties);
+            FuturePartiesCommand = new DelegateCommand(FutureParties);
             RequestViewCommand = new RequestViewCommand(UpdateViewCommand);
             RequestOverviewCommand = new RequestOverviewCommand(UpdateViewCommand);
             RequestCreationCommand = new DelegateCommand(RequestCreation);
@@ -53,7 +87,14 @@ namespace ReservationSystem.ViewModels
 
             //Suggestions = getSuggestions();
             Requests = getRequests();
+            _selectedViewModel = new ProfileViewModel(UpdateViewCommand, user);
         }
+
+        //public UserHomePageViewModel()
+        //{
+        //    UpdateViewCommand = new UpdateViewCommand(this);
+        //    _selectedViewModel = new LoginViewModel(UpdateViewCommand);
+        //}
 
         public void RequestCreation()
         {
@@ -64,7 +105,26 @@ namespace ReservationSystem.ViewModels
         {
             UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, User));
         }
+        public void FutureParties()
+        {
+            UpdateViewCommand.Execute(new FuturePartiesViewModel(UpdateViewCommand, User));
+        }
 
+        public void PreviousParties()
+        {
+            UpdateViewCommand.Execute(new PreviousPartiesViewModel(UpdateViewCommand, User));
+        }
+
+        public void NewSuggestions()
+        {
+            UpdateViewCommand.Execute(new NewSuggestionsViewModel(UpdateViewCommand, User));
+        }
+
+        public void PendingRequests()
+        {
+            UpdateViewCommand.Execute(new PendingRequestsViewModel(UpdateViewCommand, User));
+        }
+        
         public void LogOut()
         {
             UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));

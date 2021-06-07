@@ -5,35 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReservationSystem.Views"
         mc:Ignorable="d"
-        Background="White"
-        Height="450" Width="800">
+        Height="500" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="340"/>
-
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" >
-            <Image  Height="150" Width="150"/>
-
-            <Button Content="Nazad" Grid.Column="1" Grid.Row="3" Command="{Binding UserHomePageCommand}" Margin="35"/>
+        <StackPanel Margin="0,0,0,60" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="/Static/blankProfilePicture.png" Height="150" Width="150"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" >
-            <Label  Content="{Binding User.Username}"/>
-            <Label  Content="{Binding User.Password}"/>
-            <Label  Content="{Binding User.Name}"/>
-            <Label  Content="{Binding User.Surname}"/>
-            <Label  Content="{Binding User.Email}"/>
-            <Label  Content="{Binding User.Birthday}"/>
-            <Button Content="Azuriraj podatke" Grid.Column="1" Grid.Row="3" Command="{Binding DataUpdateCommand}" Margin="35"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel Margin="10"  Orientation="Horizontal">
+                <Label Content="Korisničko ime: " FontWeight="Bold" FontSize="16"/>
+                <Label  Content="{Binding User.Username}" FontSize="16"/>
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <Label Content="Ime: " FontWeight="Bold" FontSize="16"/>
+                <Label  Content="{Binding User.Name}" FontSize="16"/>
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <Label Content="Prezime: " FontWeight="Bold" FontSize="16"/>
+                <Label  Content="{Binding User.Surname}" FontSize="16"/>
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <Label Content="E-mail adresa: " FontWeight="Bold" FontSize="16"/>
+                <Label  Content="{Binding User.Email}" FontSize="16"/>
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <Label Content="Datum rođenja: " FontWeight="Bold" FontSize="16"/>
+                <Label  Content="{Binding User.Birthday}" FontSize="16"/>
+            </StackPanel>
+            <Button Content="Ažuriraj podatke" Grid.Column="1" Grid.Row="3" Command="{Binding DataUpdateCommand}" Margin="35" HorizontalAlignment="Center"/>
         </StackPanel>
-
 
     </Grid>
 </UserControl>

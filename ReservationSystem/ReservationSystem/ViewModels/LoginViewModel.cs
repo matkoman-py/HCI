@@ -1,11 +1,13 @@
 ﻿using ReservationSystem.Commands;
 using ReservationSystem.Models;
 using ReservationSystem.ViewModels.Administrator;
+using ReservationSystem.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
@@ -95,7 +97,11 @@ namespace ReservationSystem.ViewModels
                 {
                     case Role.Customer:
                         //customer
-                        UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, user));//, new User()));
+                        //UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, user));//, new User()));
+                        UserHomePage userHomePage = new UserHomePage(user);
+                        userHomePage.Show();
+                        userHomePage.Topmost = true;
+                        Application.Current.MainWindow.Hide();
                         break;
                     case Role.Organizier:
                         //organizier

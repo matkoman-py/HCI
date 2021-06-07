@@ -5,20 +5,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
 {
-    class RequestsOverviewViewModel : BaseViewModel
+    class PendingRequestsViewModel : BaseViewModel
     {
+
         public List<PartyRequest> Requests { get; set; }
 
         private List<PartyRequest> requestsToShow;
-        public List<PartyRequest> RequestsToShow 
+        public List<PartyRequest> RequestsToShow
         {
             get { return requestsToShow; }
-            set 
+            set
             {
                 requestsToShow = value;
                 OnPropertyChanged("RequestsToShow");
@@ -26,14 +26,16 @@ namespace ReservationSystem.ViewModels
         }
 
         private int pageIndex;
-        public int PageIndex {
+        public int PageIndex
+        {
             get { return pageIndex; }
-            set {
+            set
+            {
                 pageIndex = value;
                 OnPropertyChanged("PageIndex");
                 NextPageCommand.RaiseCanExecuteChanged();
                 PreviousPageCommand.RaiseCanExecuteChanged();
-            } 
+            }
         }
         private int requestsLength { get; set; }
         public ICommand UpdateViewCommand { get; set; }
@@ -41,7 +43,9 @@ namespace ReservationSystem.ViewModels
         public DelegateCommand PreviousPageCommand { get; set; }
         public User User { get; set; }
 
-        public RequestsOverviewViewModel(ICommand updateViewCommand, User user)
+        public String Visibility { get; set; }
+
+        public PendingRequestsViewModel(ICommand updateViewCommand, User user)
         {
             UpdateViewCommand = updateViewCommand;
             User = user;
@@ -53,9 +57,17 @@ namespace ReservationSystem.ViewModels
             InitialPage();
         }
 
-        public void InitialPage() 
+        public void InitialPage()
         {
             int amount = (requestsLength >= 3) ? 3 : requestsLength;
+            if (requestsLength == 0)
+            {
+                Visibility = "Visible";
+            }
+            else
+            {
+                Visibility = "Hidden";
+            }
             RequestsToShow = Requests.GetRange(0, amount);
         }
 
@@ -68,14 +80,14 @@ namespace ReservationSystem.ViewModels
             return true;
         }
 
-        public void PreviousPage() 
+        public void PreviousPage()
         {
             PageIndex--;
             int start = PageIndex * 3;
             RequestsToShow = Requests.GetRange(start, 3);
         }
 
-        public Boolean CanGetNextPage() 
+        public Boolean CanGetNextPage()
         {
             int start = (PageIndex + 1) * 3;
             if (requestsLength <= start)
@@ -85,20 +97,21 @@ namespace ReservationSystem.ViewModels
             return true;
         }
 
-        public void NextPage() 
+        public void NextPage()
         {
             PageIndex++;
             int start = PageIndex * 3;
-            int amount = (requestsLength >= start+3) ? 3 : 3 - ((start + 3) - requestsLength);
+            int amount = (requestsLength >= start + 3) ? 3 : 3 - ((start + 3) - requestsLength);
             RequestsToShow = Requests.GetRange(start, amount);
         }
 
-        private List<PartyRequest> getRequests() 
+        private List<PartyRequest> getRequests()
         {
-            using (var db = new ProjectDatabase()) 
+            using (var db = new ProjectDatabase())
             {
-                return db.PartyRequests.OrderBy(requst => requst.Date).ToList();
+                return db.PartyRequests.Where(request => request.RequestState == RequestState.Pending).OrderBy(requst => requst.Date).ToList();
             }
         }
+
     }
 }

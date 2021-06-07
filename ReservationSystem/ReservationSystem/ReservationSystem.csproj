@@ -98,6 +98,7 @@
     <Compile Include="Commands\TeskOverviewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Converter\EnumConverter.cs" />
+    <Compile Include="IMainWindow.cs" />
     <Compile Include="ViewModels\Administrator\AddAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOfferViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOrganizerViewModel.cs" />
@@ -112,9 +113,13 @@
     <Compile Include="ViewModels\CreateNewAssociateViewModel.cs" />
     <Compile Include="ViewModels\CreateNewOfferViewModel.cs" />
     <Compile Include="ViewModels\DataUpdateViewModel.cs" />
+    <Compile Include="ViewModels\FuturePartiesViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\NewSuggestionsViewModel.cs" />
     <Compile Include="ViewModels\OfferReviewPageViewModel.cs" />
+    <Compile Include="ViewModels\PendingRequestsViewModel.cs" />
+    <Compile Include="ViewModels\PreviousPartiesViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\RequesCreationViewModel.cs" />
@@ -169,8 +174,14 @@
     <Compile Include="Views\DataUpdate.xaml.cs">
       <DependentUpon>DataUpdate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FutureParties.xaml.cs">
+      <DependentUpon>FutureParties.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewSuggestionsOverview.xaml.cs">
+      <DependentUpon>NewSuggestionsOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OfferReviewPage.xaml.cs">
       <DependentUpon>OfferReviewPage.xaml</DependentUpon>
@@ -192,6 +203,12 @@
     </Compile>
     <Compile Include="Views\OrganizierHomePage.xaml.cs">
       <DependentUpon>OrganizierHomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PendingRequestsOverview.xaml.cs">
+      <DependentUpon>PendingRequestsOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PreviousParties.xaml.cs">
+      <DependentUpon>PreviousParties.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
@@ -298,7 +315,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\FutureParties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewSuggestionsOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -329,6 +354,14 @@
     <Page Include="Views\OrganizierHomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PendingRequestsOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PreviousParties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Profile.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -412,8 +445,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Static\" />
+    <Resource Include="Static\blankProfilePicture.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Static\placeHolder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

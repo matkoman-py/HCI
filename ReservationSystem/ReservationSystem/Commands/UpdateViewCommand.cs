@@ -13,11 +13,11 @@ namespace ReservationSystem.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        private MainViewModel viewModel;
+        private IMainWindow viewModel;
 
-        public UpdateViewCommand(MainViewModel mainViewModel)
+        public UpdateViewCommand(IMainWindow baseViewModel)
         {
-            viewModel = mainViewModel;
+            viewModel = baseViewModel;
         }
 
         public bool CanExecute(object parameter)

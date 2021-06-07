@@ -70,7 +70,7 @@ namespace ReservationSystem.ViewModels
                 db.PartyRequests.Add(PartyRequest);
                 db.SaveChanges();
             }
-            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, User));
+            UpdateViewCommand.Execute(new UserHomePageViewModel(User));
         }
 
         public void RequestCreation()

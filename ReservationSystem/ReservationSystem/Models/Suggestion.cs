@@ -11,7 +11,7 @@ namespace ReservationSystem.Models
 {
     public enum AnsweredType
     {
-        Odbijen, Prihvacen, Neobradjen
+        Odbijen, Prihvacen, Neobradjen, Neprihvacen
     }
     public class Suggestion
     {

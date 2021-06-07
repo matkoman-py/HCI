@@ -34,7 +34,7 @@ namespace ReservationSystem.ViewModels
 
         public void UserHomePage()
         {
-            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, User));
+            UpdateViewCommand.Execute(new UserHomePageViewModel(User));
         }
 
         public void DataUpdate()

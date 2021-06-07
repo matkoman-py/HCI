@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainViewModel : BaseViewModel, IMainWindow
     {
         private BaseViewModel _selectedViewModel;
 

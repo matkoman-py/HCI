@@ -60,7 +60,7 @@ namespace ReservationSystem.ViewModels
             {
                 user = db.Users.Where(u => u.Id == Suggestion.PartyRequest.CreatorId).First();
             }
-            UpdateViewCommand.Execute(new UserHomePageViewModel(UpdateViewCommand, user));
+            UpdateViewCommand.Execute(new UserHomePageViewModel(user));
         }
 
         public void GiveAnswer()

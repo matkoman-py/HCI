@@ -1,44 +1,92 @@
-﻿<UserControl x:Class="ReservationSystem.Views.UserHomePage"
+﻿<Window x:Class="ReservationSystem.Views.UserHomePage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReservationSystem.Views" xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:UserHomePageViewModel}"
-             mc:Ignorable="d"
-         Height="400" Width="600">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Height="570" Width="860">
+    <Window.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="220"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="220"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="showMenuButton">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="hideMenuButton">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Button Content="Odjavi se" Grid.Column="0" Grid.Row="0" Command="{Binding LogOutCommand}" Margin="35"/>
-        <StackPanel Grid.Column="0" Grid.Row="1">
-            <Label Margin="10,10,0,0" Content="Tvoji zahtevi:"/>
-            <ListView Margin="10,10,0,13"  ItemsSource="{Binding Requests}" Name="ListView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200">
-                
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <Button  
-                                    Command="{Binding DataContext.RequestOverviewCommand,
-                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                    CommandParameter="{Binding}"
-                                    Content="{Binding PartyTheme}"
-                                    
-                               >    
-                            </Button>
+        <Grid Panel.ZIndex="10" Height="70" VerticalAlignment="Top" Background="#FF4176A8"></Grid>
+        <Grid Panel.ZIndex="10" x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF4176A8">
+            <StackPanel>
+                <Grid Height="70" Background="White">
+                    <Button x:Name="hideMenuButton" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave" Visibility="Collapsed" Height="60" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="hideMenuButton_Click">
+                        <materialDesign:PackIcon Foreground="#FF4176A8" Kind="ArrowLeft" Height="25" Width="25"/>
+                    </Button>
+                    <Button x:Name="showMenuButton" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave" Height="60" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="showMenuButton_Click">
+                        <materialDesign:PackIcon Foreground="#FF4176A8" Kind="Menu" Height="25" Width="25"/>
+                    </Button>
+                </Grid>
+                <ListView x:Name="MenuBar"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="MenuBar_SelectionChanged">
+                    <ListViewItem x:Name="ScheduledParties" Height="70" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="10,0,10,0" Kind="PartyPopper" Width="26" Height="26" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="Predstojeće proslave" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="White"></TextBlock>
                         </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Content="Kreiraj novi zahtev" Command="{Binding RequestCreationCommand}" Grid.Column="0" Grid.Row="0"  Margin="10,10,0,0"/>
-            <Button Content="Pregled profila" Command="{Binding ProfileCommand}" Grid.Column="0" Grid.Row="0"  Margin="10,10,0,20"/>
-        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="PartySuggestions" Height="70" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="10,0,10,0" Kind="BellBadge" Width="26" Height="26" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="Novi predlozi" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="PendingRequests" Height="70" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="10,0,10,0" Kind="ClipboardClockOutline" Width="26" Height="26" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="Zahtevi na čekanju" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="PreviousParties" Height="70" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="10,0,10,0" Kind="CalendarMultipleCheck" Width="26" Height="26" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="Istorija proslava" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="MyProfile" Height="70" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="10,0,10,0" Kind="Account" Width="26" Height="26" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="Moj nalog" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="Logout" Height="70" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="10,0,10,0" Kind="Logout" Width="26" Height="26" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="Odjavi se" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+        
+        <Grid Panel.ZIndex="0" x:Name="UserHomePageContainer" Margin="60,70,0,0">
+            <ContentControl Content="{Binding SelectedViewModel}"></ContentControl>
+        </Grid>
     </Grid>
-</UserControl>
+
+</Window>
