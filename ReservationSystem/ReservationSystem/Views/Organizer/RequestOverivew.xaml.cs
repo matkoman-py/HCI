@@ -17,7 +17,7 @@ namespace ReservationSystem.Views.Organizer
     /// <summary>
     /// Interaction logic for RequestOverivew.xaml
     /// </summary>
-    public partial class RequestOverivew : Window
+    public partial class RequestOverivew : UserControl
     {
         public RequestOverivew()
         {

@@ -112,11 +112,15 @@
     <Compile Include="ViewModels\ChooseOrganisatorPageViewModel.cs" />
     <Compile Include="ViewModels\CreateNewAssociateViewModel.cs" />
     <Compile Include="ViewModels\CreateNewOfferViewModel.cs" />
+    <Compile Include="ViewModels\CreateSuggestionViewViewModel.cs" />
+    <Compile Include="ViewModels\CreateTaskViewModel.cs" />
     <Compile Include="ViewModels\DataUpdateViewModel.cs" />
+    <Compile Include="ViewModels\DenyRequestViewViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\OfferReviewPageViewModel.cs" />
     <Compile Include="ViewModels\OrganizierHomePageViewModel.cs" />
+    <Compile Include="ViewModels\PendingRequestOverview.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\RequesCreationViewModel.cs" />
