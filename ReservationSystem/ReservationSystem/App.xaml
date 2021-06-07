@@ -26,6 +26,10 @@
             </Style>
 
             <converters:EnumConverter x:Key="EnumConverter"/>
+            <converters:FieldOfWorkConverter x:Key="FieldOfWorkConverter"/>
+            <converters:PartyTypeConverter x:Key="PartyTypeConverter"/>
+            <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <converters:NegateConverter x:Key="NegateConverter"/>
 
             <DataTemplate DataType="{x:Type viewmodels:ProfileViewModel}">
                 <views:Profile></views:Profile>
@@ -96,6 +100,13 @@
             <DataTemplate DataType="{x:Type viewmodels:CreateNewAssociateViewModel}">
                 <views:CreateNewAssociateWindow/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminFieldsOfWorkViewModel}">
+                <viewsAdmin:AdminFieldOfWorkOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminPartyTypeViewModel}">
+                <viewsAdmin:AdminPartyTypeOverview/>
+            </DataTemplate>
+            
         </ResourceDictionary>
 
     </Application.Resources>

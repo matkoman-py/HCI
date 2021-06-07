@@ -12,23 +12,15 @@ namespace ReservationSystem.Models
     {
         Neobradjen, Odbijen, Prihvacen
     }
-    [DataContract]
     public class OrganizierTask
     {
         [Key]
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
         public string Name { get; set; }
-        [DataMember]
         public string Description { get; set; }
-        [DataMember]
         public virtual List<Offer> Offers { get; set; }
-        [DataMember]
         public bool IsDone { get; set; }
-        [DataMember]
         public string Comment { get; set; }
-
         public int SuggestionId { get; set; }
         public virtual Suggestion Suggestion { get; set; }
         public UserApproval UserApproval { get; set; }

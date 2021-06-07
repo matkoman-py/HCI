@@ -35,7 +35,9 @@
             <Label DockPanel.Dock="Top">Delatnost:</Label>
             <ComboBox Height="25" 
                     ItemsSource="{Binding Path=FieldOfWorkOptions}"
-                    SelectedValue="{Binding Path=Associate.FieldOfWork, Converter={StaticResource EnumConverter}}"></ComboBox>
+                    SelectedValue="{Binding Path=Associate.FieldOfWork}"
+                    DisplayMemberPath="Name"
+                    ></ComboBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row ="4" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Opsi:</Label>

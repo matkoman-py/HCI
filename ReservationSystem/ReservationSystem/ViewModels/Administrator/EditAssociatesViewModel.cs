@@ -34,7 +34,10 @@ namespace ReservationSystem.ViewModels.Administrator
         private void Setup(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
-            FieldOfWorkOptions = Enum.GetValues(typeof(FieldOfWork)).Cast<FieldOfWork>().ToList();
+            using (var db = new ProjectDatabase())
+            {
+                FieldOfWorkOptions = db.FieldsOfWork.ToList();
+            }
             EditAssociatesCommand = new DelegateCommand(UpdateAssociates);
             EditOfferCommand = new EditOfferViewCommand(UpdateViewCommand);
             BackCommand = new DelegateCommand(() =>

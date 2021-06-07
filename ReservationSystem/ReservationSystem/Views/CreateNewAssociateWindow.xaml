@@ -37,7 +37,8 @@
             <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Content="Kreiraj saradnika" Command="{Binding AddAssociatesCommand}"></Button>
         <StackPanel Margin="20" Grid.Row="0" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="2">
                 <Label FontSize="20" Content="Delatnost:" FontWeight="Bold"/>
-            <ComboBox ItemsSource="{Binding Path=FieldOfWorkOptions}"   SelectedValue="{Binding Path=Associate.FieldOfWork, Converter={StaticResource EnumConverter}}"></ComboBox>
+            <ComboBox ItemsSource="{Binding Path=FieldOfWorkOptions}"   SelectedValue="{Binding Path=Associate.FieldOfWork}"
+                      DisplayMemberPath="Name"></ComboBox>
         </StackPanel>
         </Grid>
 </UserControl>

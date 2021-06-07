@@ -17,11 +17,20 @@ namespace ReservationSystem.Commands
 
         private Func<Boolean> _validator;
         private Action _execution;
+        private Func<Object, Object> _parameter_execution;
+        private bool _hasParameter;
 
         public DelegateCommand(Action execution)
         {
             _execution = execution;
             _validator = () => true;
+        }
+
+        public DelegateCommand(Func<Object, Object> execution) 
+        {
+            _parameter_execution = execution;
+            _validator = () => true;
+            _hasParameter = true;
         }
 
         public DelegateCommand(Func<Boolean> validator, Action execution) {
@@ -37,7 +46,14 @@ namespace ReservationSystem.Commands
 
         public void Execute(object parameter)
         {
-            _execution();
+            if (_hasParameter)
+            {
+                _parameter_execution(parameter);
+            }
+            else 
+            {
+                _execution();
+            }
         }
 
         public void RaiseCanExecuteChanged()
