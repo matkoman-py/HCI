@@ -25,8 +25,9 @@ namespace ReservationSystem.Commands
         public void Execute(object parameter)
         {
             ViewChangeUtils.PastViews.Push(pastView);
-            Offer offer = (Offer)parameter;
-            UpdateViewCommand.Execute(new EditOfferViewModel(UpdateViewCommand, offer));
+            Associate associate = (Associate)parameter;
+            Console.WriteLine(associate.Name);
+            UpdateViewCommand.Execute(new AddOfferViewModel(UpdateViewCommand, associate));
         }
 
         public AddOfferViewCommand(ICommand updateViewCommand, BaseViewModel baseViewModel)
