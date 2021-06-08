@@ -9,9 +9,8 @@ using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
 {
-    public class FuturePartiesViewModel : BaseViewModel
+    public class AcceptedSuggestionViewModel : BaseViewModel
     {
-
         public List<Suggestion> Suggestions { get; set; }
 
         private List<Suggestion> suggestionsToShow;
@@ -41,11 +40,12 @@ namespace ReservationSystem.ViewModels
         public ICommand UpdateViewCommand { get; set; }
         public DelegateCommand NextPageCommand { get; set; }
         public DelegateCommand PreviousPageCommand { get; set; }
+        public RequestOverviewCommand RequestOverviewCommand { get; set; }
         public User User { get; set; }
 
         public string Visibility { get; set; }
 
-        public FuturePartiesViewModel(ICommand updateViewCommand, User user)
+        public AcceptedSuggestionViewModel(ICommand updateViewCommand, User user)
         {
             UpdateViewCommand = updateViewCommand;
             User = user;
@@ -55,6 +55,7 @@ namespace ReservationSystem.ViewModels
             PreviousPageCommand = new DelegateCommand(CanGetPreviousPage, PreviousPage);
             PageIndex = 0;
             InitialPage();
+            RequestOverviewCommand = new RequestOverviewCommand(UpdateViewCommand);
         }
 
         public void InitialPage()
@@ -63,7 +64,8 @@ namespace ReservationSystem.ViewModels
             if (suggestionsLength == 0)
             {
                 Visibility = "Visible";
-            } else
+            }
+            else
             {
                 Visibility = "Hidden";
             }
@@ -108,9 +110,8 @@ namespace ReservationSystem.ViewModels
         {
             using (var db = new ProjectDatabase())
             {
-                return db.Suggestions.Include("PartyRequest").Include("PartyRequest.PartyType").Where(suggestion => suggestion.Answered == AnsweredType.Prihvacen && suggestion.PartyRequest.CreatorId ==  User.Id && suggestion.PartyRequest.Date.CompareTo(DateTime.Now) > 0).OrderBy(suggestion => suggestion.PartyRequest.Date).ToList();
+                return db.Suggestions.Include("PartyRequest").Include("PartyRequest.PartyType").Where(suggestion => suggestion.PartyRequest.OrganiserId == User.Id && suggestion.Answered == AnsweredType.Prihvacen && suggestion.PartyRequest.Date.CompareTo(DateTime.Now) > 0).OrderBy(suggestion => suggestion.PartyRequest.Date).ToList();
             }
         }
-
     }
 }

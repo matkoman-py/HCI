@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
 {
-    class NewSuggestionsViewModel : BaseViewModel
+    public class NewSuggestionsViewModel : BaseViewModel
     {
 
         public List<Suggestion> Suggestions { get; set; }

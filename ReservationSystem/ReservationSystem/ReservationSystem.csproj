@@ -112,6 +112,7 @@
     <Compile Include="Seeders\UserSeeder.cs" />
     <Compile Include="Utils\ViewChangeUtils.cs" />
     <Compile Include="ViewModels\AcceptedRequestOverviewViewModel.cs" />
+    <Compile Include="ViewModels\AcceptedSuggestionViewModel.cs" />
     <Compile Include="ViewModels\ActiveRequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\ActiveTaskOverviewViewModel.cs" />
     <Compile Include="ViewModels\AdminHomePageViewModel.cs" />
@@ -157,6 +158,9 @@
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Views\AcceptedRequestOverview.xaml.cs">
       <DependentUpon>AcceptedRequestOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AcceptedSuggestions.xaml.cs">
+      <DependentUpon>AcceptedSuggestions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ActiveRequestOverview.xaml.cs">
       <DependentUpon>ActiveRequestOverview.xaml</DependentUpon>
@@ -297,6 +301,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AcceptedRequestOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AcceptedSuggestions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
