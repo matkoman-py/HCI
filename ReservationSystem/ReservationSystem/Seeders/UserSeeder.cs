@@ -40,7 +40,7 @@ namespace ReservationSystem.Seeders
                         of2,
                         of3
 
-                    }, false, "kurcina", UserApproval.Neobradjen);
+                    }, false, "kurcina", UserApproval.Prihvacen);
 
                 OrganizierTask or2 = new OrganizierTask("Zadatak2", "Drugi zadatak", new List<Offer>(){
                         of1,
@@ -48,7 +48,7 @@ namespace ReservationSystem.Seeders
                         of3
 
 
-                    }, false, "kurcina", UserApproval.Neobradjen);
+                    }, false, "kurcina", UserApproval.Prihvacen);
 
                 OrganizierTask or3 = new OrganizierTask("Zadatak3", "Treci zadatak", new List<Offer>(){
                         of1,
@@ -56,7 +56,7 @@ namespace ReservationSystem.Seeders
                         of3
 
 
-                    }, false, "kurcina", UserApproval.Neobradjen);
+                    }, false, "kurcina", UserApproval.Prihvacen);
 
                 OrganizierTask ora1 = new OrganizierTask("Zadatak11", "Prvi zadatak", new List<Offer>(){
                         of1,
@@ -94,14 +94,14 @@ namespace ReservationSystem.Seeders
                 db.PartyTypes.Add(partyType3);
 
                 PartyRequest pr = new PartyRequest(partyType1, 500, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Accepted, 1);
-                PartyRequest pr1 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Zezanje", "Duvanje", RequestState.Rejected, 1);
+                PartyRequest pr1 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Zezanje", "Duvanje", RequestState.Active, 1);
                 pr1.OrganiserId = 3;
-                PartyRequest pr2 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Kanada", "Duvanje", RequestState.Pending, 1);
+                PartyRequest pr2 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Kanada", "Duvanje", RequestState.Accepted, 1);
                 
                 PartyRequest pr3 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Banana split", "Duvanje", RequestState.Pending, 1);
                 PartyRequest pr4 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "BOBI I COBI", "Duvanje", RequestState.Pending, 1);
-                PartyRequest pr5 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "Tekela", "Duvanje", RequestState.Pending, 1);
-                PartyRequest pr6 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "Pakle", "Duvanje", RequestState.Pending, 1);
+                PartyRequest pr5 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "Tekela", "Duvanje", RequestState.Accepted, 1);
+                PartyRequest pr6 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "Pakle", "Duvanje", RequestState.Rejected, 1);
                 PartyRequest pr7 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Pending, 1);
                 PartyRequest pr8 = new PartyRequest(partyType2, 600, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
                 PartyRequest pr9 = new PartyRequest(partyType3, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Active, 1);
@@ -129,7 +129,7 @@ namespace ReservationSystem.Seeders
 
                 Suggestion sug = new Suggestion(new List<OrganizierTask>(){
                     or1,or2,or3
-                }, "MASU JAK PREDLOG1", pr1);
+                }, "MASU JAK PREDLOG1", pr2);
                 Suggestion sug2 = new Suggestion(new List<OrganizierTask>(){
                     or1,or2,or3
                 }, "MASU JAK PREDLOG1", pr1);

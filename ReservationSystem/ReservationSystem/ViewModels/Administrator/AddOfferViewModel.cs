@@ -27,13 +27,13 @@ namespace ReservationSystem.ViewModels.Administrator
             Associate = associate;
         }
 
-        private void goToPastView() 
+        private void goToPastView()
         {
             var pastViewModel = ViewChangeUtils.PastViews.Pop();
             UpdateViewCommand.Execute(pastViewModel);
         }
 
-        private void AddOffer() 
+        private void AddOffer()
         {
             Offer.Associate = Associate;
             Associate.Offers.Add(Offer);

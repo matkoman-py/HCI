@@ -8,6 +8,26 @@
         mc:Ignorable="d"
         Title="HelperModal" Height="450" Width="800">
     <Grid>
-        <Image Source="{Binding ElementName=helperModal, Path=ImagePath}" Height="300" Width="500"></Image>
+        <ScrollViewer>
+            <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+            <Border BorderBrush="Black" Grid.Column="1" Grid.Row="1" BorderThickness="1" >
+        <Image Source="{Binding ElementName=helperModal, Path=ImagePath}" Height="Auto" Width="Auto"></Image>
+        </Border>
+        
+        <TextBlock FontSize="20" Margin="50" Grid.Column="1" Grid.Row="2" Text="{Binding Description, RelativeSource={RelativeSource 
+                                   Mode=FindAncestor, AncestorType=Window}}"></TextBlock>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

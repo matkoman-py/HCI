@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Height="590" Width="860">
     <Window.Resources>
+        <RoutedUICommand x:Key="MyCommand1" Text="Text" />
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
@@ -21,7 +22,13 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource MyCommand1}" 
+                    Executed="CommandBinding_Executed" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="F1" Command="{StaticResource MyCommand1}" />
+    </Window.InputBindings>
     <Window.Triggers>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="showMenuButton">
             <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
@@ -90,7 +97,7 @@
             </StackPanel>
         </Grid>
         
-        <Grid Panel.ZIndex="0" x:Name="UserHomePageContainer" Margin="60,70,0,0">
+        <Grid Panel.ZIndex="5" x:Name="UserHomePageContainer" Margin="60,70,0,0">
             <ContentControl Content="{Binding SelectedViewModel}"></ContentControl>
         </Grid>
     </Grid>
