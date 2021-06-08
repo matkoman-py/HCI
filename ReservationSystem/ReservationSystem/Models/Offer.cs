@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    public class Offer
+    public class Offer : AbstractModel
     {
         [Key]
         public int Id { get; set; }
@@ -22,7 +22,16 @@ namespace ReservationSystem.Models
         public virtual List<OrganizierTask> OrganizierTasks { get; set; }
         public int? TablesArrangementId { get; set; }
         public virtual TablesArrangement TablesArrangement { get; set; }
-        public bool IsRoom { get; set; }
+        private bool isRoom;
+        public bool IsRoom 
+        {
+            get { return isRoom; }
+            set 
+            { 
+                isRoom = value;
+                OnPropertyChanged("IsRoom");
+            }
+        }
 
         public Offer()
         {

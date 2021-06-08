@@ -9,8 +9,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.7*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -19,34 +20,55 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <DockPanel VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="1" Margin="20,0,20,0">
+        <DockPanel 
+            VerticalAlignment="Center" 
+            Grid.Row="0" 
+            Grid.Column="1"
+            Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Saradnik:</Label>
             <TextBlock Height="25" Text="{Binding Associate.Name}"></TextBlock>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="1" Margin="20,0,20,0">
+        <DockPanel 
+            VerticalAlignment="Center" 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Ime:</Label>
             <TextBox Height="25" Text="{Binding Offer.Name}"></TextBox>
         </DockPanel>
-        <DockPanel Visibility="{Binding Offer.IsRoom}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="20,0,20,0">
-            <CheckBox Margin="0,0,10,0" Grid.Column="2" IsChecked="{Binding Offer.IsRoom}">Sala</CheckBox>
+        <DockPanel 
+            Visibility="{Binding Associate.FieldOfWork.HasRoom, Converter={StaticResource BooleanToVisibilityConverter}}" 
+            VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Margin="20,0,20,0">
+            <CheckBox Margin="0,0,10,0" IsChecked="{Binding Offer.IsRoom}">Sala</CheckBox>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="1" Margin="20,0,20,0">
+        <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Cena ponude:</Label>
             <TextBox Height="25" Text="{Binding Offer.Price}"></TextBox>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="1" 
+        <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" 
                    Grid.RowSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Opis:</Label>
             <TextBox Height="100" Text="{Binding Offer.Description}"></TextBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="1"
                    Grid.ColumnSpan="1" Grid.RowSpan="4" Grid.Column="1" Margin="20,0,20,0"/>
-        <StackPanel VerticalAlignment="Center" Grid.Row="5">
-            <Button Command="{Binding BackCommand}">Odustani</Button>
-        </StackPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="1">
-            <Button Command="{Binding AddOfferCommand}">Dodaj</Button>
-        </StackPanel>
+        <Grid Grid.Row="6" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button 
+                Grid.Column="0"
+                HorizontalAlignment="Center"
+                Command="{Binding BackCommand}"
+                ToolTip="Odustani i vrati se na prethodni prikaz">Odustani</Button>
+            <Button 
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                Command="{Binding AddOfferCommand}"
+                ToolTip="Dodaj ponudu">Dodaj</Button>
+        </Grid>
     </Grid>
 </UserControl>
