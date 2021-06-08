@@ -268,7 +268,6 @@ C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOfferView.g.cs
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOrganizerView.g.cs
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminAssociatesView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminPage.g.cs
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminOrganizersOverview.g.cs
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditAssociatesView.g.cs
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditOfferView.g.cs
@@ -277,7 +276,6 @@ C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOfferView.baml
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOrganizerView.baml
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminAssociatesView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminPage.baml
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminOrganizersOverview.baml
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditAssociatesView.baml
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditOfferView.baml
@@ -330,3 +328,5 @@ C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PendingRequestsOverview.baml
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PreviousParties.baml
 C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.baml
+C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AdminHomePage.baml
+C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AdminHomePage.g.cs

@@ -18,7 +18,7 @@
 
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" >
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="50">
             <Label  Content="Vrsta proslave:"/>
             <TextBox Margin="10" Text="{Binding Request.PartyType.Name}" IsEnabled="False"/>
             <Label  Content="Budzet:"/>
@@ -33,14 +33,14 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" >
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="50">
             <Label  Content="Broj ljudi:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding Request.Capacity}" IsEnabled="False"/>
             <CheckBox  Height="47" Margin="10" Content="Budzet fleksibilan" IsChecked="{Binding Request.IsBudgetFlexible}" IsEnabled="False"/>
             <Label  Content="Tema:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding Request.PartyTheme}" IsEnabled="False"/>
 
-            <Label   Margin="10,100,0,0" Content="Predlog za proslavu:"/>
+            <Label   Margin="10,50,0,0" Content="Predlog za proslavu:"/>
             <ListView Grid.Row="7" Margin="10,10" ItemsSource="{Binding Suggestion}" SelectedItem="{Binding SelectedSuggestion}" Name="Predlozi" VerticalAlignment="Top" Width="600" Height="50">
                 <ListView.ItemTemplate>
                     <DataTemplate>

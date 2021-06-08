@@ -15,7 +15,20 @@ namespace ReservationSystem.ViewModels
         public User User { get; set; }
         public User SelectedOrganiser { get; set; }
         public PartyRequest PartyRequest { get; set; }
-        public List<Object> Organisers { get; set; }
+        private List<User> organisers { get; set; }
+
+        public ICommand SearchCommand { get; set; }
+
+        public string SrcAtr { get; set; }
+        public List<User> Organisers
+        {
+            get { return organisers; }
+            set
+            {
+                organisers = value;
+                OnPropertyChanged("Organisers");
+            }
+        }
         public ICommand RequestCreationCommand
         {
             get; set;
@@ -33,7 +46,7 @@ namespace ReservationSystem.ViewModels
             UserHomePageCommand = new DelegateCommand(UserHomePage);
             User = user;
             PartyRequest = partyRequest;
-            Organisers = new List<Object>();
+            Organisers = new List<User>();
             /*
             using (var db = new ProjectDatabase())
             {
@@ -44,6 +57,8 @@ namespace ReservationSystem.ViewModels
                 db.SaveChanges();
             }
             */
+            SearchCommand = new DelegateCommand(Search);
+
             fillOrganisers();
         }
         public void fillOrganisers()
@@ -70,13 +85,28 @@ namespace ReservationSystem.ViewModels
                 db.PartyRequests.Add(PartyRequest);
                 db.SaveChanges();
             }
-            UpdateViewCommand.Execute(new UserHomePageViewModel(User));
+            UpdateViewCommand.Execute(new PendingRequestsViewModel(UpdateViewCommand,User));
         }
 
         public void RequestCreation()
         {
             //Console.WriteLine(SelectedOrganiser.Id);
             UpdateViewCommand.Execute(new RequesCreationViewModel(UpdateViewCommand, User));
+        }
+
+        public void Search()
+        {
+            if (SrcAtr == null) return;
+            using (var db = new ProjectDatabase())
+            {
+                Organisers = db.Users
+                        .Where(user => user.Role == Role.Organizier)
+                        .Where(user => user.Name.Contains(SrcAtr) ||
+                                        user.PhoneNumber.Contains(SrcAtr) ||
+                                        user.Surname.Contains(SrcAtr) ||
+                                        user.Email.Contains(SrcAtr)) 
+                        .ToList();
+            }
         }
     }
 }

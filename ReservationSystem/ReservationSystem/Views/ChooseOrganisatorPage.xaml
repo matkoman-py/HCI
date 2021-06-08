@@ -17,28 +17,28 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBox   Height ="30" Width="250" Margin="10"/>
-            <Button Content="Pretrazi"  Height ="30" Width="100" Margin="35"/>
+        <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,30,30,0">
+            <TextBox   Height ="30" Width="250" Margin="10" Text="{Binding SrcAtr}"/>
+            <Button Content="Pretrazi"  Height ="30" Width="100" Margin="35" Command="{Binding SearchCommand}"/>
             
         </StackPanel>
 
-        <StackPanel  Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+        <StackPanel  Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <ListView ItemsSource="{Binding Organisers}" SelectedItem="{Binding SelectedOrganiser}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="150"></GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Surname}" Header="Surname" Width="150"></GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="Email" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Ime" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Surname}" Header="Prezime" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="E-mail" Width="150"></GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
         </StackPanel>
 
 
-        <StackPanel  Grid.Row="3" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-            <Button Content="Nazad" Command="{Binding RequestCreationCommand}"  Height ="30" Width="100" Margin="10"/>
-            <Button Content="Zavrsi zahtev" Command="{Binding UserHomePageCommand}" Height ="30" Width="100" Margin="35"/>
+        <StackPanel  Grid.Row="3" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Nazad" Command="{Binding RequestCreationCommand}"  Height ="30" Width="Auto" Margin="10"/>
+            <Button Content="Zavrsi zahtev" Command="{Binding UserHomePageCommand}" Height ="30" Width="Auto" Margin="35"/>
         </StackPanel>
     </Grid>
 </UserControl>

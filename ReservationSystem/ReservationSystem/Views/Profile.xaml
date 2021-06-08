@@ -40,7 +40,7 @@
                 <Label Content="Datum rođenja: " FontWeight="Bold" FontSize="16"/>
                 <Label  Content="{Binding User.Birthday}" FontSize="16"/>
             </StackPanel>
-            <Button Content="Ažuriraj podatke" Grid.Column="1" Grid.Row="3" Command="{Binding DataUpdateCommand}" Margin="35" HorizontalAlignment="Center"/>
+            <Button Content="Ažuriraj podatke" Grid.Column="1" Grid.Row="3" Command="{Binding DataUpdateCommand}" Margin="35,35,35,0" HorizontalAlignment="Center"/>
         </StackPanel>
 
     </Grid>
