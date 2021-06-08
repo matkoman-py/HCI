@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\
 ReservationSystem
 none
 false
 DEBUG;TRACE
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\App.xaml
-43922623899
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\App.xaml
+441546367964
 
-126-1319888771
-26359213018
-MainWindow.xaml;Views\AcceptedRequestOverview.xaml;Views\ActiveRequestOverview.xaml;Views\ActiveTaskOverview.xaml;Views\Administrator\AddAssociatesView.xaml;Views\Administrator\AddOfferView.xaml;Views\Administrator\AddOrganizerView.xaml;Views\Administrator\AdminAssociatesView.xaml;Views\Administrator\AdminFieldOfWorkOverview.xaml;Views\Administrator\AdminPage.xaml;Views\Administrator\AdminOrganizersOverview.xaml;Views\Administrator\AdminPartyTypeOverview.xaml;Views\Administrator\EditAssociatesView.xaml;Views\Administrator\EditOfferView.xaml;Views\ChooseOrganisatorPage.xaml;Views\CreateNewAssociateWindow.xaml;Views\CreateNewOfferWindow.xaml;Views\DataUpdate.xaml;Views\FutureParties.xaml;Views\LoginWindow.xaml;Views\NewSuggestionsOverview.xaml;Views\OfferReviewOrganizer.xaml;Views\OfferReviewPage.xaml;Views\Organizer\CreateSuggestionView.xaml;Views\Organizer\CreateTastView.xaml;Views\Organizer\DenyRequestView.xaml;Views\Organizer\OrganizerAssociateOverview.xaml;Views\Organizer\RequestOverivew.xaml;Views\OrganizierHomePage.xaml;Views\PendingRequestsOverview.xaml;Views\PreviousParties.xaml;Views\Profile.xaml;Views\RegistrationWindow.xaml;Views\RejectedRequestOverview.xaml;Views\RequestCreation.xaml;Views\RequestOverview.xaml;Views\RequestsOverview.xaml;Views\RequestView.xaml;Views\ResolvedTaskOverview.xaml;Views\SuggestionOverview.xaml;Views\TableArrangementOverview.xaml;Views\TaskOverview.xaml;Views\UserHomePage.xaml;
+1271034277857
+26906309607
+MainWindow.xaml;Views\AcceptedRequestOverview.xaml;Views\ActiveRequestOverview.xaml;Views\ActiveTaskOverview.xaml;Views\AdminHomePage.xaml;Views\Administrator\AddAssociatesView.xaml;Views\Administrator\AddOfferView.xaml;Views\Administrator\AddOrganizerView.xaml;Views\Administrator\AdminAssociatesView.xaml;Views\Administrator\AdminFieldOfWorkOverview.xaml;Views\Administrator\AdminOrganizersOverview.xaml;Views\Administrator\AdminPartyTypeOverview.xaml;Views\Administrator\EditAssociatesView.xaml;Views\Administrator\EditOfferView.xaml;Views\ChooseOrganisatorPage.xaml;Views\CreateNewAssociateWindow.xaml;Views\CreateNewOfferWindow.xaml;Views\DataUpdate.xaml;Views\FutureParties.xaml;Views\HelperModal.xaml;Views\LoginWindow.xaml;Views\NewSuggestionsOverview.xaml;Views\OfferReviewOrganizer.xaml;Views\OfferReviewPage.xaml;Views\Organizer\CreateSuggestionView.xaml;Views\Organizer\CreateTastView.xaml;Views\Organizer\DenyRequestView.xaml;Views\Organizer\OrganizerAssociateOverview.xaml;Views\Organizer\RequestOverivew.xaml;Views\OrganizierHomePage.xaml;Views\PendingRequestsOverview.xaml;Views\PreviousParties.xaml;Views\Profile.xaml;Views\RegistrationWindow.xaml;Views\RejectedRequestOverview.xaml;Views\RequestCreation.xaml;Views\RequestOverview.xaml;Views\RequestsOverview.xaml;Views\RequestView.xaml;Views\ResolvedTaskOverview.xaml;Views\SuggestionOverview.xaml;Views\TableArrangementOverview.xaml;Views\TaskOverview.xaml;Views\UserHomePage.xaml;
 
-True
+False
 

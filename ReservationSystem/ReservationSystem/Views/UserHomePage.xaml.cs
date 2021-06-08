@@ -70,7 +70,57 @@ namespace ReservationSystem.Views
             if (this.Cursor != Cursors.Wait)
                 Mouse.OverrideCursor = Cursors.Arrow;
         }
-
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(ProfileViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/profileHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(DataUpdateViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/dataupdateHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequesCreationViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/requestcreationHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(ChooseOrganisatorPageViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/chooseorganisierHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(PendingRequestsViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/pendingrequestovervirewHelp.jpg", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(PreviousPartiesViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/previouspartyHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequestOverviewViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/moreinfoHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequestOverviewViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/pendingrequestovervirewHelp.jpg", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+        }
         private void MenuBar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedOption = ((ListViewItem)(sender as ListView).SelectedItem).Name;

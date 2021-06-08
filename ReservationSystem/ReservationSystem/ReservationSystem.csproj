@@ -520,6 +520,30 @@
   <ItemGroup>
     <Resource Include="Static\loginHelp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\registrationHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\profileHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\dataupdateHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\requestcreationHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\chooseorganisierHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\pendingrequestovervirewHelp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\moreinfoHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\previouspartyHelp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

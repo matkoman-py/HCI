@@ -35,14 +35,14 @@ namespace ReservationSystem
             if(((MainViewModel)DataContext).SelectedViewModel.GetType() == typeof(LoginViewModel))
             {
                 
-                HelperModal hm = new HelperModal("/Static/LoginHelp.png", "OPIS SRANJA");
+                HelperModal hm = new HelperModal("/Static/LoginHelp.png", "\tProzor za logovanje\n Unesite vaše korisničko ime i šifru i pritisnite \"Uloguj se\" dugme\n Ako niste registrovani pritisnite \"Registruj se\"");
                 hm.ShowDialog();
 
             }
             if (((MainViewModel)DataContext).SelectedViewModel.GetType() == typeof(RegistrationViewModel))
             {
                 
-                HelperModal hm = new HelperModal("MOJA SLIKA", "opsi");
+                HelperModal hm = new HelperModal("/Static/registrationHelp.png", "opsi");
                 hm.ShowDialog();
             }
         }
