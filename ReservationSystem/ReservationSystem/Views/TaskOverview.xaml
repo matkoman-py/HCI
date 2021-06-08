@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="ReservationSystem.Views.ResolvedTaskOverview"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ReservationSystem.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+﻿<UserControl x:Class="ReservationSystem.Views.TaskOverview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReservationSystem.Views"
+        mc:Ignorable="d"
+        Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Nazad"  Command="{Binding BackCommand}" Grid.Row="0"  Height="20" Margin="10" HorizontalAlignment="Left"/>
+        <Button Content="Nazad"  Command="{Binding RequestViewCommand}" Grid.Row="0"  Height="20" Margin="10" HorizontalAlignment="Left"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Label Content="Naziv:" Margin="0,0,0,0.4" Width="72"></Label>
             <Label Content="{Binding OrganizierTask.Name}" Margin="0,0,0,0.4" Width="141"></Label>
@@ -30,14 +30,15 @@
         <Label Grid.Row="2" Margin="100,10,0,0" Content="Opis zadatka:" />
         <TextBlock Grid.Row="3" Background="LightGray" Width="600" Height="40" Text="{Binding OrganizierTask.Description}"></TextBlock>
         <Label Grid.Row="4" Margin="100,10,0,0" Content="Komentar:" />
-        <TextBox Grid.Row="5" Background="LightGray" Width="600" Height="50" Text="{Binding OrganizierTask.Comment}"></TextBox>
+        <TextBox Grid.Row="5" Background="LightGray" Width="600" Height="50" Text="{Binding OrganizierTask.Comment}" IsEnabled="{Binding Answered}"></TextBox>
         <Label Grid.Row="6" Margin="10,10,0,0" Content="Ponude:" HorizontalAlignment="Center"/>
-        <ListView Grid.Row="7" Margin="10" ItemsSource="{Binding OrganizierTask.Offers}" Name="Zadaci" VerticalAlignment="Top" Width="600" Height="50">
+        <ListView Grid.Row="7" Margin="10" ItemsSource="{Binding OrganizierTask.Offers}" SelectedItem="{Binding SelectedOffer}" Name="Zadaci" VerticalAlignment="Top" Width="600" Height="50">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Button Click="Button_Click"
-                                Tag="{Binding}"
+                        <Button Command="{Binding DataContext.OfferReviewCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}"
                                 Content="{Binding Description}" 
                                >
                         </Button>
@@ -45,6 +46,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+        <StackPanel HorizontalAlignment="Center" Grid.Row="8" Orientation="Horizontal">
+            <Button Content="Odbij" Command="{Binding DenyTaskCommand}" Grid.Row="0"  Height="20" Margin="10,10,10,10.8" HorizontalAlignment="Left" Width="75"/>
+            <Button Content="Prihvati"  Command="{Binding AcceptTaskCommand}" Height="20" Margin="10,11,10,11.4" HorizontalAlignment="Left" Width="85" RenderTransformOrigin="0.515,0.532"/>
+        </StackPanel>
     </Grid>
 </UserControl>

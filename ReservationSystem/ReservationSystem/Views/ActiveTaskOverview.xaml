@@ -26,41 +26,42 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" />
+        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" Command="{Binding BackCommand}"/>
 
         <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Label Margin="15" FontSize="16" Content="Naziv:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">Ime korisnika</TextBlock>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding OrganizierTask.Name}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Label Margin="15" FontSize="16" Content="Status:" FontWeight="Bold"/>
-            <ComboBox Margin="15"></ComboBox>
+            <Label Margin="15" FontSize="16" Content="Aktivan" FontWeight="Bold"/>
         </StackPanel>
 
         <StackPanel Margin="15" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
             <Label FontSize="16" Content="Opis zadatka:" FontWeight="Bold"/>
-            <TextBox MinLines="2" BorderThickness="2" IsEnabled="False"  BorderBrush="Gray" FontSize="20">sfdsafasfsad</TextBox>
+            <TextBox MinLines="2" BorderThickness="2" IsEnabled="False"  BorderBrush="Gray" FontSize="20" Text="{Binding OrganizierTask.Description}"></TextBox>
         </StackPanel>
 
         <StackPanel Margin="15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" >
             <Label FontSize="16" Content="Komentar:" FontWeight="Bold"/>
-            <TextBox MinLines="2" BorderThickness="2" IsEnabled="False"  BorderBrush="Gray" FontSize="20">sfdsafasfsad</TextBox>
+            <TextBox MinLines="2" BorderThickness="2" IsEnabled="False"  BorderBrush="Gray" FontSize="20" Text="{Binding OrganizierTask.Comment}"></TextBox>
         </StackPanel>
 
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="4">
                 <Label FontSize="16" FontWeight="Bold" Content="Izabrane ponude:" />
-                <ListView  ItemsSource="{Binding Suggestions}" Name="ListView1">
+                <ListView  ItemsSource="{Binding SelectedOffers}" Name="ListView1">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <CheckBox></CheckBox>
-                                <TextBlock>
-                            <Hyperlink>
-                                <TextBlock Text="{Binding nesto}"></TextBlock>
-                            </Hyperlink>
-                        </TextBlock>
-                            </StackPanel>
+                            <Button Command="{Binding DataContext.RequestViewCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}"
+                                Content="{Binding Name}" 
+                               >
+                            </Button>
+
+                        </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -74,28 +75,21 @@
                 <Button Margin="5" Content="Pretrazi"></Button>
             </StackPanel>
                 <DataGrid Margin="15" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Name = "AssociateOverviewTable" AlternatingRowBackground = "LightBlue"  
-                    AlternationCount = "2" AutoGenerateColumns = "False">
-                <BeginStoryboard></BeginStoryboard>
-                <BeginStoryboard></BeginStoryboard>
-                <BeginStoryboard></BeginStoryboard>
-                <BeginStoryboard></BeginStoryboard>
-                <BeginStoryboard></BeginStoryboard>
-                <BeginStoryboard></BeginStoryboard>
-                <BeginStoryboard></BeginStoryboard>
-                <BeginStoryboard></BeginStoryboard>
-                <BeginStoryboard></BeginStoryboard>
+                    AlternationCount = "2" AutoGenerateColumns = "False" CanUserAddRows="false" SelectedItem="{Binding SelectedOffer}" ItemsSource="{Binding AllOffers}" >
+                
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header = "Associate" Width="*"/>
-                    <DataGridTextColumn Header = "Field of work" Width="*"/>
-                    <DataGridTextColumn Header = "Location" Width="*"/>
-                    <DataGridTextColumn Header = "Additional informations" Width="*"/>
+                    <DataGridTextColumn Header = "Name" Width="*" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header = "Associate" Width="*" Binding="{Binding Associate.Name}"/>
+                    <DataGridTextColumn Header = "Price" Width="*" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Header = "Description" Width="*" Binding="{Binding Description}"/>
+                    
                 </DataGrid.Columns>
 
             </DataGrid>
 
         <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="1" Orientation="Horizontal">
-            <Button Margin="5" Content="Vidi vise"></Button>
-            <Button Margin="5" Content="Dodaj"></Button>
+            <Button Margin="5" Content="Vidi vise" Command="{Binding SeeMoreCommand}"></Button>
+            <Button Margin="5" Content="Dodaj" Command="{Binding AddOfferCommand}"></Button>
         </StackPanel>
     </StackPanel>
 

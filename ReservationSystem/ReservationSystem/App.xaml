@@ -122,7 +122,42 @@
             <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminPartyTypeViewModel}">
                 <viewsAdmin:AdminPartyTypeOverview/>
             </DataTemplate>
-            
+            <DataTemplate DataType="{x:Type viewmodels:OrganizierHomePageViewModel}">
+                <views:OrganizierHomePage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RejectedRequestOverviewViewModel}">
+                <views:RejectedRequestOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AcceptedRequestOverviewViewModel}">
+                <views:AcceptedRequestOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ActiveRequestOverviewViewModel}">
+                <views:ActiveRequestOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SuggestionOverviewViewModel}">
+                <views:SuggestionOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ActiveTaskOverviewViewModel}">
+                <views:ActiveTaskOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ResolvedTaskOverviewViewModel}">
+                <views:ResolvedTaskOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:OfferReviewOrganizerViewModel}">
+                <views:OfferReviewOrganizer/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:PendingRequestOverview}">
+                <viewsOrganizer:RequestOverivew/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:DenyRequestViewViewModel}">
+                <viewsOrganizer:DenyRequestView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CreateSuggestionViewViewModel}">
+                <viewsOrganizer:CreateSuggestionView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CreateTaskViewModel}">
+                <viewsOrganizer:CreateTastView/>
+            </DataTemplate>
         </ResourceDictionary>
 
     </Application.Resources>

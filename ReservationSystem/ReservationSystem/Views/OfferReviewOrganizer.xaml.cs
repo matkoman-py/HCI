@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ReservationSystem.Views.Organizer
+namespace ReservationSystem.Views
 {
     /// <summary>
-    /// Interaction logic for DenyRequestView.xaml
+    /// Interaction logic for OfferReviewOrganizer.xaml
     /// </summary>
-    public partial class DenyRequestView : UserControl
+    public partial class OfferReviewOrganizer : UserControl
     {
-        public DenyRequestView()
+        public OfferReviewOrganizer()
         {
             InitializeComponent();
         }

@@ -17,7 +17,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for AcceptedRequestOverview.xaml
     /// </summary>
-    public partial class AcceptedRequestOverview : Window
+    public partial class AcceptedRequestOverview : UserControl
     {
         public AcceptedRequestOverview()
         {

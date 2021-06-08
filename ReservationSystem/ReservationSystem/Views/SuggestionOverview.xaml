@@ -22,21 +22,22 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" />
+        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" Command="{Binding BackCommand}" />
 
         <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3">
             <Label FontSize="16" FontWeight="Bold" Content="Zadaci:" HorizontalAlignment="Center"/>
-            <ListView  ItemsSource="{Binding Suggestions}" Name="ListView1" VerticalAlignment="Top">
+            <ListView  ItemsSource="{Binding Suggestion.OrganizierTasks}" Name="ListView1" VerticalAlignment="Top">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <CheckBox></CheckBox>
-                            <TextBlock>
-                                <Hyperlink>
-                                    <TextBlock Text="{Binding nesto}"></TextBlock>
-                                </Hyperlink>
-                            </TextBlock>
+                            <Button 
+                                Command="{Binding DataContext.TaskOverviewOrganizerCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}"
+                                Content="{Binding Name}" 
+                               >
+                            </Button>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -45,7 +46,7 @@
 
         <StackPanel Margin="15" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="1">
             <Label FontSize="16" Content="Description:" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-            <TextBox MinLines="2" BorderThickness="2" IsEnabled="False"  BorderBrush="Gray" FontSize="20">sfdsafasfsad</TextBox>
+            <TextBox MinLines="2" BorderThickness="2" IsEnabled="False"  BorderBrush="Gray" FontSize="20" Text="{Binding Suggestion.Comment}"></TextBox>
         </StackPanel>
 
         <Button Grid.Column="1" Grid.Row="5">Posalji ponudu</Button>

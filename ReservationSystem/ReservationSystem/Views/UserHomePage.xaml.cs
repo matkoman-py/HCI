@@ -83,6 +83,9 @@ namespace ReservationSystem.Views
                 case "PartySuggestions":
                     UserHomePageViewModel.NewSuggestionsCommand.Execute(User);
                     break;
+                case "CreateNewRequest":
+                    UserHomePageViewModel.RequestCreationCommand.Execute(User);
+                    break;
                 case "PendingRequests":
                     UserHomePageViewModel.PendingRequestsCommand.Execute(User);
                     break;

@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ReservationSystem.Views.Organizer
+namespace ReservationSystem.Views
 {
     /// <summary>
-    /// Interaction logic for DenyRequestView.xaml
+    /// Interaction logic for TaskOverview.xaml
     /// </summary>
-    public partial class DenyRequestView : UserControl
+    public partial class TaskOverview : UserControl
     {
-        public DenyRequestView()
+        public TaskOverview()
         {
             InitializeComponent();
         }

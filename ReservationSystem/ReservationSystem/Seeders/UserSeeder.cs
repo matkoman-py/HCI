@@ -94,9 +94,6 @@ namespace ReservationSystem.Seeders
                 db.PartyTypes.Add(partyType3);
 
                 PartyRequest pr = new PartyRequest(partyType1, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Accepted, 1);
-                PartyRequest pr1 = new PartyRequest(partyType2, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
-                PartyRequest pr2 = new PartyRequest(partyType3, 500, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Accepted, 1);
-
                 PartyRequest pr1 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Zezanje", "Duvanje", RequestState.Pending, 1);
                 PartyRequest pr2 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Kanada", "Duvanje", RequestState.Pending, 1);
                 PartyRequest pr3 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Banana split", "Duvanje", RequestState.Pending, 1);

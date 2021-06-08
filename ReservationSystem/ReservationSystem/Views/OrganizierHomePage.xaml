@@ -21,11 +21,13 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="0" Content="Odjavi se"></Button>
+        
+        <Button Grid.Column="0" Grid.Row="0" Content="Odjavi se" Command="{Binding LogOutCommand}"></Button>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" VerticalAlignment="Center">
-            <Button Padding="25" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Content="Neobradjeni zahtevi"></Button>
-            <Button Padding="25" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Content="Aktivni zahtevi"></Button>
-            <Button Padding="25" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Content="Obradjeni zahtevi"></Button>
+            <Button Padding="25" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Content="Neobradjeni zahtevi" Command="{Binding RequestsOverviewPendingCommand}"></Button>
+            <Button Padding="25" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Content="Aktivni zahtevi" Command="{Binding RequestsOverviewActiveCommand}"></Button>
+            <Button Padding="25" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Content="Obradjeni zahtevi" Command="{Binding RequestsOverviewProcessedCommand}"></Button>
+            <Button Padding="25" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="Saradnici" Command="{Binding OrganizerAssociatesOverviewCommand}"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

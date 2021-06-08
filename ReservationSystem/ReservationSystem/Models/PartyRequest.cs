@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    public enum RequestState { Pending, Rejected, Accepted }
+    public enum RequestState { Pending, Rejected, Accepted,
+        Active
+    }
 
     public class PartyRequest
     {

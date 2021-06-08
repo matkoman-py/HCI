@@ -17,7 +17,7 @@ namespace ReservationSystem.Views
     /// <summary>
     /// Interaction logic for RejectedRequestOverview.xaml
     /// </summary>
-    public partial class RejectedRequestOverview : Window
+    public partial class RejectedRequestOverview : UserControl
     {
         public RejectedRequestOverview()
         {

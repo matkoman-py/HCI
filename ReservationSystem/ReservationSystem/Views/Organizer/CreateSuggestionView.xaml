@@ -1,11 +1,11 @@
-﻿<Window x:Class="ReservationSystem.Views.Organizer.CreateSuggestion"
+﻿<UserControl x:Class="ReservationSystem.Views.Organizer.CreateSuggestionView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReservationSystem.Views.Organizer"
-        mc:Ignorable="d"
-        Title="CreateSuggestion" Height="450" Width="800">
+             mc:Ignorable="d"
+        Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -26,14 +26,17 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="2" Grid.Column="3" Margin="0,0,50,0">
-            <Button >Kreiraj novi zadatak</Button>
+            <Button Command="{Binding CreateTaskCommand}">Kreiraj novi zadatak</Button>
         </StackPanel>
         <DockPanel Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="50,0,50,0" >
             <Label DockPanel.Dock="Top" HorizontalAlignment="Center">Kreirani zadaci:</Label>
-            <ListView Name="Zadaci" VerticalAlignment="Top">
-                <ListViewItem Content="Zadatak 1"></ListViewItem>
-                <ListViewItem Content="Zadatak 2"></ListViewItem>
-                <ListViewItem Content="Zadatak 3"></ListViewItem>
+            <ListView ItemsSource="{Binding OrganizierTasks}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" Width="150"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
             </ListView>
         </DockPanel>
         <Label Margin="50,0,50,0" Grid.Row="5" Content="Komentar:"></Label>
@@ -44,10 +47,10 @@
                  BorderBrush="Gray" 
                  BorderThickness="1" Grid.RowSpan="3"/>
         <StackPanel Grid.Row="9" Grid.Column="3" Margin="0,0,50,0">
-            <Button >Prihvati zahtev</Button>
+            <Button Command="{Binding AcceptPendingRequestCommand}">Prihvati zahtev</Button>
         </StackPanel>
         <StackPanel Grid.Row="9" Grid.Column="0" Margin="50,0,0,0">
-            <Button >Odustani</Button>
+            <Button Command="{Binding PendingRequestOverviewCommand}">Odustani</Button>
         </StackPanel>
     </Grid>
-</Window>
+</UserControl>

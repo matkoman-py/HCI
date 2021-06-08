@@ -42,6 +42,7 @@ namespace ReservationSystem.ViewModels
                 return;
             }
 
+
             switch (user.Role)
             {
                 case Role.Customer:
@@ -54,7 +55,8 @@ namespace ReservationSystem.ViewModels
                     break;
                 case Role.Organizier:
                     //organizier
-                    UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user));//, new User()));
+                    //UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user));//, new User()));
+                    UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand, user));
                     break;
                 case Role.Administrator:
                     //administrator
@@ -62,6 +64,7 @@ namespace ReservationSystem.ViewModels
                     break;
             }
         }
+
 
         public void Register()
         {
@@ -83,3 +86,4 @@ namespace ReservationSystem.ViewModels
         }
     }
 }
+
