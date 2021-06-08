@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -19,9 +20,9 @@ namespace ReservationSystem.Models
         public int AssociateId { get; set; }
         public virtual Associate Associate { get; set; }
         public virtual List<OrganizierTask> OrganizierTasks { get; set; }
-        public int TablesArrngementId { get; set; }
+        public int? TablesArrangementId { get; set; }
         public virtual TablesArrangement TablesArrangement { get; set; }
-        public bool isRoom { get; set; }
+        public bool IsRoom { get; set; }
 
         public Offer()
         {

@@ -13,7 +13,31 @@ namespace ReservationSystem.Models
         [Key]
         public int Id { get; set; }
         public int NumberOfSeats { get; set; }
-        public Point TableCoordinates { get; set; }
+        public int TakenNumberOfSeats { get; set; }
+
+        private bool hasCollision;
+        public bool HasCollision 
+        {
+            get { return hasCollision; }
+            set 
+            {
+                hasCollision = value;
+                OnPropertyChanged("HasCollision");
+            } 
+        }
+
+        private Point tableCoordinates;
+        public Point TableCoordinates {
+            get
+            {
+                return tableCoordinates;
+            }
+            set
+            {
+                tableCoordinates = value;
+                OnPropertyChanged("TableCoordinates");
+            }
+        }
         private List<Guest> guests;
         public virtual List<Guest> Guests 
         {

@@ -28,6 +28,9 @@
             <Label DockPanel.Dock="Top">Ime:</Label>
             <TextBox Height="25" Text="{Binding Offer.Name}"></TextBox>
         </DockPanel>
+        <DockPanel Visibility="{Binding Offer.IsRoom}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="20,0,20,0">
+            <CheckBox Margin="0,0,10,0" Grid.Column="2" IsChecked="{Binding Offer.IsRoom}">Sala</CheckBox>
+        </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="1" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Cena ponude:</Label>
             <TextBox Height="25" Text="{Binding Offer.Price}"></TextBox>
@@ -38,10 +41,7 @@
             <TextBox Height="100" Text="{Binding Offer.Description}"></TextBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="1"
-                   Grid.ColumnSpan="1" Grid.RowSpan="4" Grid.Column="1" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Slika:</Label>
-            <TextBlock Height="250"></TextBlock>
-        </DockPanel>
+                   Grid.ColumnSpan="1" Grid.RowSpan="4" Grid.Column="1" Margin="20,0,20,0"/>
         <StackPanel VerticalAlignment="Center" Grid.Row="5">
             <Button Command="{Binding BackCommand}">Odustani</Button>
         </StackPanel>

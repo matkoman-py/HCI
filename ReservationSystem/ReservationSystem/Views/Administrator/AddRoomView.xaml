@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="ReservationSystem.Views.Administrator.AddRoomView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ReservationSystem.Views.Administrator" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Grid.Column="0"
+                Margin="5"
+                Command="{Binding CancelCommand}"
+                ToolTip="Odustani i vrati se na prethodni prikaz"
+                HorizontalAlignment="Center"
+                >Odustani</Button>
+
+            <Label HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" >Broj stolica:</Label>
+                <TextBox VerticalAlignment="Center" Grid.Column="2" Text="{Binding NewNumberOfSeats}" HorizontalAlignment="Stretch"></TextBox>
+                <Button
+                Grid.Column="3"
+                Margin="10"
+                HorizontalAlignment="Left"
+                Command="{Binding AddTableCommand}"
+                ToolTip="Dodaj sto"
+                Content="{materialDesign:PackIcon Plus}"
+                ></Button>
+            <Button
+                Grid.Column="4"
+                Margin="5"
+                Command="{Binding SaveTablesCommand}"
+                ToolTip="Sačuvaj"
+                HorizontalAlignment="Center"
+                >Sačuvaj</Button>
+
+        </Grid>
+        <ScrollViewer
+            Grid.Row="0" 
+            BorderBrush="Black" 
+            BorderThickness="2" 
+            HorizontalScrollBarVisibility="Visible" 
+            VerticalScrollBarVisibility="Visible">
+        <ItemsControl ItemsSource="{Binding Tables}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                        <Canvas 
+                        x:Name="CanvasMain"
+                        AllowDrop="True" 
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        Height="1000"
+                        Width="1000"
+                        PreviewMouseMove="Canvas_PreviewMouseMove"
+                        PreviewMouseLeftButtonUp="Canvas_PreviewMouseUp"
+                        ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                        ScrollViewer.VerticalScrollBarVisibility="Visible"
+                        Background="Beige"
+                        />
+                    </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Canvas.Left" Value="{Binding TableCoordinates.X}" />
+                    <Setter Property="Canvas.Top" Value="{Binding TableCoordinates.Y}" />
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                        <StackPanel
+                        MouseRightButtonDown="StackPanel_MouseRightButtonDown"
+                        PreviewMouseLeftButtonDown="StackPanel_PreviewMouseDown"
+                        MouseEnter="StackPanel_MouseEnter"
+                        MouseLeave="StackPanel_MouseLeave"
+                        >
+                            <Border 
+                            BorderBrush="Red" 
+                            BorderThickness="2"
+                            Visibility="{Binding HasCollision, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                            >
+                                <Image Source="/Static/table.png" Height="70" Width="70"/>
+                            </Border>
+                            <Image
+                            Visibility="{Binding HasCollision, Converter={StaticResource InverseBoolToVisConverter}}"
+                            Source="/Static/table.png" Height="70" Width="70"/>
+                            <StackPanel HorizontalAlignment="Center" Margin="5" Orientation="Horizontal">
+                        <TextBlock FontSize="16" Text="{Binding TakenNumberOfSeats}"></TextBlock>
+                        <TextBlock FontSize="16">/</TextBlock>
+                        <TextBlock FontSize="16" Text="{Binding NumberOfSeats}"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

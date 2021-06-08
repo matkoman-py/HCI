@@ -48,6 +48,7 @@
         <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2">
             <Button Command="{Binding EditAssociatesCommand}">Ažuriraj</Button>
         </StackPanel>
+        
         <StackPanel VerticalAlignment="Center" Grid.Row="4" Grid.Column="3">
             <Button Command="{Binding AddOfferCommand}">Dodaj Ponudu</Button>
         </StackPanel>

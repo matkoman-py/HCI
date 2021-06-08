@@ -9,19 +9,37 @@ using System.Threading.Tasks;
 namespace ReservationSystem.Models
 {
     [DataContract]
-    public class Point
+    public class Point : AbstractModel
     {
         [Key]
         public int Id { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        private double x;
+        public double X 
+        {
+            get { return x; }
+            set 
+            {
+                x = value;
+                OnPropertyChanged("X");
+            }
+        }
+        private double y;
+        public double Y 
+        {
+            get { return y; }
+            set
+            {
+                y = value;
+                OnPropertyChanged("Y");
+            }
+        }
 
         public Point()
         {
 
         }
 
-        public Point(int x, int y)
+        public Point(double x, double y)
         {
             X = x;
             Y = y;
