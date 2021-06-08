@@ -1,5 +1,6 @@
 ﻿using ReservationSystem.Commands;
 using ReservationSystem.Models;
+using ReservationSystem.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,7 +15,7 @@ namespace ReservationSystem.ViewModels.Administrator
     {
         private ICommand UpdateViewCommand;
         public ICommand EditAssociatesCommand { get; set; }
-        public AddOfferViewCommand AddOfferCommand { get; set; }
+        public DelegateCommand AddOfferCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public Associate Associate { get; set; }
         public List<FieldOfWork> FieldOfWorkOptions { get; set; }
@@ -39,9 +40,15 @@ namespace ReservationSystem.ViewModels.Administrator
                 FieldOfWorkOptions = db.FieldsOfWork.ToList();
             }
             EditAssociatesCommand = new DelegateCommand(UpdateAssociates);
-            AddOfferCommand = new AddOfferViewCommand(UpdateViewCommand, this);
+            AddOfferCommand = new DelegateCommand(GoToAddOffer);
             BackCommand = new DelegateCommand(() =>
                 UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand)));
+        }
+
+        public void GoToAddOffer()
+        {
+            ViewChangeUtils.PastViews.Push(this);
+            UpdateViewCommand.Execute(new AddOfferViewModel(UpdateViewCommand, Associate));
         }
 
         private void UpdateAssociates()
