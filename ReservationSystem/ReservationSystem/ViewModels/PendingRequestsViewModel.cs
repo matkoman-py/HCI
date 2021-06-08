@@ -112,7 +112,7 @@ namespace ReservationSystem.ViewModels
         {
             using (var db = new ProjectDatabase())
             {
-                return db.PartyRequests.Where(request => request.RequestState == RequestState.Pending).OrderBy(requst => requst.Date).ToList();
+                return db.PartyRequests.Include("PartyType").Where(request => request.RequestState == RequestState.Pending).OrderBy(requst => requst.Date).ToList();
             }
         }
 

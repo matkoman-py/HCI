@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReservationSystem.Views"
         mc:Ignorable="d"
-        Height="400" Width="500">
+        Height="500" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -16,11 +16,10 @@
             <RowDefinition Height="Auto"/>
 
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left">
-            <Button Content="Nazad" Width="110" Height="30" Margin="20" Command="{Binding TaskOverviewFromOfferCommand}" CommandParameter="{Binding Offer}"/>
-            <Label Margin="10" Width="110" Height="30" Content="{Binding Offer.Associate.Name}"/>
-        </StackPanel>
-        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
+        <Button Grid.Column="0" Grid.Row="0" Content="Nazad"  Height="Auto" Margin="10" Command="{Binding BackCommand}" HorizontalAlignment="Left"/>
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Margin="0,50,0,0">
+            <Label Margin="10" Width="110" Height="30" Content="Ime saradnika: "/>
+            <TextBox  Height="30"  Width="200" Margin="0" Text="{Binding Offer.Associate.Name}" IsReadOnly="True"/>
             <Label Margin="3" Width="110" Height="30" Content="Cena ponude: "/>
             <TextBox  Height="30"  Width="200" Margin="0" Text="{Binding Offer.Price}" IsReadOnly="True"/>
             <Label Margin="3" Width="110" Height="30" Content="Opis ponude: "/>

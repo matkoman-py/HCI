@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
@@ -26,6 +27,7 @@ namespace ReservationSystem.ViewModels
         {
             UpdateViewCommand = updateViewCommand;
             RegisterCommand = new DelegateCommand(Register);
+            BirthDate = DateTime.Today;
         }
 
         private void Register()
@@ -36,16 +38,21 @@ namespace ReservationSystem.ViewModels
             }
             else
             {
+                if (BirthDate.CompareTo(DateTime.Today) > 0)
+                {
+                    MessageBox.Show("Ne mozete se roditi u buducnost xD");
+                }
                 //ovde treba provera da li postoji korisnik sa tim korisnickim imenom u bazi, ali to ce biti nad onim ucitanim objektima
                 using (var db = new ProjectDatabase())
                 {
                     db.Users.Add(new User(Username, Password, Email, Name, Surname, BirthDate, Role.Customer));
                     db.SaveChanges();
+                    Console.WriteLine("Uspesna registracija, ulogujte se..");
+                    UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));
                 }
             }
 
-            Console.WriteLine("Uspesna registracija, ulogujte se..");
-            UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));//, new User()));
+            
 
         }
     }

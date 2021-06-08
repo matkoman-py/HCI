@@ -23,8 +23,12 @@ namespace ReservationSystem.Commands
         public void Execute(object parameter)
         {
             Offer sug = (Offer)parameter;
-            
-            UpdateViewCommand.Execute(new OfferReviewPageViewModel(UpdateViewCommand, sug));
+            Offer o;
+            using(var db = new ProjectDatabase())
+            {
+                o = db.Offers.Include("Associate").Where(of => of.Id == sug.Id).First();
+            }
+            UpdateViewCommand.Execute(new OfferReviewPageViewModel(UpdateViewCommand, o,1));
         }
 
         public OfferReviewCommand(ICommand updateViewCommand)

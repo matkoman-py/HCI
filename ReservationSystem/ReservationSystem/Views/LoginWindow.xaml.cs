@@ -29,5 +29,12 @@ namespace ReservationSystem.Views
         {
             LoginViewModel.RegistrationCommand.Execute(null);
         }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Console.WriteLine("CRNI GA DUCKA JAKO");
+        }
+
     }
+    
 }

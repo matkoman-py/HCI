@@ -51,7 +51,7 @@
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="10">
                                             <TextBlock HorizontalAlignment="Left">Tip:</TextBlock>
-                                            <TextBlock Margin="5,0,0,0" Text="{Binding PartyRequest.PartyType}"></TextBlock>
+                                            <TextBlock Margin="5,0,0,0" Text="{Binding PartyRequest.PartyType.Name}"></TextBlock>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
                                             <TextBlock HorizontalAlignment="Left">Mesto:</TextBlock>
@@ -62,7 +62,9 @@
                                             <TextBlock Margin="5,0,0,0" Text="{Binding PartyRequest.Date}"></TextBlock>
                                         </StackPanel>
                                     </StackPanel>
-                                    <Button Grid.Row="2">Vidi više</Button>
+                                    <Button Grid.Row="2" Command="{Binding DataContext.RequestOverviewCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}">Vidi više</Button>
                                 </Grid>
                             </materialDesign:Card>
                         </DockPanel>

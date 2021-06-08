@@ -15,10 +15,12 @@ namespace ReservationSystem.ViewModels
         public OrganizierTask OrganizierTask { get; set; }
 
         public Offer SelectedOffer { get; set; }
+        public static Offer ToGoOffer { get; set; }
         public bool Answered { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-        public ICommand OfferReviewCommand { get; set; }
+        public static ICommand OfferReviewCommand { get; set; }
 
+        public string Visibility { get; set; }
         public ICommand RequestViewCommand { get; set; }
 
         public ICommand DenyTaskCommand { get; set; }
@@ -30,12 +32,39 @@ namespace ReservationSystem.ViewModels
             OrganizierTask = suggestion;
             Answered = getAnswered();
             SelectedOffer = null;
-            OfferReviewCommand = new OfferReviewCommand(UpdateViewCommand);
+            OfferReviewCommand = new DelegateCommand(OfferReview);
             RequestViewCommand = new DelegateCommand(RequestView);
             DenyTaskCommand = new DelegateCommand(DenyTask);
             AcceptTaskCommand = new DelegateCommand(AcceptTask);
+            Visibility = getVisibility();
         }
-
+        public void OfferReview()
+        {
+            Offer o;
+            using (var db = new ProjectDatabase())
+            {
+                o = db.Offers.Include("Associate").Where(of => of.Id == ToGoOffer.Id).First();
+            }
+            UpdateViewCommand.Execute(new OfferReviewPageViewModel(UpdateViewCommand, o, OrganizierTask.Id));
+        }
+        public string getVisibility()
+        {
+            Suggestion sug;
+            using (var db = new ProjectDatabase())
+            {
+                sug = db.Suggestions.Include("OrganizierTasks")
+                        .Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
+                if (sug.Answered == AnsweredType.Odbijen || sug.Answered == AnsweredType.Prihvacen || sug.PartyRequest.Date.CompareTo(DateTime.Now) <= 0)
+                {
+                    return "Hidden";
+                }
+                else
+                {
+                    return "Visible";
+                }
+            }
+            
+        }
         public bool getAnswered()
         {
             Suggestion sug = null;
@@ -54,13 +83,13 @@ namespace ReservationSystem.ViewModels
         }
         public void RequestView()
         {
-            //PRONADJI IZ DBA NA OSNOVU TASKA SUGGESTION KOJI SADRZI TAJ TASK I PROSLEDI GA
+            
 
             Suggestion sug;
             using (var db = new ProjectDatabase())
             {
                 sug = db.Suggestions.Include("OrganizierTasks")
-                        .Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
+                        .Include("OrganizierTasks.Offers").Include("PartyRequest").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
             }
             UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));
 
@@ -75,7 +104,7 @@ namespace ReservationSystem.ViewModels
             using (var db = new ProjectDatabase())
             {
                 sug = db.Suggestions.Include("OrganizierTasks")
-                        .Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
+                        .Include("OrganizierTasks.Offers").Include("PartyRequest").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
                 if (sug.Answered == AnsweredType.Prihvacen || sug.Answered == AnsweredType.Odbijen)
                 {
                     MessageBox.Show("Ovaj zadatak je u okviru ponude na koju ste vec odgovorili!");
@@ -100,7 +129,7 @@ namespace ReservationSystem.ViewModels
                 using (var db = new ProjectDatabase())
                 {
                     sug = db.Suggestions.Include("OrganizierTasks")
-                            .Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
+                            .Include("OrganizierTasks.Offers").Include("PartyRequest").Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First();
                     if (sug.Answered == AnsweredType.Prihvacen || sug.Answered == AnsweredType.Odbijen)
                     {
                         MessageBox.Show("Ovaj zadatak je u okviru ponude na koju ste vec odgovorili!");

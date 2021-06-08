@@ -23,10 +23,13 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                
             </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="MaterialDesignButtonColor" Color="#FF4176A8"  />
             <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatMidBgButton}">
                 <Setter Property="OverridesDefaultStyle" Value="True" />
                 <Setter Property="Foreground"  Value="{StaticResource MaterialDesignDarkForeground}"/>
+                <Setter Property="Background"  Value="{StaticResource MaterialDesignButtonColor}"/>
             </Style>
 
             <converters:EnumConverter x:Key="EnumConverter"/>

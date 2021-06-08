@@ -16,6 +16,8 @@ namespace ReservationSystem.ViewModels
 
         public PartyRequest Request { get; set; }
         public User user { get; set; }
+
+        public string Visibility { get; set; }
         public ICommand UpdateViewCommand { get; set; }
 
         public ICommand UserHomePageCommand
@@ -49,8 +51,19 @@ namespace ReservationSystem.ViewModels
             UserHomePageCommand = new DelegateCommand(UserHomePage);
             TaskOverviewCommand = new TeskOverviewCommand(UpdateViewCommand);
             GiveAnswerCommand = new DelegateCommand(GiveAnswer);
+            Visibility = getVisibility();
         }
 
+        public string getVisibility()
+        {
+            if (Suggestion.Answered == AnsweredType.Odbijen || Suggestion.Answered == AnsweredType.Prihvacen || Suggestion.PartyRequest.Date.CompareTo(DateTime.Now) <= 0)
+            {
+                return "Hidden";
+            }else
+            {
+                return "Visible";
+            }
+        }
         public void UserHomePage()
         {
             //treba da se prosledjuje id korisnika koji je u pitanju - znaci nzm kako 

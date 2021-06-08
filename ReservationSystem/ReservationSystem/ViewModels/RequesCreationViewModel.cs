@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
@@ -27,6 +28,7 @@ namespace ReservationSystem.ViewModels
         public List<PartyType> PartyTypes { get; set; }
         public ICommand UpdateViewCommand { get; set; }
         public User User { get; set; }
+       
         public ICommand UserHomePageCommand
         {
             get; set;
@@ -49,6 +51,7 @@ namespace ReservationSystem.ViewModels
             PartyRequest = new PartyRequest();
             PartyRequest.RequestState = RequestState.Pending;
             PartyRequest.CreatorId = user.Id;
+            PartyRequest.Date = DateTime.Today;
         }
         public void UserHomePage()
         {
@@ -57,6 +60,11 @@ namespace ReservationSystem.ViewModels
 
         public void ChooseOrganisatorPage()
         {
+            if(PartyRequest.Date.CompareTo(DateTime.Today) < 0)
+            {
+                MessageBox.Show("Ne mozete izabrati datum u proslosti!");
+                return;
+            }
             UpdateViewCommand.Execute(new ChooseOrganisatorPageViewModel(UpdateViewCommand, User, PartyRequest));
         }
     }

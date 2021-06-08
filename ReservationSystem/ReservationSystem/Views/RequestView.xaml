@@ -7,14 +7,27 @@
         mc:Ignorable="d"
         Height="500" Width="800">
     <Grid>
-        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
-            <Button  Content="Nazad" Command="{Binding RequestOverviewCommand}" CommandParameter="{Binding Suggestion}" Width="50" HorizontalAlignment="Left" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button  Content="Nazad" Command="{Binding RequestOverviewCommand}" CommandParameter="{Binding Suggestion}" Width="Auto"  Height="Auto" HorizontalAlignment="Left"  Margin="10"/>
+        <StackPanel  Grid.Row="1" HorizontalAlignment="Center" Margin="0,15,0,0">
+            
             <Label  Margin="10" Content="Zadaci:" />
-            <ListView  Margin="10"  Name="Zadaci" ItemsSource="{Binding Suggestion.OrganizierTasks}" VerticalAlignment="Top" Width="600" Height="160">
+            <ListView  Margin="10"  Name="Zadaci" ItemsSource="{Binding Suggestion.OrganizierTasks}" VerticalAlignment="Top" Width="600" Height="140" AlternationCount="2" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Button 
+                            <Button Width="100"
                                 Command="{Binding DataContext.TaskOverviewCommand,
                                                 RelativeSource={RelativeSource AncestorType=UserControl}}"
                                 CommandParameter="{Binding}"
@@ -25,10 +38,23 @@
                         </StackPanel>
                     </DataTemplate>
                     </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Style.Triggers>
+                            <Trigger Property="ItemsControl.AlternationIndex"  Value="0">
+                                <Setter Property="Background" Value="LightSkyBlue" />
+                            </Trigger>
+                            <Trigger Property="ItemsControl.AlternationIndex"  Value="1">
+                                <Setter Property="Background" Value="WhiteSmoke" />
+                            </Trigger>
+                            
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
             </ListView>
             <Label  Margin="10" Content="Komentar:" />
             <TextBlock Margin="10" Background="LightGray" Width="600" Height="100" Text="{Binding Suggestion.Comment}"></TextBlock>
-            <Button  Content="Posalji odgovor na predlog" Command="{Binding GiveAnswerCommand}"  Width="200" Margin="35" />
+            <Button Visibility="{Binding Visibility}" Content="Posalji odgovor na predlog" Command="{Binding GiveAnswerCommand}"  Width="230" Margin="35" />
         </StackPanel>
 
         

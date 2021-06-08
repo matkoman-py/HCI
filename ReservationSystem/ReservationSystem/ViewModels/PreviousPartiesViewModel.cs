@@ -42,7 +42,7 @@ namespace ReservationSystem.ViewModels
         public DelegateCommand NextPageCommand { get; set; }
         public DelegateCommand PreviousPageCommand { get; set; }
         public User User { get; set; }
-
+        public RequestOverviewCommand RequestOverviewCommand { get; set; }
         public string Visibility { get; set; }
 
         public PreviousPartiesViewModel(ICommand updateViewCommand, User user)
@@ -55,6 +55,7 @@ namespace ReservationSystem.ViewModels
             PreviousPageCommand = new DelegateCommand(CanGetPreviousPage, PreviousPage);
             PageIndex = 0;
             InitialPage();
+            RequestOverviewCommand = new RequestOverviewCommand(UpdateViewCommand);
         }
 
         public void InitialPage()
@@ -109,7 +110,7 @@ namespace ReservationSystem.ViewModels
         {
             using (var db = new ProjectDatabase())
             {
-                return db.Suggestions.Include("PartyRequest").Where(suggestion => suggestion.PartyRequest.CreatorId == User.Id && (suggestion.Answered == AnsweredType.Odbijen || suggestion.Answered == AnsweredType.Neprihvacen || suggestion.PartyRequest.Date.CompareTo(DateTime.Now) < 0)).OrderBy(suggestion => suggestion.PartyRequest.Date).ToList();
+                return db.Suggestions.Include("PartyRequest").Include("PartyRequest.PartyType").Where(suggestion => suggestion.PartyRequest.CreatorId == User.Id && (suggestion.Answered == AnsweredType.Odbijen || suggestion.Answered == AnsweredType.Neprihvacen || suggestion.PartyRequest.Date.CompareTo(DateTime.Now) < 0)).OrderBy(suggestion => suggestion.PartyRequest.Date).ToList();
             }
         }
 

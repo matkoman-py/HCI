@@ -1,4 +1,5 @@
 ﻿using ReservationSystem.ViewModels;
+using ReservationSystem.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,24 @@ namespace ReservationSystem
             InitializeComponent();
 
             DataContext = new MainViewModel();
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            
+            if(((MainViewModel)DataContext).SelectedViewModel.GetType() == typeof(LoginViewModel))
+            {
+                
+                HelperModal hm = new HelperModal("/Static/LoginHelp.png", "OPIS SRANJA");
+                hm.ShowDialog();
+
+            }
+            if (((MainViewModel)DataContext).SelectedViewModel.GetType() == typeof(RegistrationViewModel))
+            {
+                
+                HelperModal hm = new HelperModal("MOJA SLIKA", "opsi");
+                hm.ShowDialog();
+            }
         }
     }
 }

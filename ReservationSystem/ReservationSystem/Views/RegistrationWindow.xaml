@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views"
         mc:Ignorable="d"
         Height="450" Width="800">
-    <Grid>
+    <Grid Margin="50">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
@@ -34,7 +34,9 @@
             <Label  Content="Prezime:"/>
             <TextBox  Text="{Binding Surname}" Height="30" Margin="10"/>
             <Label  Content="Datum rodjenja:"/>
-            <TextBox  Text="{Binding BirthDate}" Height="30" Margin="10"/>
+            <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding BirthDate}"
+                  
+                  FirstDayOfWeek="Monday" />
         </StackPanel>
 
         <Button Content="Registruj se " Grid.Column="1" Grid.Row="3"  Margin="35" Command="{Binding RegisterCommand}" RenderTransformOrigin="0.504,0.51"/>

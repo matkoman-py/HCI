@@ -20,6 +20,8 @@ namespace ReservationSystem.ViewModels
         public string Visibility { get; set; }
         public ICommand UpdateViewCommand { get; set; }
         public ICommand NewSuggestionsCommand { get; set; }
+
+        public string Pending { get; set; }
         public static ICommand RequestViewCommand
         {
             get; set;
@@ -36,18 +38,43 @@ namespace ReservationSystem.ViewModels
             RequestViewCommand = new RequestViewCommand(UpdateViewCommand);
             NewSuggestionsCommand = new DelegateCommand(NewSuggestions);
             Suggestion = getSuggestion();
+            Pending = getPending();
+        }
+        public string getPending()
+        {
+            if (Request.RequestState == RequestState.Pending)
+            {
+                return "Hidden";
+            }
+            return "Visible";
         }
         public void NewSuggestions()
         {
-            //treba da se prosledjuje id korisnika koji je u pitanju - znaci nzm kako 
-            // i nesto sacuvas u bazu valjda 
+            if(Pending == "Hidden")
+            {
+                User user;
+                using (var db = new ProjectDatabase())
+                {
+
+                    user = db.Users.Where(u => u.Id == Request.CreatorId).First();
+                    UpdateViewCommand.Execute(new PendingRequestsViewModel(UpdateViewCommand, user));
+                    
+                }
+            }
+            else { 
             User user;
             using (var db = new ProjectDatabase())
             {
-                
-                user = db.Users.Where(u => u.Id == Request.CreatorId).First();
+                    Suggestion sug = db.Suggestions.Where(s => s.PartyRequestId == Request.Id).First();
+                    user = db.Users.Where(u => u.Id == Request.CreatorId).First();
+                    if (sug.Answered == AnsweredType.Neobradjen && sug.PartyRequest.Date.CompareTo(DateTime.Now) > 0)
+                    {
+                        UpdateViewCommand.Execute(new NewSuggestionsViewModel(UpdateViewCommand, user));
+                    }
+                    else { UpdateViewCommand.Execute(new PreviousPartiesViewModel(UpdateViewCommand, user)); }
+                }
+            
             }
-            UpdateViewCommand.Execute(new NewSuggestionsViewModel(UpdateViewCommand,user));
         }
 
         public List<Suggestion> getSuggestion()
