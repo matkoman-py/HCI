@@ -51,7 +51,7 @@
                                         <TextBlock  FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="10" Text="{Binding PartyTheme}"></TextBlock>
                                         <StackPanel Orientation="Horizontal" Margin="10">
                                             <TextBlock HorizontalAlignment="Left">Tip:</TextBlock>
-                                            <TextBlock Margin="5,0,0,0" Text="{Binding PartyType}"></TextBlock>
+                                            <TextBlock Margin="5,0,0,0" Text="{Binding PartyType.Name}"></TextBlock>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
                                             <TextBlock HorizontalAlignment="Left">Mesto:</TextBlock>

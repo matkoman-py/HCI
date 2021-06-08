@@ -76,7 +76,7 @@ namespace ReservationSystem.ViewModels
             using (var db = new ProjectDatabase())
             {
                 db.PartyRequests.Where(pr => pr.Id == Sug.Id).First().RequestState = RequestState.Active;
-                double price = 0;
+                /*double price = 0;
                 foreach (OrganizierTask task in OrganizierTasks)
                 {
                     foreach (Offer offer in task.Offers)
@@ -84,10 +84,10 @@ namespace ReservationSystem.ViewModels
                         price += offer.Price;
                     }
                 }
-                db.Suggestions.Where(suggestion => suggestion.Id == Sug.Id).First().Price = price;
+                db.Suggestions.Where(suggestion => suggestion.Id == Sug.Id).First().Price = price;*/
                 db.SaveChanges();
             }
-            UpdateViewCommand.Execute(new PendingRequestOverview(UpdateViewCommand, Sug));
+            UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, User, RequestState.Pending));
         }
         public void PendingRequestOverviewView()
         {   

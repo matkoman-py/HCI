@@ -32,7 +32,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Vrsta žurke:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding Sug.PartyType}"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding Sug.PartyType.Name}"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Broj gostiju:" FontWeight="Bold"/>

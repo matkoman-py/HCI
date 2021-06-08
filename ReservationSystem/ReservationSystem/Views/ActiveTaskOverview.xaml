@@ -54,10 +54,9 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                            <Button Command="{Binding DataContext.RequestViewCommand,
-                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                CommandParameter="{Binding}"
-                                Content="{Binding Name}" 
+                            <Button Click="Button_Click"
+                                    Tag="{Binding}"
+                                    Content="{Binding Name}" 
                                >
                             </Button>
 
@@ -93,7 +92,7 @@
         </StackPanel>
     </StackPanel>
 
-        <Button Margin="15" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2">Sacuvaj</Button>
+        <Button Margin="15" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Command="{Binding SaveCommand}">Sacuvaj</Button>
 
     </Grid>
 </UserControl>

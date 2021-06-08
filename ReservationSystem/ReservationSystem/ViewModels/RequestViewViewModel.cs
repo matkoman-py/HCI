@@ -84,14 +84,16 @@ namespace ReservationSystem.ViewModels
                         return;
                     }
                 }
+                User user;
                 using (var db = new ProjectDatabase())
                 {
                     Suggestion sug;
                     sug = db.Suggestions.Where(s => s.Id == Suggestion.Id).First();
                     sug.Answered = state;
+                    user = db.Users.Where(u => u.Id == Request.CreatorId).First();
                     db.SaveChanges();
                 }
-                UpdateViewCommand.Execute(new RequestOverviewViewModel(UpdateViewCommand, Request));
+                UpdateViewCommand.Execute(new NewSuggestionsViewModel(UpdateViewCommand, user));
             }
         }
     }

@@ -38,7 +38,7 @@ namespace ReservationSystem.ViewModels
             using (var db = new ProjectDatabase())
             {
                 
-                User user = db.Users.Where(u => u.Id == PartyRequest.CreatorId).First();
+                User user = db.Users.Where(u => u.Id == PartyRequest.OrganiserId).First();
                 UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user, RequestState.Accepted));
             }
         }

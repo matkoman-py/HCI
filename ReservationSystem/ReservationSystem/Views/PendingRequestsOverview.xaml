@@ -47,7 +47,7 @@
                                         <TextBlock  FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="10" Text="{Binding PartyTheme}"></TextBlock>
                                         <StackPanel Orientation="Horizontal" Margin="10">
                                             <TextBlock HorizontalAlignment="Left">Tip:</TextBlock>
-                                            <TextBlock Margin="5,0,0,0" Text="{Binding PartyType}"></TextBlock>
+                                            <TextBlock Margin="5,0,0,0" Text="{Binding PartyType.Name}"></TextBlock>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
                                             <TextBlock HorizontalAlignment="Left">Mesto:</TextBlock>
@@ -62,7 +62,7 @@
                                         <TextBlock DockPanel.Dock="Top" Margin="0,0,0,5">Opis:</TextBlock>
                                         <TextBox BorderBrush="LightGray" BorderThickness="1" IsEnabled="False" Text="{Binding Description}"></TextBox>
                                     </DockPanel>
-                                    <Button Grid.Row="2">Vidi više</Button>
+                                    <Button Grid.Row="2" Click="Button_Click" Tag="{Binding}">Vidi više</Button>
                                 </Grid>
                             </materialDesign:Card>
                         </DockPanel>

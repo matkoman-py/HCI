@@ -32,7 +32,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Party type:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.PartyType}"></TextBlock>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.PartyType.Name}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Number of guests:" FontWeight="Bold"/>
