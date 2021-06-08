@@ -17,10 +17,7 @@ namespace ReservationSystem.Models
     {
         [Key]
         public int Id { get; set; }
-        
-        
         public virtual List<OrganizierTask> OrganizierTasks { get; set; }
-
         public AnsweredType Answered { get; set; }
         public string Comment { get; set; }
         public double Price { get; set; }

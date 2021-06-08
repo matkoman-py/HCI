@@ -111,6 +111,55 @@ namespace ReservationSystem.ViewModels
             }
             UpdateViewCommand.Execute(new OfferReviewOrganizerViewModel(UpdateViewCommand, o, OrganizierTask.Id));
         }
+
+        private void CheckIsAlreadyOffered() 
+        {
+            using (var db = new ProjectDatabase())
+            {
+
+                OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
+                foreach (Offer of in o.Offers)
+                {
+                    if (of.Id == SelectedOffer.Id)
+                    {
+                        MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
+                        return;
+                    }
+                }
+            }
+            if (SelectedOffers.Contains(SelectedOffer))
+            {
+                MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
+                return;
+            }
+        }
+
+        public void AddRegularOffer() 
+        {
+            SelectedOffers.Add(SelectedOffer);
+            using (var db = new ProjectDatabase())
+            {
+                OrganizierTask.Offers.Add(SelectedOffer);
+                double price = 0;
+
+                foreach (Offer off in OrganizierTask.Offers)
+                {
+                    //TODO: Odraditi proveru za prihvaceno
+                    price += off.Price;
+                }
+                OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
+                Offer offer = db.Offers.Include("Associate").Include("Associate.FieldOfWork").Where(of => of.Id == SelectedOffer.Id).First();
+                o.Offers.Add(offer);
+                db.Suggestions.Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First().Price += price;
+                db.SaveChanges();
+            }
+
+        }
+
+        private void GoToTableArrangmentView() 
+        {
+        }
+
         public void AddOffer()
         {
             if (SelectedOffer == null)
@@ -119,45 +168,17 @@ namespace ReservationSystem.ViewModels
             }
             else
             {
-                using (var db = new ProjectDatabase())
+                CheckIsAlreadyOffered();
+
+                if (SelectedOffer.Associate.FieldOfWork.HasRoom)
                 {
-                    
-                    OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
-                    foreach(Offer of in o.Offers)
-                    {
-                        if (of.Id == SelectedOffer.Id)
-                        {
-                            MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
-                            return;
-                        }
-                    }
+                    GoToTableArrangmentView();
                 }
-                if ( SelectedOffers.Contains(SelectedOffer)){
-                    MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
-                    return;
-                }
-                if(SelectedOffer.Associate.FieldOfWork.HasRoom)
+                else 
                 {
-                    Console.WriteLine("Otvori DRAG N DROP");
+                    AddRegularOffer();
                 }
 
-                SelectedOffers.Add(SelectedOffer);
-                using(var db = new ProjectDatabase())
-                {
-                    OrganizierTask.Offers.Add(SelectedOffer);
-                    double price = 0;
-                
-                    foreach (Offer off in OrganizierTask.Offers)
-                    {
-                        price += off.Price;
-                    }
-                    OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
-                    Offer offer = db.Offers.Include("Associate").Include("Associate.FieldOfWork").Where(of => of.Id == SelectedOffer.Id).First();
-                    o.Offers.Add(offer);
-                    db.Suggestions.Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First().Price += price;
-                    db.SaveChanges();
-                }
-                
             }
         }
        

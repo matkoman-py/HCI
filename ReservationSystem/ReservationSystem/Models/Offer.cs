@@ -19,6 +19,10 @@ namespace ReservationSystem.Models
         public int AssociateId { get; set; }
         public virtual Associate Associate { get; set; }
         public virtual List<OrganizierTask> OrganizierTasks { get; set; }
+        public int TablesArrngementId { get; set; }
+        public virtual TablesArrangement TablesArrangement { get; set; }
+        public bool isRoom { get; set; }
+
         public Offer()
         {
 

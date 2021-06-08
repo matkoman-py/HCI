@@ -108,6 +108,7 @@
     <Compile Include="Converter\NegateConverter.cs" />
     <Compile Include="Models\AbstractModel.cs" />
     <Compile Include="Models\FieldOfWork.cs" />
+    <Compile Include="Models\Guest.cs" />
     <Compile Include="Models\PartyType.cs" />
     <Compile Include="Seeders\UserSeeder.cs" />
     <Compile Include="Utils\ViewChangeUtils.cs" />
@@ -236,6 +237,9 @@
     <Compile Include="Views\Organizer\RequestOverivew.xaml.cs">
       <DependentUpon>RequestOverivew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Organizer\TableArrangementOverview.xaml.cs">
+      <DependentUpon>TableArrangementOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OrganizierHomePage.xaml.cs">
       <DependentUpon>OrganizierHomePage.xaml</DependentUpon>
     </Compile>
@@ -271,9 +275,6 @@
     </Compile>
     <Compile Include="Views\SuggestionOverview.xaml.cs">
       <DependentUpon>SuggestionOverview.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TableArrangementOverview.xaml.cs">
-      <DependentUpon>TableArrangementOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TaskOverview.xaml.cs">
       <DependentUpon>TaskOverview.xaml</DependentUpon>
@@ -401,6 +402,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Organizer\TableArrangementOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\OrganizierHomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -446,10 +451,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SuggestionOverview.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\TableArrangementOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

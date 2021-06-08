@@ -17,7 +17,6 @@ namespace ReservationSystem.Models
         public string Description { get; set; }
         public int FieldOfWorkId { get; set; }
         public FieldOfWork FieldOfWork { get; set; }
-        public TablesArrangement TablesArrangement { get; set; }
         public virtual ICollection<Offer> Offers { get; set; }
 
         public Associate()

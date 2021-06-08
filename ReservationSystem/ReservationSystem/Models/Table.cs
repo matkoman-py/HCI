@@ -8,16 +8,25 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    [DataContract]
-    public class Table
+    public class Table : AbstractModel
     {
         [Key]
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
         public int NumberOfSeats { get; set; }
-        [DataMember]
         public Point TableCoordinates { get; set; }
+        private List<Guest> guests;
+        public virtual List<Guest> Guests 
+        {
+            get 
+            {
+                return guests;
+            }
+            set 
+            {
+                guests = value;
+                OnPropertyChanged("Guests");
+            }
+        }
 
         public Table()
         {
