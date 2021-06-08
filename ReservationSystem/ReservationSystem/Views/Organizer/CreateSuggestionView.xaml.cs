@@ -17,9 +17,9 @@ namespace ReservationSystem.Views.Organizer
     /// <summary>
     /// Interaction logic for CreateSuggestion.xaml
     /// </summary>
-    public partial class CreateSuggestion : Window
+    public partial class CreateSuggestionView : UserControl
     {
-        public CreateSuggestion()
+        public CreateSuggestionView()
         {
             InitializeComponent();
         }

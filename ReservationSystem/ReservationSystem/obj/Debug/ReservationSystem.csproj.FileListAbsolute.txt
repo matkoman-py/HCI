@@ -1,131 +1,114 @@
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.exe.config
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.exe
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.pdb
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csprojAssemblyReference.cache
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.g.cs
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.g.cs
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem_MarkupCompile.cache
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem_MarkupCompile.lref
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.baml
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.g.resources
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.Properties.Resources.resources
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.GenerateResource.cache
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CoreCompileInputs.cache
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.exe
-C:\Users\zoran\source\repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.pdb
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.exe.config
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.exe
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.pdb
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csprojAssemblyReference.cache
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem_MarkupCompile.cache
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem_MarkupCompile.lref
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.g.resources
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.Properties.Resources.resources
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.GenerateResource.cache
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CoreCompileInputs.cache
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.exe
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.exe.config
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.exe
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.dll
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.xml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem_MarkupCompile.cache
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem_MarkupCompile.lref
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.g.resources
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.Properties.Resources.resources
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.GenerateResource.cache
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CoreCompileInputs.cache
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CopyComplete
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.exe
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.pdb
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.dll
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.xml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CopyComplete
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AssociateOverview.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPagexaml.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TestWindow.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.exe.config
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.exe
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\ReservationSystem.pdb
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\ControlzEx.dll
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.dll
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MahApps.Metro.dll
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignColors.dll
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\ControlzEx.pdb
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\ControlzEx.xml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.xml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MahApps.Metro.pdb
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MahApps.Metro.xml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignColors.pdb
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.MahApps.pdb
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveTaskOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddAssociatesView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOfferView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOrganizerView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminAssociatesView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminPage.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminOrganizersOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditAssociatesView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditOfferView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\FutureParties.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\NewSuggestionsOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewOrganizer.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPage.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\OrganizerAssociateOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OrganizierHomePage.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PendingRequestsOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PreviousParties.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestsOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ResolvedTaskOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\SuggestionOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TableArrangementOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveTaskOverview.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddAssociatesView.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOfferView.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOrganizerView.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminAssociatesView.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminPage.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminOrganizersOverview.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditAssociatesView.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditOfferView.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\FutureParties.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.g.cs
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AssociateOverview.g.cs
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPagexaml.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\NewSuggestionsOverview.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewOrganizer.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPage.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\OrganizerAssociateOverview.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OrganizierHomePage.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PendingRequestsOverview.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PreviousParties.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestOverview.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestsOverview.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ResolvedTaskOverview.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\SuggestionOverview.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TableArrangementOverview.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.g.cs
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TestWindow.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem_MarkupCompile.cache
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem_MarkupCompile.lref
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\MainWindow.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AssociateOverview.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPagexaml.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TestWindow.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.g.resources
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.Properties.Resources.resources
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.GenerateResource.cache
@@ -133,188 +116,3 @@ C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJ
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CopyComplete
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.exe
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.AssemblyReference.cache
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AssociateOverview.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPagexaml.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TestWindow.baml
-C:\Users\djord\Documents\GitHub\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddAssociatesView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOfferView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOrganizerView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminAssociatesView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminPage.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminOrganizersOverview.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditAssociatesView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditOfferView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AssociateOverview.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPagexaml.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestOverview.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TestWindow.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.dll
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.xml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\App.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedRequestOverview.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveRequestOverview.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddAssociatesView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOfferView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOrganizerView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminAssociatesView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminPage.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminOrganizersOverview.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditAssociatesView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditOfferView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ChooseOrganisatorPage.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewAssociateWindow.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\CreateNewOfferWindow.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\DataUpdate.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\LoginWindow.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AssociateOverview.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPagexaml.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateSuggestionView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\CreateTastView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\DenyRequestView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\RequestOverivew.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Profile.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RegistrationWindow.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RejectedRequestOverview.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestCreation.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestOverview.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestView.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TestWindow.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\UserHomePage.baml
-C:\Users\zoran\Source\Repos\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.CopyComplete
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddAssociatesView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOfferView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOrganizerView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminAssociatesView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminPage.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminOrganizersOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditAssociatesView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditOfferView.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddAssociatesView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOfferView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AddOrganizerView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminAssociatesView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminPage.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\AdminOrganizersOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditAssociatesView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Administrator\EditOfferView.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\OrganizerAssociateOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\OrganizerAssociateOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\ControlzEx.dll
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MahApps.Metro.dll
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignColors.dll
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.MahApps.dll
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.Wpf.dll
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\Microsoft.Xaml.Behaviors.dll
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\ControlzEx.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\ControlzEx.xml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MahApps.Metro.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MahApps.Metro.xml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignColors.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.MahApps.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\Microsoft.Xaml.Behaviors.pdb
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveTaskOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPage.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OrganizierHomePage.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestsOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ResolvedTaskOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\SuggestionOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TableArrangementOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ActiveTaskOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPage.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OrganizierHomePage.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestsOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\ResolvedTaskOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\SuggestionOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TableArrangementOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TaskOverview.baml
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewOrganizer.g.cs
-C:\Users\Mateja\Documents\HCI\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewOrganizer.baml

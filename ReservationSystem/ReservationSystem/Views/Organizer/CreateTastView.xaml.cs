@@ -17,7 +17,7 @@ namespace ReservationSystem.Views.Organizer
     /// <summary>
     /// Interaction logic for CreateTastView.xaml
     /// </summary>
-    public partial class CreateTastView : Window
+    public partial class CreateTastView : UserControl
     {
         public CreateTastView()
         {

@@ -23,7 +23,6 @@ namespace ReservationSystem.Commands
         public void Execute(object parameter)
         {
             PartyRequest sug = (PartyRequest)parameter;
-            //UpdateViewCommand.Execute(new TaskOverviewViewModel(UpdateViewCommand, sug));
             if (sug.RequestState == RequestState.Accepted || sug.RequestState == RequestState.Rejected)
             {
                 if(sug.RequestState == RequestState.Accepted)
@@ -38,6 +37,7 @@ namespace ReservationSystem.Commands
             }
             else if (sug.RequestState == RequestState.Pending)
             {
+                UpdateViewCommand.Execute(new PendingRequestOverview(UpdateViewCommand, sug));
                 Console.WriteLine("idi neobradjene");
                 //return getPending();
             }

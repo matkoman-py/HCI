@@ -100,28 +100,36 @@ namespace ReservationSystem.ViewModels
                     db.OrganizierTasks.Add(or1);
                     db.OrganizierTasks.Add(or2);
                     db.OrganizierTasks.Add(or3);
-                    db.OrganizierTasks.Add(ora1);
-                    db.OrganizierTasks.Add(ora2);
-                    db.OrganizierTasks.Add(ora3);
-                    PartyRequest pr = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Pending, 1);
-                    PartyRequest pr1 = new PartyRequest(PartyType.Anniversary, 600, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
-                    PartyRequest pr2 = new PartyRequest(PartyType.Other, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Active, 1);
-                    PartyRequest pr3 = new PartyRequest(PartyType.Other, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Rejected, 1);
-                    db.PartyRequests.Add(pr);
+                    PartyRequest pr1 = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Zezanje", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr2 = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Kanada", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr3 = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Banana split", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr4 = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "BOBI I COBI", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr5 = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Tekela", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr6 = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Pakle", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr7 = new PartyRequest(PartyType.Birthday, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Pending, 1);
+                    PartyRequest pr8 = new PartyRequest(PartyType.Anniversary, 600, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
+                    PartyRequest pr9 = new PartyRequest(PartyType.Other, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Active, 1);
+                    PartyRequest pr10 = new PartyRequest(PartyType.Other, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak4", "Duvanje", RequestState.Rejected, 1);
                     db.PartyRequests.Add(pr1);
                     db.PartyRequests.Add(pr2);
                     db.PartyRequests.Add(pr3);
+                    db.PartyRequests.Add(pr4);
+                    db.PartyRequests.Add(pr5);
+                    db.PartyRequests.Add(pr6);
+                    db.PartyRequests.Add(pr7);
+                    db.PartyRequests.Add(pr8);
+                    db.PartyRequests.Add(pr9);
+                    db.PartyRequests.Add(pr10);
+
                     Suggestion sug = new Suggestion(new List<OrganizierTask>(){
                     or1,or2,or3
-                }, "MASU JAK PREDLOG1", pr);
-
-
+                }, "MASU JAK PREDLOG1", pr1);
                     Suggestion sug2 = new Suggestion(new List<OrganizierTask>(){
-                    ora1,ora2,ora3
-                }, "MASU JAK PREDLOG3", pr2);
+                    or1,or2,or3
+                }, "MASU JAK PREDLOG1", pr1);
 
-                    db.Suggestions.Add(sug);
                     db.Suggestions.Add(sug2);
+                    db.Suggestions.Add(sug);
                     db.SaveChanges();
                 }
 

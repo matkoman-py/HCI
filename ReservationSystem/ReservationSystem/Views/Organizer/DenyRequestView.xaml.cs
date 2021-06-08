@@ -17,7 +17,7 @@ namespace ReservationSystem.Views.Organizer
     /// <summary>
     /// Interaction logic for DenyRequestView.xaml
     /// </summary>
-    public partial class DenyRequestView : Window
+    public partial class DenyRequestView : UserControl
     {
         public DenyRequestView()
         {
