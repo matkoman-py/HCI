@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ReservationSystem.Views
 {
     /// <summary>
-    /// Interaction logic for OrganizierHomePage.xaml
+    /// Interaction logic for PartyRequestsTypeSelection.xaml
     /// </summary>
-    public partial class OrganizierHomePage : UserControl
+    public partial class PartyRequestsTypeSelection : UserControl
     {
-        public OrganizierHomePage()
+        public PartyRequestsTypeSelection()
         {
             InitializeComponent();
         }

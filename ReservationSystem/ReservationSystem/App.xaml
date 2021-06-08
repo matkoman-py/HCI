@@ -122,9 +122,6 @@
             <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminPartyTypeViewModel}">
                 <viewsAdmin:AdminPartyTypeOverview/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodels:OrganizierHomePageViewModel}">
-                <views:OrganizierHomePage/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:RejectedRequestOverviewViewModel}">
                 <views:RejectedRequestOverview/>
             </DataTemplate>
@@ -160,6 +157,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:AcceptedSuggestionViewModel}">
                 <views:AcceptedSuggestions/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:PartyRequestTypeSelectionViewModel}">
+                <views:PartyRequestsTypeSelection/>
             </DataTemplate>
         </ResourceDictionary>
 

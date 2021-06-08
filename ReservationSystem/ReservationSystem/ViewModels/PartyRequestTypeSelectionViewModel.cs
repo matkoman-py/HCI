@@ -9,24 +9,16 @@ using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
 {
-    public class OrganizierHomePageViewModel : BaseViewModel
+    public class PartyRequestTypeSelectionViewModel : BaseViewModel, IMainWindow
     {
+
         public User User { get; set; }
 
         public ICommand UpdateViewCommand { get; set; }
 
-        public ICommand LogOutCommand
-        {
-            get; set;
-        }
-        public ICommand OrganizerAssociatesOverviewCommand
-        {
-            get;set;
-        }
-
         public ICommand RequestsOverviewPendingCommand
         {
-            get;set;
+            get; set;
         }
         public ICommand RequestsOverviewActiveCommand
         {
@@ -36,26 +28,16 @@ namespace ReservationSystem.ViewModels
         {
             get; set;
         }
-        public OrganizierHomePageViewModel(ICommand updateViewCommand, User user)
+        public BaseViewModel SelectedViewModel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public PartyRequestTypeSelectionViewModel(ICommand updateViewCommand, User user)
         {
             User = user;
             //Console.WriteLine(User.Name);
             UpdateViewCommand = updateViewCommand;
-            LogOutCommand = new DelegateCommand(LogOut);
-            OrganizerAssociatesOverviewCommand = new DelegateCommand(OrganizerAssociatesOverview);
             RequestsOverviewPendingCommand = new DelegateCommand(RequestOverviewPending);
             RequestsOverviewActiveCommand = new DelegateCommand(RequestOverviewActive);
             RequestsOverviewProcessedCommand = new DelegateCommand(RequestOverviewProcessed);
-        }
-
-        public void LogOut()
-        {
-            UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));
-        }
-
-        public void OrganizerAssociatesOverview()
-        {
-            UpdateViewCommand.Execute(new AssociateOverviewViewModel(UpdateViewCommand,User));
         }
 
         public void RequestOverviewPending()
@@ -70,5 +52,6 @@ namespace ReservationSystem.ViewModels
         {
             UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, User, RequestState.Accepted));
         }
+
     }
 }
