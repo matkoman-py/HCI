@@ -52,7 +52,7 @@
                                 Content="{Binding Comment}" 
                                >
                             </Button>
-                            <Label Content="{Binding Answered}"></Label>
+                            
                         </StackPanel>
                         
                     </DataTemplate>

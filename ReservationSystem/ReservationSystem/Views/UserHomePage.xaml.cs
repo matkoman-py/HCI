@@ -114,9 +114,27 @@ namespace ReservationSystem.Views
                 hm.Topmost = true;
                 hm.ShowDialog();
             }
-            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequestOverviewViewModel))
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequestViewViewModel))
             {
-                HelperModal hm = new HelperModal("/Static/pendingrequestovervirewHelp.jpg", "opsi");
+                HelperModal hm = new HelperModal("/Static/requestViewHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(NewSuggestionsViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/suggestionsViewHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(TaskOverviewViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/taskOverviewHelp.png", "opsi");
+                hm.Topmost = true;
+                hm.ShowDialog();
+            }
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(OfferReviewPageViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/offerOverviewHelp.png", "opsi");
                 hm.Topmost = true;
                 hm.ShowDialog();
             }

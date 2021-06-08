@@ -552,6 +552,14 @@
   <ItemGroup>
     <Resource Include="Static\previouspartyHelp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\requestViewHelp.png" />
+    <Resource Include="Static\suggestionsViewHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\offerOverviewHelp.png" />
+    <Resource Include="Static\taskOverviewHelp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

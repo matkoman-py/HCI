@@ -13,12 +13,13 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             
         </Grid.RowDefinitions>
 
+        <Button Content="Nazad"  Grid.Row="0"   Command="{Binding BackCommand}" Height="Auto" Margin="10" HorizontalAlignment="Left"/>
         <StackPanel Grid.Row="1" Grid.Column="0" >
             <Label  Content="Korisnicko ime:"/>
             <TextBox  Text="{Binding Username}" Height="30" Margin="10"/>
@@ -34,7 +35,7 @@
             <Label  Content="Prezime:"/>
             <TextBox  Text="{Binding Surname}" Height="30" Margin="10"/>
             <Label  Content="Datum rodjenja:"/>
-            <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding BirthDate}"
+            <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding BirthDate}" Margin="10"
                   
                   FirstDayOfWeek="Monday" />
         </StackPanel>

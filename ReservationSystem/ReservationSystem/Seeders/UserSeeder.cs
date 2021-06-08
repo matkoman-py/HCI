@@ -93,19 +93,19 @@ namespace ReservationSystem.Seeders
                 db.PartyTypes.Add(partyType2);
                 db.PartyTypes.Add(partyType3);
 
-                PartyRequest pr = new PartyRequest(partyType1, 500, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Accepted, 1);
-                PartyRequest pr1 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Zezanje", "Duvanje", RequestState.Active, 1);
+                PartyRequest pr = new PartyRequest(partyType1, 500, "Mite cenica1", new DateTime(2022, 9, 5), 1999, false, "Plesanje", "Kuvanje", RequestState.Accepted, 1);
+                PartyRequest pr1 = new PartyRequest(partyType1, 550, "Mite cenica2", new DateTime(2021, 9, 5), 1999, false, "Zezanje", "White Party", RequestState.Active, 1);
                 pr1.OrganiserId = 3;
-                PartyRequest pr2 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Kanada", "Duvanje", RequestState.Accepted, 1);
+                PartyRequest pr2 = new PartyRequest(partyType1, 550, "Mite cenica3", new DateTime(2020, 9, 5), 1999, false, "Kanada", "Narodnjaci", RequestState.Accepted, 1);
                 
-                PartyRequest pr3 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Banana split", "Duvanje", RequestState.Pending, 1);
-                PartyRequest pr4 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "BOBI I COBI", "Duvanje", RequestState.Pending, 1);
-                PartyRequest pr5 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "Tekela", "Duvanje", RequestState.Accepted, 1);
-                PartyRequest pr6 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(2022, 9, 5), 1999, false, "Pakle", "Duvanje", RequestState.Rejected, 1);
-                PartyRequest pr7 = new PartyRequest(partyType1, 550, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak1", "Duvanje", RequestState.Pending, 1);
-                PartyRequest pr8 = new PartyRequest(partyType2, 600, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak2", "Duvanje", RequestState.Accepted, 1);
-                PartyRequest pr9 = new PartyRequest(partyType3, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak3", "Duvanje", RequestState.Active, 1);
-                PartyRequest pr10 = new PartyRequest(partyType3, 700, "Mite cenica", new DateTime(1997, 9, 5), 1999, false, "Lepak4", "Duvanje", RequestState.Rejected, 1);
+                PartyRequest pr3 = new PartyRequest(partyType1, 550, "Mite cenica4", new DateTime(2022, 9, 4), 1999, false, "Banana split", "Ako je drina granica popicemo je", RequestState.Pending, 1);
+                PartyRequest pr4 = new PartyRequest(partyType1, 550, "Mite cenica5", new DateTime(2022, 9, 3), 1999, false, "BOBI I COBI", "Prelo", RequestState.Pending, 1);
+                PartyRequest pr5 = new PartyRequest(partyType1, 550, "Mite cenica6", new DateTime(2022, 9, 5), 1999, false, "Tekela", "Krajiska zurka", RequestState.Accepted, 1);
+                PartyRequest pr6 = new PartyRequest(partyType1, 550, "Mite cenica7", new DateTime(2022, 9, 5), 1999, false, "Pakle", "Duvanje", RequestState.Rejected, 1);
+                PartyRequest pr7 = new PartyRequest(partyType1, 550, "Mite cenica8", new DateTime(2021, 9, 4), 1999, false, "Zare i Goci", "Zezancija", RequestState.Pending, 1);
+                PartyRequest pr8 = new PartyRequest(partyType2, 600, "Mite cenica9", new DateTime(2021, 9, 3), 1999, false, "Bahanalija", "Opsta zurka", RequestState.Accepted, 1);
+                PartyRequest pr9 = new PartyRequest(partyType3, 700, "Mite cenica10", new DateTime(1997, 9, 5), 1999, false, "Gospodsko", "Kosulja party", RequestState.Active, 1);
+                PartyRequest pr10 = new PartyRequest(partyType3, 700, "Mite cenica11", new DateTime(1997, 9, 5), 1999, false, "Dzabana", "Semafor party", RequestState.Rejected, 1);
                 pr2.OrganiserId = 3;
                 pr3.OrganiserId = 3;
                 pr4.OrganiserId = 3;

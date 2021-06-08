@@ -21,12 +21,11 @@
         </Grid.RowDefinitions>
 
         <Button Content="Nazad"  Command="{Binding RequestViewCommand}"   Height="Auto" Margin="10" HorizontalAlignment="Left"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
             
-            <Label Content="Naziv:" Margin="0,0,0,0.4" Width="72"></Label>
-            <Label Content="{Binding OrganizierTask.Name}" Margin="0,0,0,0.4" Width="141"></Label>
-            <Label Content="Status:" Margin="0,0,0,0.4" Width="97"></Label>
-            <Label Content="{Binding OrganizierTask.IsDone}" Height="26" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Naziv:" Margin="100,0,0,0.4" Width="72"></Label>
+            <Label Content="{Binding OrganizierTask.Name}" Margin="100,0,0,0.4" Width="141"></Label>
+            
         </StackPanel>
         <Label Grid.Row="2" Margin="100,10,0,0" Content="Opis zadatka:" />
         <TextBlock Grid.Row="3" Background="LightGray" Width="600" Height="40" Text="{Binding OrganizierTask.Description}"></TextBlock>

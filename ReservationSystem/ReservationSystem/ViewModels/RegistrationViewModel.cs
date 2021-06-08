@@ -15,7 +15,7 @@ namespace ReservationSystem.ViewModels
         public ICommand UpdateViewCommand { get; set; }
 
         public ICommand RegisterCommand { get; set; }
-
+        public ICommand BackCommand { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -28,8 +28,13 @@ namespace ReservationSystem.ViewModels
             UpdateViewCommand = updateViewCommand;
             RegisterCommand = new DelegateCommand(Register);
             BirthDate = DateTime.Today;
+            BackCommand = new DelegateCommand(Login);
         }
 
+        public void Login()
+        {
+            UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));
+        }
         private void Register()
         {
             if (Username == null || Password == null || Name == null || Surname == null || Email == null || BirthDate == null)
