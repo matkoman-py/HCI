@@ -39,7 +39,7 @@ namespace ReservationSystem.ViewModels
         }
         private int requestsLength { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-        public ICommand BackCommand { get; set; }
+        //public ICommand BackCommand { get; set; }
         public DelegateCommand NextPageCommand { get; set; }
         public DelegateCommand PreviousPageCommand { get; set; }
 
@@ -55,7 +55,7 @@ namespace ReservationSystem.ViewModels
             requestsLength = Requests.Count();
             NextPageCommand = new DelegateCommand(CanGetNextPage, NextPage);
             PreviousPageCommand = new DelegateCommand(CanGetPreviousPage, PreviousPage);
-            BackCommand = new DelegateCommand(Back);
+            //BackCommand = new DelegateCommand(Back);
             MoreInfoCommand = new MoreInfoCommand(UpdateViewCommand);
             PageIndex = 0;
             InitialPage();
@@ -120,10 +120,10 @@ namespace ReservationSystem.ViewModels
             }
             
         }
-        public void Back()
+        /*public void Back()
         {
             UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand, User));
-        }
+        }*/
 
         public List<PartyRequest> getProcessed()
         {

@@ -29,10 +29,10 @@ namespace ReservationSystem.ViewModels
             get; set;
         }
 
-        public ICommand BackCommand
+       /* public ICommand BackCommand
         {
             get; set;
-        }
+        }*/
         public AssociateOverviewViewModel(ICommand updateViewCommand, User user)
         {
             UpdateViewCommand = updateViewCommand;
@@ -41,7 +41,7 @@ namespace ReservationSystem.ViewModels
             User = user;
             AddNewOfferForAssociateCommand = new DelegateCommand(AddNewOfferForAssociate);
             AddNewAssociateCommand = new DelegateCommand(AddNewAssociate);
-            BackCommand = new DelegateCommand(Back);
+            //BackCommand = new DelegateCommand(Back);
         }
 
         public List<Associate> getAssociates()
@@ -72,9 +72,9 @@ namespace ReservationSystem.ViewModels
                 UpdateViewCommand.Execute(new CreateNewAssociateViewModel(UpdateViewCommand, User));
             
         }
-        public void Back()
+        /*public void Back()
         {
-            UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand,User));
-        }
+            UpdateViewCommand.Execute(new OrganizerHomePageViewModel(UpdateViewCommand,User));
+        }*/
     }
 }

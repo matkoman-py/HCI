@@ -55,8 +55,11 @@ namespace ReservationSystem.ViewModels
                     break;
                 case Role.Organizier:
                     //organizier
-                    //UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user));//, new User()));
-                    UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand, user));
+                    OrganizerHomePage organizerHomePage = new OrganizerHomePage(user);
+                    organizerHomePage.Show();
+                    organizerHomePage.Topmost = true;
+                    Application.Current.MainWindow.Hide();
+                    //UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand, user));
                     break;
                 case Role.Administrator:
                     //administrator

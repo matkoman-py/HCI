@@ -139,7 +139,8 @@
     <Compile Include="ViewModels\NewSuggestionsViewModel.cs" />
     <Compile Include="ViewModels\OfferReviewOrganizerViewModel.cs" />
     <Compile Include="ViewModels\OfferReviewPageViewModel.cs" />
-    <Compile Include="ViewModels\OrganizierHomePageViewModel.cs" />
+    <Compile Include="ViewModels\OrganizerHomePageViewModel.cs" />
+    <Compile Include="ViewModels\PartyRequestTypeSelectionViewModel.cs" />
     <Compile Include="ViewModels\PendingRequestsViewModel.cs" />
     <Compile Include="ViewModels\PreviousPartiesViewModel.cs" />
     <Compile Include="ViewModels\PendingRequestOverview.cs" />
@@ -221,6 +222,9 @@
     <Compile Include="Views\OfferReviewPage.xaml.cs">
       <DependentUpon>OfferReviewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\OrganizerHomePage.xaml.cs">
+      <DependentUpon>OrganizerHomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Organizer\CreateSuggestionView.xaml.cs">
       <DependentUpon>CreateSuggestionView.xaml</DependentUpon>
     </Compile>
@@ -236,8 +240,8 @@
     <Compile Include="Views\Organizer\RequestOverivew.xaml.cs">
       <DependentUpon>RequestOverivew.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\OrganizierHomePage.xaml.cs">
-      <DependentUpon>OrganizierHomePage.xaml</DependentUpon>
+    <Compile Include="Views\PartyRequestsTypeSelection.xaml.cs">
+      <DependentUpon>PartyRequestsTypeSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PendingRequestsOverview.xaml.cs">
       <DependentUpon>PendingRequestsOverview.xaml</DependentUpon>
@@ -381,6 +385,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\OrganizerHomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Organizer\CreateSuggestionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -401,9 +409,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\OrganizierHomePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\PartyRequestsTypeSelection.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PendingRequestsOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
