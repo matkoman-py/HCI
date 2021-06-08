@@ -85,16 +85,9 @@ namespace ReservationSystem.ViewModels
             RequestCreationCommand = new DelegateCommand(RequestCreation);
             User = user;
 
-            //Suggestions = getSuggestions();
             Requests = getRequests();
             _selectedViewModel = new ProfileViewModel(UpdateViewCommand, user);
         }
-
-        //public UserHomePageViewModel()
-        //{
-        //    UpdateViewCommand = new UpdateViewCommand(this);
-        //    _selectedViewModel = new LoginViewModel(UpdateViewCommand);
-        //}
 
         public void RequestCreation()
         {

@@ -71,9 +71,6 @@
             <DataTemplate DataType="{x:Type viewmodelsAdmin:AddOrganizersViewModel}">
                 <viewsAdmin:AddOrganizerView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminPageViewModel}">
-                <viewsAdmin:AdminPage/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodelsAdmin:AdminAssociatesViewModel}">
                 <viewsAdmin:AdminAssociatesView/>
             </DataTemplate>

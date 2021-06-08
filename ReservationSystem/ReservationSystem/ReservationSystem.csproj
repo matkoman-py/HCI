@@ -114,13 +114,13 @@
     <Compile Include="ViewModels\AcceptedRequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\ActiveRequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\ActiveTaskOverviewViewModel.cs" />
+    <Compile Include="ViewModels\AdminHomePageViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOfferViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOrganizerViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminFieldsOfWorkViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminOrganizersOverviewModel.cs" />
-    <Compile Include="ViewModels\Administrator\AdminPageViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminPartyTypeViewModel.cs" />
     <Compile Include="ViewModels\Administrator\EditAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\EditOfferViewModel.cs" />
@@ -164,6 +164,9 @@
     <Compile Include="Views\ActiveTaskOverview.xaml.cs">
       <DependentUpon>ActiveTaskOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminHomePage.xaml.cs">
+      <DependentUpon>AdminHomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrator\AddAssociatesView.xaml.cs">
       <DependentUpon>AddAssociatesView.xaml</DependentUpon>
     </Compile>
@@ -178,9 +181,6 @@
     </Compile>
     <Compile Include="Views\Administrator\AdminFieldOfWorkOverview.xaml.cs">
       <DependentUpon>AdminFieldOfWorkOverview.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrator\AdminPage.xaml.cs">
-      <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrator\AdminOrganizersOverview.xaml.cs">
       <DependentUpon>AdminOrganizersOverview.xaml</DependentUpon>
@@ -305,6 +305,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\AdminHomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Administrator\AddAssociatesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -322,10 +326,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Administrator\AdminFieldOfWorkOverview.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Administrator\AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -499,7 +499,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Validators\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Static\blankProfilePicture.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -507,8 +509,6 @@
     <Resource Include="Static\placeHolder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Folder Include="Static\" />
-    <Folder Include="Validators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

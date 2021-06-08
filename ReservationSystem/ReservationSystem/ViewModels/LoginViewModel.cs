@@ -60,7 +60,11 @@ namespace ReservationSystem.ViewModels
                     break;
                 case Role.Administrator:
                     //administrator
-                    UpdateViewCommand.Execute(new AdminPageViewModel(UpdateViewCommand, user));//, new User()));
+                    AdminHomePage adminHomePage = new AdminHomePage(user);
+                    adminHomePage.Show();
+                    adminHomePage.Topmost = true;
+                    Application.Current.MainWindow.Hide();
+                    //UpdateViewCommand.Execute(new AdminPageViewModel(UpdateViewCommand, user));//, new User()));
                     break;
             }
         }
