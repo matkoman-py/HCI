@@ -43,10 +43,9 @@ namespace ReservationSystem.ViewModels
             UserHomePageCommand = new DelegateCommand(UserHomePage);
             ChooseOrganisatorPageCommand = new DelegateCommand(ChooseOrganisatorPage);
             User = user;
-            PartyTypes = new List<PartyType>();
-            PartyTypes.Add(PartyType.Anniversary);
-            PartyTypes.Add(PartyType.Birthday);
-            PartyTypes.Add(PartyType.Other);
+            using (var db = new ProjectDatabase()) {
+                PartyTypes = db.PartyTypes.ToList();
+            }
             PartyRequest = new PartyRequest();
             PartyRequest.RequestState = RequestState.Pending;
             PartyRequest.CreatorId = user.Id;

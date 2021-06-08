@@ -8,17 +8,12 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    [DataContract]
     public class TablesArrangement
     {
         [Key]
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
         public List<Table> Tables { get; set; }
-        [DataMember]
         public string Description { get; set; }
-        [DataMember]
         public string Image { get; set; }
 
         public TablesArrangement()

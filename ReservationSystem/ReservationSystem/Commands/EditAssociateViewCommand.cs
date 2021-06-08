@@ -1,4 +1,6 @@
 ﻿using ReservationSystem.Models;
+using ReservationSystem.Utils;
+using ReservationSystem.ViewModels;
 using ReservationSystem.ViewModels.Administrator;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,14 @@ namespace ReservationSystem.Commands
         public void Execute(object parameter)
         {
             Associate associate = (Associate)parameter;
+            using (var db = new ProjectDatabase())
+            {
+                associate = db.Associates
+                    .Include("FieldOfWork")
+                    .Include("Offers")
+                    .Where(a => a.Id == associate.Id)
+                    .FirstOrDefault();
+            }
             UpdateViewCommand.Execute(new EditAssociatesViewModel(UpdateViewCommand, associate));
         }
 

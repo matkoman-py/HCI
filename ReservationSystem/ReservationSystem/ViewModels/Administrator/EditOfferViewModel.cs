@@ -1,5 +1,6 @@
 ﻿using ReservationSystem.Commands;
 using ReservationSystem.Models;
+using ReservationSystem.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -20,10 +21,15 @@ namespace ReservationSystem.ViewModels.Administrator
         public EditOfferViewModel(ICommand updateViewCommand, Offer offer)
         {
             UpdateViewCommand = updateViewCommand;
-            BackCommand = new DelegateCommand(()
-                => UpdateViewCommand.Execute(new EditAssociatesViewModel(updateViewCommand, Offer.Associate)));
+            BackCommand = new DelegateCommand(goToPastView);
             EditOfferCommand = new DelegateCommand(EditOffer);
             Offer = offer;
+        }
+
+        private void goToPastView()
+        {
+            var pastViewModel = ViewChangeUtils.PastViews.Pop();
+            UpdateViewCommand.Execute(pastViewModel);
         }
 
         private void EditOffer()

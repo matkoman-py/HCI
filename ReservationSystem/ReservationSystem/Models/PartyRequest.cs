@@ -9,19 +9,16 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-
-    public enum PartyType { Birthday, Anniversary, Other}
-
     public enum RequestState { Pending, Rejected, Accepted }
 
-    [DataContract]
     public class PartyRequest
     {
         [Key]
-
         public int Id { get; set; }
 
-        public PartyType PartyType { get; set; }
+        public int PartyTypeId { get; set; }
+
+        public virtual PartyType PartyType { get; set; }
 
         public int Budget { get; set; }
 
@@ -40,7 +37,9 @@ namespace ReservationSystem.Models
         public RequestState RequestState { get; set; }
 
         public int CreatorId { get; set; }
+
         public int OrganiserId { get; set; }
+
         public PartyRequest()
         {
 

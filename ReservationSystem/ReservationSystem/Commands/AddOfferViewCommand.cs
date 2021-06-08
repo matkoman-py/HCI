@@ -1,4 +1,6 @@
 ﻿using ReservationSystem.Models;
+using ReservationSystem.Utils;
+using ReservationSystem.ViewModels;
 using ReservationSystem.ViewModels.Administrator;
 using System;
 using System.Collections.Generic;
@@ -9,9 +11,10 @@ using System.Windows.Input;
 
 namespace ReservationSystem.Commands
 {
-    public class EditOfferViewCommand : ICommand
+    public class AddOfferViewCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
+        private BaseViewModel pastView;
         public ICommand UpdateViewCommand { get; set; }
 
         public bool CanExecute(object parameter)
@@ -21,12 +24,15 @@ namespace ReservationSystem.Commands
 
         public void Execute(object parameter)
         {
-            Offer offer = (Offer)parameter;
-            UpdateViewCommand.Execute(new EditOfferViewModel(UpdateViewCommand, offer));
+            ViewChangeUtils.PastViews.Push(pastView);
+            Associate associate = (Associate)parameter;
+            Console.WriteLine(associate.Name);
+            UpdateViewCommand.Execute(new AddOfferViewModel(UpdateViewCommand, associate));
         }
 
-        public EditOfferViewCommand(ICommand updateViewCommand)
+        public AddOfferViewCommand(ICommand updateViewCommand, BaseViewModel baseViewModel)
         {
+            pastView = baseViewModel;
             UpdateViewCommand = updateViewCommand;
         }
     }

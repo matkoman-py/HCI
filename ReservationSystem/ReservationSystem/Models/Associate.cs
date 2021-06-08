@@ -8,9 +8,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ReservationSystem.Models
 {
-
-    public enum FieldOfWork { Restaurant, Catering, Music, Other }
-
     public class Associate
     {
         [Key]
@@ -18,6 +15,7 @@ namespace ReservationSystem.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string Description { get; set; }
+        public int FieldOfWorkId { get; set; }
         public FieldOfWork FieldOfWork { get; set; }
         public TablesArrangement TablesArrangement { get; set; }
         public virtual ICollection<Offer> Offers { get; set; }

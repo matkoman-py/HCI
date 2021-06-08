@@ -21,41 +21,51 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
-        <DockPanel VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Margin="20,0,20,0">
+        <DockPanel VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Ime:</Label>
-            <TextBox Height="25" Text="{Binding Associate.Name}"></TextBox>
+            <TextBox Text="{Binding Associate.Name}"></TextBox>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" Margin="20,0,20,0">
+        <DockPanel VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Lokacija:</Label>
             <TextBox Height="25" Text="{Binding Associate.Address}"></TextBox>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" Margin="20,0,20,0">
+        <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Delatnost:</Label>
             <ComboBox Height="25" 
                     ItemsSource="{Binding Path=FieldOfWorkOptions}"
-                    SelectedValue="{Binding Path=Associate.FieldOfWork, Converter={StaticResource EnumConverter}}"></ComboBox>
+                    SelectedValue="{Binding Path=Associate.FieldOfWork}"
+                    DisplayMemberPath="Name"
+                    ></ComboBox>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row ="4" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="20,0,20,0">
+        <DockPanel VerticalAlignment="Center" Grid.Row ="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Opsi:</Label>
-            <TextBox Height="70" Text="{Binding Associate.Description}"></TextBox>
+            <TextBox  Text="{Binding Associate.Description}"></TextBox>
         </DockPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="1">
+        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1">
             <Button Command="{Binding BackCommand}">Odustani</Button>
         </StackPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2">
+        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2">
             <Button Command="{Binding EditAssociatesCommand}">Ažuriraj</Button>
         </StackPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="3">
-            <Button Command="{Binding EditOfferCommand}">Dodaj Ponudu</Button>
+        <StackPanel VerticalAlignment="Center" Grid.Row="4" Grid.Column="3">
+            <Button Command="{Binding AddOfferCommand}">Dodaj Ponudu</Button>
         </StackPanel>
-        <DataGrid Height="250"  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="4"
-                Margin="0,10,10,0" ItemsSource="{Binding Associate.Offers}" AutoGenerateColumns="False" CanUserAddRows="false">
+        <DataGrid 
+            Grid.Row="0" 
+            Grid.Column="2" 
+            Grid.ColumnSpan="2" 
+            Grid.RowSpan="4"
+            Margin="0,10,10,0" 
+            ColumnWidth="*"
+            ItemsSource="{Binding Associate.Offers}" 
+            AutoGenerateColumns="False" 
+            CanUserAddRows="false"
+            IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Ime" Width="90" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Cena" Width="90" Binding="{Binding Price}"/>
-                <DataGridTextColumn Header="Opis" Width="120" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Ime" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Description}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

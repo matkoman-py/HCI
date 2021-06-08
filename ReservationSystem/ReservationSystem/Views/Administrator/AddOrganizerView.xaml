@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ReservationSystem.Views.Administrator"
+             xmlns:local="clr-namespace:ReservationSystem.Views.Administrator" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              Background="White"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.7*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -20,36 +20,100 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <DockPanel VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Ime:</Label>
-            <TextBox Height="25" Text="{Binding Name}"></TextBox> 
-        </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Prezime:</Label>
-            <TextBox Height="25" Text="{Binding Surname}"></TextBox> 
-        </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Broj telefona:</Label>
-            <TextBox Height="25" Text="{Binding PhoneNumber}"></TextBox> 
-        </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row ="1"  Grid.Column="2" Grid.ColumnSpan="2" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Korisničko ime:</Label>
-            <TextBox Height="25" Text="{Binding Username}"></TextBox> 
-        </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row ="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Lozinka:</Label>
-            <TextBox Height="25" Text="{Binding Password}"></TextBox> 
-        </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row ="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="20,0,20,0">
+        <Grid
+            HorizontalAlignment="Stretch"
+            Grid.Row="0" 
+            Grid.Column="1"
+            Grid.ColumnSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
+                <Label DockPanel.Dock="Top">Ime:</Label>
+                <TextBox Text="{Binding Name}"></TextBox>
+            </DockPanel>
+            <DockPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
+                <Label DockPanel.Dock="Top">Prezime:</Label>
+                <TextBox Text="{Binding Surname}"></TextBox>
+            </DockPanel>
+        </Grid>
+
+        <DockPanel VerticalAlignment="Center" Grid.Row ="1" Grid.Column="1" Grid.ColumnSpan="1" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Email:</Label>
-            <TextBox Height="25" Text="{Binding Email}"></TextBox> 
+            <TextBox Text="{Binding Email}"></TextBox>
         </DockPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2">
-            <Button Command="{Binding BackCommand}">Odustani</Button>
-        </StackPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2">
-            <Button Command="{Binding AddOrganizerCommand}">Dodaj</Button>
-        </StackPanel>
+
+        <DockPanel VerticalAlignment="Center" Grid.Row ="2"  Grid.Column="1" Grid.ColumnSpan="1" Margin="20,0,20,0">
+            <Label DockPanel.Dock="Top">Korisničko ime:</Label>
+            <TextBox Text="{Binding Username}"></TextBox>
+        </DockPanel>
+
+        <Grid
+            HorizontalAlignment="Stretch"
+            Grid.Row="3" 
+            Grid.Column="1"
+            Grid.ColumnSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
+                <Label DockPanel.Dock="Top">Lozinka:</Label>
+                <TextBox Text="{Binding Password}"></TextBox>
+            </DockPanel>
+            <DockPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
+                <Label DockPanel.Dock="Top">Ponovite lozinku:</Label>
+                <TextBox Text="{Binding PasswordRepeat}"></TextBox>
+            </DockPanel>
+        </Grid>
+
+        <Grid
+            HorizontalAlignment="Stretch"
+            Grid.Row="4" 
+            Grid.Column="1"
+            Grid.ColumnSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
+                <Label DockPanel.Dock="Top">Broj telefona:</Label>
+                <TextBox Text="{Binding PhoneNumber}"></TextBox>
+            </DockPanel>
+            <DockPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
+                <Label DockPanel.Dock="Top">Rođendan:</Label>
+                <DatePicker SelectedDate="{Binding Birthday}"></DatePicker>
+            </DockPanel>
+        </Grid>
+
+        <Grid
+            HorizontalAlignment="Stretch"
+            Grid.Row="5" 
+            Grid.Column="1"
+            Grid.ColumnSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button 
+                HorizontalAlignment="Center" 
+                Grid.Column="0" 
+                Command="{Binding BackCommand}"
+                Content="{materialDesign:PackIcon ArrowLeft}" 
+                ToolTip="Odustani i vrati se na prethodnu stranu"
+                ></Button>
+            <Button 
+                HorizontalAlignment="Center"
+                Grid.Column="2"
+                Command="{Binding AddOrganizerCommand}"
+                Content="{materialDesign:PackIcon AccountPlus}" 
+                ToolTip="Dodaj novog organizatora"
+                ></Button>
+        </Grid>
+
     </Grid>
 </UserControl>

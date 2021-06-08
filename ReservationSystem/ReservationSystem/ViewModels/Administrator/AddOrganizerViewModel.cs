@@ -19,13 +19,16 @@ namespace ReservationSystem.ViewModels.Administrator
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string PasswordRepeat { get; set; }
         public string PhoneNumber { get; set; }
         public string Username { get; set; }
+        public DateTime Birthday { get; set; }
 
         public AddOrganizersViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
             AddOrganizerCommand = new DelegateCommand(AddOrganizer);
+            Birthday = DateTime.Now;
             BackCommand = new DelegateCommand(() => 
                 UpdateViewCommand.Execute(new AdminOrganizersOverviewModel(UpdateViewCommand)));
         }
@@ -44,7 +47,7 @@ namespace ReservationSystem.ViewModels.Administrator
                         Password = Password,
                         Username = Username,
                         PhoneNumber = PhoneNumber,
-                        Birthday = DateTime.Now,
+                        Birthday = Birthday,
                         Role = Role.Organizier,
                     };
                     db.Users.Add(user);

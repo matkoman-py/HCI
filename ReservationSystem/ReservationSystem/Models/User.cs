@@ -12,7 +12,6 @@ namespace ReservationSystem.Models
 
     public enum Role { Customer, Organizier, Administrator}
 
-    [DataContract]
     public class User
     {
         [Key]

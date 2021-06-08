@@ -12,11 +12,8 @@ namespace ReservationSystem.Models
     public class Point
     {
         [Key]
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
         public int X { get; set; }
-        [DataMember]
         public int Y { get; set; }
 
         public Point()

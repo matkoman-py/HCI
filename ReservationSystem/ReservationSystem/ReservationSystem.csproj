@@ -90,21 +90,32 @@
     <Compile Include="App_Code\Initializer.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\EditAssociateViewCommand.cs" />
-    <Compile Include="Commands\EditOfferViewCommand.cs" />
+    <Compile Include="Commands\AddOfferViewCommand.cs" />
     <Compile Include="Commands\OfferReviewCommand.cs" />
     <Compile Include="Commands\RequestOverviewCommand.cs" />
     <Compile Include="Commands\RequestViewCommand.cs" />
     <Compile Include="Commands\TaskOverviewFromOfferCommand.cs" />
     <Compile Include="Commands\TeskOverviewCommand.cs" />
+    <Compile Include="Commands\ToEditFieldOfWorkCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converter\EnumConverter.cs" />
     <Compile Include="IMainWindow.cs" />
+    <Compile Include="Converter\ModelConverter.cs" />
+    <Compile Include="Converter\NegateConverter.cs" />
+    <Compile Include="Models\AbstractModel.cs" />
+    <Compile Include="Models\FieldOfWork.cs" />
+    <Compile Include="Models\PartyType.cs" />
+    <Compile Include="Seeders\UserSeeder.cs" />
+    <Compile Include="Utils\ViewChangeUtils.cs" />
     <Compile Include="ViewModels\Administrator\AddAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOfferViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOrganizerViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminAssociatesViewModel.cs" />
+    <Compile Include="ViewModels\Administrator\AdminFieldsOfWorkViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminOrganizersOverviewModel.cs" />
     <Compile Include="ViewModels\Administrator\AdminPageViewModel.cs" />
+    <Compile Include="ViewModels\Administrator\AdminPartyTypeViewModel.cs" />
     <Compile Include="ViewModels\Administrator\EditAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\EditOfferViewModel.cs" />
     <Compile Include="ViewModels\AssociateOverviewViewModel.cs" />
@@ -150,11 +161,17 @@
     <Compile Include="Views\Administrator\AdminAssociatesView.xaml.cs">
       <DependentUpon>AdminAssociatesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrator\AdminFieldOfWorkOverview.xaml.cs">
+      <DependentUpon>AdminFieldOfWorkOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrator\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrator\AdminOrganizersOverview.xaml.cs">
       <DependentUpon>AdminOrganizersOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\AdminPartyTypeOverview.xaml.cs">
+      <DependentUpon>AdminPartyTypeOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrator\EditAssociatesView.xaml.cs">
       <DependentUpon>EditAssociatesView.xaml</DependentUpon>
@@ -283,11 +300,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Administrator\AdminFieldOfWorkOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Administrator\AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Administrator\AdminOrganizersOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\AdminPartyTypeOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -453,6 +478,8 @@
     <Resource Include="Static\placeHolder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Folder Include="Static\" />
+    <Folder Include="Validators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

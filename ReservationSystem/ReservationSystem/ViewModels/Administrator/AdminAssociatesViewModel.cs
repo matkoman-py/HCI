@@ -13,15 +13,26 @@ namespace ReservationSystem.ViewModels.Administrator
     {
         private ICommand UpdateViewCommand;
         public ICommand ToAddAssociatesCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
         public EditAssociateViewCommand ToEditAssociatesCommand { get; set; }
-        public ICollection<Associate> Associates { get; set; }
+
+        private ICollection<Associate> associates;
+        public ICollection<Associate> Associates
+        {
+            get { return associates; }
+            set
+            {
+                associates = value;
+                OnPropertyChanged("Associates");
+            }
+        }
+        public string SearchQuery { get; set; }
         public ICommand BackCommand { get; set; }
-
-
         public AdminAssociatesViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
             ToAddAssociatesCommand = new DelegateCommand(ToAddAssociate);
+            SearchCommand = new DelegateCommand(Search);
             ToEditAssociatesCommand = new EditAssociateViewCommand(UpdateViewCommand);
             Associates = getAssociates();
             BackCommand = new DelegateCommand(() =>
@@ -32,7 +43,27 @@ namespace ReservationSystem.ViewModels.Administrator
         {
             using (var db = new ProjectDatabase())
             {
-                return db.Associates.Include("Offers").ToList();
+                return db.Associates.Include("FieldOfWork").Include("Offers").ToList();
+            }
+        }
+
+        private void Search()
+        {
+            if (String.IsNullOrEmpty(SearchQuery))
+            {
+                Associates = getAssociates();
+            }
+            else
+            {
+                using (var db = new ProjectDatabase())
+                {
+                    Associates = db.Associates.Include("FieldOfWork").Include("Offers")
+                        .Where(a => a.Name.Contains(SearchQuery) ||
+                                        a.Address.Contains(SearchQuery) ||
+                                        a.Description.Contains(SearchQuery) ||
+                                        a.FieldOfWork.Name.Contains(SearchQuery))
+                        .ToList();
+                }
             }
         }
 
