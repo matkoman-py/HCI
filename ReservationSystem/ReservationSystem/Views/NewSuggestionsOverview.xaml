@@ -58,7 +58,9 @@
                                             <TextBox BorderBrush="LightGray" BorderThickness="1" IsEnabled="False" Text="{Binding Comment}"></TextBox>
                                         </DockPanel>
                                     </StackPanel>
-                                    <Button Grid.Row="2">Vidi više</Button>
+                                    <Button Grid.Row="2" Command="{Binding DataContext.RequestOverviewCommand,
+                                                RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}">Vidi više</Button>
                                 </Grid>
                             </materialDesign:Card>
                         </DockPanel>

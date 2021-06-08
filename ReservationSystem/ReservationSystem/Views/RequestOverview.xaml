@@ -20,7 +20,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0" >
             <Label  Content="Vrsta proslave:"/>
-            <TextBox Margin="10" Text="{Binding Request.PartyType}" IsEnabled="False"/>
+            <TextBox Margin="10" Text="{Binding Request.PartyType.Name}" IsEnabled="False"/>
             <Label  Content="Budzet:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding Request.Budget}" IsEnabled="False"/>
             <Label  Content="Mesto:"/>
@@ -29,7 +29,7 @@
             <TextBox  Height="25" Margin="10" Text="{Binding Request.Date}" IsEnabled="False"/>
             <Label  Content="Opis:"/>
             <TextBox  Height="30" Margin="10" Text="{Binding Request.Description}" IsEnabled="False"/>
-            <Button Command="{Binding UserHomePageCommand}" Content="Nazad" Grid.Column="1" Grid.Row="3"  Margin="35"/>
+            <Button Command="{Binding NewSuggestionsCommand}" Content="Nazad" Grid.Column="1" Grid.Row="3"  Margin="35"/>
 
         </StackPanel>
 

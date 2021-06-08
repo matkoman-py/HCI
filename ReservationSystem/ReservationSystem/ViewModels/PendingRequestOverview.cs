@@ -44,7 +44,7 @@ namespace ReservationSystem.ViewModels
             using (var db = new ProjectDatabase())
             {
 
-                return db.Users.Where(u => u.Id == Sug.CreatorId).First();
+                return db.Users.Where(u => u.Id == Sug.OrganiserId).First();
             }
         }
 

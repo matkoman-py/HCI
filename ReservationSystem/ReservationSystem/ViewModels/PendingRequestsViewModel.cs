@@ -14,6 +14,7 @@ namespace ReservationSystem.ViewModels
 
         public List<PartyRequest> Requests { get; set; }
 
+        public static PartyRequest SelectedRequest { get; set; }
         private List<PartyRequest> requestsToShow;
         public List<PartyRequest> RequestsToShow
         {
@@ -39,6 +40,7 @@ namespace ReservationSystem.ViewModels
         }
         private int requestsLength { get; set; }
         public ICommand UpdateViewCommand { get; set; }
+        public static ICommand OfferReviewCommand { get; set; }
         public DelegateCommand NextPageCommand { get; set; }
         public DelegateCommand PreviousPageCommand { get; set; }
         public User User { get; set; }
@@ -55,6 +57,7 @@ namespace ReservationSystem.ViewModels
             PreviousPageCommand = new DelegateCommand(CanGetPreviousPage, PreviousPage);
             PageIndex = 0;
             InitialPage();
+            OfferReviewCommand = new DelegateCommand(OfferReview);
         }
 
         public void InitialPage()
@@ -113,5 +116,13 @@ namespace ReservationSystem.ViewModels
             }
         }
 
+        public void OfferReview()
+        {
+            using (var db = new ProjectDatabase())
+            {
+                PartyRequest pr =  db.PartyRequests.Include("PartyType").Where(p => p.Id == SelectedRequest.Id).First();
+                UpdateViewCommand.Execute(new RequestOverviewViewModel(UpdateViewCommand, pr));
+            }
+        }
     }
 }

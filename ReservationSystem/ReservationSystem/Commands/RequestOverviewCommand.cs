@@ -22,12 +22,13 @@ namespace ReservationSystem.Commands
 
         public void Execute(object parameter)
         {
-            PartyRequest sug = (PartyRequest)parameter;
-            /*using (var db = new ProjectDatabase())
+            Suggestion sug = (Suggestion)parameter;
+            PartyRequest pr;
+            using (var db = new ProjectDatabase())
             {
-                sug = db.PartyRequests.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Where(suggestion => suggestion.Id == sug.Id).First();
-            }*/
-            UpdateViewCommand.Execute(new RequestOverviewViewModel(UpdateViewCommand, sug));
+                pr = db.PartyRequests.Include("PartyType").Where(suggestion => suggestion.Id == sug.PartyRequestId).First();
+            }
+            UpdateViewCommand.Execute(new RequestOverviewViewModel(UpdateViewCommand, pr));
         }
 
         public RequestOverviewCommand(ICommand updateViewCommand)

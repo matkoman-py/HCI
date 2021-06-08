@@ -19,7 +19,7 @@ namespace ReservationSystem.ViewModels
 
         public string Visibility { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-
+        public ICommand NewSuggestionsCommand { get; set; }
         public static ICommand RequestViewCommand
         {
             get; set;
@@ -34,10 +34,10 @@ namespace ReservationSystem.ViewModels
             UpdateViewCommand = updateViewCommand;
             Request = suggestion;
             RequestViewCommand = new RequestViewCommand(UpdateViewCommand);
-            UserHomePageCommand = new DelegateCommand(UserHomePage);
+            NewSuggestionsCommand = new DelegateCommand(NewSuggestions);
             Suggestion = getSuggestion();
         }
-        public void UserHomePage()
+        public void NewSuggestions()
         {
             //treba da se prosledjuje id korisnika koji je u pitanju - znaci nzm kako 
             // i nesto sacuvas u bazu valjda 
@@ -47,7 +47,7 @@ namespace ReservationSystem.ViewModels
                 
                 user = db.Users.Where(u => u.Id == Request.CreatorId).First();
             }
-            UpdateViewCommand.Execute(new UserHomePageViewModel(user));
+            UpdateViewCommand.Execute(new NewSuggestionsViewModel(UpdateViewCommand,user));
         }
 
         public List<Suggestion> getSuggestion()

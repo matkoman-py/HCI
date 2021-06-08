@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ReservationSystem.Models;
+using ReservationSystem.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,13 @@ namespace ReservationSystem.Views
         public ActiveTaskOverview()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Offer myValue = (Offer)((Button)sender).Tag;
+            ActiveTaskOverviewViewModel.ToGoOffer = myValue;
+            ActiveTaskOverviewViewModel.OfferReviewCommand.Execute(null);
         }
     }
 }

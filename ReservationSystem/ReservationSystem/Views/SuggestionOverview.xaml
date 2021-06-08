@@ -30,7 +30,7 @@
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
+                        <StackPanel Orientation="Horizontal">
                             <Button 
                                 Command="{Binding DataContext.TaskOverviewOrganizerCommand,
                                                 RelativeSource={RelativeSource AncestorType=UserControl}}"
@@ -38,6 +38,7 @@
                                 Content="{Binding Name}" 
                                >
                             </Button>
+                            <Label Content="{Binding IsDone}"></Label>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -49,6 +50,6 @@
             <TextBox MinLines="2" BorderThickness="2" IsEnabled="False"  BorderBrush="Gray" FontSize="20" Text="{Binding Suggestion.Comment}"></TextBox>
         </StackPanel>
 
-        <Button Grid.Column="1" Grid.Row="5">Posalji ponudu</Button>
+        <Button Grid.Column="1" Grid.Row="5" Command="{Binding SendOfferCommand}">Posalji ponudu</Button>
     </Grid>
 </UserControl>

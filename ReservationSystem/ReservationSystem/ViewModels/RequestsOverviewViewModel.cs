@@ -129,7 +129,7 @@ namespace ReservationSystem.ViewModels
         {
             using (var db = new ProjectDatabase())
             {
-                return db.PartyRequests.Where(req => req.RequestState == RequestState.Accepted || req.RequestState == RequestState.Rejected).OrderBy(requst => requst.Date).ToList();
+                return db.PartyRequests.Include("PartyType").Where(req => (req.RequestState == RequestState.Accepted || req.RequestState == RequestState.Rejected) && req.OrganiserId == User.Id).OrderBy(requst => requst.Date).ToList();
             }
         }
 
@@ -137,7 +137,7 @@ namespace ReservationSystem.ViewModels
         {
             using (var db = new ProjectDatabase())
             {
-                return db.PartyRequests.Where(req => req.RequestState == RequestState.Active).OrderBy(requst => requst.Date).ToList();
+                return db.PartyRequests.Include("PartyType").Where(req => req.RequestState == RequestState.Active && req.OrganiserId == User.Id).OrderBy(requst => requst.Date).ToList();
             }
         }
 
@@ -145,7 +145,7 @@ namespace ReservationSystem.ViewModels
         {
             using (var db = new ProjectDatabase())
             {
-                return db.PartyRequests.Where(req => req.RequestState == RequestState.Pending).OrderBy(requst => requst.Date).ToList();
+                return db.PartyRequests.Include("PartyType").Where(req => req.RequestState == RequestState.Pending && req.OrganiserId == User.Id).OrderBy(requst => requst.Date).ToList();
             }
         }
         
