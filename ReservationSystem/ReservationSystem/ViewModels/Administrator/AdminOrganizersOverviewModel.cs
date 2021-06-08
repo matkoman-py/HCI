@@ -13,17 +13,26 @@ namespace ReservationSystem.ViewModels.Administrator
     {
         private ICommand UpdateViewCommand;
         public ICommand ToAddOrganizerCommand { get; set; }
-        public ICollection<User> Organizers { get; set; }
-        public ICommand BackCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
 
+        private ICollection<User> organizers;
+        public ICollection<User> Organizers 
+        {
+            get { return organizers; }
+            set 
+            { 
+                organizers = value;
+                OnPropertyChanged("Organizers");
+            }
+        }
+        public string SearchQuery { get; set; }
 
         public AdminOrganizersOverviewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
             ToAddOrganizerCommand = new DelegateCommand(ToAddOrganizer);
+            SearchCommand = new DelegateCommand(Search);
             Organizers = getOrganizers();
-            BackCommand = new DelegateCommand(() => 
-                UpdateViewCommand.Execute(new AdminPageViewModel(UpdateViewCommand)));
         }
 
         private ICollection<User> getOrganizers() 
@@ -37,6 +46,27 @@ namespace ReservationSystem.ViewModels.Administrator
         public void ToAddOrganizer()
         {
             UpdateViewCommand.Execute(new AddOrganizersViewModel(UpdateViewCommand));
+        }
+
+        private void Search()
+        {
+            if (String.IsNullOrEmpty(SearchQuery))
+            {
+                Organizers = getOrganizers();
+            }
+            else
+            {
+                using (var db = new ProjectDatabase())
+                {
+                    Organizers = db.Users
+                        .Where(user => user.Role == Role.Organizier)
+                        .Where(user => user.Name.Contains(SearchQuery) ||
+                                        user.PhoneNumber.Contains(SearchQuery) ||
+                                        user.Surname.Contains(SearchQuery) ||
+                                        user.Email.Contains(SearchQuery))
+                        .ToList();
+                }
+            }
         }
     }
 }

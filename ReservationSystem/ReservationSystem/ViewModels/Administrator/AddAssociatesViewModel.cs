@@ -1,5 +1,6 @@
 ﻿using ReservationSystem.Commands;
 using ReservationSystem.Models;
+using ReservationSystem.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,7 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void AddOffer()
         {
+            ViewChangeUtils.PastViews.Push(this);
             UpdateViewCommand.Execute(new AddOfferViewModel(UpdateViewCommand, Associate));
         }
 

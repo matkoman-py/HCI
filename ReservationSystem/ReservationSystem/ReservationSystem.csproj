@@ -90,7 +90,7 @@
     <Compile Include="App_Code\Initializer.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\EditAssociateViewCommand.cs" />
-    <Compile Include="Commands\EditOfferViewCommand.cs" />
+    <Compile Include="Commands\AddOfferViewCommand.cs" />
     <Compile Include="Commands\OfferReviewCommand.cs" />
     <Compile Include="Commands\RequestOverviewCommand.cs" />
     <Compile Include="Commands\RequestViewCommand.cs" />
@@ -106,6 +106,7 @@
     <Compile Include="Models\FieldOfWork.cs" />
     <Compile Include="Models\PartyType.cs" />
     <Compile Include="Seeders\UserSeeder.cs" />
+    <Compile Include="Utils\ViewChangeUtils.cs" />
     <Compile Include="ViewModels\Administrator\AddAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOfferViewModel.cs" />
     <Compile Include="ViewModels\Administrator\AddOrganizerViewModel.cs" />

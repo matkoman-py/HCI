@@ -14,7 +14,7 @@ namespace ReservationSystem.ViewModels.Administrator
     {
         private ICommand UpdateViewCommand;
         public ICommand EditAssociatesCommand { get; set; }
-        public EditOfferViewCommand EditOfferCommand { get; set; }
+        public AddOfferViewCommand AddOfferCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public Associate Associate { get; set; }
         public List<FieldOfWork> FieldOfWorkOptions { get; set; }
@@ -39,7 +39,7 @@ namespace ReservationSystem.ViewModels.Administrator
                 FieldOfWorkOptions = db.FieldsOfWork.ToList();
             }
             EditAssociatesCommand = new DelegateCommand(UpdateAssociates);
-            EditOfferCommand = new EditOfferViewCommand(UpdateViewCommand);
+            AddOfferCommand = new AddOfferViewCommand(UpdateViewCommand, this);
             BackCommand = new DelegateCommand(() =>
                 UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand)));
         }
