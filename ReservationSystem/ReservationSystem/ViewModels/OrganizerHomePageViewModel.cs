@@ -28,6 +28,7 @@ namespace ReservationSystem.ViewModels
         static public ICommand PartyRequestsSelectionTypeCommand { get; set; }
         static public ICommand AssociateOverviewCommand { get; set; }
 
+        static public ICommand AcceptedSuggestionOverviewCommand { get; set; }
         public User User { get; set; }
 
         public OrganizerHomePageViewModel(User user)
@@ -37,10 +38,15 @@ namespace ReservationSystem.ViewModels
             ProfileCommand = new DelegateCommand(Profile);
             PartyRequestsSelectionTypeCommand = new DelegateCommand(PartyRequestsSelectionType);
             AssociateOverviewCommand = new DelegateCommand(AssociateOverview);
+            AcceptedSuggestionOverviewCommand = new DelegateCommand(AcceptedSuggestion);
             User = user;
             _selectedViewModel = new ProfileViewModel(UpdateViewCommand, user);
         }
 
+        public void AcceptedSuggestion()
+        {
+            UpdateViewCommand.Execute(new AcceptedSuggestionViewModel(UpdateViewCommand, User));
+        }
         public void Profile()
         {
             UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, User));

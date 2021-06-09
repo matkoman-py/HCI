@@ -50,6 +50,7 @@ namespace ReservationSystem.ViewModels
         }
         public void NewSuggestions()
         {
+            
             if(Pending == "Hidden")
             {
                 User user;

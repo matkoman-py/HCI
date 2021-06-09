@@ -36,7 +36,7 @@
             <TextBox  Text="{Binding Surname}" Height="30" Margin="10"/>
             <Label  Content="Datum rodjenja:"/>
             <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding BirthDate}" Margin="10"
-                  
+                  Height="30"
                   FirstDayOfWeek="Monday" />
         </StackPanel>
 

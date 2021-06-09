@@ -49,7 +49,7 @@ namespace ReservationSystem.ViewModels
             List<Associate> associates = new List<Associate>();
             using(var db = new ProjectDatabase())
             {
-                associates = db.Associates.ToList();
+                associates = db.Associates.Include("FieldOfWork").ToList();
             }
             return associates;
         }

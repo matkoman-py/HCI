@@ -21,7 +21,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Grid.Column="1" >
-            <Label  Content="Korisnicko ime:"/>
+            <Label  Content="Korisničko ime:"/>
             <TextBox Text="{Binding Username}" Height="30" Margin="3"/>
         </StackPanel>
         
@@ -29,7 +29,7 @@
             <Label  Content="Lozinka:"/>
             <TextBox Text="{Binding Password}" Height="30" Margin="3"/>
             <TextBlock>
-                Jos uvek nemas profil?
+                Još uvek nemaš profil?
                 <Hyperlink Click="Register">
                     Registruj se
                 </Hyperlink>

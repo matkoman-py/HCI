@@ -14,7 +14,6 @@ namespace ReservationSystem.ViewModels.Administrator
         private ICommand UpdateViewCommand;
         public ICommand AddOrganizerCommand { get; set; }
         public ICommand BackCommand { get; set; }
-
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }

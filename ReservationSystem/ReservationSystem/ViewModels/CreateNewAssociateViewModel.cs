@@ -22,7 +22,11 @@ namespace ReservationSystem.ViewModels
         public CreateNewAssociateViewModel(ICommand updateViewCommand, User user)
         {
             UpdateViewCommand = updateViewCommand;
-            FieldOfWorkOptions = Enum.GetValues(typeof(FieldOfWork)).Cast<FieldOfWork>().ToList();
+            using(var db = new ProjectDatabase())
+            {
+                FieldOfWorkOptions = db.FieldsOfWork.ToList();
+            }
+            
             AddAssociatesCommand = new DelegateCommand(AddAssociates);
             User = user;
             BackCommand = new DelegateCommand(() => UpdateViewCommand.Execute(new AssociateOverviewViewModel(UpdateViewCommand,User)));

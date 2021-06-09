@@ -40,7 +40,7 @@ namespace ReservationSystem.ViewModels
         public ICommand UpdateViewCommand { get; set; }
         public DelegateCommand NextPageCommand { get; set; }
         public DelegateCommand PreviousPageCommand { get; set; }
-        public RequestOverviewCommand RequestOverviewCommand { get; set; }
+        public RequestOverviewOrganizerCommand RequestOverviewCommand { get; set; }
         public User User { get; set; }
 
         public string Visibility { get; set; }
@@ -55,7 +55,7 @@ namespace ReservationSystem.ViewModels
             PreviousPageCommand = new DelegateCommand(CanGetPreviousPage, PreviousPage);
             PageIndex = 0;
             InitialPage();
-            RequestOverviewCommand = new RequestOverviewCommand(UpdateViewCommand);
+            RequestOverviewCommand = new RequestOverviewOrganizerCommand(UpdateViewCommand);
         }
 
         public void InitialPage()

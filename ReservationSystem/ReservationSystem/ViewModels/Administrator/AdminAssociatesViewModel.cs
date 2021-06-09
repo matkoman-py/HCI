@@ -27,7 +27,6 @@ namespace ReservationSystem.ViewModels.Administrator
             }
         }
         public string SearchQuery { get; set; }
-       // public ICommand BackCommand { get; set; }
         public AdminAssociatesViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
@@ -35,8 +34,6 @@ namespace ReservationSystem.ViewModels.Administrator
             SearchCommand = new DelegateCommand(Search);
             ToEditAssociatesCommand = new EditAssociateViewCommand(UpdateViewCommand);
             Associates = getAssociates();
-            //BackCommand = new DelegateCommand(() =>
-                //UpdateViewCommand.Execute(new AdminPageViewModel(UpdateViewCommand)));
         }
 
         private ICollection<Associate> getAssociates()

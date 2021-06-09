@@ -36,6 +36,7 @@ namespace ReservationSystem.ViewModels
             ProfileSaveCommand = new DelegateCommand(ProfileSave);
             UserCopy = new User(user);
             User = user;
+            
         }
         public void ProfileCancel()
         {
@@ -43,6 +44,11 @@ namespace ReservationSystem.ViewModels
         }
         public void ProfileSave()
         {
+            if (User.Birthday.CompareTo(DateTime.Today) > 0)
+            {
+                MessageBox.Show("Ne mozete se roditi u buducnost xD");
+                return;
+            }
             using (var db = new ProjectDatabase())
             {
                 foreach (User user in db.Users.ToList())

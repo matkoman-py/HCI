@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ReservationSystem.Views
+namespace ReservationSystem.Views.Organizer
 {
     /// <summary>
     /// Interaction logic for TableArrangementOverview.xaml

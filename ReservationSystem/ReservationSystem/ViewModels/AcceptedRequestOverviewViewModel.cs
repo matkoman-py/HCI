@@ -14,7 +14,7 @@ namespace ReservationSystem.ViewModels
         public PartyRequest PartyRequest { get; set; }
         public string Name { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-
+        public ICommand SuggestionOverviewCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public AcceptedRequestOverviewViewModel(ICommand updateViewCommand, PartyRequest partyRequest)
         {
@@ -22,6 +22,11 @@ namespace ReservationSystem.ViewModels
             PartyRequest = partyRequest;
             Name = getName();
             BackCommand = new DelegateCommand(Back);
+            SuggestionOverviewCommand = new DelegateCommand(SuggestionOverview);
+        }
+        public void SuggestionOverview()
+        {
+            UpdateViewCommand.Execute(new SuggestionOverviewOrganizerViewModel(UpdateViewCommand, PartyRequest.Id));
         }
         public string getName()
         {
@@ -37,9 +42,17 @@ namespace ReservationSystem.ViewModels
         {
             using (var db = new ProjectDatabase())
             {
+                Suggestion sug = db.Suggestions.Where(s => s.PartyRequestId == PartyRequest.Id).First();
                 
                 User user = db.Users.Where(u => u.Id == PartyRequest.OrganiserId).First();
-                UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user, RequestState.Accepted));
+                if(sug.Answered == AnsweredType.Prihvacen)
+                {
+                    UpdateViewCommand.Execute(new AcceptedSuggestionViewModel(UpdateViewCommand, user));
+                }
+                else {
+                    UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user, RequestState.Accepted));
+                }
+                
             }
         }
     }

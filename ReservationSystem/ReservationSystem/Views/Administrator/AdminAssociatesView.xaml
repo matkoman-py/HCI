@@ -49,7 +49,13 @@
                 <DataGridTextColumn Header="Adresa" Binding="{Binding Address}"/>
                 <DataGridTextColumn Header="Opis" Binding="{Binding Description}"/>
                 <DataGridTextColumn Header="Delatnost" Binding="{Binding FieldOfWork.Name}"/>
-                <DataGridTextColumn Header="Sala" Binding="{Binding FieldOfWork.HasRoom}"/>
+                <DataGridTemplateColumn Header="Sala">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsEnabled="False" IsChecked="{Binding FieldOfWork.HasRoom}"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -66,7 +72,7 @@
         <StackPanel Margin="0,10,0,10"  Grid.Row="5" Grid.Column="3">
             <Button 
                 Command="{Binding ToAddAssociatesCommand}"
-                Content="{materialDesign:PackIcon FormatAnnotationPlus}" 
+                Content="{materialDesign:PackIcon Plus}" 
                 ToolTip="Dodaj novog saradnika"
                 ></Button>
         </StackPanel>

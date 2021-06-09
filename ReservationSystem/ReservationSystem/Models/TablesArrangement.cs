@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    public class TablesArrangement
+    public class TablesArrangement : AbstractModel
     {
         [Key]
         public int Id { get; set; }
-        public List<Table> Tables { get; set; }
+        public virtual List<Table> Tables { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
 

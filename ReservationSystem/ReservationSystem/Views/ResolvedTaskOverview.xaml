@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ReservationSystem.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800"
+             Background="White">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,19 +21,22 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Nazad"  Command="{Binding BackCommand}" Grid.Row="0"  Height="20" Margin="10" HorizontalAlignment="Left"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Label Content="Naziv:" Margin="0,0,0,0.4" Width="72"></Label>
-            <Label Content="{Binding OrganizierTask.Name}" Margin="0,0,0,0.4" Width="141"></Label>
-            <Label Content="Status:" Margin="0,0,0,0.4" Width="97"></Label>
-            <Label Content="{Binding OrganizierTask.IsDone}" Height="26" VerticalAlignment="Top" Width="66"/>
+        <Button Content="Nazad"  Command="{Binding BackCommand}" Grid.Row="0"  Margin="10" HorizontalAlignment="Left"/>
+        <StackPanel Grid.Row="1" Margin="40,0,0,10" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Label FontSize="20" FontWeight="Bold" Content="Naziv:" Margin="0,0,0,0.4" Width="72"></Label>
+            <Label FontSize="20"  Content="{Binding OrganizierTask.Name}" Margin="0,0,0,0.4" Width="141"></Label>
+            
         </StackPanel>
-        <Label Grid.Row="2" Margin="100,10,0,0" Content="Opis zadatka:" />
-        <TextBlock Grid.Row="3" Background="LightGray" Width="600" Height="40" Text="{Binding OrganizierTask.Description}"></TextBlock>
-        <Label Grid.Row="4" Margin="100,10,0,0" Content="Komentar:" />
-        <TextBox Grid.Row="5" Background="LightGray" Width="600" Height="50" Text="{Binding OrganizierTask.Comment}"></TextBox>
-        <Label Grid.Row="6" Margin="10,10,0,0" Content="Ponude:" HorizontalAlignment="Center"/>
-        <ListView Grid.Row="7" Margin="10" ItemsSource="{Binding OrganizierTask.Offers}" Name="Zadaci" VerticalAlignment="Top" Width="600" Height="50">
+        <StackPanel Grid.Row="2" Margin="40,0,40,40">
+        <Label   Content="Opis zadatka:" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" />
+        <TextBox  BorderThickness="2"   BorderBrush="Black" FontSize="16"  Height="50" Text="{Binding OrganizierTask.Description}" IsEnabled="False"></TextBox>
+        <Label  Content="Komentar:" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" />
+        <TextBox   BorderThickness="2"   BorderBrush="Black" FontSize="16"  Height="50" Text="{Binding OrganizierTask.Comment}" IsEnabled="False"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Margin="40,0,40,40">
+            <Label  FontSize="16" FontWeight="Bold" Content="Ponude:" HorizontalAlignment="Center"/>
+        <Border  Grid.Row="7" BorderBrush="Black" BorderThickness="2">
+            <ListView  MaxHeight="150" ItemsSource="{Binding OrganizierTask.Offers}" Name="Zadaci" VerticalAlignment="Top" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -45,6 +49,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+        </Border>
+        </StackPanel>
     </Grid>
 </UserControl>
