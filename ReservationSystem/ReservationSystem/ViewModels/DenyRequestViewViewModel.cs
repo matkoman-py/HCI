@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
@@ -42,6 +43,7 @@ namespace ReservationSystem.ViewModels
                 s.Answered = AnsweredType.Neprihvacen;
                 db.Suggestions.Add(s);
                 db.SaveChanges();
+                MessageBox.Show("Uspešno ste odbili zahtev.");
             }
             UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, User, RequestState.Pending));
         }

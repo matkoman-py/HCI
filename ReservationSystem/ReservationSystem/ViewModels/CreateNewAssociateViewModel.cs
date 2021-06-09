@@ -35,7 +35,7 @@ namespace ReservationSystem.ViewModels
         }
         private void AddAssociates()
         {
-            if(string.IsNullOrEmpty(Associate.Address) || string.IsNullOrEmpty(Associate.Description) || string.IsNullOrEmpty(Associate.Name))
+            if(string.IsNullOrEmpty(Associate.Address) || string.IsNullOrEmpty(Associate.Description) || string.IsNullOrEmpty(Associate.Name) || Associate.FieldOfWork == null)
             {
                 MessageBox.Show("Morate uneti sva polja!");
                 return;
@@ -46,6 +46,7 @@ namespace ReservationSystem.ViewModels
                 {
                     db.Associates.Add(Associate);
                     db.SaveChanges();
+                    MessageBox.Show("Uspešno ste dodali saradnika.");
                     UpdateViewCommand.Execute(new AssociateOverviewViewModel(UpdateViewCommand, User));
                 }
                 catch

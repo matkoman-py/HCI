@@ -56,13 +56,10 @@
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.PartyTheme}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Datum:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Datum i vreme:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Date}"></TextBlock>
         </StackPanel>
-        <StackPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Vreme:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">21h</TextBlock>
-        </StackPanel>
+        
 
         <StackPanel  Margin="15" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Button Command="{Binding DenyRequestViewCommand}">Odbij zahtev</Button>

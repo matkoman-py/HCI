@@ -4,6 +4,7 @@ using ReservationSystem.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels.Administrator
@@ -65,9 +66,15 @@ namespace ReservationSystem.ViewModels.Administrator
             {
                 try
                 {
+                    if(string.IsNullOrEmpty(Associate.Description) || string.IsNullOrEmpty(Associate.Address) || string.IsNullOrEmpty(Associate.Name) || Associate.FieldOfWork == null)
+                    {
+                        MessageBox.Show("Morate popuniti sva polja!");
+                        return;
+                    }
                     db.FieldsOfWork.Attach(Associate.FieldOfWork);
                     db.Associates.Add(Associate);
                     db.SaveChanges();
+                    MessageBox.Show("Uspešno ste dodali saradnika!");
                     UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand));
                 }
                 catch

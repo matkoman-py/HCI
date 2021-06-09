@@ -63,6 +63,7 @@ namespace ReservationSystem.ViewModels.Administrator
             {
                 Offer.Associate = Associate;
                 Associate.Offers.Add(Offer);
+                MessageBox.Show("Uspešno ste dodali ponudu!");
                 UpdateViewCommand.Execute(ViewChangeUtils.PastViews.Pop());
             }
 

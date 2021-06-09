@@ -113,6 +113,7 @@ namespace ReservationSystem.ViewModels.Administrator
                 db.SaveChanges();
                 NewPartyTypeName = "";
                 PartyTypes.Add(partyType);
+                MessageBox.Show("Uspešno ste dodali vrstu proslave!");
             }
         }
 

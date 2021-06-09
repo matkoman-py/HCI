@@ -27,7 +27,7 @@
         <StackPanel Margin="40,0,40,40" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3">
             <Label FontSize="16" FontWeight="Bold" Content="Zadaci:" HorizontalAlignment="Center"/>
             <Border  BorderBrush="Black" BorderThickness="2">
-            <ListView MaxHeight="150" ItemsSource="{Binding Suggestion.OrganizierTasks}" Name="ListView1" VerticalAlignment="Top" >
+            <ListView MaxHeight="150" MinHeight="50" ItemsSource="{Binding Suggestion.OrganizierTasks}" Name="ListView1" VerticalAlignment="Top" >
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -53,6 +53,6 @@
             <TextBox  BorderThickness="2"   BorderBrush="Black" FontSize="16" Text="{Binding Suggestion.Comment}"></TextBox>
         </StackPanel>
 
-        <Button Grid.Column="1" Grid.Row="3" Margin="30" Command="{Binding SendOfferCommand}">Posalji ponudu</Button>
+        <Button Grid.Column="1" Grid.Row="3" Margin="30" Command="{Binding SendOfferCommand}">Pošalji ponudu</Button>
     </Grid>
 </UserControl>

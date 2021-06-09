@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:sys="clr-namespace:System;assembly=mscorlib"
-      xmlns:local="clr-namespace:ReservationSystem.Views" xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:RequesCreationViewModel}"
+      xmlns:local="clr-namespace:ReservationSystem.Views" xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DataContext="{d:DesignInstance Type=viewmodels:RequesCreationViewModel}"
              mc:Ignorable="d" 
       d:DesignHeight="520" d:DesignWidth="800">
     <Grid>
@@ -26,13 +26,15 @@
                       SelectedValue="{Binding PartyRequest.PartyType}"
                       DisplayMemberPath="Name"/>
             <Label  Content="Budžet:"/>
-            <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Budget}"/>
+            <TextBox  Height="25" Margin="10" Text="{Binding Budget}"/>
             <Label  Content="Mesto:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Place}"/>
             <Label  Content="Datum:"/>
             <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding PartyRequest.Date}"
                   Height="25" Margin="10"
                   FirstDayOfWeek="Monday" />
+            <Label  Content="Vreme:"/>
+            <materialDesign:TimePicker SelectedTime="{Binding Time}" Is24Hours="True" Height="25" Margin="10" />
             <Label  Content="Opis:"/>
             <TextBox  Height="30" Margin="10" Text="{Binding PartyRequest.Description}" />
             
@@ -41,7 +43,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="50,50,50,50">
             <Label  Content="Broj ljudi:"/>
-            <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Capacity}"/>
+            <TextBox  Height="25" Margin="10" Text="{Binding Capacity}"/>
             <CheckBox  Height="47" Margin="10" Content="Budžet fleksibilan" IsChecked="{Binding PartyRequest.IsBudgetFlexible, Mode=TwoWay}"/>
             <Label  Content="Tema:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.PartyTheme}"/>

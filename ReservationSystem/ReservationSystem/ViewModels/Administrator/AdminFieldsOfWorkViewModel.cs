@@ -130,6 +130,7 @@ namespace ReservationSystem.ViewModels.Administrator
                 NewFieldOfWorkName = "";
                 NewHasRoom = false;
                 FieldsOfWork.Add(fieldOfWork);
+                MessageBox.Show("Uspešno ste dodali delatnost!");
             }
         }
 
