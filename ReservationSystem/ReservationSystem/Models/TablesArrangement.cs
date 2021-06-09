@@ -18,7 +18,7 @@ namespace ReservationSystem.Models
 
         public TablesArrangement()
         {
-
+            Tables = new List<Table>();
         }
 
         public TablesArrangement(List<Table> tables, string description, string image)

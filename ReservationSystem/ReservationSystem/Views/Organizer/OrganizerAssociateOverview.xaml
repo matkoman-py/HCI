@@ -22,14 +22,14 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="4"
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="4" ColumnWidth="*"
                     Name = "AssociateOverviewTable" AlternatingRowBackground = "LightBlue"  
                      AutoGenerateColumns = "False" ItemsSource="{Binding Associates}" CanUserAddRows="false" SelectedItem="{Binding SelectedAssociate}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Ime" Width="100" Binding="{Binding Name}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Adresa" Width="100" Binding="{Binding Address}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Opis" Width="130" Binding="{Binding Description}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Oblast posla" Width="130" Binding="{Binding FieldOfWork.Name}" IsReadOnly="True"/>
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Ime"  Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Adresa" Binding="{Binding Address}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Opis"  Binding="{Binding Description}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Oblast posla"  Binding="{Binding FieldOfWork.Name}" IsReadOnly="True"/>
             </DataGrid.Columns>
 
         </DataGrid>

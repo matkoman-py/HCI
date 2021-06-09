@@ -124,6 +124,7 @@
     <Compile Include="Models\Guest.cs" />
     <Compile Include="Models\PartyType.cs" />
     <Compile Include="Seeders\UserSeeder.cs" />
+    <Compile Include="Utils\CsvToGuestsConverter.cs" />
     <Compile Include="Utils\ViewChangeUtils.cs" />
     <Compile Include="ViewModels\AcceptedRequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\AcceptedSuggestionViewModel.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="ViewModels\ResolvedTaskOverviewViewModel.cs" />
     <Compile Include="ViewModels\SuggestionOverviewOrganizerViewModel.cs" />
     <Compile Include="ViewModels\SuggestionOverviewViewModel.cs" />
+    <Compile Include="ViewModels\TableArrangementViewModel.cs" />
     <Compile Include="ViewModels\TaskOverviewViewModel.cs" />
     <Compile Include="ViewModels\UserHomePageViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />

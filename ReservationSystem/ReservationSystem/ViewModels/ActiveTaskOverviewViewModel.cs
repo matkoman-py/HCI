@@ -1,5 +1,6 @@
 ﻿using ReservationSystem.Commands;
 using ReservationSystem.Models;
+using ReservationSystem.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -112,7 +113,7 @@ namespace ReservationSystem.ViewModels
             UpdateViewCommand.Execute(new OfferReviewOrganizerViewModel(UpdateViewCommand, o, OrganizierTask.Id));
         }
 
-        private void CheckIsAlreadyOffered()
+        private bool CheckIsAlreadyOffered()
         {
             using (var db = new ProjectDatabase())
             {
@@ -123,15 +124,16 @@ namespace ReservationSystem.ViewModels
                     if (of.Id == SelectedOffer.Id)
                     {
                         MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
-                        return;
+                        return true;
                     }
                 }
             }
             if (SelectedOffers.Contains(SelectedOffer))
             {
                 MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
-                return;
+                return true;
             }
+            return false;
         }
 
         public void AddRegularOffer()
@@ -140,17 +142,11 @@ namespace ReservationSystem.ViewModels
             using (var db = new ProjectDatabase())
             {
                 OrganizierTask.Offers.Add(SelectedOffer);
-                double price = 0;
-
-                foreach (Offer off in OrganizierTask.Offers)
-                {
-                    //TODO: Odraditi proveru za prihvaceno
-                    price += off.Price;
-                }
+                
                 OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
                 Offer offer = db.Offers.Include("Associate").Include("Associate.FieldOfWork").Where(of => of.Id == SelectedOffer.Id).First();
                 o.Offers.Add(offer);
-                db.Suggestions.Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First().Price += price;
+                
                 db.SaveChanges();
             }
 
@@ -158,6 +154,8 @@ namespace ReservationSystem.ViewModels
 
         private void GoToTableArrangmentView()
         {
+            ViewChangeUtils.PastViews.Push(this);
+            UpdateViewCommand.Execute(new TableArrangementViewModel(UpdateViewCommand, SelectedOffer, OrganizierTask));
         }
 
         public void AddOffer()
@@ -168,7 +166,8 @@ namespace ReservationSystem.ViewModels
             }
             else
             {
-                CheckIsAlreadyOffered();
+
+                if (CheckIsAlreadyOffered()) return;
 
                 if (SelectedOffer.Associate.FieldOfWork.HasRoom)
                 {
@@ -177,18 +176,6 @@ namespace ReservationSystem.ViewModels
                 else
                 {
                     AddRegularOffer();
-                }
-
-                SelectedOffers.Add(SelectedOffer);
-                using (var db = new ProjectDatabase())
-                {
-                    OrganizierTask.Offers.Add(SelectedOffer);
-
-                    OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
-                    Offer offer = db.Offers.Include("Associate").Include("Associate.FieldOfWork").Where(of => of.Id == SelectedOffer.Id).First();
-                    o.Offers.Add(offer);
-
-                    db.SaveChanges();
                 }
 
             }

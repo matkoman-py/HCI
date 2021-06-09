@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReservationSystem.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,27 @@ namespace ReservationSystem.Views
         public RequestCreation()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".csv";
+            dlg.Filter = "CSV Files (*.csv)|*.csv|TXT Files (*.txt)|*.txt";
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                string filename = dlg.FileName;
+                var guests = Utils.CsvToGuestsConverter.CsvToGuests(filename);
+                RequesCreationViewModel.SetGuestsCommand.Execute(guests);
+            }
         }
     }
 }

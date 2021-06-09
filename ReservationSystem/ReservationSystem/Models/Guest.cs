@@ -3,7 +3,10 @@
 namespace ReservationSystem.Models
 {
     public class Guest
-    {   
+    {
+        private string v1;
+        private string v2;
+
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
@@ -13,9 +16,8 @@ namespace ReservationSystem.Models
         {
         }
 
-        public Guest(int id, string name, string surname)
+        public Guest(string name, string surname)
         {
-            Id = id;
             Name = name;
             Surname = surname;
         }

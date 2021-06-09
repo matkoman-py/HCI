@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ReservationSystem.Views"
+             xmlns:local="clr-namespace:ReservationSystem.Views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              Background="White"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -19,12 +19,114 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Canvas Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4" Background="AntiqueWhite"></Canvas>
-        <Canvas Grid.Row="0" Grid.Column="3" Grid.RowSpan="4" Background="AliceBlue"></Canvas>
-        <Button Margin="20" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Odustani"></Button>
-        <Button Margin="20" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Content="Zavrsi"></Button>
+        <Border Grid.Row="0" 
+                Grid.Column="1" 
+                Grid.ColumnSpan="3" 
+                Grid.RowSpan="4" 
+                Margin="10"
+                BorderBrush="Black" BorderThickness="2">
+            <ScrollViewer
+            Grid.Row="0" 
+            BorderBrush="Black" 
+            BorderThickness="2" 
+            HorizontalScrollBarVisibility="Visible" 
+            VerticalScrollBarVisibility="Visible">
+                <ItemsControl ItemsSource="{Binding TablesArrangement.Tables}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas 
+                        x:Name="CanvasMain"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        Height="1000"
+                        Width="1000"
+                        ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                        ScrollViewer.VerticalScrollBarVisibility="Visible"
+                        Background="Beige"
+                        />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <Setter Property="Canvas.Left" Value="{Binding TableCoordinates.X}" />
+                            <Setter Property="Canvas.Top" Value="{Binding TableCoordinates.Y}" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel
+                                AllowDrop="{Binding IsFull, Converter={StaticResource InvertBooleanConverter}}"
+                                DragOver="StackPanel_DragOver"
+                                Drop="StackPanel_Drop">
+                            <Image
+                            Source="/Static/table.png" Height="70" Width="70"/>
+                                <StackPanel HorizontalAlignment="Center" Margin="5" Orientation="Horizontal">
+                                    <TextBlock FontSize="16" Text="{Binding TakenNumberOfSeats}"></TextBlock>
+                                    <TextBlock FontSize="16">/</TextBlock>
+                                    <TextBlock FontSize="16" Text="{Binding NumberOfSeats}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+        <Border Grid.Row="0" 
+                Grid.Column="0" 
+                Grid.RowSpan="4" 
+                Margin="10"
+                BorderBrush="Black" BorderThickness="2">
+            <ListView 
+            PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown"
+            MouseMove="ListView_MouseMove"
+            Background="AliceBlue"
+            HorizontalContentAlignment="Stretch"
+            ItemsSource="{Binding Guests}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="2">
+                    <DockPanel>
+                        <Grid 
+                            HorizontalAlignment="Stretch"
+                            Margin="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.8*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel 
+                                    Grid.Column="0"
+                                    Orientation="Vertical">
+                                    <TextBlock Text="{Binding Name}"></TextBlock>
+                                    <TextBlock Text="{Binding Surname}"></TextBlock>
+                                </StackPanel>
+                            <materialDesign:PackIcon 
+                                Grid.Column="1"
+                                Kind="DragVariant" 
+                                HorizontalAlignment="Right" 
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                    </DockPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </Border>
+        <Button 
+            Margin="20" 
+            Grid.Row="4" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
+            Content="Odustani"
+            Command="{Binding BackCommand}"></Button>
+        <Button 
+            Margin="20" 
+            Grid.Row="4" 
+            Grid.Column="2" 
+            Grid.ColumnSpan="2" 
+            Content="Zavrsi"
+            Command="{Binding SaveCommand}"></Button>
     </Grid>
 </UserControl>

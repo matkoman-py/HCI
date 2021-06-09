@@ -32,14 +32,14 @@ namespace ReservationSystem.Views
 
         private void GridSplitter_MouseEnter(object sender, RoutedEventArgs e)
         {
-            if (this.Cursor != Cursors.Wait)
-                Mouse.OverrideCursor = Cursors.Hand;
+            //if (this.Cursor != Cursors.Wait)
+            //    Mouse.OverrideCursor = Cursors.Hand;
         }
 
         private void GridSplitter_MouseLeave(object sender, RoutedEventArgs e)
         {
-            if (this.Cursor != Cursors.Wait)
-                Mouse.OverrideCursor = Cursors.Arrow;
+            //if (this.Cursor != Cursors.Wait)
+            //    Mouse.OverrideCursor = Cursors.Arrow;
         }
 
         private void NewAssociateShortcut(object sender, ExecutedRoutedEventArgs e)

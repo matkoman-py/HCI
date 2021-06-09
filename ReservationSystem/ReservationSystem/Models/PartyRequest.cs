@@ -42,6 +42,8 @@ namespace ReservationSystem.Models
 
         public int OrganiserId { get; set; }
 
+        public virtual List<Guest> Guests { get; set; }
+
         public PartyRequest()
         {
 
