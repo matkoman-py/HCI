@@ -14,6 +14,12 @@ namespace ReservationSystem.Seeders
 
             using (var db = new ProjectDatabase())
             {
+
+                if (db.Users.ToList().Count != 0)
+                {
+                    return;
+                }
+
                 db.Users.Add(new User("pera", "pera", "peragmajl", "Pera", "Peric", new DateTime(1999, 9, 5), Role.Customer));
                 db.Users.Add(new User("mika", "mika", "mikagmajl", "Mika", "Mikic", new DateTime(1998, 9, 5), Role.Administrator));
                 db.Users.Add(new User("zika", "zika", "zikagmajl", "Zika", "Zikic", new DateTime(1997, 9, 5), Role.Organizier));

@@ -35,14 +35,6 @@ namespace ReservationSystem.ViewModels
         {
             User user = findUser();
 
-            if (user == null)
-            {
-                var userSeeder = new UserSeeder();
-                userSeeder.Execute();
-                return;
-            }
-
-
             switch (user.Role)
             {
                 case Role.Customer:

@@ -22,8 +22,7 @@
                     Executed="NewOfferForAssociateShortcut" />
         <CommandBinding Command="{StaticResource ApplyShortcut}" 
                     Executed="ApplyShortcut" />
-        <CommandBinding Command="{StaticResource CreateNewTaskShortcut}" 
-                    Executed="CreateNewTaskShortcut" />
+        <CommandBinding Command="{StaticResource CreateNewTaskShortcut}"  />
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Gesture="Control+S" Key="S" Command="{StaticResource NewAssociateShortcut}" />
