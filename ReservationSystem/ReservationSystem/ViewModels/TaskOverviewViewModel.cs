@@ -138,7 +138,7 @@ namespace ReservationSystem.ViewModels
                     OrganizierTask taskk = db.OrganizierTasks.Where(task => task.Id == OrganizierTask.Id).First();
                     taskk.Comment = OrganizierTask.Comment;
                     taskk.UserApproval = UserApproval.Prihvacen;
-
+                    taskk.SelectedOfferId = SelectedOffer.Id;
                     db.SaveChanges();
                 }
                 UpdateViewCommand.Execute(new RequestViewViewModel(UpdateViewCommand, sug));

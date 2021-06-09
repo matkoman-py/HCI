@@ -145,16 +145,13 @@ namespace ReservationSystem.ViewModels
                 using(var db = new ProjectDatabase())
                 {
                     OrganizierTask.Offers.Add(SelectedOffer);
-                    double price = 0;
+                   
                 
-                    foreach (Offer off in OrganizierTask.Offers)
-                    {
-                        price += off.Price;
-                    }
+                    
                     OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
                     Offer offer = db.Offers.Include("Associate").Include("Associate.FieldOfWork").Where(of => of.Id == SelectedOffer.Id).First();
                     o.Offers.Add(offer);
-                    db.Suggestions.Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First().Price += price;
+                    
                     db.SaveChanges();
                 }
                 

@@ -42,13 +42,7 @@ namespace ReservationSystem.Models
             Answered = AnsweredType.Neobradjen;
             Price = 0;
 
-            foreach (OrganizierTask task in tasks)
-            {
-                foreach (Offer offer in task.Offers)
-                {
-                    Price += offer.Price;
-                }
-            }
+            
         }
     }
 }

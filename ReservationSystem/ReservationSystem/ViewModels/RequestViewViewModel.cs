@@ -101,7 +101,16 @@ namespace ReservationSystem.ViewModels
                 using (var db = new ProjectDatabase())
                 {
                     Suggestion sug;
-                    sug = db.Suggestions.Where(s => s.Id == Suggestion.Id).First();
+                    sug = db.Suggestions.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Where(s => s.Id == Suggestion.Id).First();
+                    sug.Price = 0;
+                    if (state == AnsweredType.Prihvacen)
+                    {
+                        foreach (OrganizierTask ot in sug.OrganizierTasks)
+                        {
+                            Offer of = db.Offers.Where(o => o.Id == ot.SelectedOfferId).First();
+                            sug.Price += of.Price;
+                        }
+                    }
                     sug.Answered = state;
                     user = db.Users.Where(u => u.Id == Request.CreatorId).First();
                     db.SaveChanges();

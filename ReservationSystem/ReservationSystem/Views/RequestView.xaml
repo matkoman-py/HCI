@@ -53,7 +53,7 @@
                 </ListView.ItemContainerStyle>
             </ListView>
             <Label  Margin="10" Content="Komentar:" />
-            <TextBlock Margin="10" Background="LightGray" Width="600" Height="100" Text="{Binding Suggestion.Comment}"></TextBlock>
+            <TextBlock Margin="10" Background="LightGray" Width="600" Height="50" Text="{Binding Suggestion.Comment}"></TextBlock>
             <Button Visibility="{Binding Visibility}" Content="Posalji odgovor na predlog" Command="{Binding GiveAnswerCommand}"  Width="230" Margin="35" />
         </StackPanel>
 
