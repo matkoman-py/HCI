@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="Utils\CsvToGuestsConverter.cs" />
     <Compile Include="Utils\ViewChangeUtils.cs" />
+    <Compile Include="Validators\StringToIntValidate.cs" />
     <Compile Include="ViewModels\AcceptedRequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\AcceptedSuggestionViewModel.cs" />
     <Compile Include="ViewModels\ActiveRequestOverviewViewModel.cs" />
@@ -570,9 +571,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validators\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Static\blankProfilePicture.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -66,10 +66,8 @@
 
         <StackPanel Background="LightGray" Margin="15" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Label FontSize="16" Content="Zahtev odbijen" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-            <StackPanel Orientation="Horizontal">
-
-            </StackPanel>
-            <Button Content="Pregled predloga" HorizontalAlignment="Center"></Button>
+            
+            <Button Content="Pregled predloga" Command="{Binding SuggestionOverviewCommand}" HorizontalAlignment="Center"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels.Administrator
@@ -21,6 +22,7 @@ namespace ReservationSystem.ViewModels.Administrator
         public static ICommand CancelCommand { get; set; }
         private Offer Offer { get; set; }
         private Associate associate;
+        
         private int newNumberOfSeats { get; set; }
         public int NewNumberOfSeats 
         {
@@ -142,6 +144,11 @@ namespace ReservationSystem.ViewModels.Administrator
 
         public void AddTable() 
         {
+            if (NewNumberOfSeats <= 0)
+            {
+                MessageBox.Show("Morate uneti broj koji je veci od 0!");
+                return;
+            }
             var table = new Table()
             {
                 TableCoordinates = new Point(0, 0),

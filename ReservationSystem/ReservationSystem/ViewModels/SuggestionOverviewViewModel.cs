@@ -63,6 +63,7 @@ namespace ReservationSystem.ViewModels
                 pr = db.PartyRequests.Where(p => p.Id == Suggestion.PartyRequestId).First();
                 pr.RequestState = RequestState.Accepted;
                 sug.Answered = AnsweredType.Neobradjen;
+                sug.Comment = Suggestion.Comment;
                 db.SaveChanges();
                 User user = db.Users.Where(u => u.Id == sug.PartyRequest.OrganiserId).First();
                 UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user, RequestState.Active));

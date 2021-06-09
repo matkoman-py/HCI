@@ -29,7 +29,8 @@ namespace ReservationSystem.ViewModels
         public ICommand UpdateViewCommand { get; set; }
         public static ICommand SetGuestsCommand { get; set; }
         public User User { get; set; }
-       
+        public string Budget { get; set; }
+        public string Capacity { get; set; }
         public ICommand UserHomePageCommand
         {
             get; set;
@@ -64,9 +65,35 @@ namespace ReservationSystem.ViewModels
         {
             if(PartyRequest.Date.CompareTo(DateTime.Today) < 0)
             {
-                MessageBox.Show("Ne mozete izabrati datum u proslosti!");
+                MessageBox.Show("Ne možete izabrati datum u prošlosti!");
                 return;
             }
+            if(PartyRequest.PartyTheme == null || PartyRequest.Place == null || PartyRequest.Description == null || Budget == null || Capacity == null)
+            {
+                MessageBox.Show("Morate uneti sve podatke!");
+                return;
+            }
+            if (PartyRequest.PartyTheme.Trim() == "" || PartyRequest.Place.Trim() == "" || PartyRequest.Description.Trim() == "")
+            {
+                MessageBox.Show("Morate uneti sve podatke!");
+                return;
+            }
+            int budget;
+            bool success = Int32.TryParse(Budget, out budget);
+            if (!success)
+            {
+                MessageBox.Show("Morate uneti brojevnu vrednost za budzet!");
+                return;
+            }
+            int capacity;
+            success = Int32.TryParse(Capacity, out capacity);
+            if (!success)
+            {
+                MessageBox.Show("Morate uneti brojevnu vrednost za kapacitet!");
+                return;
+            }
+            PartyRequest.Budget = budget;
+            PartyRequest.Capacity = capacity;
             UpdateViewCommand.Execute(new ChooseOrganisatorPageViewModel(UpdateViewCommand, User, PartyRequest));
         }
 
