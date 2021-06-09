@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views" xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:UserHomePageViewModel}"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        Closed="Window_Closed"
         Height="590" Width="860">
     <Window.Resources>
         <RoutedUICommand x:Key="MyCommand1" Text="Text" />
