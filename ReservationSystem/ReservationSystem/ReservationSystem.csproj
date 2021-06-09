@@ -135,6 +135,7 @@
     <Compile Include="ViewModels\Administrator\AdminPartyTypeViewModel.cs" />
     <Compile Include="ViewModels\Administrator\EditAssociatesViewModel.cs" />
     <Compile Include="ViewModels\Administrator\EditOfferViewModel.cs" />
+    <Compile Include="ViewModels\Administrator\EditRoomViewModel.cs" />
     <Compile Include="ViewModels\AssociateOverviewViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChooseOrganisatorPageViewModel.cs" />
@@ -207,6 +208,9 @@
     </Compile>
     <Compile Include="Views\Administrator\EditOfferView.xaml.cs">
       <DependentUpon>EditOfferView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\EditRoomView.xaml.cs">
+      <DependentUpon>EditRoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChooseOrganisatorPage.xaml.cs">
       <DependentUpon>ChooseOrganisatorPage.xaml</DependentUpon>
@@ -360,6 +364,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Administrator\EditOfferView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\EditRoomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

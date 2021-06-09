@@ -158,6 +158,9 @@
             <DataTemplate DataType="{x:Type viewmodelsAdmin:AddRoomViewModel}">
                 <viewsAdmin:AddRoomView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsAdmin:EditRoomViewModel}">
+                <viewsAdmin:EditRoomView/>
+            </DataTemplate>
         </ResourceDictionary>
 
     </Application.Resources>

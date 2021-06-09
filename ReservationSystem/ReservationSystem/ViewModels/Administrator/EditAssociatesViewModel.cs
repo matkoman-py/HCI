@@ -18,6 +18,7 @@ namespace ReservationSystem.ViewModels.Administrator
         public DelegateCommand AddOfferCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
+        public ICommand EditOfferCommand { get; set; }
         public Associate Associate { get; set; }
         public List<FieldOfWork> FieldOfWorkOptions { get; set; }
 
@@ -44,6 +45,7 @@ namespace ReservationSystem.ViewModels.Administrator
             EditAssociatesCommand = new DelegateCommand(UpdateAssociates);
             AddOfferCommand = new DelegateCommand(GoToAddOffer);
             DeleteCommand = new DelegateCommand(Delete);
+            EditOfferCommand = new DelegateCommand(EditOffer);
             BackCommand = new DelegateCommand(() =>
                 UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand)));
         }
@@ -84,7 +86,6 @@ namespace ReservationSystem.ViewModels.Administrator
                     Console.WriteLine(e.StackTrace);
                     Console.WriteLine("Can't update associate!");
                 }
-
             }
         }
 
@@ -107,6 +108,14 @@ namespace ReservationSystem.ViewModels.Administrator
                 }
             }
             return this;
+        }
+
+        private Object EditOffer(Object offer)
+        {
+            var sentOffer = (Offer)offer;
+            ViewChangeUtils.PastViews.Push(this);
+            UpdateViewCommand.Execute(new EditOfferViewModel(UpdateViewCommand, sentOffer, "Edit"));
+            return sentOffer;
         }
 
     }

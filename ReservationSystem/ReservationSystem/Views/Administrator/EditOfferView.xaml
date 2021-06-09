@@ -20,7 +20,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <DockPanel 
             VerticalAlignment="Center" 
@@ -28,7 +28,7 @@
             Grid.Column="1"
             Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Saradnik:</Label>
-            <TextBlock Height="25" Text="{Binding Associate.Name}"></TextBlock>
+            <TextBlock Height="25" Text="{Binding Offer.Associate.Name}"></TextBlock>
         </DockPanel>
         <DockPanel 
             VerticalAlignment="Center" 
@@ -36,16 +36,36 @@
             Grid.Column="1" 
             Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Ime:</Label>
-            <TextBox Height="25" Text="{Binding Offer.Name}"></TextBox>
+            <TextBox Height="25" Text="{Binding Name}"></TextBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Cena ponude:</Label>
-            <TextBox Height="25" Text="{Binding Offer.Price}"></TextBox>
+            <TextBox Height="25" Text="{Binding Price}"></TextBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" 
                    Grid.RowSpan="2" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Opis:</Label>
-            <TextBox Height="100" Text="{Binding Offer.Description}"></TextBox>
+            <TextBox Height="100" Text="{Binding Description}"></TextBox>
+        </DockPanel>
+        <DockPanel  
+            VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Margin="20,0,20,0">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1.6*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Grid.Column="0" Margin="0,0,10,0" IsChecked="{Binding Offer.IsRoom}" IsEnabled="False">Sala</CheckBox>
+                <Button 
+                    Visibility="{Binding Offer.IsRoom, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                    Margin="5" 
+                    Grid.Column="1" 
+                    HorizontalAlignment="Center"
+                    Command="{Binding EditRoomCommand}"
+                    ToolTip="Izmeni raspored"
+                    VerticalAlignment="Center">Raspored</Button>
+            </Grid>
+            
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="1"
                    Grid.ColumnSpan="1" Grid.RowSpan="4" Grid.Column="1" Margin="20,0,20,0"/>
@@ -60,6 +80,7 @@
                 Command="{Binding BackCommand}"
                 ToolTip="Odustani i vrati se na prethodni prikaz">Odustani</Button>
             <Button 
+                Margin="5"
                 Grid.Column="1"
                 HorizontalAlignment="Center"
                 Command="{Binding EditOfferCommand}"
