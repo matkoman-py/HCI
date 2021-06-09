@@ -75,13 +75,13 @@
                         <ColumnDefinition Width="3*"/>
                         
                     </Grid.ColumnDefinitions>
-                    <TextBox Margin="5" Grid.Column="0" ></TextBox>
+                    <TextBox Margin="5" Grid.Column="0" Text="{Binding SearchParam}"></TextBox>
 
-                    <Button Margin="5" Content="Pretrazi" Grid.Column="1"></Button>
+                    <Button Margin="5" Content="Pretrazi" Grid.Column="1" Command="{Binding SearchCommand}"></Button>
                 </Grid>
                 
             </DockPanel>
-                <DataGrid   Name = "AssociateOverviewTable" AlternatingRowBackground = "LightBlue"  
+                <DataGrid   Name = "AssociateOverviewTable" AlternatingRowBackground = "LightBlue"  MaxHeight="150"
                     AlternationCount = "2" AutoGenerateColumns = "False" CanUserAddRows="false" SelectedItem="{Binding SelectedOffer}" ItemsSource="{Binding AllOffers}" IsReadOnly="True" >
                 
                 <DataGrid.Columns>

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
@@ -73,20 +74,18 @@ namespace ReservationSystem.ViewModels
         }
         public void AcceptPendingRequest()
         {
+            if(OrganizierTasks.Count == 0)
+            {
+                MessageBox.Show("Morate dodati bar jedan zadatak na ponudu!");
+                return;
+            }
             using (var db = new ProjectDatabase())
             {
                 db.PartyRequests.Where(pr => pr.Id == Sug.Id).First().RequestState = RequestState.Active;
-                /*double price = 0;
-                foreach (OrganizierTask task in OrganizierTasks)
-                {
-                    foreach (Offer offer in task.Offers)
-                    {
-                        price += offer.Price;
-                    }
-                }
-                db.Suggestions.Where(suggestion => suggestion.Id == Sug.Id).First().Price = price;*/
+                
                 db.SaveChanges();
             }
+            MessageBox.Show("Prihvatili ste ponudu!");
             UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, User, RequestState.Pending));
         }
         public void PendingRequestOverviewView()

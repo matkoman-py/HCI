@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels.Administrator
@@ -58,6 +59,11 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void UpdateAssociates()
         {
+            if(string.IsNullOrEmpty(Associate.Name.Trim()) || string.IsNullOrEmpty(Associate.Address.Trim()) || string.IsNullOrEmpty(Associate.Description.Trim()))
+            {
+                MessageBox.Show("Morate uneti sva polja!");
+                return;
+            }
             using (var db = new ProjectDatabase())
             {
                 try

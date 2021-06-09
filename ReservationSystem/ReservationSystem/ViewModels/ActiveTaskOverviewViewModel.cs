@@ -19,10 +19,23 @@ namespace ReservationSystem.ViewModels
         public ICommand SaveCommand { get; set; }
         public ICommand SeeMoreCommand { get; set; }
         public ICommand AddOfferCommand { get; set; }
+
+        public ICommand SearchCommand { get; set; }
         public static ICommand OfferReviewCommand { get; set; }
         public ObservableCollection<Offer> SelectedOffers { get; set; }
-        public List<Offer> AllOffers { get; set; }
+        private List<Offer> allOffers { get; set; }
+        public List<Offer> AllOffers
+        {
+            get { return allOffers; }
+            set
+            {
+                allOffers = value;
+                OnPropertyChanged("AllOffers");
+            }
+        }
         public static Offer ToGoOffer { get; set; }
+
+        public string SearchParam { get; set; }
         public Offer SelectedOffer { get; set; }
         public ActiveTaskOverviewViewModel(ICommand updateViewCommand, OrganizierTask organizierTask)
         {
@@ -36,6 +49,20 @@ namespace ReservationSystem.ViewModels
             SelectedOffers = new ObservableCollection<Offer>(OrganizierTask.Offers);
             AllOffers = getAllOffers();
             OfferReviewCommand = new DelegateCommand(OfferReview);
+            SearchCommand = new DelegateCommand(Search);
+        }
+        public void Search()
+        {
+            List<Offer> wanted = new List<Offer>();
+            List<Offer> all = getAllOffers();
+            foreach(Offer o in all)
+            {
+                if(o.Name.Contains(SearchParam) || o.Description.Contains(SearchParam) || o.Associate.Name.Contains(SearchParam))
+                {
+                    wanted.Add(o);
+                }
+            }
+            AllOffers = wanted;
         }
         public void Back()
         {

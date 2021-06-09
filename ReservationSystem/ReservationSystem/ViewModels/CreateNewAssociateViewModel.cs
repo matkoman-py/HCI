@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
@@ -34,6 +35,11 @@ namespace ReservationSystem.ViewModels
         }
         private void AddAssociates()
         {
+            if(string.IsNullOrEmpty(Associate.Address) || string.IsNullOrEmpty(Associate.Description) || string.IsNullOrEmpty(Associate.Name))
+            {
+                MessageBox.Show("Morate uneti sva polja!");
+                return;
+            }
             using (var db = new ProjectDatabase())
             {
                 try

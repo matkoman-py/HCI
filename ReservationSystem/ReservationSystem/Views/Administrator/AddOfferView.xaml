@@ -45,7 +45,7 @@
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="20,0,20,0">
             <Label DockPanel.Dock="Top">Cena ponude:</Label>
-            <TextBox Height="25" Text="{Binding Offer.Price}"></TextBox>
+            <TextBox Height="25" Text="{Binding Price}"></TextBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" 
                    Grid.RowSpan="2" Margin="20,0,20,0">
