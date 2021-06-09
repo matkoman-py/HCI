@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    public class Offer
+    public class Offer : AbstractModel
     {
         [Key]
         public int Id { get; set; }
@@ -19,6 +20,19 @@ namespace ReservationSystem.Models
         public int AssociateId { get; set; }
         public virtual Associate Associate { get; set; }
         public virtual List<OrganizierTask> OrganizierTasks { get; set; }
+        public int? TablesArrangementId { get; set; }
+        public virtual TablesArrangement TablesArrangement { get; set; }
+        private bool isRoom;
+        public bool IsRoom 
+        {
+            get { return isRoom; }
+            set 
+            { 
+                isRoom = value;
+                OnPropertyChanged("IsRoom");
+            }
+        }
+
         public Offer()
         {
 

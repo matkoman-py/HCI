@@ -8,16 +8,49 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Models
 {
-    [DataContract]
-    public class Table
+    public class Table : AbstractModel
     {
         [Key]
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
         public int NumberOfSeats { get; set; }
-        [DataMember]
-        public Point TableCoordinates { get; set; }
+        public int TakenNumberOfSeats { get; set; }
+
+        private bool hasCollision;
+        public bool HasCollision 
+        {
+            get { return hasCollision; }
+            set 
+            {
+                hasCollision = value;
+                OnPropertyChanged("HasCollision");
+            } 
+        }
+
+        private Point tableCoordinates;
+        public Point TableCoordinates {
+            get
+            {
+                return tableCoordinates;
+            }
+            set
+            {
+                tableCoordinates = value;
+                OnPropertyChanged("TableCoordinates");
+            }
+        }
+        private List<Guest> guests;
+        public virtual List<Guest> Guests 
+        {
+            get 
+            {
+                return guests;
+            }
+            set 
+            {
+                guests = value;
+                OnPropertyChanged("Guests");
+            }
+        }
 
         public Table()
         {

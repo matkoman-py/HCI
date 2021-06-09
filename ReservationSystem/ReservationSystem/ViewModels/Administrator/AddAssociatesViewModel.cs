@@ -13,6 +13,8 @@ namespace ReservationSystem.ViewModels.Administrator
         private ICommand UpdateViewCommand;
         public ICommand AddAssociatesCommand { get; set; }
         public ICommand AddOfferCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
+        public ICommand EditOfferCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public Associate Associate { get; set; }
         public List<FieldOfWork> FieldOfWorkOptions { get; set; }
@@ -38,6 +40,8 @@ namespace ReservationSystem.ViewModels.Administrator
             }
             AddAssociatesCommand = new DelegateCommand(AddAssociates);
             AddOfferCommand = new DelegateCommand(AddOffer);
+            DeleteCommand = new DelegateCommand(Delete);
+            EditOfferCommand = new DelegateCommand(EditOffer);
             BackCommand = new DelegateCommand(() => UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand)));
         }
 
@@ -47,12 +51,21 @@ namespace ReservationSystem.ViewModels.Administrator
             UpdateViewCommand.Execute(new AddOfferViewModel(UpdateViewCommand, Associate));
         }
 
+        private Object EditOffer(Object offer)
+        {
+            var sentOffer = (Offer)offer;
+            ViewChangeUtils.PastViews.Push(this);
+            UpdateViewCommand.Execute(new EditOfferViewModel(UpdateViewCommand, sentOffer, "Add"));
+            return sentOffer;
+        }
+
         private void AddAssociates() 
         {
             using (var db = new ProjectDatabase())
             {
                 try
                 {
+                    db.FieldsOfWork.Attach(Associate.FieldOfWork);
                     db.Associates.Add(Associate);
                     db.SaveChanges();
                     UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand));
@@ -63,6 +76,14 @@ namespace ReservationSystem.ViewModels.Administrator
                 }
 
             }
+        }
+        private Object Delete(Object offer)
+        {
+            var offerToDelete = (Offer)offer;
+            Associate.Offers.Remove(Associate.Offers.Where(offerTemp => offerTemp.Id == offerToDelete.Id).First());
+            Associate.Offers = new List<Offer>(Associate.Offers);
+
+            return this;
         }
     }
 }

@@ -170,8 +170,6 @@ namespace ReservationSystem.ViewModels.Administrator
                 {
                     var fieldOfWorkToDelete = (FieldOfWork)fieldOfWork;
                     fieldOfWorkToDelete = db.FieldsOfWork.Where(field => field.Id == fieldOfWorkToDelete.Id).FirstOrDefault();
-                    Console.WriteLine(fieldOfWorkToDelete.Id);
-                    Console.WriteLine(fieldOfWorkToDelete.Name);
                     db.FieldsOfWork.Remove(fieldOfWorkToDelete);
                     db.SaveChanges();
                     FieldsOfWork.Remove(fieldOfWork as FieldOfWork);

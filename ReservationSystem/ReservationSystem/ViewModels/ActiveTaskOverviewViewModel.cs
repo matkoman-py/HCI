@@ -26,7 +26,7 @@ namespace ReservationSystem.ViewModels
         public Offer SelectedOffer { get; set; }
         public ActiveTaskOverviewViewModel(ICommand updateViewCommand, OrganizierTask organizierTask)
         {
-            UpdateViewCommand = updateViewCommand;   
+            UpdateViewCommand = updateViewCommand;
             OrganizierTask = organizierTask;
             SelectedOffer = null;
             BackCommand = new DelegateCommand(Back);
@@ -54,7 +54,7 @@ namespace ReservationSystem.ViewModels
                 {
                     OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
                     o.Offers.Clear();
-                    
+
                     Suggestion sug;
                     sug = db.Suggestions.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Where(s => s.Id == OrganizierTask.SuggestionId).First();
                     sug.Price = 0;
@@ -66,11 +66,11 @@ namespace ReservationSystem.ViewModels
         }
         public void Save()
         {
-            
+
             using (var db = new ProjectDatabase())
             {
                 OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
-                if(o.Offers.Count == 0)
+                if (o.Offers.Count == 0)
                 {
                     MessageBox.Show("Morate dodati bar jednu ponudu na zadatak");
                     return;
@@ -81,18 +81,18 @@ namespace ReservationSystem.ViewModels
                 sug = db.Suggestions.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Where(s => s.Id == OrganizierTask.SuggestionId).First();
                 UpdateViewCommand.Execute(new SuggestionOverviewViewModel(UpdateViewCommand, sug.PartyRequestId));
             }
-            
+
         }
         public List<Offer> getAllOffers()
         {
-            using(var db = new ProjectDatabase())
+            using (var db = new ProjectDatabase())
             {
                 return db.Offers.Include("Associate").Include("Associate.FieldOfWork").ToList();
             }
         }
         public void SeeMore()
         {
-            if(SelectedOffer == null)
+            if (SelectedOffer == null)
             {
                 MessageBox.Show("Morate selektovati ponudu!");
             }
@@ -111,6 +111,55 @@ namespace ReservationSystem.ViewModels
             }
             UpdateViewCommand.Execute(new OfferReviewOrganizerViewModel(UpdateViewCommand, o, OrganizierTask.Id));
         }
+
+        private void CheckIsAlreadyOffered()
+        {
+            using (var db = new ProjectDatabase())
+            {
+
+                OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
+                foreach (Offer of in o.Offers)
+                {
+                    if (of.Id == SelectedOffer.Id)
+                    {
+                        MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
+                        return;
+                    }
+                }
+            }
+            if (SelectedOffers.Contains(SelectedOffer))
+            {
+                MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
+                return;
+            }
+        }
+
+        public void AddRegularOffer()
+        {
+            SelectedOffers.Add(SelectedOffer);
+            using (var db = new ProjectDatabase())
+            {
+                OrganizierTask.Offers.Add(SelectedOffer);
+                double price = 0;
+
+                foreach (Offer off in OrganizierTask.Offers)
+                {
+                    //TODO: Odraditi proveru za prihvaceno
+                    price += off.Price;
+                }
+                OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
+                Offer offer = db.Offers.Include("Associate").Include("Associate.FieldOfWork").Where(of => of.Id == SelectedOffer.Id).First();
+                o.Offers.Add(offer);
+                db.Suggestions.Where(suggestion => suggestion.Id == OrganizierTask.SuggestionId).First().Price += price;
+                db.SaveChanges();
+            }
+
+        }
+
+        private void GoToTableArrangmentView()
+        {
+        }
+
         public void AddOffer()
         {
             if (SelectedOffer == null)
@@ -119,44 +168,31 @@ namespace ReservationSystem.ViewModels
             }
             else
             {
-                using (var db = new ProjectDatabase())
+                CheckIsAlreadyOffered();
+
+                if (SelectedOffer.Associate.FieldOfWork.HasRoom)
                 {
-                    
-                    OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
-                    foreach(Offer of in o.Offers)
-                    {
-                        if (of.Id == SelectedOffer.Id)
-                        {
-                            MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
-                            return;
-                        }
-                    }
+                    GoToTableArrangmentView();
                 }
-                if ( SelectedOffers.Contains(SelectedOffer)){
-                    MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
-                    return;
-                }
-                if(SelectedOffer.Associate.FieldOfWork.HasRoom)
+                else
                 {
-                    Console.WriteLine("Otvori DRAG N DROP");
+                    AddRegularOffer();
                 }
 
                 SelectedOffers.Add(SelectedOffer);
-                using(var db = new ProjectDatabase())
+                using (var db = new ProjectDatabase())
                 {
                     OrganizierTask.Offers.Add(SelectedOffer);
-                   
-                
-                    
+
                     OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
                     Offer offer = db.Offers.Include("Associate").Include("Associate.FieldOfWork").Where(of => of.Id == SelectedOffer.Id).First();
                     o.Offers.Add(offer);
-                    
+
                     db.SaveChanges();
                 }
-                
+
             }
         }
-       
+
     }
 }
