@@ -82,6 +82,11 @@ namespace ReservationSystem.ViewModels
             PartyRequest.OrganiserId = SelectedOrganiser.Id;
             using (var db = new ProjectDatabase())
             {
+                for(int i = 0; i < PartyRequest.Guests.Count; i++) 
+                {
+                    PartyRequest.Guests[i] = db.Guests.Add(PartyRequest.Guests[i]);
+                }
+
                 db.PartyRequests.Add(PartyRequest);
                 db.SaveChanges();
             }

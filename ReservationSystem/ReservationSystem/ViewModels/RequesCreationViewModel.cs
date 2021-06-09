@@ -27,6 +27,7 @@ namespace ReservationSystem.ViewModels
         */
         public List<PartyType> PartyTypes { get; set; }
         public ICommand UpdateViewCommand { get; set; }
+        public static ICommand SetGuestsCommand { get; set; }
         public User User { get; set; }
        
         public ICommand UserHomePageCommand
@@ -43,6 +44,7 @@ namespace ReservationSystem.ViewModels
         {
             UpdateViewCommand = updateViewCommand;
             UserHomePageCommand = new DelegateCommand(UserHomePage);
+            SetGuestsCommand = new DelegateCommand(SetGuests);
             ChooseOrganisatorPageCommand = new DelegateCommand(ChooseOrganisatorPage);
             User = user;
             using (var db = new ProjectDatabase()) {
@@ -66,6 +68,12 @@ namespace ReservationSystem.ViewModels
                 return;
             }
             UpdateViewCommand.Execute(new ChooseOrganisatorPageViewModel(UpdateViewCommand, User, PartyRequest));
+        }
+
+        private Object SetGuests(Object obj) 
+        {
+            PartyRequest.Guests = (List<Guest>)obj;
+            return obj;
         }
     }
 }

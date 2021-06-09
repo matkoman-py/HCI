@@ -124,6 +124,7 @@
     <Compile Include="Models\Guest.cs" />
     <Compile Include="Models\PartyType.cs" />
     <Compile Include="Seeders\UserSeeder.cs" />
+    <Compile Include="Utils\CsvToGuestsConverter.cs" />
     <Compile Include="Utils\ViewChangeUtils.cs" />
     <Compile Include="ViewModels\AcceptedRequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\AcceptedSuggestionViewModel.cs" />

@@ -30,7 +30,7 @@
                 <Setter Property="OverridesDefaultStyle" Value="True" />
                 <Setter Property="Foreground"  Value="{StaticResource MaterialDesignDarkForeground}"/>
                 <Setter Property="Background"  Value="{StaticResource MaterialDesignButtonColor}"/>
-                <Setter Property="Cursor" Value="Hand"> </Setter>
+                <Setter Property="Cursor" Value="Hand"></Setter>
             </Style>
 
             <converters:EnumConverter x:Key="EnumConverter"/>
