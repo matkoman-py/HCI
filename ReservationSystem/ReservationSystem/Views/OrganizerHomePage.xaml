@@ -8,6 +8,30 @@
         mc:Ignorable="d"
         Title="OrganizerHomePage" Height="590" Width="1040">
 
+    <Window.Resources>
+        <RoutedUICommand x:Key="NewAssociateShortcut" Text="Text" />
+        <RoutedUICommand x:Key="NewOfferForAssociateShortcut" Text="Text" />
+        <RoutedUICommand x:Key="ApplyShortcut" Text="Text" />
+        <RoutedUICommand x:Key="CreateNewTaskShortcut" Text="Text" />
+    </Window.Resources>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource NewAssociateShortcut}" 
+                    Executed="NewAssociateShortcut" />
+        <CommandBinding Command="{StaticResource NewOfferForAssociateShortcut}" 
+                    Executed="NewOfferForAssociateShortcut" />
+        <CommandBinding Command="{StaticResource ApplyShortcut}" 
+                    Executed="ApplyShortcut" />
+        <CommandBinding Command="{StaticResource CreateNewTaskShortcut}" 
+                    Executed="CreateNewTaskShortcut" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Gesture="Control+S" Key="S" Command="{StaticResource NewAssociateShortcut}" />
+        <KeyBinding Gesture="Control+P" Key="P" Command="{StaticResource NewOfferForAssociateShortcut}" />
+        <KeyBinding Gesture="Control+Space" Key="Space" Command="{StaticResource ApplyShortcut}" />
+        <KeyBinding Gesture="Control+Z" Key="Z" Command="{StaticResource CreateNewTaskShortcut}" />
+    </Window.InputBindings>
+
     <Grid>
         <Grid Panel.ZIndex="10" Height="70" VerticalAlignment="Top" Background="#FF4176A8"></Grid>
             <Grid Panel.ZIndex="10" x:Name="GridMenu" Width="240" HorizontalAlignment="Left" Background="#FF4176A8">

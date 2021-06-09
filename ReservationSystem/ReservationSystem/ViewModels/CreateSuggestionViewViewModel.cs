@@ -12,8 +12,8 @@ namespace ReservationSystem.ViewModels
     public class CreateSuggestionViewViewModel : BaseViewModel
     {
         public ICommand UpdateViewCommand { get; set; }
-        public ICommand AcceptPendingRequestCommand { get; set; }
-        public ICommand CreateTaskCommand { get; set; }
+        public static ICommand AcceptPendingRequestCommand { get; set; }
+        public static ICommand CreateTaskCommand { get; set; }
         public List<OrganizierTask> OrganizierTasks { get; set; }
         public PartyRequest Sug { get; set; }
         public Suggestion Suggestion { get; set; }

@@ -42,6 +42,51 @@ namespace ReservationSystem.Views
                 Mouse.OverrideCursor = Cursors.Arrow;
         }
 
+        private void NewAssociateShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(AssociateOverviewViewModel))
+            {
+                AssociateOverviewViewModel.AddNewAssociateCommand.Execute(null);
+            }
+        }
+
+        private void NewOfferForAssociateShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(AssociateOverviewViewModel))
+            {
+                AssociateOverviewViewModel.AddNewOfferForAssociateCommand.Execute(null);
+            }
+        }
+
+        private void ApplyShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(PendingRequestOverview))
+            {
+                PendingRequestOverview.CreateSuggestionViewCommand.Execute(null);
+            } else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateSuggestionViewViewModel))
+            {
+                CreateSuggestionViewViewModel.AcceptPendingRequestCommand.Execute(null);
+            }
+            else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateTaskViewModel))
+            {
+                Console.WriteLine("????????????????????????????");
+                CreateTaskViewModel.SaveTaskCommand.Execute(null);
+            } else
+            {
+                Console.WriteLine("Staaaaaaaaaaa");
+            }
+
+        }
+
+        private void CreateNewTask(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateSuggestionViewViewModel))
+            {
+                CreateSuggestionViewViewModel.CreateTaskCommand.Execute(null);
+            }
+
+        }
+
         private void MenuBar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedOption = ((ListViewItem)(sender as ListView).SelectedItem).Name;

@@ -14,7 +14,7 @@ namespace ReservationSystem.ViewModels
         public ICommand UpdateViewCommand { get; set; }
         public ICommand CreateSuggestionViewCommand { get; set; }
 
-        public ICommand SaveTaskCommand { get; set; }
+        public static ICommand SaveTaskCommand { get; set; }
         public User User { get; set; }
         public Suggestion Suggestion { get; set; }
 

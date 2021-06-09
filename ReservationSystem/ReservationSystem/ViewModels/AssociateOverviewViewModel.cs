@@ -20,11 +20,11 @@ namespace ReservationSystem.ViewModels
         {
             get; set;
         }
-        public ICommand AddNewOfferForAssociateCommand
+        public static ICommand AddNewOfferForAssociateCommand
         {
             get; set;
         }
-        public ICommand AddNewAssociateCommand
+        public static ICommand AddNewAssociateCommand
         {
             get; set;
         }

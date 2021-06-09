@@ -19,7 +19,7 @@ namespace ReservationSystem.ViewModels
 
         public string Visibility { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-        public ICommand NewSuggestionsCommand { get; set; }
+        public static ICommand NewSuggestionsCommand { get; set; }
 
         public string Pending { get; set; }
         public static ICommand RequestViewCommand

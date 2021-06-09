@@ -23,5 +23,6 @@ namespace ReservationSystem.Views.Organizer
         {
             InitializeComponent();
         }
+
     }
 }
