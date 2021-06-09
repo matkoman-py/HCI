@@ -55,7 +55,7 @@
                                         </StackPanel>
                                         <DockPanel Grid.Row="1" Margin="10,0,10,10">
                                             <TextBlock DockPanel.Dock="Top" Margin="0,0,0,5">Komentar organizatora:</TextBlock>
-                                            <TextBox BorderBrush="LightGray" BorderThickness="1" IsEnabled="False" Text="{Binding Comment}"></TextBox>
+                                            <TextBox BorderBrush="LightGray" BorderThickness="1" IsEnabled="False" Text="{Binding Comment}" TextWrapping="Wrap" MaxWidth="170"  MaxLines="1"></TextBox>
                                         </DockPanel>
                                     </StackPanel>
                                     <Button Grid.Row="2" Command="{Binding DataContext.RequestOverviewCommand,

@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReservationSystem.Views.Organizer"
              mc:Ignorable="d"
-        Height="450" Width="800">
+        Background="White"
+             Height="500" Width="800">
+        
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -25,32 +27,34 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="2" Grid.Column="3" Margin="0,0,50,0">
-            <Button Command="{Binding CreateTaskCommand}">Kreiraj novi zadatak</Button>
-        </StackPanel>
-        <DockPanel Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="50,0,50,0" >
-            <Label DockPanel.Dock="Top" HorizontalAlignment="Center">Kreirani zadaci:</Label>
-            <ListView ItemsSource="{Binding OrganizierTasks}">
+
+        <Button Command="{Binding CreateTaskCommand}" Margin="10">Novi zadatak</Button>
+        
+        <DockPanel Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="4" Margin="50,0,50,20" >
+            <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"  >Kreirani zadaci:</Label>
+            <Border BorderBrush="Black" BorderThickness="2">
+            <ListView ItemsSource="{Binding OrganizierTasks}" MinHeight="50" MaxHeight="150">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="150"></GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Ime" Width="300"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Opis" Width="300"></GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
+            </Border>
         </DockPanel>
-        <Label Margin="50,0,50,0" Grid.Row="5" Content="Komentar:"></Label>
+        <Label Margin="50,0,50,0" Grid.Row="5" Content="Komentar:" FontSize="16" FontWeight="Bold"></Label>
         <TextBox Grid.Row="6" 
                  Grid.ColumnSpan="4" 
                  Margin="50,0,50,0" 
                  HorizontalAlignment="Stretch" 
-                 BorderBrush="Gray" 
-                 BorderThickness="1" Grid.RowSpan="3"/>
-        <StackPanel Grid.Row="9" Grid.Column="3" Margin="0,0,50,0">
-            <Button Command="{Binding AcceptPendingRequestCommand}">Prihvati zahtev</Button>
-        </StackPanel>
-        <StackPanel Grid.Row="9" Grid.Column="0" Margin="50,0,0,0">
-            <Button Command="{Binding PendingRequestOverviewCommand}">Odustani</Button>
+                 BorderBrush="Black" 
+                 BorderThickness="2" Grid.RowSpan="1"/>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="8" Grid.ColumnSpan="4" Orientation="Horizontal" >
+            <Button Margin="0,0,40,0" Command="{Binding PendingRequestOverviewCommand}">Odustani</Button>
+            <Button Command="{Binding AcceptPendingRequestCommand}"  >Prihvati zahtev</Button>
+
+            
         </StackPanel>
     </Grid>
 </UserControl>

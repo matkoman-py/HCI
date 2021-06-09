@@ -15,6 +15,7 @@ namespace ReservationSystem.ViewModels
         public Associate Associate { get; set; }
 
         public Offer Offer { get; set; }
+        public string Price { get; set; }
         public User User { get; set; }
         public ICommand UpdateViewCommand
         {
@@ -48,13 +49,25 @@ namespace ReservationSystem.ViewModels
 
         private void AddOffer()
         {
-            //NZM STA URADITI OVDE SKONTATI SUTRA Zajebava organizier task
+            if(string.IsNullOrEmpty(Offer.Name) || string.IsNullOrEmpty(Offer.Description))
+            {
+                MessageBox.Show("Morate uneti sva polja!");
+                return;
+            }
+            int budget;
+            bool success = Int32.TryParse(Price, out budget);
+            if (!success)
+            {
+                MessageBox.Show("Morate uneti brojevnu vrednost za cenu!");
+                return;
+            }
             Associate ass;
             using(var db = new ProjectDatabase())
             {
                 
                 ass = db.Associates.Include("Offers").Where(a => a.Id == Associate.Id).First();
                 Offer.Associate = ass;
+                Offer.Price = budget;
                 db.Offers.Add(Offer);
                 ass.Offers.Add(Offer);
                 db.SaveChanges();

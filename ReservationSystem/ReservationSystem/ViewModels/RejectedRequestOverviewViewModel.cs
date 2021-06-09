@@ -15,14 +15,20 @@ namespace ReservationSystem.ViewModels
         public string Name { get; set; }
         public ICommand UpdateViewCommand { get; set; }
         public ICommand BackCommand { get; set; }
+        public ICommand SuggestionOverviewCommand { get; set; }
         public RejectedRequestOverviewViewModel(ICommand updateViewCommand, PartyRequest partyRequest)
         {
             UpdateViewCommand = updateViewCommand;
             PartyRequest = partyRequest;
             Name = getName();
             BackCommand = new DelegateCommand(Back);
+            SuggestionOverviewCommand = new DelegateCommand(SuggestionOverview);
         }
 
+        public void SuggestionOverview()
+        {
+            UpdateViewCommand.Execute(new SuggestionOverviewOrganizerViewModel(UpdateViewCommand, PartyRequest.Id));
+        }
         public string getName()
         {
             using (var db = new ProjectDatabase())

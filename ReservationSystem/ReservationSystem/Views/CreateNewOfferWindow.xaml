@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReservationSystem.Views"
         mc:Ignorable="d"
-        Height="450" Width="800">
-    <Grid>
+        Height="500" Width="800">
+    <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -29,7 +29,7 @@
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" Margin="20,0,20,0">
             <Label Foreground="Black" FontSize="20" DockPanel.Dock="Top">Cena ponude:</Label>
-            <TextBox  Text="{Binding Offer.Price}" BorderThickness="2" BorderBrush="Black" FontSize="20"></TextBox>
+            <TextBox  Text="{Binding Price}" BorderThickness="2" BorderBrush="Black" FontSize="20"></TextBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center"  Grid.Row="3" Grid.ColumnSpan="2" 
                    Grid.RowSpan="2" Margin="20,0,20,0">

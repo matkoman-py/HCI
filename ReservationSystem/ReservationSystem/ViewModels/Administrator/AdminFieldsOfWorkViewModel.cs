@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -116,6 +117,11 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void AddFieldOfWork()
         {
+            if(string.IsNullOrEmpty(NewFieldOfWorkName.Trim()))
+            {
+                MessageBox.Show("Morate uneti ime za delatnost!");
+                return;
+            }
             using (var db = new ProjectDatabase())
             {
                 FieldOfWork fieldOfWork = new FieldOfWork { Name = NewFieldOfWorkName, HasRoom = NewHasRoom };
