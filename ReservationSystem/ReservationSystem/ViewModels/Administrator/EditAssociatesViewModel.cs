@@ -17,6 +17,7 @@ namespace ReservationSystem.ViewModels.Administrator
         public ICommand EditAssociatesCommand { get; set; }
         public DelegateCommand AddOfferCommand { get; set; }
         public ICommand BackCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
         public Associate Associate { get; set; }
         public List<FieldOfWork> FieldOfWorkOptions { get; set; }
 
@@ -42,6 +43,7 @@ namespace ReservationSystem.ViewModels.Administrator
             }
             EditAssociatesCommand = new DelegateCommand(UpdateAssociates);
             AddOfferCommand = new DelegateCommand(GoToAddOffer);
+            DeleteCommand = new DelegateCommand(Delete);
             BackCommand = new DelegateCommand(() =>
                 UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand)));
         }
@@ -58,16 +60,54 @@ namespace ReservationSystem.ViewModels.Administrator
             {
                 try
                 {
+                    foreach (var associateOffer in Associate.Offers) 
+                    {
+                        if (associateOffer.Id == 0)
+                        {
+                            db.Offers.Add(associateOffer);
+                        }
+                        else 
+                        {
+                            associateOffer.Associate = null;
+                            associateOffer.AssociateId = Associate.Id;
+                            db.Offers.Attach(associateOffer);
+                        }
+                    }
+                    db.FieldsOfWork.Attach(Associate.FieldOfWork);
                     db.Entry(Associate).State = EntityState.Modified;
                     db.SaveChanges();
                     UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand));
                 }
-                catch
+                catch(Exception e)
                 {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e.StackTrace);
                     Console.WriteLine("Can't update associate!");
                 }
 
             }
         }
+
+        private Object Delete(Object offer)
+        {
+            using (var db = new ProjectDatabase())
+            {
+                try
+                {
+                    var offerToDelete = (Offer)offer;
+                    offerToDelete = db.Offers.Where(offerTemp => offerTemp.Id == offerToDelete.Id).FirstOrDefault();
+                    db.Offers.Remove(offerToDelete);
+                    db.SaveChanges();
+                    Associate.Offers.Remove(Associate.Offers.Where(offerTemp => offerTemp.Id == offerToDelete.Id).First());
+                    Associate.Offers = new List<Offer>(Associate.Offers);
+                }
+                catch
+                {
+                    Console.WriteLine("Can't delete field of work!");
+                }
+            }
+            return this;
+        }
+
     }
 }

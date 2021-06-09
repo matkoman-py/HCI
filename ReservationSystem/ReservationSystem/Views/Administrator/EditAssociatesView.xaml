@@ -92,7 +92,7 @@
                                 <Button 
                                     Margin="2"
                                     Grid.Column="1"
-                                    Command="{Binding Path=DataContext.EditOfferCommand, RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                                    Command="{Binding Path=DataContext.DeleteCommand, RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
                                     CommandParameter="{Binding}"
                                     Content="{materialDesign:PackIcon Trash}" 
                                     ToolTip="Izbriši"></Button>

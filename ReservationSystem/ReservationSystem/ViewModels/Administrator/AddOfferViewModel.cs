@@ -35,17 +35,17 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void AddOffer() 
         {
-            ViewChangeUtils.PastViews.Push(this);
             
             if (Offer.IsRoom)
             {
+                ViewChangeUtils.PastViews.Push(this);
                 UpdateViewCommand.Execute(new AddRoomViewModel(UpdateViewCommand, Associate, Offer));
             }
             else 
             {
                 Offer.Associate = Associate;
                 Associate.Offers.Add(Offer);
-                UpdateViewCommand.Execute(new AddAssociatesViewModel(UpdateViewCommand, Associate));
+                UpdateViewCommand.Execute(ViewChangeUtils.PastViews.Pop());
             }
 
         }
