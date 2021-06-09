@@ -22,24 +22,24 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="50,50,50,50">
             <Label  Content="Vrsta proslave:"/>
             <ComboBox Margin="10" ItemsSource="{Binding PartyTypes}"  SelectedValue="{Binding PartyRequest.PartyType}"/>
-            <Label  Content="Budzet:"/>
-            <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Budget}"/>
+            <Label  Content="Budžet:"/>
+            <TextBox  Height="25" Margin="10" Text="{Binding Budget}" />
             <Label  Content="Mesto:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Place}"/>
-            <Label  Content="Datum i vreme:"/>
+            <Label  Content="Datum:"/>
             <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding PartyRequest.Date}"
-                  
+                  Height="25" Margin="10"
                   FirstDayOfWeek="Monday" />
             <Label  Content="Opis:"/>
-            <TextBox  Height="30" Margin="10" Text="{Binding PartyRequest.Description}"/>
+            <TextBox  Height="30" Margin="10" Text="{Binding PartyRequest.Description}" />
             
 
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="50,50,50,50">
             <Label  Content="Broj ljudi:"/>
-            <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Capacity}"/>
-            <CheckBox  Height="47" Margin="10" Content="Budzet fleksibilan" IsChecked="{Binding PartyRequest.IsBudgetFlexible, Mode=TwoWay}"/>
+            <TextBox  Height="25" Margin="10" Text="{Binding Capacity}"/>
+            <CheckBox  Height="47" Margin="10" Content="Budžet fleksibilan" IsChecked="{Binding PartyRequest.IsBudgetFlexible, Mode=TwoWay}"/>
             <Label  Content="Tema:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.PartyTheme}"/>
             <Label  Content=""/>

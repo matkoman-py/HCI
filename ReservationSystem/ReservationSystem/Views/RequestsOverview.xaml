@@ -64,7 +64,7 @@
                                     </StackPanel>
                                     <DockPanel Grid.Row="1" Margin="10,0,10,10">
                                         <TextBlock DockPanel.Dock="Top" Margin="0,0,0,5">Opis:</TextBlock>
-                                        <TextBox BorderBrush="LightGray" BorderThickness="1" IsEnabled="False" Text="{Binding Description}"></TextBox>
+                                        <TextBox BorderBrush="LightGray" BorderThickness="1" IsEnabled="False" Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="170"  MaxLines="1"></TextBox>
                                     </DockPanel>
                                     <Button Grid.Row="2" Command="{Binding DataContext.MoreInfoCommand,
                                                 RelativeSource={RelativeSource AncestorType=UserControl}}"

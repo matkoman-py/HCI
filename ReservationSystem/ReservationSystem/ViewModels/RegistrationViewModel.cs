@@ -39,20 +39,30 @@ namespace ReservationSystem.ViewModels
         {
             if (Username == null || Password == null || Name == null || Surname == null || Email == null || BirthDate == null)
             {
-                Console.WriteLine("All atributes must be specified!");
+                MessageBox.Show("Morate navesti sva polja!");
+                
             }
             else
             {
                 if (BirthDate.CompareTo(DateTime.Today) > 0)
                 {
-                    MessageBox.Show("Ne mozete se roditi u buducnost xD");
+                    MessageBox.Show("Rođendan vam ne moze biti u budućnosti!");
+                    return;
                 }
                 //ovde treba provera da li postoji korisnik sa tim korisnickim imenom u bazi, ali to ce biti nad onim ucitanim objektima
                 using (var db = new ProjectDatabase())
                 {
+                    foreach(User u in db.Users)
+                    {
+                        if(u.Username == Username)
+                        {
+                            MessageBox.Show("Korisničko ime nije jedinstveno!");
+                            return;
+                        }
+                    }
                     db.Users.Add(new User(Username, Password, Email, Name, Surname, BirthDate, Role.Customer));
                     db.SaveChanges();
-                    Console.WriteLine("Uspesna registracija, ulogujte se..");
+                    MessageBox.Show("Uspešna registracija, ulogujte se..");
                     UpdateViewCommand.Execute(new LoginViewModel(UpdateViewCommand));
                 }
             }

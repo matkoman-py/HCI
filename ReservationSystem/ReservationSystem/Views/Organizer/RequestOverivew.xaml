@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views.Organizer" xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:PendingRequestOverview}"
              mc:Ignorable="d"
         Height="450" Width="800">
-    <Grid>
+    <Grid Margin="30">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -28,46 +28,46 @@
         <Button Grid.Row="0" Grid.Column="0" Content="Nazad" Command="{Binding RequestsOverviewPendingCommand}"/>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Korisnik:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding User.Name}"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline"  Text="{Binding Name}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Vrsta žurke:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding Sug.PartyType.Name}"/>
+            <Label Margin="15" FontSize="16" Content="Vrsta proslave:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.PartyType.Name}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Broj gostiju:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding Sug.Capacity}"/>
+            <Label Margin="15" FontSize="16" Content="Broj ljudi:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Capacity}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Budžet:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding Sug.Budget}"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Budget}"></TextBlock>
         </StackPanel>
         <StackPanel Margin="15" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Label FontSize="16" Content="Description:" FontWeight="Bold"/>
-            <TextBox MinLines="2" BorderThickness="2" IsEnabled="False"  BorderBrush="Gray" FontSize="20" Text="{Binding Sug.Description}"/>
+            <Label FontSize="16" Content="Opis:" FontWeight="Bold"/>
+            <TextBox MinLines="2"  FontSize="20" Text="{Binding PartyRequest.Description}" IsEnabled="False"></TextBox>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Mesto:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding Sug.Place}"/>
+            <Label Margin="15" FontSize="16" Content="Lokacija:" FontWeight="Bold"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Place}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Tema:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding Sug.PartyTheme}"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.PartyTheme}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Datum:" FontWeight="Bold"/>
-            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding Sug.Date}"/>
+            <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Date}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Vreme:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">21h</TextBlock>
         </StackPanel>
-        <StackPanel Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2">
+
+        <StackPanel  Margin="15" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Button Command="{Binding DenyRequestViewCommand}">Odbij zahtev</Button>
-        </StackPanel>
-        <StackPanel Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2">
-            <Button Command="{Binding CreateSuggestionViewCommand}">Kreirjaj predlog</Button>
+            <Button Margin="0,10,0,0" Command="{Binding CreateSuggestionViewCommand}">Kreiraj predlog</Button>
         </StackPanel>
     </Grid>
+    
 </UserControl>

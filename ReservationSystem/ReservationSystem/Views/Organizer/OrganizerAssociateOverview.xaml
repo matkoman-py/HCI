@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ReservationSystem.Views.Organizer"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -14,29 +14,29 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
+            
         </Grid.RowDefinitions>
         
-        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="4"
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" ColumnWidth="*"
                     Name = "AssociateOverviewTable" AlternatingRowBackground = "LightBlue"  
                      AutoGenerateColumns = "False" ItemsSource="{Binding Associates}" CanUserAddRows="false" SelectedItem="{Binding SelectedAssociate}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Ime" Width="100" Binding="{Binding Name}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Adresa" Width="100" Binding="{Binding Address}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Opis" Width="130" Binding="{Binding Description}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Oblast posla" Width="130" Binding="{Binding FieldOfWork.Name}" IsReadOnly="True"/>
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Ime"  Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Adresa" Binding="{Binding Address}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Opis"  Binding="{Binding Description}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Oblast posla"  Binding="{Binding FieldOfWork.Name}" IsReadOnly="True"/>
             </DataGrid.Columns>
 
         </DataGrid>
-        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" >
+        <StackPanel Margin="20" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" >
             <Button Content="Kreiraj novu ponudu za saradnika" Command="{Binding AddNewOfferForAssociateCommand}"/>
         </StackPanel>
-        <StackPanel Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" >
+        <StackPanel Margin="20" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" >
             <Button Content="Dodaj novog saradnika" Command="{Binding AddNewAssociateCommand}" />
         </StackPanel>
     </Grid>

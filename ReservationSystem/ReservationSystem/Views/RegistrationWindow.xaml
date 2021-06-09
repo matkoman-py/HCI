@@ -21,7 +21,7 @@
 
         <Button Content="Nazad"  Grid.Row="0"   Command="{Binding BackCommand}" Height="Auto" Margin="10" HorizontalAlignment="Left"/>
         <StackPanel Grid.Row="1" Grid.Column="0" >
-            <Label  Content="Korisnicko ime:"/>
+            <Label  Content="Korisničko ime:"/>
             <TextBox  Text="{Binding Username}" Height="30" Margin="10"/>
             <Label  Content="Lozinka:"/>
             <TextBox  Text="{Binding Password}" Height="30" Margin="10"/>
@@ -34,7 +34,7 @@
             <TextBox  Text="{Binding Name}" Height="30" Margin="10"/>
             <Label  Content="Prezime:"/>
             <TextBox  Text="{Binding Surname}" Height="30" Margin="10"/>
-            <Label  Content="Datum rodjenja:"/>
+            <Label  Content="Datum rođenja:"/>
             <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding BirthDate}" Margin="10"
                   Height="30"
                   FirstDayOfWeek="Monday" />

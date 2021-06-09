@@ -12,8 +12,9 @@ namespace ReservationSystem.ViewModels
     public class PendingRequestOverview : BaseViewModel
     {
         public User User { get; set; }
+        public string Name { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-        public PartyRequest Sug { get; set; }
+        public PartyRequest PartyRequest { get; set; }
         public ICommand DenyRequestViewCommand { get; set; }
         public ICommand CreateSuggestionViewCommand { get; set; }
         public ICommand RequestsOverviewPendingCommand { get; set; }
@@ -23,13 +24,13 @@ namespace ReservationSystem.ViewModels
             CreateSuggestionViewCommand = new DelegateCommand(CreateSuggestionView);
             UpdateViewCommand = updateViewCommand;
             DenyRequestViewCommand = new DelegateCommand(DenyRequestView);
-            Sug = sug;
+            PartyRequest = sug;
             User = getUser();
         }
 
         public void CreateSuggestionView()
         {
-            UpdateViewCommand.Execute(new CreateSuggestionViewViewModel(UpdateViewCommand, User, Sug));
+            UpdateViewCommand.Execute(new CreateSuggestionViewViewModel(UpdateViewCommand, User, PartyRequest));
         }
         public void RequestOverviewPending()
         {
@@ -37,14 +38,15 @@ namespace ReservationSystem.ViewModels
         }
         public void DenyRequestView()
         {
-            UpdateViewCommand.Execute(new DenyRequestViewViewModel(UpdateViewCommand, Sug,User));
+            UpdateViewCommand.Execute(new DenyRequestViewViewModel(UpdateViewCommand, PartyRequest, User));
         }
         public User getUser()
         {
             using (var db = new ProjectDatabase())
             {
-
-                return db.Users.Where(u => u.Id == Sug.OrganiserId).First();
+                User u1 = db.Users.Where(u => u.Id == PartyRequest.CreatorId).First();
+                Name = u1.Name;
+                return db.Users.Where(u => u.Id == PartyRequest.OrganiserId).First();
             }
         }
 
