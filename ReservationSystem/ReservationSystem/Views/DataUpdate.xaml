@@ -37,7 +37,9 @@
             <Label  Content="Prezime:"/>
             <TextBox  Height="30" Margin="10" Text="{Binding User.Surname}"/>
             <Label  Content="Datum rodjenja:" />
-            <TextBox  Height="30" Margin="10" Text="{Binding User.Birthday}"/>
+            <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding User.Birthday}" Margin="10"
+                  Height="30"
+                  FirstDayOfWeek="Monday" />
             <Button Command="{Binding ProfileSaveCommand}" Content="Sacuvaj" Grid.Column="1" Grid.Row="3"  Margin="35"/>
         </StackPanel>
 

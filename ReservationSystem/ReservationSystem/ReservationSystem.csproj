@@ -66,9 +66,11 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -95,7 +97,9 @@
     <Compile Include="Commands\OfferReviewCommand.cs" />
     <Compile Include="Commands\OfferReviewOrganizerCommand.cs" />
     <Compile Include="Commands\RequestOverviewCommand.cs" />
+    <Compile Include="Commands\RequestOverviewOrganizerCommand.cs" />
     <Compile Include="Commands\RequestViewCommand.cs" />
+    <Compile Include="Commands\ResolvedTaskOverviewOrganizerCommand.cs" />
     <Compile Include="Commands\TaskOverviewFromOfferCommand.cs" />
     <Compile Include="Commands\TaskOverviewOrganizerCommand.cs" />
     <Compile Include="Commands\TeskOverviewCommand.cs" />
@@ -153,6 +157,7 @@
     <Compile Include="ViewModels\RequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\RequestViewViewModel.cs" />
     <Compile Include="ViewModels\ResolvedTaskOverviewViewModel.cs" />
+    <Compile Include="ViewModels\SuggestionOverviewOrganizerViewModel.cs" />
     <Compile Include="ViewModels\SuggestionOverviewViewModel.cs" />
     <Compile Include="ViewModels\TaskOverviewViewModel.cs" />
     <Compile Include="ViewModels\UserHomePageViewModel.cs" />
@@ -282,6 +287,9 @@
     </Compile>
     <Compile Include="Views\SuggestionOverview.xaml.cs">
       <DependentUpon>SuggestionOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SuggestionOverviewOrganizer.xaml.cs">
+      <DependentUpon>SuggestionOverviewOrganizer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TableArrangementOverview.xaml.cs">
       <DependentUpon>TableArrangementOverview.xaml</DependentUpon>
@@ -471,6 +479,10 @@
     <Page Include="Views\SuggestionOverview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SuggestionOverviewOrganizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TableArrangementOverview.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -39,7 +39,7 @@ namespace ReservationSystem.ViewModels
         }
         private int requestsLength { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-        //public ICommand BackCommand { get; set; }
+        public ICommand BackCommand { get; set; }
         public DelegateCommand NextPageCommand { get; set; }
         public DelegateCommand PreviousPageCommand { get; set; }
 
@@ -55,7 +55,7 @@ namespace ReservationSystem.ViewModels
             requestsLength = Requests.Count();
             NextPageCommand = new DelegateCommand(CanGetNextPage, NextPage);
             PreviousPageCommand = new DelegateCommand(CanGetPreviousPage, PreviousPage);
-            //BackCommand = new DelegateCommand(Back);
+            BackCommand = new DelegateCommand(Back);
             MoreInfoCommand = new MoreInfoCommand(UpdateViewCommand);
             PageIndex = 0;
             InitialPage();
@@ -120,16 +120,26 @@ namespace ReservationSystem.ViewModels
             }
             
         }
-        /*public void Back()
+        public void Back()
         {
-            UpdateViewCommand.Execute(new OrganizierHomePageViewModel(UpdateViewCommand, User));
-        }*/
+            UpdateViewCommand.Execute(new PartyRequestTypeSelectionViewModel(UpdateViewCommand, User));
+        }
 
         public List<PartyRequest> getProcessed()
         {
+            List<PartyRequest> list = new List<PartyRequest>();
             using (var db = new ProjectDatabase())
             {
-                return db.PartyRequests.Include("PartyType").Where(req => (req.RequestState == RequestState.Accepted || req.RequestState == RequestState.Rejected) && req.OrganiserId == User.Id).OrderBy(requst => requst.Date).ToList();
+                List<Suggestion> listSug = db.Suggestions.Include("PartyRequest").Include("PartyRequest.PartyType").ToList();
+                foreach(Suggestion sug in listSug)
+                {
+                    if((sug.PartyRequest.RequestState == RequestState.Accepted || sug.PartyRequest.RequestState == RequestState.Rejected) && sug.PartyRequest.OrganiserId == User.Id && (sug.Answered == AnsweredType.Neprihvacen || sug.Answered == AnsweredType.Neobradjen))
+                    {
+                        list.Add(sug.PartyRequest);
+                    }
+                }
+                //db.PartyRequests.Include("PartyType").Where(req => (req.RequestState == RequestState.Accepted || req.RequestState == RequestState.Rejected) && req.OrganiserId == User.Id).OrderBy(requst => requst.Date).ToList();
+                return list;
             }
         }
 

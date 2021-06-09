@@ -35,6 +35,7 @@ namespace ReservationSystem.ViewModels
                 db.PartyRequests.Where(pr => pr.Id == Sug.Id).First().RequestState = RequestState.Rejected;
                 s.PartyRequest = db.PartyRequests.Where(pr => pr.Id == Sug.Id).First();
                 s.Comment = Comment;
+                s.Answered = AnsweredType.Neprihvacen;
                 db.Suggestions.Add(s);
                 db.SaveChanges();
             }

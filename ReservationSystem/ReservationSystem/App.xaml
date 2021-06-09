@@ -30,6 +30,7 @@
                 <Setter Property="OverridesDefaultStyle" Value="True" />
                 <Setter Property="Foreground"  Value="{StaticResource MaterialDesignDarkForeground}"/>
                 <Setter Property="Background"  Value="{StaticResource MaterialDesignButtonColor}"/>
+                <Setter Property="Cursor" Value="Hand"> </Setter>
             </Style>
 
             <converters:EnumConverter x:Key="EnumConverter"/>
@@ -160,6 +161,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:PartyRequestTypeSelectionViewModel}">
                 <views:PartyRequestsTypeSelection/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SuggestionOverviewOrganizerViewModel}">
+                <views:SuggestionOverviewOrganizer/>
             </DataTemplate>
         </ResourceDictionary>
 

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views"
         mc:Ignorable="d"
         Height="450" Width="800">
-    <Grid>
+    <Grid Margin="30">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -27,49 +27,49 @@
 
         <Button Grid.Row="0" Grid.Column="0" Content="Nazad" Command="{Binding BackCommand}"/>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="User:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Korisnik:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline"  Text="{Binding Name}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Party type:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Vrsta proslave:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.PartyType.Name}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Number of guests:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Broj ljudi:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Capacity}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Budget:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Budžet:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Budget}"></TextBlock>
         </StackPanel>
         <StackPanel Margin="15" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Label FontSize="16" Content="Description:" FontWeight="Bold"/>
-            <TextBox MinLines="2" BorderThickness="2" BorderBrush="Black" FontSize="20" Text="{Binding PartyRequest.Description}"></TextBox>
+            <Label FontSize="16" Content="Opis:" FontWeight="Bold"/>
+            <TextBox MinLines="2"  FontSize="20" Text="{Binding PartyRequest.Description}" IsEnabled="False"></TextBox>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Location:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Lokacija:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Place}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Theme:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Tema:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.PartyTheme}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Date:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Datum:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline" Text="{Binding PartyRequest.Date}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" >
-            <Label Margin="15" FontSize="16" Content="Time:" FontWeight="Bold"/>
+            <Label Margin="15" FontSize="16" Content="Vreme:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline">21h</TextBlock>
         </StackPanel>
 
         <StackPanel Background="LightGray" Margin="15" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Label FontSize="16" Content="REQUEST REJECTED" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <Label FontSize="16" Content="Zahtev odbijen" FontWeight="Bold" HorizontalContentAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
 
             </StackPanel>
-            <Button Content="Suggestion review" HorizontalAlignment="Center"></Button>
+            <Button Content="Pregled predloga" HorizontalAlignment="Center"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

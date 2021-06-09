@@ -55,6 +55,7 @@ namespace ReservationSystem.Views
                     break;
                 case "ActiveParties":
                     //ovde ga bacas na ono sto je mateja pravio poslednje
+                    OrganizerHomePageViewModel.AcceptedSuggestionOverviewCommand.Execute(User);
                     break;
                 case "Profile":
                     OrganizerHomePageViewModel.ProfileCommand.Execute(User);

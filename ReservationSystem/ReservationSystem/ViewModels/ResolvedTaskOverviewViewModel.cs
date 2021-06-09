@@ -33,8 +33,15 @@ namespace ReservationSystem.ViewModels
             using (var db = new ProjectDatabase())
             {
                 Suggestion sug;
-                sug = db.Suggestions.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Where(s => s.Id == OrganizierTask.SuggestionId).First();
-                UpdateViewCommand.Execute(new SuggestionOverviewViewModel(UpdateViewCommand, sug.PartyRequestId));
+                sug = db.Suggestions.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Include("PartyRequest").Where(s => s.Id == OrganizierTask.SuggestionId).First();
+                if (sug.PartyRequest.RequestState == RequestState.Active)
+                {
+                    UpdateViewCommand.Execute(new SuggestionOverviewViewModel(UpdateViewCommand, sug.PartyRequestId));
+                }
+                else
+                {
+                    UpdateViewCommand.Execute(new SuggestionOverviewOrganizerViewModel(UpdateViewCommand, sug.PartyRequestId));
+                }
             }
         }
         public void OfferReview()

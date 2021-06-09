@@ -19,32 +19,28 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DockPanel VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="1" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Saradnik:</Label>
-            <TextBlock Height="25" Text="{Binding Associate.Name}"></TextBlock>
+        <StackPanel VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="1" Margin="20,0,20,0" Orientation="Horizontal">
+            <Label Foreground="Black" FontSize="20" DockPanel.Dock="Top">Saradnik:</Label>
+            <TextBlock  FontSize="20" Height="25" Text="{Binding Associate.Name}"></TextBlock>
+        </StackPanel>
+        <DockPanel VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Margin="20,0,20,0">
+            <Label Foreground="Black" FontSize="20" DockPanel.Dock="Top">Ime:</Label>
+            <TextBox  Text="{Binding Offer.Name}" BorderThickness="2" BorderBrush="Black" FontSize="20"></TextBox>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="1" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Ime:</Label>
-            <TextBox Height="25" Text="{Binding Offer.Name}"></TextBox>
+        <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" Margin="20,0,20,0">
+            <Label Foreground="Black" FontSize="20" DockPanel.Dock="Top">Cena ponude:</Label>
+            <TextBox  Text="{Binding Offer.Price}" BorderThickness="2" BorderBrush="Black" FontSize="20"></TextBox>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="1" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Cena ponude:</Label>
-            <TextBox Height="25" Text="{Binding Offer.Price}"></TextBox>
-        </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="1" 
+        <DockPanel VerticalAlignment="Center"  Grid.Row="3" Grid.ColumnSpan="2" 
                    Grid.RowSpan="2" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Opis:</Label>
-            <TextBox Height="100" Text="{Binding Offer.Description}"></TextBox>
+            <Label  Foreground="Black" FontSize="20" DockPanel.Dock="Top">Opis:</Label>
+            <TextBox Height="100" Text="{Binding Offer.Description}" BorderThickness="2" BorderBrush="Black" FontSize="20" ></TextBox>
         </DockPanel>
-        <DockPanel VerticalAlignment="Center" Grid.Row="1"
-                   Grid.ColumnSpan="1" Grid.RowSpan="4" Grid.Column="1" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Slika:</Label>
-            <TextBlock Height="250"></TextBlock>
-        </DockPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="5">
+
+        <StackPanel VerticalAlignment="Center" Grid.Row="5" Margin="40,20,40,20">
             <Button Command="{Binding AssociateOverviewCommand}">Odustani</Button>
         </StackPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="1">
+        <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Margin="40,20,40,20">
             <Button Command="{Binding AddOfferCommand}">Dodaj</Button>
         </StackPanel>
 
