@@ -24,6 +24,8 @@ namespace ReservationSystem.Models
         public int SuggestionId { get; set; }
         public virtual Suggestion Suggestion { get; set; }
         public UserApproval UserApproval { get; set; }
+        public int? TablesArrangementId { get; set; }
+        public TablesArrangement TablesArrangement { get; set; }
 
         public int SelectedOfferId { get; set; }
         public OrganizierTask()

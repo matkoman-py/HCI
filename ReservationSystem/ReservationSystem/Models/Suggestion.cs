@@ -26,9 +26,6 @@ namespace ReservationSystem.Models
         public int PartyRequestId { get; set; }
         public virtual PartyRequest PartyRequest { get; set; }
 
-        public int? TablesArrangementId { get; set; }
-        public TablesArrangement TablesArrangement { get; set; }
-
         public Suggestion()
         {
 

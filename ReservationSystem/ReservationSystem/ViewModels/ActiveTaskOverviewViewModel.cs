@@ -1,5 +1,6 @@
 ﻿using ReservationSystem.Commands;
 using ReservationSystem.Models;
+using ReservationSystem.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -153,6 +154,8 @@ namespace ReservationSystem.ViewModels
 
         private void GoToTableArrangmentView()
         {
+            ViewChangeUtils.PastViews.Push(this);
+            UpdateViewCommand.Execute(new TableArrangementViewModel(UpdateViewCommand, SelectedOffer, OrganizierTask));
         }
 
         public void AddOffer()
@@ -174,8 +177,6 @@ namespace ReservationSystem.ViewModels
                 {
                     AddRegularOffer();
                 }
-
-                
 
             }
         }

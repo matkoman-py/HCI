@@ -13,7 +13,16 @@ namespace ReservationSystem.Models
         [Key]
         public int Id { get; set; }
         public int NumberOfSeats { get; set; }
-        public int TakenNumberOfSeats { get; set; }
+        public int takenNumberOfSeats;
+        public int TakenNumberOfSeats 
+        {
+            get { return takenNumberOfSeats; } 
+            set 
+            {
+                takenNumberOfSeats = value;
+                OnPropertyChanged("TakenNumberOfSeats");
+            }
+        }
 
         private bool hasCollision;
         public bool HasCollision 
@@ -52,9 +61,23 @@ namespace ReservationSystem.Models
             }
         }
 
+        private bool isFull;
+        public virtual bool IsFull
+        {
+            get
+            {
+                return isFull;
+            }
+            set
+            {
+                isFull = value;
+                OnPropertyChanged("IsFull");
+            }
+        }
+
         public Table()
         {
-
+            Guests = new List<Guest>();
         }
 
         public Table(int numberOfSeats, Point tableCoordinates)
