@@ -356,7 +356,6 @@ C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJ
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewOrganizer.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPage.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\OrganizerAssociateOverview.g.cs
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OrganizierHomePage.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PendingRequestsOverview.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PreviousParties.g.cs
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestOverview.g.cs
@@ -381,7 +380,6 @@ C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJ
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewOrganizer.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OfferReviewPage.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\Organizer\OrganizerAssociateOverview.baml
-C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OrganizierHomePage.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PendingRequestsOverview.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PreviousParties.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\RequestOverview.baml
@@ -390,3 +388,9 @@ C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJ
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\SuggestionOverview.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\TableArrangementOverview.baml
 C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\ReservationSystem.csproj.AssemblyReference.cache
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedSuggestions.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OrganizerHomePage.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PartyRequestsTypeSelection.g.cs
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\AcceptedSuggestions.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\OrganizerHomePage.baml
+C:\Users\aleks\Desktop\PROGRAMIRANJE\FAKS\TRECA GODINA\DRUGI SEMESTAR\INTERAKCIJA COVEK RACUNAR\Projekat\HCI\ReservationSystem\ReservationSystem\obj\Debug\Views\PartyRequestsTypeSelection.baml
