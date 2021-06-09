@@ -34,12 +34,107 @@ namespace ReservationSystem.Views
         private void StartTutorial(object sender, RoutedEventArgs e)
         {
 
-            var currentWindowType = ((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType();
-
-            TutorialWindow tutorial = new TutorialWindow(User, this, currentWindowType);
-            tutorial.Show();
-            tutorial.Topmost = true;
-            this.Hide();
+            Type currentWindowType = ((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType();
+            if (currentWindowType == typeof(RequestsOverviewViewModel))
+            {
+                if (RequestsOverviewViewModel.RequestState == RequestState.Pending)
+                {
+                    TutorialWindow tutorial = new TutorialWindow(User, this, 0);
+                    tutorial.Show();
+                    tutorial.Topmost = true;
+                    this.Hide();
+                }
+                else if (RequestsOverviewViewModel.RequestState == RequestState.Active)
+                {
+                    TutorialWindow tutorial = new TutorialWindow(User, this, 1);
+                    tutorial.Show();
+                    tutorial.Topmost = true;
+                    this.Hide();
+                } else
+                {
+                    MessageBox.Show("Tutorijal možete pokrenuti samo u delu menija sa aktivnim i neobrađenim zahtevima.");
+                }
+            } else if (currentWindowType == typeof(PendingRequestOverview)) {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 0);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(CreateSuggestionViewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 0);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(DenyRequestViewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 0);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(CreateTaskViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 0);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            //--------------------------------------------------------------------------------
+            else if (currentWindowType == typeof(ActiveRequestOverviewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 1);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(SuggestionOverviewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 1);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(RequestsOverviewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 1);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(ResolvedTaskOverviewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 1);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(OfferReviewOrganizerViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 1);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(ActiveTaskOverviewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 1);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(TableArrangementViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this, 1);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Tutorijal možete pokrenuti samo u delu menija sa aktivnim i neobrađenim zahtevima.");
+            }
         }
 
         private void GridSplitter_MouseEnter(object sender, RoutedEventArgs e)

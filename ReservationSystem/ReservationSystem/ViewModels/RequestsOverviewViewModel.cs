@@ -45,7 +45,7 @@ namespace ReservationSystem.ViewModels
 
         public MoreInfoCommand MoreInfoCommand { get; set; }
         public User User { get; set; }
-        public RequestState RequestState { get; set; }
+        public static RequestState RequestState { get; set; }
         public RequestsOverviewViewModel(ICommand updateViewCommand, User user, RequestState requestState)
         {
             UpdateViewCommand = updateViewCommand;

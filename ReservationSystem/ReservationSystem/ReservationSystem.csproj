@@ -128,6 +128,14 @@
     <Compile Include="Tutorial\TutorialWindow.xaml.cs">
       <DependentUpon>TutorialWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tutorial\ViewModel\PendingRequestOverviewViewModel.cs" />
+    <Compile Include="Tutorial\ViewModel\PendingRequestViewModel.cs" />
+    <Compile Include="Tutorial\View\PendingRequestOverview.xaml.cs">
+      <DependentUpon>PendingRequestOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tutorial\View\PendingRequestsOverview.xaml.cs">
+      <DependentUpon>PendingRequestsOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utils\CsvToGuestsConverter.cs" />
     <Compile Include="Utils\ViewChangeUtils.cs" />
     <Compile Include="Validators\StringToIntValidate.cs" />
@@ -338,6 +346,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Tutorial\TutorialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tutorial\View\PendingRequestOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tutorial\View\PendingRequestsOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

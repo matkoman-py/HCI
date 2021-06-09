@@ -28,7 +28,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Command="{Binding CreateTaskCommand}" Margin="10">Novi zadatak</Button>
+        <Button Command="{Binding PendingRequestOverviewCommand}" Margin="10">Nazad</Button>
         
         <DockPanel Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="4" Margin="50,0,50,20" >
             <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"  >Kreirani zadaci:</Label>
@@ -51,7 +51,7 @@
                  BorderBrush="Black" 
                  BorderThickness="2" Grid.RowSpan="1"/>
         <StackPanel HorizontalAlignment="Center" Grid.Row="8" Grid.ColumnSpan="4" Orientation="Horizontal" >
-            <Button Margin="0,0,40,0" Command="{Binding PendingRequestOverviewCommand}">Odustani</Button>
+            <Button Margin="0,0,40,0" Command="{Binding CreateTaskCommand}">Novi zadatak</Button>
             <Button Command="{Binding AcceptPendingRequestCommand}"  >Prihvati zahtev</Button>
 
             

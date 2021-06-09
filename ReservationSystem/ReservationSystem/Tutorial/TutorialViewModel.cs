@@ -1,4 +1,6 @@
 ﻿using ReservationSystem.Commands;
+using ReservationSystem.Models;
+using ReservationSystem.Tutorial.ViewModel;
 using ReservationSystem.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,18 +28,25 @@ namespace ReservationSystem.Tutorial
 
         public ICommand UpdateViewCommand { get; set; }
 
-        public TutorialViewModel(Type currentWidnowType)
+        public TutorialViewModel(int  tutorialType)
         {
 
             UpdateViewCommand = new UpdateViewCommand(this);
-            getStartView(currentWidnowType);
+            getStartView(tutorialType);
 
         }
 
-        public void getStartView(Type currentWindowType)
+        public void getStartView(int tutorialType)
         {
 
-
+            if (tutorialType == 0)
+            {
+                _selectedViewModel = new PendingRequestOverviewViewModel(UpdateViewCommand);
+            }
+            else
+            {
+               // _selectedViewModel = new ProfileViewModel(UpdateViewCommand, user);
+            }
 
         }
 

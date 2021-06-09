@@ -25,12 +25,12 @@ namespace ReservationSystem.Tutorial
         public User User { get; set; }
         public Window Window { get; set; }
 
-        public TutorialWindow(User user, Window window, Type currentViewModelType)
+        public TutorialWindow(User user, Window window, int tutorialType)
         {
             InitializeComponent();
             User = user;
             Window = window;
-            DataContext = new TutorialViewModel(currentViewModelType);
+            DataContext = new TutorialViewModel(tutorialType);
 
         }
 

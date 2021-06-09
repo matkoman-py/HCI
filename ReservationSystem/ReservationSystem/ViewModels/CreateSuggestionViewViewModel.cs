@@ -85,11 +85,22 @@ namespace ReservationSystem.ViewModels
                 
                 db.SaveChanges();
             }
-            MessageBox.Show("Prihvatili ste ponudu!");
+            MessageBox.Show("Prihvatili ste zahtev!");
             UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, User, RequestState.Pending));
         }
         public void PendingRequestOverviewView()
-        {   
+        {
+            using (var db = new ProjectDatabase())
+            {
+                var suggestion = db.Suggestions.Where(s => s.PartyRequest.Id == Sug.Id).First();
+                List<OrganizierTask> organizerTasksCopy = new List<OrganizierTask>(db.OrganizierTasks.Where(task => task.SuggestionId == suggestion.Id));
+                foreach (OrganizierTask task in organizerTasksCopy)
+                {
+                    db.OrganizierTasks.Remove(task);
+                }
+                suggestion.OrganizierTasks = new List<OrganizierTask>();
+                db.SaveChanges();
+            }
             UpdateViewCommand.Execute(new PendingRequestOverview(UpdateViewCommand, Sug));
         }
     }
