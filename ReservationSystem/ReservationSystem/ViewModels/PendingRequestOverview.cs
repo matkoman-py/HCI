@@ -12,6 +12,7 @@ namespace ReservationSystem.ViewModels
     public class PendingRequestOverview : BaseViewModel
     {
         public User User { get; set; }
+        public string Name { get; set; }
         public ICommand UpdateViewCommand { get; set; }
         public PartyRequest PartyRequest { get; set; }
         public ICommand DenyRequestViewCommand { get; set; }
@@ -43,7 +44,8 @@ namespace ReservationSystem.ViewModels
         {
             using (var db = new ProjectDatabase())
             {
-
+                User u1 = db.Users.Where(u => u.Id == PartyRequest.CreatorId).First();
+                Name = u1.Name;
                 return db.Users.Where(u => u.Id == PartyRequest.OrganiserId).First();
             }
         }

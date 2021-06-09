@@ -46,14 +46,19 @@ namespace ReservationSystem.ViewModels
         {
             if (User.Birthday.CompareTo(DateTime.Today) > 0)
             {
-                MessageBox.Show("Ne mozete se roditi u buducnost xD");
+                MessageBox.Show("Rođendan vam ne može biti u budućnosti!");
+                return;
+            }
+            if(User.Name.Trim() == "" || User.Surname.Trim() == "" || User.Email.Trim() == "" || User.Password.Trim() == "")
+            {
+                MessageBox.Show("Morate uneti sve podatke");
                 return;
             }
             using (var db = new ProjectDatabase())
             {
                 foreach (User user in db.Users.ToList())
                 {
-                    if (user.Username.Equals(User.Username))
+                    if (user.Id.Equals(User.Id))
                     {
                         user.Name = User.Name;
                         user.Surname = User.Surname;
@@ -65,6 +70,7 @@ namespace ReservationSystem.ViewModels
                     }
                 }
             }
+            MessageBox.Show("Uspešna izmena podataka!");
             UpdateViewCommand.Execute(new ProfileViewModel(UpdateViewCommand, User));
         }
     }
