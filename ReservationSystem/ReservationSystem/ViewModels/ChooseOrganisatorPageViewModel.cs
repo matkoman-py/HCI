@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
@@ -76,7 +77,7 @@ namespace ReservationSystem.ViewModels
         {
             if(SelectedOrganiser == null)
             {
-                Console.WriteLine("Izaberite organizatora");
+                MessageBox.Show("Izaberite organizatora");
                 return;
             }
             PartyRequest.OrganiserId = SelectedOrganiser.Id;
@@ -90,6 +91,7 @@ namespace ReservationSystem.ViewModels
                 db.PartyRequests.Add(PartyRequest);
                 db.SaveChanges();
             }
+            MessageBox.Show("Uspešno ste kreirali zahtev.");
             UpdateViewCommand.Execute(new PendingRequestsViewModel(UpdateViewCommand,User));
         }
 

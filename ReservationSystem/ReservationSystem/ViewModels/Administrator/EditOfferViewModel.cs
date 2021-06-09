@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels.Administrator
@@ -128,6 +129,16 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void EditOffer()
         {
+            if(string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Description))
+            {
+                MessageBox.Show("Morate uneti sva polja!");
+                return;
+            }
+            if (Price <= 0)
+            {
+                MessageBox.Show("Cena mora biti veci od nule!");
+                return;
+            }
             if (Mode == "Add")
             {
                 Offer.Name = Name;

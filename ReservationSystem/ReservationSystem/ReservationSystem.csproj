@@ -157,8 +157,13 @@
     <Compile Include="Models\Guest.cs" />
     <Compile Include="Models\PartyType.cs" />
     <Compile Include="Seeders\UserSeeder.cs" />
+    <Compile Include="Tutorial\TutorialViewModel.cs" />
+    <Compile Include="Tutorial\TutorialWindow.xaml.cs">
+      <DependentUpon>TutorialWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utils\CsvToGuestsConverter.cs" />
     <Compile Include="Utils\ViewChangeUtils.cs" />
+    <Compile Include="Validators\StringToIntValidate.cs" />
     <Compile Include="ViewModels\AcceptedRequestOverviewViewModel.cs" />
     <Compile Include="ViewModels\AcceptedSuggestionViewModel.cs" />
     <Compile Include="ViewModels\ActiveRequestOverviewViewModel.cs" />
@@ -365,6 +370,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Tutorial\TutorialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AcceptedRequestOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -596,9 +605,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validators\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Static\blankProfilePicture.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

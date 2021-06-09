@@ -22,8 +22,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="50">
-            <Label  Content="Korisnicko ime:"/>
-            <TextBox  Height="30" Margin="10" Text="{Binding User.Username}"/>
+            <Label  Content="Korisničko ime:"/>
+            <TextBox  Height="30" Margin="10" Text="{Binding User.Username}" IsReadOnly="True"/>
             <Label  Content="Lozinka:"/>
             <TextBox  Height="30" Margin="10" Text="{Binding User.Password}"/>
             <Label  Content="E-mail:"/>
@@ -36,11 +36,11 @@
             <TextBox  Height="30" Margin="10" Text="{Binding User.Name}"/>
             <Label  Content="Prezime:"/>
             <TextBox  Height="30" Margin="10" Text="{Binding User.Surname}"/>
-            <Label  Content="Datum rodjenja:" />
+            <Label  Content="Datum rođenja:" />
             <DatePicker SelectedDateFormat="Long" SelectedDate="{Binding User.Birthday}" Margin="10"
                   Height="30"
                   FirstDayOfWeek="Monday" />
-            <Button Command="{Binding ProfileSaveCommand}" Content="Sacuvaj" Grid.Column="1" Grid.Row="3"  Margin="35"/>
+            <Button Command="{Binding ProfileSaveCommand}" Content="Sačuvaj" Grid.Column="1" Grid.Row="3"  Margin="35"/>
         </StackPanel>
 
         

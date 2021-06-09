@@ -170,5 +170,10 @@ namespace ReservationSystem.Views
                     break;
             }
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.MainWindow.Show();
+        }
     }
 }

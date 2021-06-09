@@ -49,7 +49,7 @@
 
         <StackPanel Margin="40,40,40,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="1">
             <Label FontSize="16" Content="Opis:" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-            <TextBox  BorderThickness="2"   BorderBrush="Black" FontSize="16" Text="{Binding Suggestion.Comment}"></TextBox>
+            <TextBox  BorderThickness="2"   BorderBrush="Black" FontSize="16" Text="{Binding Suggestion.Comment}" IsReadOnly="True"></TextBox>
         </StackPanel>
 
         

@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels.Administrator
@@ -101,6 +102,10 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void AddPartyType()
         {
+            if (string.IsNullOrEmpty(NewPartyTypeName.Trim())){
+                MessageBox.Show("Morate uneti ime za vrstu proslave!");
+                return;
+            }
             using (var db = new ProjectDatabase())
             {
                 PartyType partyType = new PartyType { Name = NewPartyTypeName };

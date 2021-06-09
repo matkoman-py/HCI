@@ -40,7 +40,13 @@ namespace ReservationSystem.ViewModels
             {
 
                 PartyRequest pr = db.PartyRequests.Include("PartyType").Where(u => u.Id == Suggestion.PartyRequestId).First();
-                UpdateViewCommand.Execute(new AcceptedRequestOverviewViewModel(UpdateViewCommand, pr));
+                if (pr.RequestState == RequestState.Accepted)
+                {
+                    UpdateViewCommand.Execute(new AcceptedRequestOverviewViewModel(UpdateViewCommand, pr));
+                }else if(pr.RequestState == RequestState.Rejected)
+                {
+                    UpdateViewCommand.Execute(new RejectedRequestOverviewViewModel(UpdateViewCommand, pr));
+                }
             }
         }
         

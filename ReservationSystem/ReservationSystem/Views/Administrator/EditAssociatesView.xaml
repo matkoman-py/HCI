@@ -39,7 +39,7 @@
                     ></ComboBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Center" Grid.Row ="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="20,0,20,0">
-            <Label DockPanel.Dock="Top">Opsi:</Label>
+            <Label DockPanel.Dock="Top">Opis:</Label>
             <TextBox  Text="{Binding Associate.Description}"></TextBox>
         </DockPanel>
         <StackPanel VerticalAlignment="Center" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1">

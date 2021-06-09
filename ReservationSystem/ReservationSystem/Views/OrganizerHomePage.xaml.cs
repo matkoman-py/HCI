@@ -1,4 +1,5 @@
 ﻿using ReservationSystem.Models;
+using ReservationSystem.Tutorial;
 using ReservationSystem.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,17 @@ namespace ReservationSystem.Views
             InitializeComponent();
             DataContext = new OrganizerHomePageViewModel(user);
             User = user;
+        }
+
+        private void StartTutorial(object sender, RoutedEventArgs e)
+        {
+
+            var currentWindowType = ((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType();
+
+            TutorialWindow tutorial = new TutorialWindow(User, this, currentWindowType);
+            tutorial.Show();
+            tutorial.Topmost = true;
+            this.Hide();
         }
 
         private void GridSplitter_MouseEnter(object sender, RoutedEventArgs e)
@@ -110,6 +122,11 @@ namespace ReservationSystem.Views
                     this.Close();
                     break;
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.MainWindow.Show();
         }
     }
 }

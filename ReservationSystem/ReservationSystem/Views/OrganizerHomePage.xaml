@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        Closed="Window_Closed"
         Title="OrganizerHomePage" Height="590" Width="1040">
 
     <Window.Resources>
@@ -22,7 +23,12 @@
                     Executed="NewOfferForAssociateShortcut" />
         <CommandBinding Command="{StaticResource ApplyShortcut}" 
                     Executed="ApplyShortcut" />
+<<<<<<< HEAD
         <CommandBinding Command="{StaticResource CreateNewTaskShortcut}"  />
+=======
+        <!--CommandBinding Command="{StaticResource CreateNewTaskShortcut}" 
+                    Executed="CreateNewTaskShortcut" /-->
+>>>>>>> 3ae97f04380b408f7b1963d05f86e61b4f4ed1c4
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Gesture="Control+S" Key="S" Command="{StaticResource NewAssociateShortcut}" />
@@ -32,8 +38,10 @@
     </Window.InputBindings>
 
     <Grid>
-        <Grid Panel.ZIndex="10" Height="70" VerticalAlignment="Top" Background="#FF4176A8"></Grid>
-            <Grid Panel.ZIndex="10" x:Name="GridMenu" Width="240" HorizontalAlignment="Left" Background="#FF4176A8">
+        <Grid Panel.ZIndex="10" Height="70" VerticalAlignment="Top" Background="#FF4176A8">
+            <Button Background="White" Foreground="#FF4176A8" Padding="20,5,20,5" Margin="0,0,40,0" Content="Tutorijal" Click="StartTutorial" VerticalAlignment="Center" HorizontalAlignment="Right"></Button>
+        </Grid>
+        <Grid Panel.ZIndex="10" x:Name="GridMenu" Width="240" HorizontalAlignment="Left" Background="#FF4176A8">
                 <StackPanel>
                     <Grid Height="70">
                         <TextBlock TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="White" Text="Meni"></TextBlock>

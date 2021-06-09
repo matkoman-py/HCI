@@ -15,7 +15,7 @@ namespace ReservationSystem.ViewModels
         public ICommand UpdateViewCommand { get; set; }
         public ICommand RequestsOverviewPendingCommand { get; set; }
         public PartyRequest Sug { get; set; }
-
+        public ICommand BackCommand { get; set; }
         public string Comment { get; set; }
         public DenyRequestViewViewModel(ICommand updateViewCommand, PartyRequest sug, User user)
         {
@@ -24,8 +24,12 @@ namespace ReservationSystem.ViewModels
             Sug = sug;
             User = user;
             Comment = "";
+            BackCommand = new DelegateCommand(Back);
         }
-
+        public void Back()
+        {
+            UpdateViewCommand.Execute(new PendingRequestOverview(UpdateViewCommand, Sug));
+        }
         public void RequestOverviewPending()
         {
             using(var db = new ProjectDatabase())

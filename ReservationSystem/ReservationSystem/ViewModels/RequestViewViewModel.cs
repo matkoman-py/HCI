@@ -115,6 +115,7 @@ namespace ReservationSystem.ViewModels
                     user = db.Users.Where(u => u.Id == Request.CreatorId).First();
                     db.SaveChanges();
                 }
+                MessageBox.Show("Uspešno ste odgovorili na predlog!");
                 UpdateViewCommand.Execute(new NewSuggestionsViewModel(UpdateViewCommand, user));
             }
         }

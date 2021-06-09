@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        Closing="Window_Closing"
         Title="AdminHomePage" Height="590" Width="860">
 
     <Window.Resources>

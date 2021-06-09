@@ -25,7 +25,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" Command="{Binding BackCommand}"/>
+        <Button Grid.Row="0" Grid.Column="0" Content="Nazad" Command="{Binding RequestsOverviewPendingCommand}"/>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
             <Label Margin="15" FontSize="16" Content="Korisnik:" FontWeight="Bold"/>
             <TextBlock Margin="20" FontSize="16" TextDecorations="Underline"  Text="{Binding Name}"></TextBlock>

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels.Administrator
@@ -34,6 +35,11 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void AddOrganizer() 
         {
+            if (Username == null || Password == null || Name == null || Surname == null || Email == null || Birthday == null || PhoneNumber == null)
+            {
+                MessageBox.Show("Morate navesti sva polja!");
+                return;
+            }
             using (var db = new ProjectDatabase()) 
             {
                 try
