@@ -5,27 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ReservationSystem.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition  Height="Auto"/>
             <RowDefinition Height="Auto"/>
 
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left">
-            <Button Content="Nazad" Width="110" Height="30" Margin="20"  Command="{Binding BackCommand}"/>
-            <Label Margin="10" Width="110" Height="30" Content="{Binding Offer.Associate.Name}"/>
+        <Button Grid.Column="0" Grid.Row="0" Content="Nazad"  Height="Auto" Margin="10" Command="{Binding BackCommand}" HorizontalAlignment="Left"/>
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Margin="0,50,0,0">
+            <Label FontSize="20"  FontWeight="Bold" Margin="3"   Content="Ime saradnika: "/>
+            <TextBox  MinLines="2" FontSize="16" BorderThickness="2" BorderBrush="Black" Height="30"  Width="200" Margin="0" Text="{Binding Offer.Associate.Name}" IsReadOnly="True"/>
+            <Label FontSize="20"  FontWeight="Bold" Margin="3"  Content="Cena ponude: "/>
+            <TextBox  MinLines="2" FontSize="16" BorderThickness="2" BorderBrush="Black" Height="30"  Width="200" Margin="0" Text="{Binding Offer.Price}" IsReadOnly="True"/>
+            <Label FontSize="20"  FontWeight="Bold" Margin="3"   Content="Opis ponude: "/>
+            <TextBox MinLines="2" FontSize="16"  BorderThickness="2" BorderBrush="Black" Height="100"  Width="200" Margin="0" Text="{Binding Offer.Description}" IsReadOnly="True"/>
         </StackPanel>
-        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
-            <Label Margin="3" Width="110" Height="30" Content="Cena ponude: "/>
-            <TextBox  Height="30"  Width="200" Margin="0" Text="{Binding Offer.Price}" IsReadOnly="True"/>
-            <Label Margin="3" Width="110" Height="30" Content="Opis ponude: "/>
-            <TextBox  Height="100"  Width="200" Margin="0" Text="{Binding Offer.Description}" IsReadOnly="True"/>
-        </StackPanel>
-        <Image  Grid.Column="1" Grid.Row="1" Height="150" Width="150"/>
     </Grid>
 </UserControl>
