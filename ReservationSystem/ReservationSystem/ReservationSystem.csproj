@@ -609,6 +609,33 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\AddAssociatesHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addfieldofworkHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addpartytypeHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addorganizersHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addorganizersdataHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\AddAssociatesdataHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addofferHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\editAssociateHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\editOfferHelp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
