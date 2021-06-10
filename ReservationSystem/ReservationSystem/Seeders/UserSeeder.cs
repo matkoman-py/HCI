@@ -131,7 +131,7 @@ namespace ReservationSystem.Seeders
                 pr1.OrganiserId = 3;
                 PartyRequest pr2 = new PartyRequest(partyType1, 550, "Bulevar oslobođenja 10", new DateTime(2020, 9, 5), 1999, false, "Kanada", "Narodnjaci", RequestState.Accepted, 1);
                 
-                PartyRequest pr3 = new PartyRequest(partyType1, 8000, "Bulevar evrope 22", new DateTime(2021, 10, 8), 50, false, "Banana split", "Ako je drina granica popicemo je", RequestState.Pending, 1);
+                PartyRequest pr3 = new PartyRequest(partyType1, 8000, "Bulevar evrope 22", new DateTime(2021, 10, 8), 50, false, "Banana split", "Ako je drina granica popicemo je", RequestState.Accepted, 1);
                 PartyRequest pr4 = new PartyRequest(partyType1, 5500, "Alekova ulica 55", new DateTime(2022, 9, 3), 20, false, "BOBI I COBI", "Prelo", RequestState.Pending, 1);
                 PartyRequest pr5 = new PartyRequest(partyType1, 25500, "Bulevar oslobođenja 5", new DateTime(2022, 9, 5), 200, false, "Tekela", "Krajiska zurka", RequestState.Accepted, 1);
                 PartyRequest pr6 = new PartyRequest(partyType1, 50000, "Bulevar evrope 54", new DateTime(2022, 9, 5), 15, false, "Pakle", "Duvanje", RequestState.Rejected, 1);
