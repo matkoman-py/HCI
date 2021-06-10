@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ReservationSystem.Views.Administrator" 
+             xmlns:w="clr-namespace:ReservationSystem.Password"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              Background="White"
@@ -60,14 +61,14 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DockPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
+            <DockPanel Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
                 <Label DockPanel.Dock="Top">Lozinka:</Label>
-                <TextBox Text="{Binding Password}"></TextBox>
+                <PasswordBox Height="30" Margin="3" x:Name="PasswordBox" 
+                         w:PasswordBoxAssistant.BindPassword="true" 
+                         w:PasswordBoxAssistant.BoundPassword="{Binding Path=Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         ></PasswordBox>
             </DockPanel>
-            <DockPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0">
-                <Label DockPanel.Dock="Top">Ponovite lozinku:</Label>
-                <TextBox Text="{Binding PasswordRepeat}"></TextBox>
-            </DockPanel>
+            <DockPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0"/>
         </Grid>
 
         <Grid

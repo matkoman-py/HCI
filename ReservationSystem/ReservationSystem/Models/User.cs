@@ -16,7 +16,7 @@ namespace ReservationSystem.Models
     {
         [Key]
         public int Id { get; set; }
-        //Kako ide unique constraint?
+        
         [Required]
         public string Username { get; set; }
         [Required]

@@ -19,7 +19,6 @@ namespace ReservationSystem.ViewModels.Administrator
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string PasswordRepeat { get; set; }
         public string PhoneNumber { get; set; }
         public string Username { get; set; }
         public DateTime Birthday { get; set; }
@@ -35,13 +34,27 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void AddOrganizer() 
         {
-            if (Username == null || Password == null || Name == null || Surname == null || Email == null || Birthday == null || PhoneNumber == null)
+            if (string.IsNullOrEmpty(Username.Trim()) ||
+                string.IsNullOrEmpty(Password.Trim()) ||
+                string.IsNullOrEmpty(Name.Trim()) ||
+                string.IsNullOrEmpty(Surname.Trim()) ||
+                string.IsNullOrEmpty(Email.Trim()) ||
+                Birthday == null ||
+                string.IsNullOrEmpty(PhoneNumber.Trim()))
             {
                 MessageBox.Show("Morate navesti sva polja!");
                 return;
             }
             using (var db = new ProjectDatabase()) 
             {
+                foreach (User u in db.Users)
+                {
+                    if (u.Username == Username)
+                    {
+                        MessageBox.Show("Korisničko ime nije jedinstveno!");
+                        return;
+                    }
+                }
                 try
                 {
                     User user = new User

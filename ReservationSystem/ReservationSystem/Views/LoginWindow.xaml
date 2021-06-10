@@ -29,7 +29,10 @@
         <StackPanel Grid.Row="2" Grid.Column="1" >
             <Label  Content="Lozinka:"/>
 
-            <PasswordBox Height="30" Margin="3" x:Name="PasswordBox" w:PasswordBoxAssistant.BindPassword="true" w:PasswordBoxAssistant.BoundPassword="{Binding Path=Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></PasswordBox>
+            <PasswordBox Height="30" Margin="3" x:Name="PasswordBox" 
+                         w:PasswordBoxAssistant.BindPassword="true" 
+                         w:PasswordBoxAssistant.BoundPassword="{Binding Path=Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         ></PasswordBox>
             
             <TextBlock>
                 Još uvek nemaš profil?

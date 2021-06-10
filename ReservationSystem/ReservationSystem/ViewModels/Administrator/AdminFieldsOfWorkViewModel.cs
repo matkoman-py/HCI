@@ -124,6 +124,14 @@ namespace ReservationSystem.ViewModels.Administrator
             }
             using (var db = new ProjectDatabase())
             {
+                var existingFieldOfWork = db.FieldsOfWork.Where(field => field.Name == newFieldOfWorkName);
+                
+                if (existingFieldOfWork.Count() > 0) 
+                {
+                    MessageBox.Show("Već postoji delatnost sa tim nazivom!");
+                    return;
+                }
+                
                 FieldOfWork fieldOfWork = new FieldOfWork { Name = NewFieldOfWorkName, HasRoom = NewHasRoom };
                 db.FieldsOfWork.Add(fieldOfWork);
                 db.SaveChanges();
@@ -140,6 +148,15 @@ namespace ReservationSystem.ViewModels.Administrator
             {
                 try
                 {
+                    var existingFieldOfWork = 
+                        db.FieldsOfWork.Where(field => field.Name == newFieldOfWorkName && field.Id != FieldOfWorkToEdit.Id);
+
+                    if (existingFieldOfWork.Count() > 0)
+                    {
+                        MessageBox.Show("Već postoji delatnost sa tim nazivom!");
+                        return;
+                    }
+
                     db.Entry(FieldOfWorkToEdit).State = EntityState.Modified;
                     FieldOfWorkToEdit.Name = NewFieldOfWorkName;
                     FieldOfWorkToEdit.HasRoom = NewHasRoom;

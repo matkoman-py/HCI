@@ -108,6 +108,15 @@ namespace ReservationSystem.ViewModels.Administrator
             }
             using (var db = new ProjectDatabase())
             {
+
+                var existing = db.PartyTypes.Where(p => p.Name == newPartyTypeName);
+
+                if (existing.Count() > 0)
+                {
+                    MessageBox.Show("Već postoji tip sa tim nazivom!");
+                    return;
+                }
+
                 PartyType partyType = new PartyType { Name = NewPartyTypeName };
                 db.PartyTypes.Add(partyType);
                 db.SaveChanges();
@@ -123,8 +132,16 @@ namespace ReservationSystem.ViewModels.Administrator
             {
                 try
                 {
+                    var existing = db.PartyTypes.Where(p => p.Name == newPartyTypeName && p.Id != PartyTypeToEdit.Id);
+
+                    if (existing.Count() > 0)
+                    {
+                        MessageBox.Show("Već postoji tip sa tim nazivom!");
+                        return;
+                    }
+
                     db.Entry(PartyTypeToEdit).State = EntityState.Modified;
-                    PartyTypeToEdit.Name = NewPartyTypeName;
+                    PartyTypeToEdit.Name = NewPartyTypeName;                    
                     db.SaveChanges();
                     CancelEditMode();
                 }

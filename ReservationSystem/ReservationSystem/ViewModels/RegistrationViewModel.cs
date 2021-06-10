@@ -37,10 +37,14 @@ namespace ReservationSystem.ViewModels
         }
         private void Register()
         {
-            if (Username == null || Password == null || Name == null || Surname == null || Email == null || BirthDate == null)
+            if (string.IsNullOrEmpty(Username.Trim()) ||
+                string.IsNullOrEmpty(Password.Trim()) ||
+                string.IsNullOrEmpty(Name.Trim()) ||
+                string.IsNullOrEmpty(Surname.Trim()) ||
+                string.IsNullOrEmpty(Email.Trim()) ||
+                BirthDate == null)
             {
                 MessageBox.Show("Morate navesti sva polja!");
-                
             }
             else
             {
