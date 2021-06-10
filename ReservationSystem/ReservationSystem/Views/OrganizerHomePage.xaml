@@ -14,6 +14,9 @@
         <RoutedUICommand x:Key="NewOfferForAssociateShortcut" Text="Text" />
         <RoutedUICommand x:Key="ApplyShortcut" Text="Text" />
         <RoutedUICommand x:Key="CreateNewTaskShortcut" Text="Text" />
+        <RoutedUICommand x:Key="RejectRequestShortcut" Text="Text" />
+        <RoutedUICommand x:Key="PreviousPageShortcut" Text="Text" />
+        <RoutedUICommand x:Key="NextPageShortcut" Text="Text" />
     </Window.Resources>
 
     <Window.CommandBindings>
@@ -23,6 +26,12 @@
                     Executed="NewOfferForAssociateShortcut" />
         <CommandBinding Command="{StaticResource ApplyShortcut}" 
                     Executed="ApplyShortcut" />
+        <CommandBinding Command="{StaticResource RejectRequestShortcut}" 
+                    Executed="RejectRequestShortcut" />
+        <CommandBinding Command="{StaticResource PreviousPageShortcut}" 
+                    Executed="PreviousPageShortcut" />
+        <CommandBinding Command="{StaticResource NextPageShortcut}" 
+                    Executed="NextPageShortcut" />
         <!--CommandBinding Command="{StaticResource CreateNewTaskShortcut}" 
                     Executed="CreateNewTaskShortcut" /-->
     </Window.CommandBindings>
@@ -30,7 +39,9 @@
         <KeyBinding Gesture="Control+S" Key="S" Command="{StaticResource NewAssociateShortcut}" />
         <KeyBinding Gesture="Control+P" Key="P" Command="{StaticResource NewOfferForAssociateShortcut}" />
         <KeyBinding Gesture="Control+Space" Key="Space" Command="{StaticResource ApplyShortcut}" />
-        <KeyBinding Gesture="Control+Z" Key="Z" Command="{StaticResource CreateNewTaskShortcut}" />
+        <KeyBinding Gesture="Control+Tab" Key="Tab" Command="{StaticResource RejectRequestShortcut}" />
+        <KeyBinding Gesture="Left" Key="Left" Command="{StaticResource PreviousPageShortcut}" />
+        <KeyBinding Gesture="Right" Key="Right" Command="{StaticResource NextPageShortcut}" />
     </Window.InputBindings>
 
     <Grid>

@@ -22,7 +22,7 @@ namespace ReservationSystem.ViewModels
             get; set;
         }
 
-        public ICommand AssociateOverviewCommand
+        public static ICommand AssociateOverviewCommand
         {
             get; set;
         }

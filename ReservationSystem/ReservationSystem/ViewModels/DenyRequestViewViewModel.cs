@@ -13,7 +13,7 @@ namespace ReservationSystem.ViewModels
     {
         public User User { get; set; }
         public ICommand UpdateViewCommand { get; set; }
-        public ICommand RequestsOverviewPendingCommand { get; set; }
+        public static ICommand RequestsOverviewPendingCommand { get; set; }
         public PartyRequest Sug { get; set; }
         public ICommand BackCommand { get; set; }
         public string Comment { get; set; }

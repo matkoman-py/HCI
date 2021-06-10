@@ -165,6 +165,30 @@ namespace ReservationSystem.Views
             }
         }
 
+        private void RejectRequestShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(PendingRequestOverview))
+            {
+                PendingRequestOverview.DenyRequestViewCommand.Execute(null);
+            }
+        }
+
+        private void PreviousPageShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequestsOverviewViewModel))
+            {
+                RequestsOverviewViewModel.NextPageCommand.Execute(null);
+            }
+        }
+
+        private void NextPageShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequestsOverviewViewModel))
+            {
+                RequestsOverviewViewModel.PreviousPageCommand.Execute(null);
+            }
+        }
+
         private void ApplyShortcut(object sender, ExecutedRoutedEventArgs e)
         {
             if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(PendingRequestOverview))
@@ -176,13 +200,21 @@ namespace ReservationSystem.Views
             }
             else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateTaskViewModel))
             {
-                Console.WriteLine("????????????????????????????");
                 CreateTaskViewModel.SaveTaskCommand.Execute(null);
-            } else
-            {
-                Console.WriteLine("Staaaaaaaaaaa");
             }
-
+            else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateNewOfferViewModel))
+            {
+                CreateNewOfferViewModel.AssociateOverviewCommand.Execute(null);
+            }
+            else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateNewAssociateViewModel))
+            {
+                CreateNewAssociateViewModel.AddAssociatesCommand.Execute(null);
+            }
+            else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(DenyRequestViewViewModel))
+            {
+                DenyRequestViewViewModel.RequestsOverviewPendingCommand.Execute(null);
+            }
+            
         }
 
         private void CreateNewTask(object sender, ExecutedRoutedEventArgs e)

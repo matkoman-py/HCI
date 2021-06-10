@@ -40,8 +40,8 @@ namespace ReservationSystem.ViewModels
         private int requestsLength { get; set; }
         public ICommand UpdateViewCommand { get; set; }
         public ICommand BackCommand { get; set; }
-        public DelegateCommand NextPageCommand { get; set; }
-        public DelegateCommand PreviousPageCommand { get; set; }
+        public static DelegateCommand NextPageCommand { get; set; }
+        public static DelegateCommand PreviousPageCommand { get; set; }
 
         public MoreInfoCommand MoreInfoCommand { get; set; }
         public User User { get; set; }
