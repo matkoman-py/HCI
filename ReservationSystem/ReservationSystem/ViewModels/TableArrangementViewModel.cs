@@ -49,23 +49,39 @@ namespace ReservationSystem.ViewModels
 
         private void GoBack() 
         {
-            UpdateViewCommand.Execute(ViewChangeUtils.PastViews.Pop());
+            UpdateViewCommand.Execute(new ActiveTaskOverviewViewModel(UpdateViewCommand, OrganizierTask));
         }
 
         private void Save()
         { 
-            OrganizierTask.Offers.Add(SelectedOffer);
 
             for (int i = 0; i < TablesArrangement.Tables.Count; i++)
             {
                 TablesArrangement.Tables[i] = db.Tables.Add(TablesArrangement.Tables[i]);
+                TablesArrangement.Tables[i].Guests = GetTableGuests(db, TablesArrangement.Tables[i]);
             }
 
             db.TablesArrangements.Add(TablesArrangement);
             OrganizierTask.TablesArrangement = TablesArrangement;
+            var organizierTaskToSave = db.OrganizierTasks.Find(OrganizierTask.Id);
+            organizierTaskToSave.TablesArrangement = OrganizierTask.TablesArrangement;
+
+            var offerToSave = db.Offers.Find(SelectedOffer.Id);
+            organizierTaskToSave.Offers.Add(offerToSave);
             db.SaveChanges();
 
-            UpdateViewCommand.Execute(ViewChangeUtils.PastViews.Pop());
+            OrganizierTask.Offers = new List<Offer>(organizierTaskToSave.Offers);
+            UpdateViewCommand.Execute(new ActiveTaskOverviewViewModel(UpdateViewCommand, OrganizierTask));
+        }
+
+        private List<Guest> GetTableGuests(ProjectDatabase db, Table table) 
+        {
+            List<Guest> guests = new List<Guest>();
+            foreach (var guest in table.Guests) 
+            {
+                guests.Add(db.Guests.Find(guest.Id));
+            }
+            return guests;
         }
 
         private Object RemoveGuestList(Object obj) 
@@ -90,7 +106,7 @@ namespace ReservationSystem.ViewModels
             {
                 var originalTableCoordinates = originalTable.TableCoordinates;
                 Point coordiantes = new Point() { X = originalTableCoordinates.X, Y = originalTableCoordinates.Y };
-                var newTable = new Table() { TableCoordinates = coordiantes, NumberOfSeats=originalTable.NumberOfSeats};
+                var newTable = new Table() { TableCoordinates = coordiantes, NumberOfSeats = originalTable.NumberOfSeats};
                 TablesArrangement.Tables.Add(newTable);
             }
         }

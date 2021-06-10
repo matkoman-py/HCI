@@ -12,13 +12,25 @@ namespace ReservationSystem.Models
     {
         Neobradjen, Odbijen, Prihvacen
     }
-    public class OrganizierTask
+    public class OrganizierTask : AbstractModel
     {
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public virtual List<Offer> Offers { get; set; }
+        private List<Offer> offers;
+        public virtual List<Offer> Offers 
+        {
+            get 
+            {
+                return offers;
+            }
+            set 
+            {
+                offers = value;
+                OnPropertyChanged("Offers");
+            }
+        }
         public bool IsDone { get; set; }
         public string Comment { get; set; }
         public int SuggestionId { get; set; }

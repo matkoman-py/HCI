@@ -15,7 +15,19 @@ namespace ReservationSystem.ViewModels
     public class ActiveTaskOverviewViewModel : BaseViewModel
     {
         public ICommand UpdateViewCommand { get; set; }
-        public OrganizierTask OrganizierTask { get; set; }
+        private OrganizierTask organizierTask;
+        public OrganizierTask OrganizierTask 
+        {
+            get 
+            {
+                return organizierTask;
+            }
+            set 
+            {
+                organizierTask = value;
+                OnPropertyChanged("OrganizierTask");
+            } 
+        }
         public ICommand BackCommand { get; set; }
         public ICommand SaveCommand { get; set; }
         public ICommand SeeMoreCommand { get; set; }
@@ -182,7 +194,7 @@ namespace ReservationSystem.ViewModels
 
         private void GoToTableArrangmentView()
         {
-            ViewChangeUtils.PastViews.Push(this);
+            //ViewChangeUtils.PastViews.Push(this);
             UpdateViewCommand.Execute(new TableArrangementViewModel(UpdateViewCommand, SelectedOffer, OrganizierTask));
         }
 
