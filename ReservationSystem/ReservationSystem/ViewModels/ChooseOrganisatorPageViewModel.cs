@@ -91,6 +91,9 @@ namespace ReservationSystem.ViewModels
                         PartyRequest.Guests[i] = db.Guests.Add(PartyRequest.Guests[i]);
                     }
                 }
+                var pt = db.PartyTypes.Where(p => p.Name == PartyRequest.PartyType.Name).First();
+                PartyRequest.PartyType = pt;
+
                 db.PartyRequests.Add(PartyRequest);
                 db.SaveChanges();
             }

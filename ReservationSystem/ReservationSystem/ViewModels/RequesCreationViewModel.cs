@@ -70,16 +70,12 @@ namespace ReservationSystem.ViewModels
                 MessageBox.Show("Ne možete izabrati datum u prošlosti!");
                 return;
             }
-            if(PartyRequest.PartyTheme == null || PartyRequest.Place == null || PartyRequest.Description == null || PartyRequest.PartyType == null)
+            if(string.IsNullOrEmpty(PartyRequest.PartyTheme.Trim()) || string.IsNullOrEmpty(PartyRequest.Place.Trim()) || string.IsNullOrEmpty(PartyRequest.Description.Trim()) || PartyRequest.PartyType == null)
             {
                 MessageBox.Show("Morate uneti sve podatke!");
                 return;
             }
-            if (PartyRequest.PartyTheme.Trim() == "" || PartyRequest.Place.Trim() == "" || PartyRequest.Description.Trim() == "")
-            {
-                MessageBox.Show("Morate uneti sve podatke!");
-                return;
-            }
+            
             int budget;
             bool success = Int32.TryParse(Budget, out budget);
             if (!success)
