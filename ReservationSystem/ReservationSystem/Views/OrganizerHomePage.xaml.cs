@@ -35,12 +35,50 @@ namespace ReservationSystem.Views
         private void StartTutorial(object sender, RoutedEventArgs e)
         {
 
-            var currentWindowType = ((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType();
-
-            TutorialWindow tutorial = new TutorialWindow(User, this, currentWindowType);
-            tutorial.Show();
-            tutorial.Topmost = true;
-            this.Hide();
+            Type currentWindowType = ((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType();
+            if (currentWindowType == typeof(RequestsOverviewViewModel))
+            {
+                if (RequestsOverviewViewModel.RequestState == RequestState.Pending)
+                {
+                    TutorialWindow tutorial = new TutorialWindow(User, this);
+                    tutorial.Show();
+                    tutorial.Topmost = true;
+                    this.Hide();
+                } else
+                {
+                    MessageBox.Show("Tutorijal možete pokrenuti samo u delu menija sa neobrađenim zahtevima.");
+                }
+            } else if (currentWindowType == typeof(PendingRequestOverview)) {
+                TutorialWindow tutorial = new TutorialWindow(User, this);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(CreateSuggestionViewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(DenyRequestViewViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else if (currentWindowType == typeof(CreateTaskViewModel))
+            {
+                TutorialWindow tutorial = new TutorialWindow(User, this);
+                tutorial.Show();
+                tutorial.Topmost = true;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Tutorijal možete pokrenuti samo u delu menija sa aktivnim i neobrađenim zahtevima.");
+            }
         }
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -194,6 +232,30 @@ namespace ReservationSystem.Views
             }
         }
 
+        private void RejectRequestShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(PendingRequestOverview))
+            {
+                PendingRequestOverview.DenyRequestViewCommand.Execute(null);
+            }
+        }
+
+        private void PreviousPageShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequestsOverviewViewModel))
+            {
+                RequestsOverviewViewModel.NextPageCommand.Execute(null);
+            }
+        }
+
+        private void NextPageShortcut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(RequestsOverviewViewModel))
+            {
+                RequestsOverviewViewModel.PreviousPageCommand.Execute(null);
+            }
+        }
+
         private void ApplyShortcut(object sender, ExecutedRoutedEventArgs e)
         {
             if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(PendingRequestOverview))
@@ -205,16 +267,24 @@ namespace ReservationSystem.Views
             }
             else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateTaskViewModel))
             {
-                Console.WriteLine("????????????????????????????");
                 CreateTaskViewModel.SaveTaskCommand.Execute(null);
-            } else
-            {
-                Console.WriteLine("Staaaaaaaaaaa");
             }
-
+            else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateNewOfferViewModel))
+            {
+                CreateNewOfferViewModel.AssociateOverviewCommand.Execute(null);
+            }
+            else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateNewAssociateViewModel))
+            {
+                CreateNewAssociateViewModel.AddAssociatesCommand.Execute(null);
+            }
+            else if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(DenyRequestViewViewModel))
+            {
+                DenyRequestViewViewModel.RequestsOverviewPendingCommand.Execute(null);
+            }
+            
         }
 
-        private void CreateNewTask(object sender, ExecutedRoutedEventArgs e)
+        private void CreateNewTaskShortcut(object sender, ExecutedRoutedEventArgs e)
         {
             if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateSuggestionViewViewModel))
             {

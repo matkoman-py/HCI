@@ -10,6 +10,9 @@
 
     <Grid>
         <Grid Panel.ZIndex="10" Height="70" VerticalAlignment="Top" Background="#FF4176A8">
+            <Border Height="30" Width="450" Margin="40,0,0,0" BorderBrush="Red" BorderThickness="2" VerticalAlignment="Center">
+                <Label Foreground="White" Padding="20,5,20,5" Margin="0,0,40,0" Content="{Binding TutorialText}" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            </Border>
             <Button Background="White" Foreground="#FF4176A8" Padding="20,5,20,5" Margin="0,0,40,0" Content=" Završi tutorijal" Click="EndTutorial" VerticalAlignment="Center" HorizontalAlignment="Right"></Button>
         </Grid>
         <Grid Panel.ZIndex="10" x:Name="GridMenu" Width="240" HorizontalAlignment="Left" Background="#FF4176A8">

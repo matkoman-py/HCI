@@ -52,7 +52,8 @@ namespace ReservationSystem.Commands
             }
             else 
             {
-                _execution();
+                if (_validator())
+                    _execution();
             }
         }
 

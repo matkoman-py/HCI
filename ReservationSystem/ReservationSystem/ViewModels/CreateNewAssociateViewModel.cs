@@ -17,7 +17,7 @@ namespace ReservationSystem.ViewModels
         public User User { get; set; }
         public Associate Associate { get; set; }
         public ICommand BackCommand { get; set; }
-        public ICommand AddAssociatesCommand { get; set; }
+        public static ICommand AddAssociatesCommand { get; set; }
         public List<FieldOfWork> FieldOfWorkOptions { get; set; }
 
         public CreateNewAssociateViewModel(ICommand updateViewCommand, User user)

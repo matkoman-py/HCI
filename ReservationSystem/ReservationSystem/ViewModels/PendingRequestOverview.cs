@@ -15,7 +15,7 @@ namespace ReservationSystem.ViewModels
         public string Name { get; set; }
         public ICommand UpdateViewCommand { get; set; }
         public PartyRequest PartyRequest { get; set; }
-        public ICommand DenyRequestViewCommand { get; set; }
+        public static ICommand DenyRequestViewCommand { get; set; }
         public static ICommand CreateSuggestionViewCommand { get; set; }
         public ICommand RequestsOverviewPendingCommand { get; set; }
         public PendingRequestOverview(ICommand updateViewCommand, PartyRequest sug)

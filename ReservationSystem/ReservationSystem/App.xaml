@@ -5,8 +5,10 @@
              xmlns:views ="clr-namespace:ReservationSystem.Views"
              xmlns:viewsAdmin ="clr-namespace:ReservationSystem.Views.Administrator"
              xmlns:viewsOrganizer ="clr-namespace:ReservationSystem.Views.Organizer"
+             xmlns:viewTutorial="clr-namespace:ReservationSystem.Tutorial.View"
              xmlns:viewmodels="clr-namespace:ReservationSystem.ViewModels"
              xmlns:viewmodelsAdmin="clr-namespace:ReservationSystem.ViewModels.Administrator"
+             xmlns:viewmodelsTutorial="clr-namespace:ReservationSystem.Tutorial.ViewModel"
 
              xmlns:converters="clr-namespace:ReservationSystem.Converter"
              xmlns:models="clr-namespace:ReservationSystem.Models"
@@ -174,6 +176,21 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:TableArrangementViewModel}">
                 <viewsOrganizer:TableArrangementOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsTutorial:PendingRequestOverviewViewModel}">
+                <viewTutorial:PendingRequestsOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsTutorial:PendingRequestViewModel}">
+                <viewTutorial:PendingRequestOverview/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsTutorial:DenyRequestViewViewModel}">
+                <viewTutorial:DenyRequestView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsTutorial:CreateSuggestionViewModel}">
+                <viewTutorial:CreateSuggestionView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsTutorial:CreateTaskViewModel}">
+                <viewTutorial:CreateTaskView/>
             </DataTemplate>
         </ResourceDictionary>
 
