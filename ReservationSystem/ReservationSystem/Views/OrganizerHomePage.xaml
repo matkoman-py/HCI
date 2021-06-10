@@ -7,8 +7,17 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="OrganizerHomePage" Height="590" Width="1040">
-
-    <Grid>
+    <Window.Resources>
+    <RoutedUICommand x:Key="MyCommand1" Text="Text" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource MyCommand1}" 
+                    Executed="CommandBinding_Executed" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="F1" Command="{StaticResource MyCommand1}" />
+    </Window.InputBindings>
+            <Grid>
         <Grid Panel.ZIndex="10" Height="70" VerticalAlignment="Top" Background="#FF4176A8"></Grid>
             <Grid Panel.ZIndex="10" x:Name="GridMenu" Width="240" HorizontalAlignment="Left" Background="#FF4176A8">
                 <StackPanel>

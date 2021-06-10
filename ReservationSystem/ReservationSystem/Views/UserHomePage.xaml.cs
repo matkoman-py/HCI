@@ -137,6 +137,12 @@ namespace ReservationSystem.Views
                 HelperModal hm = new HelperModal("/Static/offerOverviewHelp.png", "\n\t\t\tPregled ponude\n\nNa ovoj stranici možete videti cenu, opis kao i ime saradnika koji je kreirao\nponudu. Ako želite da se vratite na prethodnu stranicu pritisnite dugme\n\"Nazad\".\n");
                 hm.Topmost = true;
                 hm.ShowDialog();
+            }//upcomingHelp
+            else if (((UserHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(FuturePartiesViewModel))
+            {
+                HelperModal hm = new HelperModal("/Static/upcomingHelp.png", "\n\t\t\tPredstojeće proslave\n\nNa ovoj stranici prikazuju se proslave koje tek treba da se održe.\n");
+                hm.Topmost = true;
+                hm.ShowDialog();
             }
         }
         private void MenuBar_SelectionChanged(object sender, SelectionChangedEventArgs e)
