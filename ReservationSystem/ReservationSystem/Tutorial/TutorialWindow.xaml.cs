@@ -1,4 +1,5 @@
-﻿using ReservationSystem.Models;
+﻿using ReservationSystem.Commands;
+using ReservationSystem.Models;
 using ReservationSystem.ViewModels;
 using ReservationSystem.Views;
 using System;
@@ -24,6 +25,7 @@ namespace ReservationSystem.Tutorial
     {
         public User User { get; set; }
         public Window Window { get; set; }
+        public static ICommand CloseTutorial { get; set; }
 
         public TutorialWindow(User user, Window window, int tutorialType)
         {
@@ -31,13 +33,19 @@ namespace ReservationSystem.Tutorial
             User = user;
             Window = window;
             DataContext = new TutorialViewModel(tutorialType);
+            CloseTutorial = new DelegateCommand(ForceCloseTutorial);
 
+        }
+
+        private void ForceCloseTutorial() 
+        {
+            Window.Show();
+            this.Close();
         }
 
         private void EndTutorial(object sender, RoutedEventArgs e)
         {
-            Window.Show();
-            this.Close();
+            ForceCloseTutorial();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

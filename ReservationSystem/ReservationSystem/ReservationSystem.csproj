@@ -128,8 +128,20 @@
     <Compile Include="Tutorial\TutorialWindow.xaml.cs">
       <DependentUpon>TutorialWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tutorial\ViewModel\CreateSuggestionViewModel.cs" />
+    <Compile Include="Tutorial\ViewModel\CreateTaskViewModel.cs" />
+    <Compile Include="Tutorial\ViewModel\DenyRequestViewViewModel.cs" />
     <Compile Include="Tutorial\ViewModel\PendingRequestOverviewViewModel.cs" />
     <Compile Include="Tutorial\ViewModel\PendingRequestViewModel.cs" />
+    <Compile Include="Tutorial\View\CreateSuggestionView.xaml.cs">
+      <DependentUpon>CreateSuggestionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tutorial\View\CreateTaskView.xaml.cs">
+      <DependentUpon>CreateTaskView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tutorial\View\DenyRequestView.xaml.cs">
+      <DependentUpon>DenyRequestView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tutorial\View\PendingRequestOverview.xaml.cs">
       <DependentUpon>PendingRequestOverview.xaml</DependentUpon>
     </Compile>
@@ -348,6 +360,18 @@
     <Page Include="Tutorial\TutorialWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tutorial\View\CreateSuggestionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tutorial\View\CreateTaskView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tutorial\View\DenyRequestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tutorial\View\PendingRequestOverview.xaml">
       <SubType>Designer</SubType>

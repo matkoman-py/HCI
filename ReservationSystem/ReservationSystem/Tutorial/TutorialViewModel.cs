@@ -41,7 +41,7 @@ namespace ReservationSystem.Tutorial
 
             if (tutorialType == 0)
             {
-                _selectedViewModel = new PendingRequestOverviewViewModel(UpdateViewCommand);
+                _selectedViewModel = new PendingRequestOverviewViewModel(UpdateViewCommand, false);
             }
             else
             {

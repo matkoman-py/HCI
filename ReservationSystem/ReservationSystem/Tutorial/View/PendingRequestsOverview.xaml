@@ -65,7 +65,7 @@
                                         <TextBlock DockPanel.Dock="Top" Margin="0,0,0,5">Opis:</TextBlock>
                                         <TextBox BorderBrush="LightGray" BorderThickness="1" IsEnabled="False" Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="170"  MaxLines="1"></TextBox>
                                     </DockPanel>
-                                    <Button Grid.Row="2" Command="{Binding GoToNextViewCommand,
+                                    <Button Grid.Row="2" Command="{Binding DataContext.GoToNextViewCommand,
                                                 RelativeSource={RelativeSource AncestorType=UserControl}}"
                                             CommandParameter="{Binding}">Vidi više</Button>
                                 </Grid>

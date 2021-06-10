@@ -183,6 +183,15 @@
             <DataTemplate DataType="{x:Type viewmodelsTutorial:PendingRequestViewModel}">
                 <viewTutorial:PendingRequestOverview/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsTutorial:DenyRequestViewViewModel}">
+                <viewTutorial:DenyRequestView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsTutorial:CreateSuggestionViewModel}">
+                <viewTutorial:CreateSuggestionView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodelsTutorial:CreateTaskViewModel}">
+                <viewTutorial:CreateTaskView/>
+            </DataTemplate>
         </ResourceDictionary>
 
     </Application.Resources>

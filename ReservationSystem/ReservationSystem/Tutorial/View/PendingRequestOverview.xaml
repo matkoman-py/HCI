@@ -65,8 +65,8 @@
         </StackPanel>
 
         <StackPanel  Margin="15" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Button IsEnabled="{Binding First, Converter={StaticResource InvertBooleanConverter}}" Command="{Binding DenyRequestViewCommand}">Odbij zahtev</Button>
-            <Button IsEnabled="{Binding First}" Margin="0,10,0,0" Command="{Binding CreateSuggestionViewCommand}">Kreiraj predlog</Button>
+            <Button IsEnabled="{Binding First, Converter={StaticResource InvertBooleanConverter}}" Command="{Binding RejectCommand}">Odbij zahtev</Button>
+            <Button IsEnabled="{Binding First}" Margin="0,10,0,0" Command="{Binding AcceptCommand}">Kreiraj predlog</Button>
         </StackPanel>
     </Grid>
 </UserControl>

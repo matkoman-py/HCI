@@ -1,5 +1,6 @@
 ﻿using ReservationSystem.Commands;
 using ReservationSystem.Models;
+using ReservationSystem.Utils;
 using ReservationSystem.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -29,11 +30,22 @@ namespace ReservationSystem.Tutorial.ViewModel
         public ICommand UpdateViewCommand { get; set; }
         public ICommand GoToNextViewCommand { get; set; }
         public User User { get; set; }
-        public PendingRequestOverviewViewModel(ICommand updateViewCommand)
+        public PendingRequestOverviewViewModel(ICommand updateViewCommand, bool flagCard)
         {
             UpdateViewCommand = updateViewCommand;
             RequestsToShow = getRequests();
             GoToNextViewCommand = new DelegateCommand(GoToNextView);
+            flag = flagCard;
+        }
+
+        public PendingRequestOverviewViewModel(ICommand updateViewCommand, PartyRequest partyRequest, bool flagCard)
+        {
+            UpdateViewCommand = updateViewCommand;
+            RequestsToShow = getRequests();
+            GoToNextViewCommand = new DelegateCommand(GoToNextView);
+            var prToDelete = requestsToShow.Find(pr => pr.Id == partyRequest.Id);
+            requestsToShow.Remove(prToDelete);
+            flag = flagCard;
         }
 
         public object GoToNextView(object partyRequest)

@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ReservationSystem.Tutorial.View.CreateSuggestionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ReservationSystem.Tutorial.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button IsEnabled="False" Command="{Binding PendingRequestOverviewCommand}" Margin="10">Nazad</Button>
+
+        <DockPanel Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="4" Margin="50,0,50,20" >
+            <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"  >Kreirani zadaci:</Label>
+            <Border BorderBrush="Black" BorderThickness="2">
+                <ListView ItemsSource="{Binding OrganizierTasks}" MinHeight="50" MaxHeight="150">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Ime" Width="300"></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Opis" Width="300"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+        </DockPanel>
+        <Label Margin="50,0,50,0" Grid.Row="5" Content="Komentar:" FontSize="16" FontWeight="Bold"></Label>
+        <TextBox Grid.Row="6" 
+                 Grid.ColumnSpan="4" 
+                 Margin="50,0,50,0" 
+                 HorizontalAlignment="Stretch" 
+                 BorderBrush="Black" 
+                 BorderThickness="2" Grid.RowSpan="1"/>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="8" Grid.ColumnSpan="4" Orientation="Horizontal" >
+            <Button Margin="0,0,40,0" IsEnabled="{Binding FirstStep, Converter={StaticResource InvertBooleanConverter}}" Command="{Binding CreateTaskCommand}">Novi zadatak</Button>
+            <Button IsEnabled="{Binding FirstStep}" 
+                    Command="{Binding AcceptPendingRequestCommand}">Prihvati zahtev</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

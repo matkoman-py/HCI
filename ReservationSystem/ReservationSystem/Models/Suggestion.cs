@@ -28,7 +28,7 @@ namespace ReservationSystem.Models
 
         public Suggestion()
         {
-
+            OrganizierTasks = new List<OrganizierTask>();
         }
 
         public Suggestion(List<OrganizierTask> tasks, string comment, PartyRequest partyRequest)
@@ -39,7 +39,6 @@ namespace ReservationSystem.Models
             Answered = AnsweredType.Neobradjen;
             Price = 0;
 
-            
         }
     }
 }
