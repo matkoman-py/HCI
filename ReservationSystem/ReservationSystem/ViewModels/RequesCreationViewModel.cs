@@ -70,7 +70,7 @@ namespace ReservationSystem.ViewModels
                 MessageBox.Show("Ne možete izabrati datum u prošlosti!");
                 return;
             }
-            if(string.IsNullOrEmpty(PartyRequest.PartyTheme.Trim()) || string.IsNullOrEmpty(PartyRequest.Place.Trim()) || string.IsNullOrEmpty(PartyRequest.Description.Trim()) || PartyRequest.PartyType == null)
+            if(string.IsNullOrEmpty(PartyRequest.PartyTheme) || string.IsNullOrEmpty(PartyRequest.Place) || string.IsNullOrEmpty(PartyRequest.Description) || PartyRequest.PartyType == null)
             {
                 MessageBox.Show("Morate uneti sve podatke!");
                 return;
