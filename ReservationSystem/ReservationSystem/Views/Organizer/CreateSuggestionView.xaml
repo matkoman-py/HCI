@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views.Organizer"
              mc:Ignorable="d"
         Background="White"
-             Height="500" Width="800">
+             Height="520" Width="800">
         
     <Grid>
         <Grid.RowDefinitions>

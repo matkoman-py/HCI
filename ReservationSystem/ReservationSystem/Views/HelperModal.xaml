@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views"
         x:Name="helperModal"
         mc:Ignorable="d"
-        Title="HelperModal" Height="450" Width="800" ResizeMode="NoResize">
+        Title="HelperModal" Height="520" Width="800" ResizeMode="NoResize">
     <Grid>
         <ScrollViewer>
             <Grid>

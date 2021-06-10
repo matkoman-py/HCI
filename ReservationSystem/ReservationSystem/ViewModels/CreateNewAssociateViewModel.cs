@@ -44,6 +44,8 @@ namespace ReservationSystem.ViewModels
             {
                 try
                 {
+                    var fow = db.FieldsOfWork.Where(f => f.Name == Associate.FieldOfWork.Name).First();
+                    Associate.FieldOfWork = fow;
                     db.Associates.Add(Associate);
                     db.SaveChanges();
                     MessageBox.Show("Uspešno ste dodali saradnika.");

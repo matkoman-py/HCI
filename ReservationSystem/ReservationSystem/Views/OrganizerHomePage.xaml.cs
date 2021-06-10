@@ -77,7 +77,7 @@ namespace ReservationSystem.Views
             }
             else
             {
-                MessageBox.Show("Tutorijal možete pokrenuti samo u delu menija sa aktivnim i neobrađenim zahtevima.");
+                MessageBox.Show("Tutorijal možete pokrenuti samo u delu menija sa neobrađenim zahtevima.");
             }
         }
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)

@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:ReservationSystem.Views"
         mc:Ignorable="d"
         Background="White"
-        Height="450" Width="800">
+        Height="520" Width="800">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -43,6 +43,6 @@
         </StackPanel>
 
         <Button 
-            Content="Uloguj se" Grid.Column="1" Grid.Row="3"  Margin="35" Command="{Binding LoginCommand}"/>
+            Content="Uloguj se" Grid.Column="1" Grid.Row="3"  Margin="50" Command="{Binding LoginCommand}"/>
     </Grid>
 </UserControl>
