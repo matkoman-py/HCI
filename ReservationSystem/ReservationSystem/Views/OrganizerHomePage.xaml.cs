@@ -160,7 +160,7 @@ namespace ReservationSystem.Views
             
         }
 
-        private void CreateNewTask(object sender, ExecutedRoutedEventArgs e)
+        private void CreateNewTaskShortcut(object sender, ExecutedRoutedEventArgs e)
         {
             if (((OrganizerHomePageViewModel)DataContext).SelectedViewModel.GetType() == typeof(CreateSuggestionViewViewModel))
             {

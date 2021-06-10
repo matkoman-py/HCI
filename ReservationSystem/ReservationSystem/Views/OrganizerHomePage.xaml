@@ -32,8 +32,8 @@
                     Executed="PreviousPageShortcut" />
         <CommandBinding Command="{StaticResource NextPageShortcut}" 
                     Executed="NextPageShortcut" />
-        <!--CommandBinding Command="{StaticResource CreateNewTaskShortcut}" 
-                    Executed="CreateNewTaskShortcut" /-->
+        <CommandBinding Command="{StaticResource CreateNewTaskShortcut}" 
+                    Executed="CreateNewTaskShortcut" />
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Gesture="Control+S" Key="S" Command="{StaticResource NewAssociateShortcut}" />
@@ -42,6 +42,7 @@
         <KeyBinding Gesture="Control+Tab" Key="Tab" Command="{StaticResource RejectRequestShortcut}" />
         <KeyBinding Gesture="Left" Key="Left" Command="{StaticResource PreviousPageShortcut}" />
         <KeyBinding Gesture="Right" Key="Right" Command="{StaticResource NextPageShortcut}" />
+        <KeyBinding Gesture="Control+Z" Key="Z" Command="{StaticResource CreateNewTaskShortcut}" />
     </Window.InputBindings>
 
     <Grid>
