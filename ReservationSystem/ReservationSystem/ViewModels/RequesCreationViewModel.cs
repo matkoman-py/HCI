@@ -31,6 +31,7 @@ namespace ReservationSystem.ViewModels
         public User User { get; set; }
         public string Budget { get; set; }
         public string Capacity { get; set; }
+        public DateTime Time { get; set; }
         public ICommand UserHomePageCommand
         {
             get; set;
@@ -55,6 +56,7 @@ namespace ReservationSystem.ViewModels
             PartyRequest.RequestState = RequestState.Pending;
             PartyRequest.CreatorId = user.Id;
             PartyRequest.Date = DateTime.Today;
+            Time = DateTime.Now;
         }
         public void UserHomePage()
         {
@@ -94,6 +96,10 @@ namespace ReservationSystem.ViewModels
             }
             PartyRequest.Budget = budget;
             PartyRequest.Capacity = capacity;
+
+            var combinedDateTime = PartyRequest.Date.AddTicks(Time.TimeOfDay.Ticks);
+            PartyRequest.Date = combinedDateTime;
+            
             UpdateViewCommand.Execute(new ChooseOrganisatorPageViewModel(UpdateViewCommand, User, PartyRequest));
         }
 

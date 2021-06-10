@@ -77,7 +77,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBox Margin="5" Grid.Column="0" Text="{Binding SearchParam}"></TextBox>
 
-                    <Button Margin="5" Content="Pretrazi" Grid.Column="1" Command="{Binding SearchCommand}"></Button>
+                    <Button Margin="5" Content="Pretraži" Grid.Column="1" Command="{Binding SearchCommand}"></Button>
                 </Grid>
                 
             </DockPanel>
@@ -95,12 +95,12 @@
             </DataGrid>
 
             <StackPanel   Orientation="Horizontal">
-            <Button Margin="5" Content="Vidi vise" Command="{Binding SeeMoreCommand}"></Button>
+            <Button Margin="5" Content="Vidi više" Command="{Binding SeeMoreCommand}"></Button>
             <Button Margin="5" Content="Dodaj" Command="{Binding AddOfferCommand}"></Button>
             
         </StackPanel>
             <StackPanel >
-                <Button Margin="5" Command="{Binding SaveCommand}">Sacuvaj</Button>
+                <Button Margin="5" Command="{Binding SaveCommand}">Sačuvaj</Button>
             </StackPanel>
     </StackPanel>
 

@@ -100,13 +100,14 @@ namespace ReservationSystem.ViewModels
                 OrganizierTask o = db.OrganizierTasks.Include("Offers").Where(ot => ot.Id == OrganizierTask.Id).First();
                 if (o.Offers.Count == 0)
                 {
-                    MessageBox.Show("Morate dodati bar jednu ponudu na zadatak");
+                    MessageBox.Show("Morate dodati bar jednu ponudu na zadatak!");
                     return;
                 }
                 o.IsDone = true;
                 db.SaveChanges();
                 Suggestion sug;
                 sug = db.Suggestions.Include("OrganizierTasks").Include("OrganizierTasks.Offers").Where(s => s.Id == OrganizierTask.SuggestionId).First();
+                MessageBox.Show("Uspešno ste završili zadatak!");
                 UpdateViewCommand.Execute(new SuggestionOverviewViewModel(UpdateViewCommand, sug.PartyRequestId));
             }
 
@@ -150,14 +151,14 @@ namespace ReservationSystem.ViewModels
                 {
                     if (of.Id == SelectedOffer.Id)
                     {
-                        MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
+                        MessageBox.Show("Ne možete dva put dodati istu ponudu!");
                         return true;
                     }
                 }
             }
             if (SelectedOffers.Contains(SelectedOffer))
             {
-                MessageBox.Show("Ne mozete dva put dodati istu ponudu!");
+                MessageBox.Show("Ne možete dva put dodati istu ponudu!");
                 return true;
             }
             return false;
@@ -203,6 +204,7 @@ namespace ReservationSystem.ViewModels
                 else
                 {
                     AddRegularOffer();
+                    MessageBox.Show("Dodali ste ponudu.");
                 }
 
             }

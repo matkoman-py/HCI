@@ -66,6 +66,7 @@ namespace ReservationSystem.ViewModels
                 sug.Comment = Suggestion.Comment;
                 db.SaveChanges();
                 User user = db.Users.Where(u => u.Id == sug.PartyRequest.OrganiserId).First();
+                MessageBox.Show("Uspešno ste poslali ponudu.");
                 UpdateViewCommand.Execute(new RequestsOverviewViewModel(UpdateViewCommand, user, RequestState.Active));
             }
         }

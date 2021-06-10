@@ -73,7 +73,7 @@ namespace ReservationSystem.ViewModels
                 db.SaveChanges();
             }
             
-            MessageBox.Show("Uspesno ste kreirali ponudu");
+            MessageBox.Show("Uspešno ste kreirali ponudu");
             UpdateViewCommand.Execute(new AssociateOverviewViewModel(UpdateViewCommand, User));
         }
     }

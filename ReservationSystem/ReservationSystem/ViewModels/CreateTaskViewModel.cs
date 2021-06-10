@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ReservationSystem.ViewModels
@@ -37,6 +38,11 @@ namespace ReservationSystem.ViewModels
         }
         public void saveTask()
         {
+            if(string.IsNullOrEmpty(Task.Name) || string.IsNullOrEmpty(Task.Description) || string.IsNullOrEmpty(Task.Comment))
+            {
+                MessageBox.Show("Morate uneti sva polja!");
+                return;
+            }
             using (var db = new ProjectDatabase())
             {
                 OrganizierTask task = new OrganizierTask();
@@ -48,6 +54,7 @@ namespace ReservationSystem.ViewModels
                 db.OrganizierTasks.Add(task);
                 db.SaveChanges();
             }
+            MessageBox.Show("Uspešno ste kreirali zadatak!");
             UpdateViewCommand.Execute(new CreateSuggestionViewViewModel(UpdateViewCommand, User, Sug));
         }
     }

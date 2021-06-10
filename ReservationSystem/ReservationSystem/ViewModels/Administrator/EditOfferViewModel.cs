@@ -136,7 +136,7 @@ namespace ReservationSystem.ViewModels.Administrator
             }
             if (Price <= 0)
             {
-                MessageBox.Show("Cena mora biti veci od nule!");
+                MessageBox.Show("Cena mora biti veća od nule!");
                 return;
             }
             if (Mode == "Add")
@@ -165,6 +165,7 @@ namespace ReservationSystem.ViewModels.Administrator
                     }
 
                     db.SaveChanges();
+                    MessageBox.Show("Uspešno ste izmenili ponudu!");
                     UpdateViewCommand.Execute(ViewChangeUtils.PastViews.Pop());
                 }
                 catch (Exception e)

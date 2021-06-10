@@ -57,6 +57,7 @@ namespace ReservationSystem.ViewModels.Administrator
                     };
                     db.Users.Add(user);
                     db.SaveChanges();
+                    MessageBox.Show("Uspešno ste dodali organizatora!");
                     UpdateViewCommand.Execute(new AdminOrganizersOverviewModel(UpdateViewCommand));
                 }
                 catch

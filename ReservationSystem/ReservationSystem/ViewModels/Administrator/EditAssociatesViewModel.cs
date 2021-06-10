@@ -59,7 +59,7 @@ namespace ReservationSystem.ViewModels.Administrator
 
         private void UpdateAssociates()
         {
-            if(string.IsNullOrEmpty(Associate.Name.Trim()) || string.IsNullOrEmpty(Associate.Address.Trim()) || string.IsNullOrEmpty(Associate.Description.Trim()))
+            if(string.IsNullOrEmpty(Associate.Name.Trim()) || string.IsNullOrEmpty(Associate.Address.Trim()) || string.IsNullOrEmpty(Associate.Description.Trim()) || Associate.FieldOfWork == null)
             {
                 MessageBox.Show("Morate uneti sva polja!");
                 return;
@@ -84,6 +84,7 @@ namespace ReservationSystem.ViewModels.Administrator
                     db.FieldsOfWork.Attach(Associate.FieldOfWork);
                     db.Entry(Associate).State = EntityState.Modified;
                     db.SaveChanges();
+                    MessageBox.Show("Uspešno ste izmenili saradnika!");
                     UpdateViewCommand.Execute(new AdminAssociatesViewModel(UpdateViewCommand));
                 }
                 catch(Exception e)
