@@ -2,7 +2,8 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:w="clr-namespace:ReservationSystem.Password"
       xmlns:local="clr-namespace:ReservationSystem.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -25,7 +26,7 @@
             <Label  Content="Korisničko ime:"/>
             <TextBox  Height="30" Margin="10" Text="{Binding User.Username}" IsReadOnly="True"/>
             <Label  Content="Lozinka:"/>
-            <TextBox  Height="30" Margin="10" Text="{Binding User.Password}"/>
+            <PasswordBox Height="30" Margin="10" x:Name="PasswordBox" w:PasswordBoxAssistant.BindPassword="true" w:PasswordBoxAssistant.BoundPassword="{Binding Path=User.Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></PasswordBox>
             <Label  Content="E-mail:"/>
             <TextBox  Height="30" Margin="10" Text="{Binding User.Email}"/>
             <Button Command="{Binding ProfileCancelCommand}" Content="Odustani" Grid.Column="1" Grid.Row="3"  Margin="35"/>
