@@ -34,16 +34,6 @@ namespace ReservationSystem.ViewModels
         public void Login()
         {
             User user = findUser();
-
-            if (user == null)
-            {
-                var userSeeder = new UserSeeder();
-                userSeeder.Execute();
-                MessageBox.Show("Neispravna kombinacija korisničkog imena/lozinke!");
-                return;
-            }
-
-
             switch (user.Role)
             {
                 case Role.Customer:
