@@ -22,8 +22,9 @@ namespace ReservationSystem.Tutorial.ViewModel
         public User User { get; set; }
         public ICommand PendingRequestOverviewCommand { get; set; }
         public static bool FirstStep { get; set; }
+        public TutorialViewModel Tutorial { get; set; }
 
-        public CreateSuggestionViewModel(ICommand updateViewCommand, User user, PartyRequest sug)
+        public CreateSuggestionViewModel(ICommand updateViewCommand, User user, PartyRequest sug, TutorialViewModel TutorialWindow)
         {
             Sug = sug;
             User = user;
@@ -32,9 +33,11 @@ namespace ReservationSystem.Tutorial.ViewModel
             UpdateViewCommand = updateViewCommand;
             AcceptPendingRequestCommand = new DelegateCommand(AcceptPendingRequest);
             CreateTaskCommand = new DelegateCommand(CreateTask);
+            Tutorial = TutorialWindow;
+            Tutorial.TutorialText = "Kliknite na dugme 'Novi zadatak' kako bi kreirali novi zadatak.";
         }
 
-        public CreateSuggestionViewModel(ICommand updateViewCommand, User user, PartyRequest sug, Suggestion suggestion)
+        public CreateSuggestionViewModel(ICommand updateViewCommand, User user, PartyRequest sug, Suggestion suggestion, TutorialViewModel TutorialWindow)
         {
             Sug = sug;
             User = user;
@@ -43,12 +46,14 @@ namespace ReservationSystem.Tutorial.ViewModel
             UpdateViewCommand = updateViewCommand;
             AcceptPendingRequestCommand = new DelegateCommand(AcceptPendingRequest);
             CreateTaskCommand = new DelegateCommand(CreateTask);
+            Tutorial = TutorialWindow;
+            Tutorial.TutorialText = "Nakon unosa komentara, kliknite na dugme 'Prihvati zahtev'.";
         }
 
         public void CreateTask()
         {
             FirstStep = true;
-            UpdateViewCommand.Execute(new CreateTaskViewModel(UpdateViewCommand, User, Sug, Suggestion));
+            UpdateViewCommand.Execute(new CreateTaskViewModel(UpdateViewCommand, User, Sug, Suggestion, Tutorial));
         }
 
         public void AcceptPendingRequest()

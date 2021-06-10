@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace ReservationSystem.Tutorial
 {
-    class TutorialViewModel : BaseViewModel, IMainWindow
+    public class TutorialViewModel : BaseViewModel, IMainWindow
     {
 
         private BaseViewModel _selectedViewModel;
@@ -26,28 +26,30 @@ namespace ReservationSystem.Tutorial
             }
         }
 
+        public string tutorialText;
+        public string TutorialText
+        {
+            get { return tutorialText; }
+            set
+            {
+                tutorialText = value;
+                OnPropertyChanged(nameof(TutorialText));
+            }
+        }
+
         public ICommand UpdateViewCommand { get; set; }
 
-        public TutorialViewModel(int  tutorialType)
+        public TutorialViewModel()
         {
 
             UpdateViewCommand = new UpdateViewCommand(this);
-            getStartView(tutorialType);
+            getStartView();
 
         }
 
-        public void getStartView(int tutorialType)
+        public void getStartView()
         {
-
-            if (tutorialType == 0)
-            {
-                _selectedViewModel = new PendingRequestOverviewViewModel(UpdateViewCommand, false);
-            }
-            else
-            {
-               // _selectedViewModel = new ProfileViewModel(UpdateViewCommand, user);
-            }
-
+            _selectedViewModel = new PendingRequestOverviewViewModel(UpdateViewCommand, false, this);
         }
 
     }

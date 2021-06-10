@@ -29,16 +29,19 @@ namespace ReservationSystem.Tutorial.ViewModel
 
         public ICommand UpdateViewCommand { get; set; }
         public ICommand GoToNextViewCommand { get; set; }
+        public TutorialViewModel Tutorial { get; set; }
         public User User { get; set; }
-        public PendingRequestOverviewViewModel(ICommand updateViewCommand, bool flagCard)
+        public PendingRequestOverviewViewModel(ICommand updateViewCommand, bool flagCard, TutorialViewModel TutorialWindow)
         {
             UpdateViewCommand = updateViewCommand;
             RequestsToShow = getRequests();
             GoToNextViewCommand = new DelegateCommand(GoToNextView);
             flag = flagCard;
+            Tutorial = TutorialWindow;
+            Tutorial.TutorialText = "Izaberite jednu od ponuda klikom na dugme 'Vidi više'.";
         }
 
-        public PendingRequestOverviewViewModel(ICommand updateViewCommand, PartyRequest partyRequest, bool flagCard)
+        public PendingRequestOverviewViewModel(ICommand updateViewCommand, PartyRequest partyRequest, bool flagCard, TutorialViewModel TutorialWindow)
         {
             UpdateViewCommand = updateViewCommand;
             RequestsToShow = getRequests();
@@ -46,18 +49,20 @@ namespace ReservationSystem.Tutorial.ViewModel
             var prToDelete = requestsToShow.Find(pr => pr.Id == partyRequest.Id);
             requestsToShow.Remove(prToDelete);
             flag = flagCard;
+            Tutorial = TutorialWindow;
+            Tutorial.TutorialText = "Izaberite drugu preostalu ponudu klikom na dugme 'Vidi više'.";
         }
 
         public object GoToNextView(object partyRequest)
         {
             if (flag == false)
             {
-                UpdateViewCommand.Execute(new PendingRequestViewModel(UpdateViewCommand, (PartyRequest)partyRequest, flag));
+                UpdateViewCommand.Execute(new PendingRequestViewModel(UpdateViewCommand, (PartyRequest)partyRequest, flag, Tutorial));
                 flag = true;
             }
             else
             {
-                UpdateViewCommand.Execute(new PendingRequestViewModel(UpdateViewCommand, (PartyRequest)partyRequest, flag));
+                UpdateViewCommand.Execute(new PendingRequestViewModel(UpdateViewCommand, (PartyRequest)partyRequest, flag, Tutorial));
             }
             return partyRequest;
         }

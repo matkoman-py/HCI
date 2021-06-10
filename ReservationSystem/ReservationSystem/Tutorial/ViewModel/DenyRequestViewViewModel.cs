@@ -17,13 +17,17 @@ namespace ReservationSystem.Tutorial.ViewModel
         public ICommand RejectCommand { get; set; }
         public PartyRequest Sug { get; set; }
         public string Comment { get; set; }
-        public DenyRequestViewViewModel(ICommand updateViewCommand, PartyRequest sug, User user)
+        public TutorialViewModel Tutorial { get; set; }
+
+        public DenyRequestViewViewModel(ICommand updateViewCommand, PartyRequest sug, User user, TutorialViewModel TutorialWindow)
         {
             RejectCommand = new DelegateCommand(RequestOverviewPending);
             UpdateViewCommand = updateViewCommand;
             Sug = sug;
             User = user;
             Comment = "";
+            Tutorial = TutorialWindow;
+            Tutorial.TutorialText = "Unesite komentar i pritisnite dugme 'Odbij zahtev'.";
         }
 
         public void RequestOverviewPending()
@@ -33,7 +37,7 @@ namespace ReservationSystem.Tutorial.ViewModel
 
             s.Comment = Comment;
             s.Answered = AnsweredType.Neprihvacen;
-            UpdateViewCommand.Execute(new PendingRequestOverviewViewModel(UpdateViewCommand, Sug, true));
+            UpdateViewCommand.Execute(new PendingRequestOverviewViewModel(UpdateViewCommand, Sug, true, Tutorial));
         }
     }
 }

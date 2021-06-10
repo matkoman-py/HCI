@@ -19,7 +19,9 @@ namespace ReservationSystem.Tutorial.ViewModel
         public PartyRequest PartyRequest{ get; set; }
         public User User { get; set; }
         public string Name { get; set; }
-        public PendingRequestViewModel(ICommand updateViewCommand, PartyRequest partyRequest, bool firstCard)
+        public TutorialViewModel Tutorial { get; set; }
+
+        public PendingRequestViewModel(ICommand updateViewCommand, PartyRequest partyRequest, bool firstCard, TutorialViewModel TutorialWindow)
         {
             UpdateViewCommand = updateViewCommand;
             PartyRequest = partyRequest;
@@ -27,16 +29,24 @@ namespace ReservationSystem.Tutorial.ViewModel
             AcceptCommand = new DelegateCommand(Accept);
             RejectCommand = new DelegateCommand(Reject);
             Name = "Ana";
+            Tutorial = TutorialWindow;
+            if (!firstCard)
+            {
+                Tutorial.TutorialText = "Kliknite na dugme 'Odbij zahtev'.";
+            } else
+            {
+                Tutorial.TutorialText = "Nakon pregledanja zahteva, kliknite na dugme 'Kreiraj predlog'.";
+            }
         }
 
         private void Accept() 
         {
-            UpdateViewCommand.Execute(new CreateSuggestionViewModel(UpdateViewCommand, new User(), PartyRequest));
+            UpdateViewCommand.Execute(new CreateSuggestionViewModel(UpdateViewCommand, new User(), PartyRequest, Tutorial));
         }
 
         private void Reject() 
         {
-            UpdateViewCommand.Execute(new DenyRequestViewViewModel(UpdateViewCommand, PartyRequest, new User()));
+            UpdateViewCommand.Execute(new DenyRequestViewViewModel(UpdateViewCommand, PartyRequest, new User(), Tutorial));
         }
 
 

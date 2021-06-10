@@ -27,12 +27,12 @@ namespace ReservationSystem.Tutorial
         public Window Window { get; set; }
         public static ICommand CloseTutorial { get; set; }
 
-        public TutorialWindow(User user, Window window, int tutorialType)
+        public TutorialWindow(User user, Window window)
         {
             InitializeComponent();
             User = user;
             Window = window;
-            DataContext = new TutorialViewModel(tutorialType);
+            DataContext = new TutorialViewModel();
             CloseTutorial = new DelegateCommand(ForceCloseTutorial);
 
         }
@@ -43,9 +43,16 @@ namespace ReservationSystem.Tutorial
             this.Close();
         }
 
+        private void TutorialEnded()
+        {
+            MessageBox.Show("Tutorijal je prekinut.");
+            Window.Show();
+            this.Close();
+        }
+
         private void EndTutorial(object sender, RoutedEventArgs e)
         {
-            ForceCloseTutorial();
+            TutorialEnded();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

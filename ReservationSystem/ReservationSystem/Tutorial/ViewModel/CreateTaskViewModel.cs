@@ -20,8 +20,9 @@ namespace ReservationSystem.Tutorial.ViewModel
 
         public PartyRequest Sug { get; set; }
         public OrganizierTask Task { get; set; }
+        public TutorialViewModel Tutorial { get; set; }
 
-        public CreateTaskViewModel(ICommand updateViewCommand, User user, PartyRequest sug, Suggestion suggestion)
+        public CreateTaskViewModel(ICommand updateViewCommand, User user, PartyRequest sug, Suggestion suggestion, TutorialViewModel TutorialWindow)
         {
             Suggestion = suggestion;
             UpdateViewCommand = updateViewCommand;
@@ -29,12 +30,14 @@ namespace ReservationSystem.Tutorial.ViewModel
             User = user;
             Sug = sug;
             Task = new OrganizierTask();
+            Tutorial = TutorialWindow;
+            Tutorial.TutorialText = "Nakon unosa atributa zadatka, kliknite na dugme 'Kreiraj'.";
         }
  
         public void saveTask()
         {
             Suggestion.OrganizierTasks.Add(Task);
-            UpdateViewCommand.Execute(new CreateSuggestionViewModel(UpdateViewCommand, User, Sug, Suggestion));
+            UpdateViewCommand.Execute(new CreateSuggestionViewModel(UpdateViewCommand, User, Sug, Suggestion, Tutorial));
         }
     }
 }
