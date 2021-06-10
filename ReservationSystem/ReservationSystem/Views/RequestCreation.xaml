@@ -26,7 +26,7 @@
                       SelectedValue="{Binding PartyRequest.PartyType}"
                       DisplayMemberPath="Name"/>
             <Label  Content="Budžet:"/>
-            <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Budget}"/>
+            <TextBox  Height="25" Margin="10" Text="{Binding Budget}"/>
             <Label  Content="Mesto:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Place}"/>
             <Label  Content="Datum:"/>
@@ -41,7 +41,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="50,50,50,50">
             <Label  Content="Broj ljudi:"/>
-            <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.Capacity}"/>
+            <TextBox  Height="25" Margin="10" Text="{Binding Capacity}"/>
             <CheckBox  Height="47" Margin="10" Content="Budžet fleksibilan" IsChecked="{Binding PartyRequest.IsBudgetFlexible, Mode=TwoWay}"/>
             <Label  Content="Tema:"/>
             <TextBox  Height="25" Margin="10" Text="{Binding PartyRequest.PartyTheme}"/>

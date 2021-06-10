@@ -35,14 +35,14 @@ namespace ReservationSystem
             if(((MainViewModel)DataContext).SelectedViewModel.GetType() == typeof(LoginViewModel))
             {
                 
-                HelperModal hm = new HelperModal("/Static/LoginHelp.png", "\tProzor za logovanje\n Unesite vaše korisničko ime i šifru i pritisnite \"Uloguj se\" dugme\n Ako niste registrovani pritisnite \"Registruj se\"");
+                HelperModal hm = new HelperModal("/Static/LoginHelp.png", "\n\t\t\tProzor za logovanje\n\n Da bi ste se ulogovali unesite vaše korisničko ime i šifru i potom pritisnite \n\"Uloguj se\" dugme. Ako još uvek niste registrovani pritisnite \"Registruj se\" \nkako bi kreirali vaš profil.\n");
                 hm.ShowDialog();
 
             }
             if (((MainViewModel)DataContext).SelectedViewModel.GetType() == typeof(RegistrationViewModel))
             {
                 
-                HelperModal hm = new HelperModal("/Static/registrationHelp.png", "opsi");
+                HelperModal hm = new HelperModal("/Static/registrationHelp.png", "\n\t\t\tProzor za registraciju\n\n Da bi ste se uspešno registrovali morate popuniti sva polja sa vašim ličnim\n podacima potom pritisnite \"Registruj se\"dugme. Ako neki od unetih podataka\nnisu ispravni ispravite ih i pokušajte ponovo. Ukoliko želite da se vratite na\nstranicu za logovanje pritisnite dugme \"Nazad\".\n");
                 hm.ShowDialog();
             }
         }

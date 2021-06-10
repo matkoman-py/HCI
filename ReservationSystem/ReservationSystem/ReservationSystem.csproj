@@ -571,7 +571,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Static\requesttypeselection.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Static\blankProfilePicture.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -617,6 +619,90 @@
     <Resource Include="Static\table.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\AddAssociatesHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addfieldofworkHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addpartytypeHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addorganizersHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addorganizersdataHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\AddAssociatesdataHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addofferHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\editAssociateHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\editOfferHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\pendingrequestViewHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\activeRequestsHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\associatesOverviewHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addassociateHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addoffettoAssociate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\acceptedRequestHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\acceptedrequestsuggestionHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\resolvedtaskoverviewHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\offerHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\pendingreqHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\createSuggestionHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\createTaskHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\activereqOverview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\activeReqSuggHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\activetaskhelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\denyReqHelp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\upcomingHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\tablesAdminHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\addPasangerHelp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

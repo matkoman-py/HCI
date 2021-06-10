@@ -10,6 +10,7 @@
         Title="OrganizerHomePage" Height="590" Width="1040">
 
     <Window.Resources>
+        <RoutedUICommand x:Key="MyCommand1" Text="Text" />
         <RoutedUICommand x:Key="NewAssociateShortcut" Text="Text" />
         <RoutedUICommand x:Key="NewOfferForAssociateShortcut" Text="Text" />
         <RoutedUICommand x:Key="ApplyShortcut" Text="Text" />
@@ -17,6 +18,8 @@
     </Window.Resources>
 
     <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource MyCommand1}" 
+                    Executed="CommandBinding_Executed" />
         <CommandBinding Command="{StaticResource NewAssociateShortcut}" 
                     Executed="NewAssociateShortcut" />
         <CommandBinding Command="{StaticResource NewOfferForAssociateShortcut}" 
@@ -31,6 +34,7 @@
         <KeyBinding Gesture="Control+P" Key="P" Command="{StaticResource NewOfferForAssociateShortcut}" />
         <KeyBinding Gesture="Control+Space" Key="Space" Command="{StaticResource ApplyShortcut}" />
         <KeyBinding Gesture="Control+Z" Key="Z" Command="{StaticResource CreateNewTaskShortcut}" />
+        <KeyBinding Key="F1" Command="{StaticResource MyCommand1}" />
     </Window.InputBindings>
 
     <Grid>
@@ -38,10 +42,10 @@
             <Button Background="White" Foreground="#FF4176A8" Padding="20,5,20,5" Margin="0,0,40,0" Content="Tutorijal" Click="StartTutorial" VerticalAlignment="Center" HorizontalAlignment="Right"></Button>
         </Grid>
         <Grid Panel.ZIndex="10" x:Name="GridMenu" Width="240" HorizontalAlignment="Left" Background="#FF4176A8">
-                <StackPanel>
-                    <Grid Height="70">
-                        <TextBlock TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="White" Text="Meni"></TextBlock>
-                    </Grid>
+            <StackPanel>
+                <Grid Height="70">
+                    <TextBlock TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="White" Text="Meni"></TextBlock>
+                </Grid>
                 <ListView x:Name="MenuBar"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="MenuBar_SelectionChanged">
                     <ListViewItem x:Name="PartyRequests" Height="80" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave">
                         <StackPanel Orientation="Horizontal">
@@ -77,7 +81,7 @@
                     </ListViewItem>
                 </ListView>
             </StackPanel>
-            </Grid>
+        </Grid>
         <Grid Panel.ZIndex="0" x:Name="UserHomePageContainer" Margin="240,70,0,0">
             <ContentControl Content="{Binding SelectedViewModel}"></ContentControl>
         </Grid>

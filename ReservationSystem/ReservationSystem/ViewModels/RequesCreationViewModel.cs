@@ -68,7 +68,7 @@ namespace ReservationSystem.ViewModels
                 MessageBox.Show("Ne možete izabrati datum u prošlosti!");
                 return;
             }
-            if(PartyRequest.PartyTheme == null || PartyRequest.Place == null || PartyRequest.Description == null || Budget == null || Capacity == null)
+            if(PartyRequest.PartyTheme == null || PartyRequest.Place == null || PartyRequest.Description == null || PartyRequest.PartyType == null)
             {
                 MessageBox.Show("Morate uneti sve podatke!");
                 return;
